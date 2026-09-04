@@ -11,7 +11,7 @@ Capacitor) into a **native Android app**. The web toolchain and Capacitor shell
 have been removed (see git history); the native rewrite is in progress:
 
 - [x] Phase 0 — remove web/Capacitor, native Compose skeleton, CI build gate
-- [ ] Phase 1 — theme, navigation, domain models, target calculator
+- [x] Phase 1 — theme, navigation, domain models, target calculator, settings
 - [ ] Phase 2 — food datasets + Room persistence
 - [ ] Phase 3 — home dashboard & logging flows
 - [ ] Phase 4 — food search + Open Food Facts
