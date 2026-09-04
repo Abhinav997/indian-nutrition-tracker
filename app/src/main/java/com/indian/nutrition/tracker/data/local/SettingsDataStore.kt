@@ -94,8 +94,12 @@ class SettingsDataStore(private val dataStore: DataStore<Preferences>) {
         }
     }
 
-    private fun <T : Enum<T>> String?.toEnum(fallback: T): T =
-        runCatching { if (this == null) fallback else enumValueOf<T>(this) }.getOrDefault(fallback)
+    private fun <T : Enum<T>> String?.toEnum(fallback: T): T {
+        if (this == null) return fallback
+        @Suppress("UNCHECKED_CAST")
+        val enumClass = fallback.javaClass as Class<T>
+        return runCatching { java.lang.Enum.valueOf(enumClass, this) }.getOrDefault(fallback)
+    }
 
     private companion object {
         val KEY_CURRENT_WEIGHT = doublePreferencesKey("current_weight_kg")
