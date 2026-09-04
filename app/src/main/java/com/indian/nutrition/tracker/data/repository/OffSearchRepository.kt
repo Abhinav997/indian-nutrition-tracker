@@ -88,7 +88,11 @@ class OffSearchRepository(
          */
         fun dedupeByName(foods: List<Food>): List<Food> {
             val seen = HashSet<String>()
-            return foods.filter { f -> seen.add(f.name.lowercase().trim()) }
+            return foods.filter { f -> seen.add(normalizeName(f.name)) }
         }
+
+        /** Lowercase + trim + collapse internal whitespace. */
+        fun normalizeName(name: String): String =
+            name.lowercase().trim().replace(Regex("\\s+"), " ")
     }
 }
