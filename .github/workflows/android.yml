@@ -3,10 +3,9 @@ name: Android CI
 on:
   push:
   pull_request:
-  workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: android-${{ github.ref }}
@@ -36,14 +35,19 @@ jobs:
             "build-tools;36.0.0" > /dev/null
 
       - name: Compile debug APK
-        run: |
-          ./gradlew :app:assembleDebug --stacktrace 2>&1 | tee /tmp/gradle.log
-          exit ${PIPESTATUS[0]}
+        run: ./gradlew :app:assembleDebug --stacktrace
 
-      - name: Run unit tests
-        run: |
-          ./gradlew :app:testDebugUnitTest --stacktrace 2>&1 | tee -a /tmp/gradle.log
-          exit ${PIPESTATUS[0]}
+      - name: Run unit tests (calculator)
+        run: ./gradlew :app:testDebugUnitTest --tests "*TargetCalculatorTest" --stacktrace
+
+      - name: Run unit tests (dates)
+        run: ./gradlew :app:testDebugUnitTest --tests "*DateUtilsTest" --stacktrace
+
+      - name: Run unit tests (units)
+        run: ./gradlew :app:testDebugUnitTest --tests "*UnitConvertersTest" --stacktrace
+
+      - name: Run unit tests (settings)
+        run: ./gradlew :app:testDebugUnitTest --tests "*SettingsRepositoryTest" --stacktrace
 
       - name: Upload debug APK
         uses: actions/upload-artifact@v4
@@ -51,16 +55,3 @@ jobs:
           name: debug-apk
           path: app/build/outputs/apk/debug/*.apk
           if-no-files-found: error
-
-      # Temporary: surfaces build logs on GH branch (sandbox can't read GH logs)
-      - name: Capture build log on failure
-        if: failure()
-        run: |
-          set +e
-          cat /tmp/gradle.log 2>/dev/null > .ci-build-error.log
-          [ -s .ci-build-error.log ] || echo "no captured output" > .ci-build-error.log
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -f .ci-build-error.log
-          git commit -q -m "ci: capture build error log [skip ci]" || true
-          git push origin "HEAD:refs/heads/${GITHUB_REF_NAME}" || true
