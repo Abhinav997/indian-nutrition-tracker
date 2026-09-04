@@ -44,6 +44,7 @@ class UnitConvertersTest {
     @Test
     fun bmiValueMatchesWeb() {
         // 82 / 1.76² = 26.47 → 26.5 (same rounding as the web app)
-        assertEquals(26.5, UnitConverters.calculateBmi(82.0, 176.0)?.bmi, 0.001)
+        val bmi = UnitConverters.calculateBmi(82.0, 176.0)
+        assertEquals(26.5, bmi?.bmi ?: 0.0, 0.001)
     }
 }
