@@ -29,8 +29,12 @@ sealed class AppDestination(
     companion object {
         val all: List<AppDestination> = listOf(Home, FoodSearch, Progress, Calculator)
 
-        /** Bottom-nav order: [route] → destination, tolerant of unknown routes. */
+        /**
+         * Bottom-nav order: [route] → destination, tolerant of unknown
+         * routes and of route patterns like `search?meal=BREAKFAST`.
+         */
         fun fromRoute(route: String?): AppDestination =
-            all.firstOrNull { it.route == route } ?: Home
+            all.firstOrNull { it.route == route || route?.startsWith("${it.route}?") == true }
+                ?: Home
     }
 }

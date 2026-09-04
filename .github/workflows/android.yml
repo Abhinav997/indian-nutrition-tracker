@@ -58,6 +58,15 @@ jobs:
       - name: Run unit tests (weight repo)
         run: ./gradlew :app:testDebugUnitTest --tests "*WeightRepositoryTest" --stacktrace
 
+      - name: Run unit tests (off parser)
+        run: ./gradlew :app:testDebugUnitTest --tests "*OffProductParserTest" --stacktrace
+
+      - name: Run unit tests (off client)
+        run: ./gradlew :app:testDebugUnitTest --tests "*OffApiClientTest" --stacktrace
+
+      - name: Run unit tests (off search)
+        run: ./gradlew :app:testDebugUnitTest --tests "*OffSearchRepositoryTest" --stacktrace
+
       - name: Upload debug APK
         uses: actions/upload-artifact@v4
         with:

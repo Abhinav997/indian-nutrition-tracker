@@ -8,8 +8,6 @@ import com.indian.nutrition.tracker.data.repository.WaterRepository
 import com.indian.nutrition.tracker.data.repository.WeightRepository
 import com.indian.nutrition.tracker.di.AppContainer
 import com.indian.nutrition.tracker.domain.model.DailyLog
-import com.indian.nutrition.tracker.domain.model.Food
-import com.indian.nutrition.tracker.domain.model.MealType
 import com.indian.nutrition.tracker.domain.model.UserSettings
 import com.indian.nutrition.tracker.domain.model.WaterLog
 import com.indian.nutrition.tracker.domain.model.WeightLog
@@ -23,7 +21,6 @@ import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import java.time.LocalDate
-import kotlin.math.max
 import kotlin.math.roundToInt
 
 /** Home/Today screen state: selected date, logs, water, weight, settings. */
@@ -56,24 +53,6 @@ class HomeViewModel(container: AppContainer) : ViewModel() {
     fun previousDay() { _selectedDate.value = _selectedDate.value.minusDays(1) }
     fun nextDay() { _selectedDate.value = _selectedDate.value.plusDays(1) }
     fun jumpToToday() { _selectedDate.value = DateUtils.today() }
-
-    fun addServing(food: Food, servingGrams: Int, quantity: Double, mealType: MealType) {
-        val grams = max(1, (servingGrams * quantity).roundToInt())
-        viewModelScope.launch {
-            logRepository.add(
-                date = _selectedDate.value,
-                foodId = food.id,
-                foodName = food.name,
-                source = food.source.name,
-                servingGrams = grams,
-                calories = (food.kcalPer100g * grams / 100).roundToInt(),
-                protein = round1(food.proteinPer100g * grams / 100),
-                carbs = round1(food.carbsPer100g * grams / 100),
-                fat = round1(food.fatPer100g * grams / 100),
-                mealType = mealType,
-            )
-        }
-    }
 
     fun deleteLog(id: String) = viewModelScope.launch { logRepository.delete(id) }
 

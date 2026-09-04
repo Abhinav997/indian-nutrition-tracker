@@ -30,14 +30,11 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.indian.nutrition.tracker.di.AppContainer
 import com.indian.nutrition.tracker.domain.model.DailyLog
-import com.indian.nutrition.tracker.domain.model.Food
 import com.indian.nutrition.tracker.domain.model.MealType
 import com.indian.nutrition.tracker.domain.model.UserSettings
 import com.indian.nutrition.tracker.ui.appViewModel
 import com.indian.nutrition.tracker.ui.components.DateSwitcherBar
-import com.indian.nutrition.tracker.ui.components.FoodPickerDialog
 import com.indian.nutrition.tracker.ui.components.MacroProgressBar
-import com.indian.nutrition.tracker.ui.components.ServingSheet
 import com.indian.nutrition.tracker.ui.components.WaterCard
 import com.indian.nutrition.tracker.ui.components.WeightSheet
 import com.indian.nutrition.tracker.util.DateUtils
@@ -45,7 +42,7 @@ import com.indian.nutrition.tracker.util.UnitConverters
 import kotlin.math.roundToInt
 
 @Composable
-fun HomeScreen(container: AppContainer) {
+fun HomeScreen(container: AppContainer, onOpenFoodSearch: (MealType) -> Unit) {
     val viewModel = appViewModel(container) { HomeViewModel(it) }
     val selectedDate by viewModel.selectedDate.collectAsStateWithLifecycle()
     val settings by viewModel.settings.collectAsStateWithLifecycle()
@@ -53,9 +50,6 @@ fun HomeScreen(container: AppContainer) {
     val waterLogs by viewModel.waterLogs.collectAsStateWithLifecycle()
     val weightLogs by viewModel.weightLogs.collectAsStateWithLifecycle()
 
-    var servingFood by remember { mutableStateOf<Food?>(null) }
-    var servingMeal by remember { mutableStateOf(MealType.LUNCH) }
-    var showFoodPicker by remember { mutableStateOf(false) }
     var showWeightSheet by remember { mutableStateOf(false) }
 
     val s = settings ?: return LoadingHome()
@@ -86,10 +80,7 @@ fun HomeScreen(container: AppContainer) {
             IntakeCard(
                 logs = dailyLogs,
                 settings = s,
-                onAddFood = {
-                    servingMeal = it ?: MealType.LUNCH
-                    showFoodPicker = true
-                },
+                onAddFood = { onOpenFoodSearch(MealType.LUNCH) },
             )
         }
 
@@ -120,37 +111,11 @@ fun HomeScreen(container: AppContainer) {
                 MealSection(
                     meal = meal,
                     items = items,
-                    onAdd = {
-                        servingMeal = it
-                        showFoodPicker = true
-                    },
+                    onAdd = { onOpenFoodSearch(it) },
                     onDelete = viewModel::deleteLog,
                 )
             }
         }
-    }
-
-    if (showFoodPicker) {
-        FoodPickerDialog(
-            foodRepository = container.foodRepository,
-            onSelect = { food ->
-                showFoodPicker = false
-                servingFood = food
-            },
-            onDismiss = { showFoodPicker = false },
-        )
-    }
-
-    servingFood?.let { food ->
-        ServingSheet(
-            food = food,
-            initialMeal = servingMeal,
-            onDismiss = { servingFood = null },
-            onSave = { grams, quantity, meal ->
-                viewModel.addServing(food, grams, quantity, meal)
-                servingFood = null
-            },
-        )
     }
 
     if (showWeightSheet) {
@@ -178,7 +143,7 @@ private fun LoadingHome() {
 }
 
 @Composable
-private fun IntakeCard(logs: List<DailyLog>, settings: UserSettings, onAddFood: (MealType?) -> Unit) {
+private fun IntakeCard(logs: List<DailyLog>, settings: UserSettings, onAddFood: () -> Unit) {
     val totalKcal = logs.sumOf { it.calories }
     val totalProtein = HomeViewModel.round1(logs.sumOf { it.protein })
     val totalCarbs = HomeViewModel.round1(logs.sumOf { it.carbs })
@@ -199,7 +164,7 @@ private fun IntakeCard(logs: List<DailyLog>, settings: UserSettings, onAddFood: 
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                     )
                 }
-                Button(onClick = { onAddFood(null) }) {
+                Button(onClick = onAddFood) {
                     Icon(Icons.Filled.Add, contentDescription = null)
                     Text("Add Food", modifier = Modifier.padding(start = 4.dp))
                 }

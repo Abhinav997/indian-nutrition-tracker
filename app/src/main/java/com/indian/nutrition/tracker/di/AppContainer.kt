@@ -4,10 +4,12 @@ import android.content.Context
 import com.indian.nutrition.tracker.data.local.AppDatabase
 import com.indian.nutrition.tracker.data.local.SettingsDataStore
 import com.indian.nutrition.tracker.data.local.inwSettingsDataStore
+import com.indian.nutrition.tracker.data.remote.OffApiClient
 import com.indian.nutrition.tracker.data.repository.CustomFoodRepository
 import com.indian.nutrition.tracker.data.repository.FoodRepository
 import com.indian.nutrition.tracker.data.repository.LogRepository
 import com.indian.nutrition.tracker.data.repository.OffCacheRepository
+import com.indian.nutrition.tracker.data.repository.OffSearchRepository
 import com.indian.nutrition.tracker.data.repository.SettingsRepository
 import com.indian.nutrition.tracker.data.repository.WaterRepository
 import com.indian.nutrition.tracker.data.repository.WeightRepository
@@ -42,4 +44,14 @@ class AppContainer(context: Context) {
     val customFoodRepository: CustomFoodRepository by lazy { CustomFoodRepository(database.customFoodDao()) }
 
     val offCacheRepository: OffCacheRepository by lazy { OffCacheRepository(database.offCacheDao()) }
+
+    val offApiClient: OffApiClient by lazy { OffApiClient() }
+
+    val offSearchRepository: OffSearchRepository by lazy {
+        OffSearchRepository(
+            offApiClient = offApiClient,
+            offCacheRepository = offCacheRepository,
+            packagedFoods = { foodRepository.packagedFoods() },
+        )
+    }
 }
