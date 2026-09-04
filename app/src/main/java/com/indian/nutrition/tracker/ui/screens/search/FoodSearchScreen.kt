@@ -22,7 +22,7 @@ import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material.icons.filled.Search
-import androidx.compose.material.icons.filled.Utensils
+import androidx.compose.material.icons.filled.Restaurant
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.AssistChip
 import androidx.compose.material3.Button
@@ -383,7 +383,7 @@ private fun CustomResults(
                 .fillMaxSize()
                 .padding(24.dp),
         ) {
-            Icon(Icons.Filled.Utensils, contentDescription = null, tint = MaterialTheme.colorScheme.primary)
+            Icon(Icons.Filled.Restaurant, contentDescription = null, tint = MaterialTheme.colorScheme.primary)
             Spacer(Modifier.height(8.dp))
             Text("No Custom Foods Created", fontWeight = FontWeight.Bold)
             Text(
