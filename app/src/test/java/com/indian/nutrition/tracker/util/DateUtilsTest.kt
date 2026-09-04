@@ -19,7 +19,7 @@ class DateUtilsTest {
         assertEquals("Today", DateUtils.dayLabel(today, today))
         assertEquals("Yesterday", DateUtils.dayLabel(today.minusDays(1), today))
         assertEquals("Tomorrow", DateUtils.dayLabel(today.plusDays(1), today))
-        assertEquals("Mon, Sep 1", DateUtils.dayLabel(LocalDate.of(2026, 9, 1), today))
+        assertEquals("Tue, Sep 1", DateUtils.dayLabel(LocalDate.of(2026, 9, 1), today))
     }
 
     @Test
