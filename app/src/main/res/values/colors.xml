@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App color palette (mirrors the teal/slate web UI) -->
+    <color name="teal_700">#0F766E</color>
+    <color name="slate_50">#F8FAFC</color>
+    <color name="slate_900">#0F172A</color>
+</resources>
