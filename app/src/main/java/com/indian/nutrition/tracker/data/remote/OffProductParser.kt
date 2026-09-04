@@ -7,6 +7,7 @@ import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonArray
 import kotlinx.serialization.json.JsonElement
 import kotlinx.serialization.json.JsonObject
+import kotlinx.serialization.json.JsonPrimitive
 import kotlinx.serialization.json.contentOrNull
 import kotlinx.serialization.json.doubleOrNull
 import kotlin.math.roundToInt
@@ -75,7 +76,8 @@ object OffProductParser {
             typicalServingGrams = 100,
             brand = obj.string("brands")?.takeIf { it.isNotBlank() } ?: "Packaged Product",
             category = obj["categories_tags"]?.let { cats ->
-                (cats as? JsonArray)?.firstOrNull()?.let { it.contentOrNull }
+                (cats as? JsonArray)?.firstOrNull()
+                    ?.let { (it as? JsonPrimitive)?.contentOrNull }
             },
             barcode = code,
             imageUrl = obj.string("image_front_small_url"),
@@ -85,8 +87,8 @@ object OffProductParser {
     private fun round1(value: Double): Double = (value * 10).roundToInt() / 10.0
 
     private fun JsonObject.string(key: String): String? {
-        val el = this[key] ?: return null
-        return el.contentOrNull ?: return null
+        val el = this[key] as? JsonPrimitive ?: return null
+        return el.contentOrNull
     }
 
     /**
@@ -94,7 +96,7 @@ object OffProductParser {
      * (OFF's usual output) and numeric strings (seen in some products).
      */
     private fun JsonObject.number(key: String): Double? {
-        val el = this[key] ?: return null
+        val el = this[key] as? JsonPrimitive ?: return null
         el.doubleOrNull?.let { return it }
         return el.contentOrNull?.toDoubleOrNull()
     }

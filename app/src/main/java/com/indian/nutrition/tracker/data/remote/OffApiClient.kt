@@ -1,6 +1,7 @@
 package com.indian.nutrition.tracker.data.remote
 
 import com.indian.nutrition.tracker.domain.model.Food
+import kotlinx.serialization.json.Json
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
@@ -97,11 +98,12 @@ class OffApiClient(
                 .build()
 
         private fun buildApi(baseUrl: String): OffApi {
+            val json = Json { ignoreUnknownKeys = true }
             val contentType = "application/json".toMediaType()
             return Retrofit.Builder()
                 .baseUrl(baseUrl)
                 .client(buildClient())
-                .addConverterFactory(contentType.asConverterFactory())
+                .addConverterFactory(json.asConverterFactory(contentType))
                 .build()
                 .create(OffApi::class.java)
         }

@@ -1,5 +1,6 @@
 package com.indian.nutrition.tracker.data.repository
 
+import com.indian.nutrition.tracker.data.mapper.toFood
 import com.indian.nutrition.tracker.data.remote.OffApiClient
 import com.indian.nutrition.tracker.domain.model.Food
 import com.indian.nutrition.tracker.domain.model.OffCacheProduct

@@ -138,15 +138,15 @@ fun CustomFoodDialog(
                         showValidation = true
                     } else {
                         onSave(
-                            name = name,
-                            kcal = kcalV,
-                            protein = protein.toDoubleOrNull() ?: 0.0,
-                            carbs = carbs.toDoubleOrNull() ?: 0.0,
-                            fat = fat.toDoubleOrNull() ?: 0.0,
-                            fiber = if (fiber.isNotBlank()) fiber.toDoubleOrNull() else null,
-                            servingDesc = servingDesc,
-                            servingGrams = servingGrams.toIntOrNull(),
-                            notes = notes,
+                            name,
+                            kcalV,
+                            protein.toDoubleOrNull() ?: 0.0,
+                            carbs.toDoubleOrNull() ?: 0.0,
+                            fat.toDoubleOrNull() ?: 0.0,
+                            if (fiber.isNotBlank()) fiber.toDoubleOrNull() else null,
+                            servingDesc,
+                            servingGrams.toIntOrNull(),
+                            notes,
                         )
                     }
                 },
