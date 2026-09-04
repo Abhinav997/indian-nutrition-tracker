@@ -18,6 +18,3 @@ captures/
 .DS_Store
 *.log
 
-# Planning docs kept out of version control (by request)
-ANALYSIS.md
-IMPLEMENTATION_PLAN.md
