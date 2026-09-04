@@ -101,7 +101,7 @@ class FoodLookupTest {
             food("nin_roti", "Roti"),
         )
         val logs = log("nin_rice", 5) + log("nin_dal", 2)
-        val result = FoodLookup.frequentlyUsed(master, master.take(2), logs, limit = 3)
+        val result = FoodLookup.frequentlyUsed(master, master, logs, limit = 3)
         assertEquals(listOf("nin_rice", "nin_dal", "nin_roti"), result.map { it.id })
     }
 

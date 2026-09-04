@@ -68,13 +68,16 @@ class OffCacheRepositoryTest {
                 lastFetched = now,
             )
         }
+        val base = dao.store["k0"]!!
         repo.enforceLimits(now)
         assertEquals(500, dao.count())
+        assertTrue(!dao.store.containsKey("k0")) // oldest evicted by cap
 
-        // stale entry evicted
-        dao.store["stale"] = dao.store["k0"]!!.copy(key = "stale", lastFetched = 1L)
+        // next run: a stale entry is evicted by TTL
+        dao.store["stale"] = base.copy(key = "stale", lastFetched = 1L)
         repo.enforceLimits(now)
         assertTrue(!dao.store.containsKey("stale"))
+        assertEquals(500, dao.count())
     }
 
     @Test
