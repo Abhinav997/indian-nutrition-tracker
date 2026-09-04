@@ -14,10 +14,10 @@ interface DailyLogDao {
     @Query("DELETE FROM daily_logs WHERE id = :id")
     suspend fun deleteById(id: String)
 
-    @Query("SELECT * FROM daily_logs ORDER BY date DESC, created_at ASC")
+    @Query("SELECT * FROM daily_logs ORDER BY date DESC, createdAt ASC")
     fun observeAll(): Flow<List<DailyLogEntity>>
 
-    @Query("SELECT * FROM daily_logs WHERE date = :date ORDER BY created_at ASC")
+    @Query("SELECT * FROM daily_logs WHERE date = :date ORDER BY createdAt ASC")
     fun observeForDate(date: String): Flow<List<DailyLogEntity>>
 
     @Query("SELECT * FROM daily_logs")
@@ -38,7 +38,7 @@ interface WeightLogDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(entity: WeightLogEntity)
 
-    @Query("UPDATE weight_logs SET weight_kg = :weightKg, note = :note, created_at = :createdAt WHERE id = :id")
+    @Query("UPDATE weight_logs SET weightKg = :weightKg, note = :note, createdAt = :createdAt WHERE id = :id")
     suspend fun update(id: String, weightKg: Double, note: String?, createdAt: Long)
 
     @Query("DELETE FROM weight_logs WHERE id = :id")
@@ -56,10 +56,10 @@ interface WaterLogDao {
     @Query("DELETE FROM water_logs WHERE id = :id")
     suspend fun deleteById(id: String)
 
-    @Query("SELECT * FROM water_logs ORDER BY created_at ASC")
+    @Query("SELECT * FROM water_logs ORDER BY createdAt ASC")
     fun observeAll(): Flow<List<WaterLogEntity>>
 
-    @Query("SELECT * FROM water_logs WHERE date = :date ORDER BY created_at ASC")
+    @Query("SELECT * FROM water_logs WHERE date = :date ORDER BY createdAt ASC")
     fun observeForDate(date: String): Flow<List<WaterLogEntity>>
 
     @Query("DELETE FROM water_logs")
@@ -71,9 +71,9 @@ interface CustomFoodDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(entity: CustomFoodEntity)
 
-    @Query("UPDATE custom_foods SET name = :name, kcal_per_100g = :kcal, protein_per_100g = :protein, " +
-        "carbs_per_100g = :carbs, fat_per_100g = :fat, fiber_per_100g = :fiber, " +
-        "typical_serving_description = :servingDesc, typical_serving_grams = :servingGrams, notes = :notes " +
+    @Query("UPDATE custom_foods SET name = :name, kcalPer100g = :kcal, proteinPer100g = :protein, " +
+        "carbsPer100g = :carbs, fatPer100g = :fat, fiberPer100g = :fiber, " +
+        "typicalServingDescription = :servingDesc, typicalServingGrams = :servingGrams, notes = :notes " +
         "WHERE id = :id")
     suspend fun update(
         id: String,
@@ -91,7 +91,7 @@ interface CustomFoodDao {
     @Query("DELETE FROM custom_foods WHERE id = :id")
     suspend fun deleteById(id: String)
 
-    @Query("SELECT * FROM custom_foods ORDER BY created_at DESC")
+    @Query("SELECT * FROM custom_foods ORDER BY createdAt DESC")
     fun observeAll(): Flow<List<CustomFoodEntity>>
 }
 
@@ -106,10 +106,10 @@ interface OffCacheDao {
     @Query("SELECT * FROM off_cache")
     suspend fun getAll(): List<OffCacheEntity>
 
-    @Query("DELETE FROM off_cache WHERE last_fetched < :cutoff")
+    @Query("DELETE FROM off_cache WHERE lastFetched < :cutoff")
     suspend fun deleteOlderThan(cutoff: Long)
 
-    @Query("DELETE FROM off_cache WHERE key IN (SELECT key FROM off_cache ORDER BY last_fetched ASC LIMIT :count)")
+    @Query("DELETE FROM off_cache WHERE key IN (SELECT key FROM off_cache ORDER BY lastFetched ASC LIMIT :count)")
     suspend fun deleteOldest(count: Int)
 
     @Query("SELECT COUNT(*) FROM off_cache")
