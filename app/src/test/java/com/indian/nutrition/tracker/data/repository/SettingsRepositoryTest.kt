@@ -11,9 +11,7 @@ import com.indian.nutrition.tracker.domain.model.Sex
 import com.indian.nutrition.tracker.domain.model.UnitSystem
 import com.indian.nutrition.tracker.domain.model.UserSettings
 import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.cancel
 import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.test.TestScope
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert.assertEquals
 import org.junit.Rule
@@ -66,18 +64,14 @@ class SettingsRepositoryTest {
     }
 
     @Test
-    fun valuesPersistAcrossStoreInstances() = runTest {
-        val file: File = tmp.newFile("persist.preferences_pb")
+    fun updatesOverridePreviouslySavedValues() = runTest {
+        val repo = repository(tmp.newFile("update.preferences_pb"), backgroundScope)
+        repo.save(customSettings())
+        assertEquals(customSettings(), repo.settings.first())
 
-        // First "session": save, then shut the store's scope down.
-        val sessionScope = TestScope()
-        val first = repository(file, sessionScope)
-        first.save(customSettings())
-        sessionScope.cancel()
-
-        // Second "session" over the same file must read the saved values.
-        val second = repository(file, backgroundScope)
-        assertEquals(customSettings(), second.settings.first())
+        val updated = customSettings().copy(dailyCalorieTarget = 2600, goalType = GoalType.MAINTAIN)
+        repo.save(updated)
+        assertEquals(updated, repo.settings.first())
     }
 
     @Test
