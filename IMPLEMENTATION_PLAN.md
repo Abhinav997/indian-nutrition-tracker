@@ -318,10 +318,10 @@ No automatic migration is possible (web localStorage ≠ app storage). Instead:
 - ✅ **Gate:** manual QA matrix rows 1–8 pass (see §13); logging persists.
 
 ### Phase 4 — Search & Open Food Facts (≈2–3 days)
-- [ ] Search screen: 3 tabs, source filter chips, debounced local filtering; `"Frequent"` and `"Custom"` tabs, custom-food CRUD dialog.
-- [ ] `OffApiClient` (Retrofit, in→world fallback, 4 s timeouts, real UA), `OffCacheRepository` with TTL/cap/dedupe fixes, Coil image loading.
-- [ ] Offline behavior: no network → cached + curated results, non-blocking "offline" snackbar.
-- ✅ **Gate:** search works with network disabled; no duplicate rows; cache capped.
+- [x] Search screen: 3 tabs, source filter chips, debounced local filtering; `"Frequent"` and `"Custom"` tabs, custom-food CRUD dialog.
+- [x] `OffApiClient` (Retrofit, in→world fallback, 4 s timeouts, real UA `torwer2021@gmail.com`), `OffCacheRepository` with TTL/cap/dedupe fixes, Coil image loading.
+- [x] Offline behavior: no network → cached + curated results, non-blocking "offline" snackbar.
+- ✅ **Gate:** search works with network disabled; no duplicate rows; cache capped. (Unit tests cover fallback/cache/dedupe; on-device manual check deferred to QA.)
 
 ### Phase 5 — Progress & charts (≈2–3 days)
 - [ ] Stats banner (current/net-change/target, BMI category).
