@@ -2,6 +2,8 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'org.jetbrains.kotlin.plugin.compose'
+    id 'org.jetbrains.kotlin.plugin.serialization' version "$kotlinVersion"
+    id 'com.google.devtools.ksp' version "$kspVersion"
 }
 
 android {
@@ -31,6 +33,7 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
+        coreLibraryDesugaringEnabled true
     }
 }
 
@@ -60,6 +63,25 @@ dependencies {
     // Settings persistence
     implementation "androidx.datastore:datastore-preferences:$datastoreVersion"
 
+    // Room persistence
+    implementation "androidx.room:room-runtime:$roomVersion"
+    implementation "androidx.room:room-ktx:$roomVersion"
+    ksp "androidx.room:room-compiler:$roomVersion"
+
+    // Serialization
+    implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:$serializationJsonVersion"
+
+    // Networking (Open Food Facts)
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-kotlinx-serialization:$retrofitVersion"
+    implementation "com.squareup.okhttp3:okhttp:$okhttpVersion"
+
+    // Images (OFF product photos)
+    implementation "io.coil-kt:coil-compose:$coilVersion"
+
+    // java.time on API 24-25
+    coreLibraryDesugaring "com.android.tools:desugar_jdk_libs:$desugarVersion"
+
     debugImplementation 'androidx.compose.ui:ui-tooling'
     debugImplementation 'androidx.compose.ui:ui-test-manifest'
 
@@ -67,6 +89,7 @@ dependencies {
     testImplementation "junit:junit:$junitVersion"
     testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutinesTestVersion"
     testImplementation "androidx.datastore:datastore-preferences-core:$datastoreVersion"
+    testImplementation "com.squareup.okhttp3:mockwebserver:$okhttpVersion"
     androidTestImplementation "androidx.test.ext:junit:$androidxJunitVersion"
     androidTestImplementation "androidx.test.espresso:espresso-core:$androidxEspressoCoreVersion"
 }
