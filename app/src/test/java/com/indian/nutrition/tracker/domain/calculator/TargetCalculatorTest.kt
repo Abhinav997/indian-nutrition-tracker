@@ -8,6 +8,7 @@ import com.indian.nutrition.tracker.domain.model.Sex
 import com.indian.nutrition.tracker.domain.model.UnitSystem
 import com.indian.nutrition.tracker.domain.model.UserSettings
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertTrue
 import org.junit.Test
 
 class TargetCalculatorTest {
@@ -110,10 +111,10 @@ class TargetCalculatorTest {
         val r = TargetCalculator.calculateTargets(settings())
         assertEquals("10 × 82.0kg + 6.25 × 176.0cm - 5 × 28 + 5 = 1785 kcal/day", r.formulaDetails.bmrFormula)
         assertEquals("1785 (BMR) × 1.55 (MODERATE) = 2767 kcal/day", r.formulaDetails.tdeeFormula)
-        assert(r.formulaDetails.targetFormula.contains("- 500 kcal"))
-        assert(r.formulaDetails.targetFormula.contains("2267 kcal"))
-        assert(r.formulaDetails.proteinFormula.contains("1.2 g/kg"))
-        assert(r.formulaDetails.waterFormula.contains("3250 ml/day (~3.3L)"))
+        assertTrue(r.formulaDetails.targetFormula.contains("- 500 kcal"))
+        assertTrue(r.formulaDetails.targetFormula.contains("2267 kcal"))
+        assertTrue(r.formulaDetails.proteinFormula.contains("1.2 g/kg"))
+        assertTrue(r.formulaDetails.waterFormula.contains("3250 ml/day (~3.3L)"))
     }
 
     @Test
@@ -122,7 +123,7 @@ class TargetCalculatorTest {
             settings(weight = 70.0, height = 170.0, age = 25, sex = Sex.OTHER,
                 activity = ActivityLevel.LIGHT, goal = GoalType.GAIN, rate = 0.25)
         )
-        assert(r.formulaDetails.bmrFormula.contains("- 78"))
-        assert(!r.formulaDetails.bmrFormula.contains("+ 5"))
+        assertTrue(r.formulaDetails.bmrFormula.contains("- 78"))
+        assertTrue(!r.formulaDetails.bmrFormula.contains("+ 5"))
     }
 }

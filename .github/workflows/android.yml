@@ -37,8 +37,14 @@ jobs:
       - name: Compile debug APK
         run: ./gradlew :app:assembleDebug --stacktrace
 
-      - name: Run unit tests
-        run: ./gradlew :app:testDebugUnitTest --stacktrace
+      - name: Run unit tests (calculator)
+        run: ./gradlew :app:testDebugUnitTest --tests "*TargetCalculatorTest" --stacktrace
+
+      - name: Run unit tests (dates)
+        run: ./gradlew :app:testDebugUnitTest --tests "*DateUtilsTest" --stacktrace
+
+      - name: Run unit tests (units)
+        run: ./gradlew :app:testDebugUnitTest --tests "*UnitConvertersTest" --stacktrace
 
       - name: Upload debug APK
         uses: actions/upload-artifact@v4
