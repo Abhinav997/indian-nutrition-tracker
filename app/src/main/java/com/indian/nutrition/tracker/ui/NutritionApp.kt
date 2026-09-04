@@ -15,6 +15,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.indian.nutrition.tracker.di.AppContainer
 import com.indian.nutrition.tracker.ui.navigation.AppDestination
 import com.indian.nutrition.tracker.ui.screens.calculator.CalculatorScreen
 import com.indian.nutrition.tracker.ui.screens.home.HomeScreen
@@ -27,7 +28,7 @@ import com.indian.nutrition.tracker.ui.theme.NutritionTrackerTheme
  * and the Navigation Compose graph for the four main destinations.
  */
 @Composable
-fun NutritionApp() {
+fun NutritionApp(container: AppContainer) {
     NutritionTrackerTheme {
         val navController = rememberNavController()
         val backStackEntry by navController.currentBackStackEntryAsState()
@@ -44,7 +45,6 @@ fun NutritionApp() {
                                 ?.any { it.route == destination.route } == true,
                             onClick = {
                                 navController.navigate(destination.route) {
-                                    // Single top + state save: matches tab behavior
                                     popUpTo(AppDestination.Home.route) { saveState = true }
                                     launchSingleTop = true
                                     restoreState = true
@@ -62,7 +62,7 @@ fun NutritionApp() {
                 startDestination = AppDestination.Home.route,
                 modifier = Modifier.padding(innerPadding),
             ) {
-                composable(AppDestination.Home.route) { HomeScreen() }
+                composable(AppDestination.Home.route) { HomeScreen(container) }
                 composable(AppDestination.FoodSearch.route) { FoodSearchScreen() }
                 composable(AppDestination.Progress.route) { ProgressScreen() }
                 composable(AppDestination.Calculator.route) { CalculatorScreen() }

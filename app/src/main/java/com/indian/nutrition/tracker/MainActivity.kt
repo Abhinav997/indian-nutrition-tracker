@@ -10,8 +10,9 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+        val container = (application as IndianNutritionTrackerApp).container
         setContent {
-            NutritionApp()
+            NutritionApp(container = container)
         }
     }
 }
