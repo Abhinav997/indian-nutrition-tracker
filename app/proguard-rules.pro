@@ -1,21 +1,68 @@
-# Add project specific ProGuard rules here.
-# You can control the set of applied configuration files using the
-# proguardFiles setting in build.gradle.
-#
-# For more details, see
-#   http://developer.android.com/guide/developing/tools/proguard.html
+# ============================================================
+# Indian Nutrition Tracker — ProGuard / R8 rules
+# ============================================================
 
-# If your project uses WebView with JS, uncomment the following
-# and specify the fully qualified class name to the JavaScript interface
-# class:
-#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
-#   public *;
-#}
+# --- Kotlin serialization ---
+# Keep serialization annotations and generated serializers.
+-keepattributes *Annotation*, InnerClasses
+-dontnote kotlinx.serialization.AnnotationsKt
 
-# Uncomment this to preserve the line number information for
-# debugging stack traces.
-#-keepattributes SourceFile,LineNumberTable
+-keepclassmembers class kotlinx.serialization.json.** {
+    *** Companion;
+}
+-keepclasseswithmembers class kotlinx.serialization.json.** {
+    kotlinx.serialization.KSerializer serializer(...);
+}
 
-# If you keep the line number information, uncomment this to
-# hide the original source file name.
-#-renamesourcefileattribute SourceFile
+# Keep the backup DTO classes and their serializers.
+-keep class com.indian.nutrition.tracker.data.export.** { *; }
+-keepclassmembers class com.indian.nutrition.tracker.data.export.** {
+    *** Companion;
+}
+-keepclasseswithmembers class com.indian.nutrition.tracker.data.export.** {
+    kotlinx.serialization.KSerializer serializer(...);
+}
+
+# Keep all @Serializable classes and their generated Companion.serializer()
+-keep,includedescriptorclasses class com.indian.nutrition.tracker.**$$serializer { *; }
+-keepclassmembers class com.indian.nutrition.tracker.** {
+    *** Companion;
+}
+-keepclasseswithmembers class com.indian.nutrition.tracker.** {
+    kotlinx.serialization.KSerializer serializer(...);
+}
+
+# --- Retrofit ---
+# Retrofit does reflection on generic parameters.
+-keepattributes Signature, Exceptions
+-keep class retrofit2.** { *; }
+-keepclasseswithmembers class * {
+    @retrofit2.http.* <methods>;
+}
+
+# --- OkHttp ---
+-dontwarn okhttp3.internal.platform.**
+-dontwarn org.conscrypt.**
+-dontwarn org.bouncycastle.**
+-dontwarn org.openjsse.**
+
+# --- Room ---
+# Room uses annotations, keep the generated impl.
+-keep class * extends androidx.room.RoomDatabase
+-keep @androidx.room.Entity class *
+-dontwarn androidx.room.paging.**
+
+# --- Coil ---
+-dontwarn coil.**
+
+# --- Kotlin coroutines ---
+-keepnames class kotlinx.coroutines.internal.MainDispatcherFactory {}
+-keepnames class kotlinx.coroutines.CoroutineExceptionHandler {}
+-keepclassmembers class kotlinx.coroutines.** {
+    volatile <fields>;
+}
+
+# --- General Android ---
+# Keep source file names and line numbers for crash reports.
+-keepattributes SourceFile,LineNumberTable
+-renamesourcefileattribute SourceFile
