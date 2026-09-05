@@ -373,6 +373,7 @@ private fun SearchResults(
             }
         } else {
             LazyColumn(
+                modifier = Modifier.fillMaxSize(),
                 contentPadding = androidx.compose.foundation.layout.PaddingValues(
                     start = 16.dp, end = 16.dp, bottom = 16.dp,
                 ),
@@ -397,6 +398,7 @@ private fun FrequentResults(foods: List<Food>, onSelect: (Food) -> Unit) {
         return
     }
     LazyColumn(
+        modifier = Modifier.fillMaxSize(),
         contentPadding = androidx.compose.foundation.layout.PaddingValues(16.dp),
         verticalArrangement = Arrangement.spacedBy(8.dp),
     ) {
@@ -436,6 +438,7 @@ private fun CustomResults(
         return
     }
     LazyColumn(
+        modifier = Modifier.fillMaxSize(),
         contentPadding = androidx.compose.foundation.layout.PaddingValues(16.dp),
         verticalArrangement = Arrangement.spacedBy(8.dp),
     ) {
