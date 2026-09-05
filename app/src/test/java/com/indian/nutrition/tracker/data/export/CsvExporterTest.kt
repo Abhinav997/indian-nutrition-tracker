@@ -41,7 +41,7 @@ class CsvExporterTest {
         val expected = listOf(
             "Type,Date,Detail1,Detail2,Detail3,Detail4,Detail5,Detail6,Detail7",
             "# Food Logs: Type,Date,Meal,Food Name,Source,Serving (g),Calories (kcal),Protein (g),Carbs (g),Fat (g)",
-            "FOOD,2026-09-05,Lunch,\"D\"\"al \"\"spicy\"\"\",NIN,150,180,9.0,28.0,2.0",
+            "FOOD,2026-09-05,Lunch,\"D\"\"al \"\"spicy\"\"\",NIN,150,180,9,28,2",
             "# Water Logs: Type,Date,Time,Amount (ml)",
             "WATER,2026-09-05,\"7:00 AM\",250",
             "# Weight Logs: Type,Date,Weight (kg),Note",
@@ -71,9 +71,11 @@ class CsvExporterTest {
             waterLogs = emptyList(), weightLogs = emptyList(),
             days = 30, today = today,
         )
-        assertFalse(csv.contains(today.minusDays(30).toString()))
+        // Web parity: cutoff date is inclusive (l.date >= today-days).
+        assertTrue(csv.contains(today.minusDays(30).toString()))
         assertTrue(csv.contains(today.minusDays(29).toString()))
         assertTrue(csv.contains(today.toString()))
+        assertFalse(csv.contains(today.minusDays(31).toString()))
     }
 
     @Test
