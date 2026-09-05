@@ -2,6 +2,7 @@ package com.indian.nutrition.tracker.ui.screens.calculator
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.indian.nutrition.tracker.data.export.BackupDto
 import com.indian.nutrition.tracker.data.export.JsonBackup
 import com.indian.nutrition.tracker.data.export.toDomain
 import com.indian.nutrition.tracker.data.repository.CustomFoodRepository
@@ -74,7 +75,7 @@ class CalculatorViewModel(container: AppContainer) : ViewModel() {
      * Import a parsed backup. [replace] = wipe existing logs first (web-data
      * migration path); merge = keep ids, weight rows stay one-per-date.
      */
-    fun importBackup(backup: JsonBackup.BackupDto, replace: Boolean, onDone: () -> Unit) {
+    fun importBackup(backup: BackupDto, replace: Boolean, onDone: () -> Unit) {
         viewModelScope.launch {
             if (replace) {
                 logRepository.clear()

@@ -41,6 +41,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.indian.nutrition.tracker.data.export.BackupDto
 import com.indian.nutrition.tracker.data.export.CsvExporter
 import com.indian.nutrition.tracker.data.export.JsonBackup
 import com.indian.nutrition.tracker.di.AppContainer
@@ -98,7 +99,7 @@ fun CalculatorScreen(
     var customProtein by rememberSaveable { mutableStateOf("115") }
     var customWater by rememberSaveable { mutableStateOf("2750") }
 
-    var showImportChoice by remember { mutableStateOf<JsonBackup.BackupDto?>(null) }
+    var showImportChoice by remember { mutableStateOf<BackupDto?>(null) }
     var importError by remember { mutableStateOf<String?>(null) }
     var showClearConfirm by remember { mutableStateOf(false) }
     var showValidation by remember { mutableStateOf(false) }
@@ -340,7 +341,7 @@ fun CalculatorScreen(
                 onExportCsv = {
                     val days = exportDays.toIntOrNull() ?: 0
                     val suffix = if (days > 0) "_last_${days}_days" else "_all"
-                    csvLauncher.launch("nutrition_logs$suffix_${LocalDate.now()}.csv")
+                    csvLauncher.launch("nutrition_logs${suffix}_${LocalDate.now()}.csv")
                 },
                 onExportJson = {
                     jsonExportLauncher.launch("nutrition_weight_backup_${LocalDate.now()}.json")
@@ -531,7 +532,7 @@ private fun SectionLabel(text: String) {
 }
 
 @Composable
-private fun <T> ChipRow(
+private fun ChipRow(
     options: List<Pair<String, String>>,
     selected: String,
     onSelect: (String) -> Unit,

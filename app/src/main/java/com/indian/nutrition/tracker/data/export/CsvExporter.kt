@@ -40,7 +40,7 @@ object CsvExporter {
         today: LocalDate = LocalDate.now(),
     ): String {
         val cutoff = if (days > 0) today.minusDays(days.toLong()) else null
-        fun <T> inRange(date: LocalDate): Boolean = cutoff == null || !date.isBefore(cutoff)
+        fun inRange(date: LocalDate): Boolean = cutoff == null || !date.isBefore(cutoff)
 
         val foods = dailyLogs
             .filter { inRange(it.date) }
