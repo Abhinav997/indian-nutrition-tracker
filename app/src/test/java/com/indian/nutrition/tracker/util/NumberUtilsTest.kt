@@ -33,6 +33,6 @@ class NumberUtilsTest {
         assertEquals("1950 kcal", NumberUtils.formatValue(1950.0, "kcal"))
         assertEquals("2750 ml", NumberUtils.formatValue(2750.4, "ml"))
         assertEquals("82.5 kg", NumberUtils.formatValue(82.5, "kg"))
-        assertEquals("82 kg", NumberUtils.formatValue(82.0, "kg"))
+        assertEquals("82.0 kg", NumberUtils.formatValue(82.0, "kg"))
     }
 }
