@@ -1,5 +1,6 @@
 package com.indian.nutrition.tracker.data.local
 
+import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.Index
 import androidx.room.PrimaryKey
@@ -55,6 +56,8 @@ data class CustomFoodEntity(
     val typicalServingGrams: Int?,
     val notes: String?,
     val createdAt: Long,
+    @ColumnInfo(defaultValue = "'GRAMS'")
+    val servingUnit: String = "GRAMS",
 )
 
 /** Open Food Facts product cache entry — keyed by barcode or normalized name. */

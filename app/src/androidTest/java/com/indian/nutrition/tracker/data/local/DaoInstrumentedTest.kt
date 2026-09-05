@@ -123,7 +123,7 @@ class DaoInstrumentedTest {
         ))
         assertEquals(listOf("c2", "c1"), dao.observeAll().first().map { it.id })
 
-        dao.update("c1", "Grilled Paneer", 300.0, 20.0, 4.0, 24.0, 0.5, "2 slices", 100, "grilled")
+        dao.update("c1", "Grilled Paneer", 300.0, 20.0, 4.0, 24.0, 0.5, "2 slices", 100, "grilled", "GRAMS")
         val updated = dao.observeAll().first().first { it.id == "c1" }
         assertEquals("Grilled Paneer", updated.name)
         assertEquals(300.0, updated.kcalPer100g, 0.001)

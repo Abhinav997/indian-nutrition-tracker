@@ -41,20 +41,6 @@ import kotlin.math.max
 import kotlin.math.min
 import kotlin.math.roundToInt
 
-// Palette (web parity).
-private val GRID = Color(0xFFE2E8F0)
-private val GRID_LABEL = Color(0xFF94A3B8)
-private val AXIS_LABEL = Color(0xFF64748B)
-private val TARGET_LINE = Color(0xFFF43F5E)
-private val WEIGHT_COLOR = Color(0xFF0D9488)
-private val CALORIES_COLOR = Color(0xFF0D9488)
-private val PROTEIN_COLOR = Color(0xFF059669)
-private val WATER_COLOR = Color(0xFF0284C7)
-private val ZERO_BAR = Color(0xFFCBD5E1)
-private val OVER_BAR = Color(0xFFF59E0B)
-private val HIT_BAR = Color(0xFF10B981)
-private val DOT_FILL = Color.White
-
 // Canvas geometry constants (web's 600x220 viewBox proportions).
 private const val VIEW_W = 600f
 private const val VIEW_H = 220f
@@ -77,6 +63,20 @@ fun ProgressionChart(
     var selectedIndex by remember(series) { mutableStateOf<Int?>(null) }
     val unit = series.unit
     val xAxisFormatter = remember { DateTimeFormatter.ofPattern("MMM d", Locale.US) }
+    // Use Material 3 roles so chart labels and lines remain readable in both
+    // system light/dark themes and with dynamic colours.
+    val gridColor = MaterialTheme.colorScheme.outlineVariant
+    val gridLabelColor = MaterialTheme.colorScheme.onSurfaceVariant
+    val axisLabelColor = MaterialTheme.colorScheme.onSurfaceVariant
+    val targetLineColor = MaterialTheme.colorScheme.error
+    val weightColor = MaterialTheme.colorScheme.primary
+    val caloriesColor = MaterialTheme.colorScheme.primary
+    val proteinColor = MaterialTheme.colorScheme.tertiary
+    val waterColor = MaterialTheme.colorScheme.secondary
+    val zeroBarColor = MaterialTheme.colorScheme.outline
+    val overBarColor = MaterialTheme.colorScheme.secondary
+    val hitBarColor = MaterialTheme.colorScheme.tertiary
+    val dotFillColor = MaterialTheme.colorScheme.surface
 
     Column(modifier = modifier) {
         Row(
@@ -99,7 +99,7 @@ fun ProgressionChart(
                 verticalAlignment = Alignment.CenterVertically,
             ) {
                 LegendDot(seriesColor(series.metric), "Logged")
-                LegendDash(TARGET_LINE, "Target (${NumberUtils.formatValue(series.target, unit)})")
+                LegendDash(targetLineColor, "Target (${NumberUtils.formatValue(series.target, unit)})")
             }
         }
 
@@ -143,11 +143,11 @@ fun ProgressionChart(
                 isAntiAlias = true
                 textAlign = android.graphics.Paint.Align.RIGHT
                 textSize = 9.sp.toPx()
-                color = GRID_LABEL.toArgb()
+                color = gridLabelColor.toArgb()
             }
             val xLabelPaint = android.graphics.Paint(labelPaint).apply {
                 textAlign = android.graphics.Paint.Align.CENTER
-                color = AXIS_LABEL.toArgb()
+                color = axisLabelColor.toArgb()
             }
 
             // Horizontal grid lines + y labels (web parity: 0/25/50/75/100%).
@@ -156,7 +156,7 @@ fun ProgressionChart(
                 val gy = padT + ch * pct
                 val yVal = (minV + (maxV - minV) * (1f - pct)).roundToInt()
                 drawLine(
-                    color = GRID,
+                    color = gridColor,
                     start = Offset(padL, gy),
                     end = Offset(w - padR, gy),
                     strokeWidth = 1f,
@@ -172,13 +172,13 @@ fun ProgressionChart(
                 val ty = y(series.target)
                 if (ty in padT..(padT + ch)) {
                     drawLine(
-                        color = TARGET_LINE,
+                        color = targetLineColor,
                         start = Offset(padL, ty),
                         end = Offset(w - padR, ty),
                         strokeWidth = 1.5f,
                         pathEffect = PathEffect.dashPathEffect(floatArrayOf(10f, 8f)),
                     )
-                    labelPaint.color = TARGET_LINE.toArgb()
+                    labelPaint.color = targetLineColor.toArgb()
                     drawContext.canvas.nativeCanvas.drawText(
                         "Target ${NumberUtils.formatValue(series.target, unit)}",
                         w - padR, ty - 4f, labelPaint,
@@ -202,23 +202,23 @@ fun ProgressionChart(
                     drawPath(
                         area,
                         brush = Brush.verticalGradient(
-                            colors = listOf(WEIGHT_COLOR.copy(alpha = 0.25f), WEIGHT_COLOR.copy(alpha = 0f)),
+                            colors = listOf(weightColor.copy(alpha = 0.25f), weightColor.copy(alpha = 0f)),
                             startY = padT,
                             endY = padT + ch,
                         ),
                     )
                 }
-                drawPath(linePath, WEIGHT_COLOR, style = Stroke(width = 2.5f))
+                drawPath(linePath, weightColor, style = Stroke(width = 2.5f))
 
                 val dotR = max(3.dp.toPx(), w * 4.5f / VIEW_W)
                 series.points.forEachIndexed { i, p ->
                     val cx = x(i)
                     val cy = y(p.value)
                     if (selectedIndex == i) {
-                        drawCircle(WEIGHT_COLOR.copy(alpha = 0.25f), radius = dotR * 2f, center = Offset(cx, cy))
+                        drawCircle(weightColor.copy(alpha = 0.25f), radius = dotR * 2f, center = Offset(cx, cy))
                     }
-                    drawCircle(DOT_FILL, radius = dotR, center = Offset(cx, cy))
-                    drawCircle(WEIGHT_COLOR, radius = dotR, center = Offset(cx, cy), style = Stroke(width = 2f))
+                    drawCircle(dotFillColor, radius = dotR, center = Offset(cx, cy))
+                    drawCircle(weightColor, radius = dotR, center = Offset(cx, cy), style = Stroke(width = 2f))
                 }
             } else if (n > 0) {
                 val barWidth = max(
@@ -231,12 +231,12 @@ fun ProgressionChart(
                     val top = min(cy, padT + ch)
                     val bottom = padT + ch
                     val fill = when {
-                        p.value <= 0.0 -> ZERO_BAR
-                        series.metric == ChartMetric.WATER -> WATER_COLOR
-                        p.value > series.target && series.target > 0.0 -> OVER_BAR
-                        abs(p.value - series.target) <= series.target * 0.08 -> HIT_BAR
-                        series.metric == ChartMetric.CALORIES -> CALORIES_COLOR
-                        else -> PROTEIN_COLOR
+                        p.value <= 0.0 -> zeroBarColor
+                        series.metric == ChartMetric.WATER -> waterColor
+                        p.value > series.target && series.target > 0.0 -> overBarColor
+                        abs(p.value - series.target) <= series.target * 0.08 -> hitBarColor
+                        series.metric == ChartMetric.CALORIES -> caloriesColor
+                        else -> proteinColor
                     }
                     val barSize = Size(barWidth, (bottom - top).coerceAtLeast(0f))
                     drawRect(
@@ -246,7 +246,7 @@ fun ProgressionChart(
                     )
                     if (selectedIndex == i) {
                         drawRect(
-                            color = TARGET_LINE,
+                            color = targetLineColor,
                             topLeft = Offset(cx - barWidth / 2f, top),
                             size = barSize,
                             style = Stroke(width = 2f),
@@ -285,11 +285,12 @@ private fun nearestIndex(px: Float, width: Float, series: ChartSeries): Int? {
     return idx
 }
 
+@Composable
 private fun seriesColor(metric: ChartMetric): Color = when (metric) {
-    ChartMetric.WEIGHT -> WEIGHT_COLOR
-    ChartMetric.CALORIES -> CALORIES_COLOR
-    ChartMetric.PROTEIN -> PROTEIN_COLOR
-    ChartMetric.WATER -> WATER_COLOR
+    ChartMetric.WEIGHT -> MaterialTheme.colorScheme.primary
+    ChartMetric.CALORIES -> MaterialTheme.colorScheme.primary
+    ChartMetric.PROTEIN -> MaterialTheme.colorScheme.tertiary
+    ChartMetric.WATER -> MaterialTheme.colorScheme.secondary
 }
 
 @Composable

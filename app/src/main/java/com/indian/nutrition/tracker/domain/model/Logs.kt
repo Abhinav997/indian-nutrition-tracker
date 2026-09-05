@@ -49,4 +49,5 @@ data class CustomFood(
     val typicalServingGrams: Int? = null,
     val notes: String? = null,
     val createdAt: Long,
+    val servingUnit: ServingUnit = ServingUnit.GRAMS,
 )

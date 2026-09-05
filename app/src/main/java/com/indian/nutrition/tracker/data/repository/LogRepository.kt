@@ -50,6 +50,8 @@ class LogRepository(private val dao: DailyLogDao) {
         return log
     }
 
+    suspend fun update(log: DailyLog) = dao.insert(log.toEntity())
+
     suspend fun delete(id: String) = dao.deleteById(id)
 
     suspend fun clear() = dao.deleteAll()

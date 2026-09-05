@@ -112,13 +112,14 @@ class AppUiTest {
 
     @Test
     fun test03_addFoodOpensSearchAndCanCreateCustomRecipe() {
-        composeRule.onNodeWithTag("home-quick-add-food-btn").performScrollTo().performClick()
+        composeRule.onNodeWithTag("dashboard-add-food-action").performClick()
         waitForTag("food-search-input")
+        waitForTagGone("bottom-navigation-bar")
 
-        composeRule.onNodeWithTag("tab-search-database").assertExists()
+        composeRule.onNodeWithTag("all-sources-filter").assertExists()
 
-        // Switch to Custom tab
-        composeRule.onNodeWithTag("tab-custom-foods").performClick()
+        // Switch to Custom foods
+        composeRule.onNodeWithTag("custom-foods-filter").performClick()
 
         // Open custom food dialog
         waitForTag("open-create-custom-food-btn")
@@ -135,6 +136,11 @@ class AppUiTest {
         composeRule.onNodeWithTag("save-custom-food-submit-btn").performClick()
 
         waitForText("Test Poha")
+
+        // Done closes the focused food-log overlay and restores Dashboard navigation.
+        composeRule.onNodeWithTag("food-log-done-btn").performClick()
+        waitForTag("bottom-navigation-bar")
+        waitForTagGone("food-search-input")
     }
 
     @Test

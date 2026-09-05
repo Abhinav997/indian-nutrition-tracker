@@ -1,5 +1,6 @@
 package com.indian.nutrition.tracker.ui.components
 
+import androidx.compose.animation.animateContentSize
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -7,9 +8,12 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Delete
+import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material.icons.filled.WaterDrop
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Card
 import androidx.compose.material3.FilledTonalButton
 import androidx.compose.material3.Icon
@@ -19,14 +23,17 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import com.indian.nutrition.tracker.domain.model.WaterLog
 import kotlin.math.ceil
@@ -38,6 +45,7 @@ fun WaterCard(
     logs: List<WaterLog>,
     targetMl: Int,
     onAddWater: (Int) -> Unit,
+    onEditWater: (WaterLog, Int) -> Unit,
     onDeleteWater: (String) -> Unit,
     modifier: Modifier = Modifier,
 ) {
@@ -48,8 +56,15 @@ fun WaterCard(
     var showHistory by rememberSaveable { mutableStateOf(false) }
     var showCustom by rememberSaveable { mutableStateOf(false) }
     var customAmount by rememberSaveable { mutableStateOf("250") }
+    var editingLog by remember { mutableStateOf<WaterLog?>(null) }
+    var editAmount by rememberSaveable { mutableStateOf("") }
 
-    Card(modifier = modifier.fillMaxWidth().testTag("water-tracker-widget")) {
+    Card(
+        modifier = modifier
+            .fillMaxWidth()
+            .animateContentSize()
+            .testTag("water-tracker-widget"),
+    ) {
         Column(modifier = Modifier.padding(12.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
             Row(
                 verticalAlignment = Alignment.CenterVertically,
@@ -80,9 +95,13 @@ fun WaterCard(
                 style = MaterialTheme.typography.bodySmall,
             )
 
-            // Glass grid
+            // Glass grid. Keep the computed range stable while the card is
+            // recomposed so scrolling the parent list stays inexpensive.
+            val glassCount = remember(targetGlasses, glasses) {
+                (1..maxOf(targetGlasses, ceil(glasses).toInt())).toList()
+            }
             LazyRow(horizontalArrangement = Arrangement.spacedBy(4.dp)) {
-                items((1..maxOf(targetGlasses, ceil(glasses).toInt())).toList()) { idx ->
+                items(glassCount, key = { it }, contentType = { "water-glass" }) { idx ->
                     val filled = idx <= glasses.toInt()
                     Card(
                         colors = androidx.compose.material3.CardDefaults.cardColors(
@@ -146,6 +165,15 @@ fun WaterCard(
                                     modifier = Modifier.padding(start = 6.dp),
                                 )
                             }
+                            IconButton(
+                                onClick = {
+                                    editingLog = log
+                                    editAmount = log.amountMl.toString()
+                                },
+                                modifier = Modifier.testTag("edit-water-${log.id}"),
+                            ) {
+                                Icon(Icons.Filled.Edit, contentDescription = "Edit water entry")
+                            }
                             IconButton(onClick = { onDeleteWater(log.id) }) {
                                 Icon(Icons.Filled.Delete, contentDescription = "Delete water entry")
                             }
@@ -154,5 +182,33 @@ fun WaterCard(
                 }
             }
         }
+    }
+
+    editingLog?.let { log ->
+        val amount = editAmount.toIntOrNull() ?: 0
+        AlertDialog(
+            onDismissRequest = { editingLog = null },
+            title = { Text("Edit water entry") },
+            text = {
+                OutlinedTextField(
+                    value = editAmount,
+                    onValueChange = { editAmount = it.filter(Char::isDigit).take(5) },
+                    label = { Text("Amount (ml)") },
+                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
+                    singleLine = true,
+                    isError = amount !in 1..10000,
+                )
+            },
+            confirmButton = {
+                TextButton(
+                    onClick = {
+                        onEditWater(log, amount)
+                        editingLog = null
+                    },
+                    enabled = amount in 1..10000,
+                ) { Text("Save") }
+            },
+            dismissButton = { TextButton(onClick = { editingLog = null }) { Text("Cancel") } },
+        )
     }
 }

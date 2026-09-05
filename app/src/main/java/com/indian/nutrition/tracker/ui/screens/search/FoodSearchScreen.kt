@@ -35,8 +35,6 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.SnackbarHostState
-import androidx.compose.material3.Tab
-import androidx.compose.material3.TabRow
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
@@ -61,25 +59,30 @@ import com.indian.nutrition.tracker.domain.model.MealType
 import com.indian.nutrition.tracker.ui.appViewModel
 import com.indian.nutrition.tracker.ui.components.CustomFoodDialog
 import com.indian.nutrition.tracker.ui.components.ServingSheet
+import com.indian.nutrition.tracker.util.DateUtils
+import java.time.LocalDate
 
 /**
- * Food search screen (port of the web FoodSearchScreen):
- * Search Database / Frequently Used / Custom tabs, debounced local + OFF
- * search, source filter chips, custom-food CRUD, and tap-to-log serving.
+ * Food log overlay (port of the web FoodSearchScreen):
+ * All Sources / Frequently Used / Custom filters, debounced local + OFF
+ * search, source filters, custom-food CRUD, and tap-to-log serving.
  */
 @Composable
 fun FoodSearchScreen(
     container: AppContainer,
     initialMeal: MealType = MealType.LUNCH,
+    loggingDate: LocalDate = DateUtils.today(),
     snackbarHostState: SnackbarHostState,
+    onDone: () -> Unit = {},
 ) {
-    val viewModel = appViewModel(container) { SearchViewModel(it) }
+    val viewModel = appViewModel(container) { SearchViewModel(it, loggingDate) }
     val tab by viewModel.tab.collectAsStateWithLifecycle()
     val query by viewModel.query.collectAsStateWithLifecycle()
     val sourceFilter by viewModel.sourceFilter.collectAsStateWithLifecycle()
     val results by viewModel.results.collectAsStateWithLifecycle()
     val frequent by viewModel.frequent.collectAsStateWithLifecycle()
     val customFoods by viewModel.customFoods.collectAsStateWithLifecycle()
+    val masterFoods by viewModel.master.collectAsStateWithLifecycle()
     val offLoading by viewModel.offLoading.collectAsStateWithLifecycle()
     val offError by viewModel.offError.collectAsStateWithLifecycle()
     val offline by viewModel.offline.collectAsStateWithLifecycle()
@@ -110,31 +113,6 @@ fun FoodSearchScreen(
                 .padding(16.dp),
         ) {
             Column(modifier = Modifier.padding(12.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                TabRow(selectedTabIndex = tab.ordinal) {
-                    SearchTab.entries.forEach { t ->
-                        Tab(
-                            selected = tab == t,
-                            onClick = { viewModel.setTab(t) },
-                            modifier = Modifier.testTag(
-                                when (t) {
-                                    SearchTab.SEARCH -> "tab-search-database"
-                                    SearchTab.FREQUENT -> "tab-frequent-foods"
-                                    SearchTab.CUSTOM -> "tab-custom-foods"
-                                }
-                            ),
-                            text = {
-                                Text(
-                                    when (t) {
-                                        SearchTab.SEARCH -> "Search Database"
-                                        SearchTab.FREQUENT -> "Frequently Used"
-                                        SearchTab.CUSTOM -> "Custom (${customFoods.size})"
-                                    }
-                                )
-                            },
-                        )
-                    }
-                }
-
                 if (tab == SearchTab.SEARCH) {
                     OutlinedTextField(
                         value = query,
@@ -154,22 +132,46 @@ fun FoodSearchScreen(
                         singleLine = true,
                         modifier = Modifier.fillMaxWidth().testTag("food-search-input"),
                     )
+                }
 
-                    Row(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .horizontalScroll(rememberScrollState()),
-                        horizontalArrangement = Arrangement.spacedBy(6.dp),
-                    ) {
-                        FilterChip(
-                            selected = sourceFilter == null,
-                            onClick = { viewModel.setSourceFilter(null) },
-                            label = { Text("All Sources") },
-                        )
+                // Source and list filters stay in one compact row. The old
+                // top TabRow was removed so this overlay has more room for
+                // results and the frequently-used list remains one tap away.
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .horizontalScroll(rememberScrollState()),
+                    horizontalArrangement = Arrangement.spacedBy(6.dp),
+                ) {
+                    FilterChip(
+                        selected = tab == SearchTab.SEARCH && sourceFilter == null,
+                        onClick = {
+                            viewModel.setTab(SearchTab.SEARCH)
+                            viewModel.setSourceFilter(null)
+                        },
+                        label = { Text("All Sources") },
+                        modifier = Modifier.testTag("all-sources-filter"),
+                    )
+                    FilterChip(
+                        selected = tab == SearchTab.FREQUENT,
+                        onClick = { viewModel.setTab(SearchTab.FREQUENT) },
+                        label = { Text("Frequently Used") },
+                        modifier = Modifier.testTag("frequently-used-filter"),
+                    )
+                    FilterChip(
+                        selected = tab == SearchTab.CUSTOM,
+                        onClick = { viewModel.setTab(SearchTab.CUSTOM) },
+                        label = { Text("Custom (${customFoods.size})") },
+                        modifier = Modifier.testTag("custom-foods-filter"),
+                    )
+                    if (tab == SearchTab.SEARCH) {
                         FoodSource.entries.forEach { src ->
                             FilterChip(
                                 selected = sourceFilter == src,
-                                onClick = { viewModel.setSourceFilter(src) },
+                                onClick = {
+                                    viewModel.setTab(SearchTab.SEARCH)
+                                    viewModel.setSourceFilter(src)
+                                },
                                 label = { Text(srcLabel(src)) },
                             )
                         }
@@ -182,16 +184,25 @@ fun FoodSearchScreen(
                     modifier = Modifier.fillMaxWidth(),
                 ) {
                     Text(
-                        "Logging for: Today",
+                        "Logging for: ${DateUtils.dayLabel(loggingDate)}",
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                     )
+                    TextButton(
+                        onClick = onDone,
+                        modifier = Modifier.testTag("food-log-done-btn"),
+                    ) { Text("Done") }
+                }
+
+                if (tab == SearchTab.CUSTOM) {
                     Button(
                         onClick = {
                             editingCustom = null
                             showCustomDialog = true
                         },
-                        modifier = Modifier.testTag("open-create-custom-food-btn"),
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .testTag("open-create-custom-food-btn"),
                     ) {
                         Icon(Icons.Filled.Add, contentDescription = null, modifier = Modifier.size(16.dp))
                         Spacer(Modifier.width(4.dp))
@@ -201,47 +212,54 @@ fun FoodSearchScreen(
             }
         }
 
-        when (tab) {
-            SearchTab.SEARCH -> SearchResults(
-                results = results,
-                loading = offLoading,
-                error = offError,
-                onSelect = { food -> servingFood = food },
-                onCreateCustom = {
-                    editingCustom = null
-                    showCustomDialog = true
-                },
-            )
+        Box(
+            modifier = Modifier
+                .weight(1f)
+                .fillMaxWidth(),
+        ) {
+            when (tab) {
+                SearchTab.SEARCH -> SearchResults(
+                    results = results,
+                    loading = offLoading,
+                    error = offError,
+                    onSelect = { food -> servingFood = food },
+                    onCreateCustom = {
+                        editingCustom = null
+                        showCustomDialog = true
+                    },
+                )
 
-            SearchTab.FREQUENT -> FrequentResults(frequent, onSelect = { food -> servingFood = food })
+                SearchTab.FREQUENT -> FrequentResults(frequent, onSelect = { food -> servingFood = food })
 
-            SearchTab.CUSTOM -> CustomResults(
-                foods = customFoods,
-                onLog = { food ->
-                    servingFood = Food(
-                        id = food.id,
-                        name = food.name,
-                        source = FoodSource.CUSTOM,
-                        kcalPer100g = food.kcalPer100g,
-                        proteinPer100g = food.proteinPer100g,
-                        carbsPer100g = food.carbsPer100g,
-                        fatPer100g = food.fatPer100g,
-                        fiberPer100g = food.fiberPer100g,
-                        typicalServingDescription = food.typicalServingDescription,
-                        typicalServingGrams = food.typicalServingGrams,
-                        category = "Custom Foods",
-                    )
-                },
-                onEdit = { food ->
-                    editingCustom = food
-                    showCustomDialog = true
-                },
-                onDelete = { deletingCustom = it },
-                onCreate = {
-                    editingCustom = null
-                    showCustomDialog = true
-                },
-            )
+                SearchTab.CUSTOM -> CustomResults(
+                    foods = customFoods,
+                    onLog = { food ->
+                        servingFood = Food(
+                            id = food.id,
+                            name = food.name,
+                            source = FoodSource.CUSTOM,
+                            kcalPer100g = food.kcalPer100g,
+                            proteinPer100g = food.proteinPer100g,
+                            carbsPer100g = food.carbsPer100g,
+                            fatPer100g = food.fatPer100g,
+                            fiberPer100g = food.fiberPer100g,
+                            typicalServingDescription = food.typicalServingDescription,
+                            typicalServingGrams = food.typicalServingGrams,
+                            category = "Custom Foods",
+                            servingUnit = food.servingUnit,
+                        )
+                    },
+                    onEdit = { food ->
+                        editingCustom = food
+                        showCustomDialog = true
+                    },
+                    onDelete = { deletingCustom = it },
+                    onCreate = {
+                        editingCustom = null
+                        showCustomDialog = true
+                    },
+                )
+            }
         }
     }
 
@@ -260,8 +278,9 @@ fun FoodSearchScreen(
     if (showCustomDialog) {
         CustomFoodDialog(
             foodToEdit = editingCustom,
+            availableFoods = masterFoods,
             onDismiss = { showCustomDialog = false },
-            onSave = { name, kcal, protein, carbs, fat, fiber, servingDesc, servingGrams, notes ->
+            onSave = { name, kcal, protein, carbs, fat, fiber, servingDesc, servingGrams, notes, servingUnit ->
                 viewModel.saveCustomFood(
                     name = name,
                     kcalPer100g = kcal,
@@ -272,6 +291,7 @@ fun FoodSearchScreen(
                     typicalServingDescription = servingDesc,
                     typicalServingGrams = servingGrams,
                     notes = notes,
+                    servingUnit = servingUnit,
                     editId = editingCustom?.id,
                 )
                 showCustomDialog = false
@@ -353,12 +373,15 @@ private fun SearchResults(
             }
         } else {
             LazyColumn(
+                modifier = Modifier.fillMaxSize(),
                 contentPadding = androidx.compose.foundation.layout.PaddingValues(
                     start = 16.dp, end = 16.dp, bottom = 16.dp,
                 ),
                 verticalArrangement = Arrangement.spacedBy(8.dp),
             ) {
-                items(results, key = { it.id }) { food -> FoodRow(food, onSelect) }
+                items(results, key = { it.id }, contentType = { "food-row" }) { food ->
+                    FoodRow(food, onSelect)
+                }
             }
         }
     }
@@ -375,10 +398,13 @@ private fun FrequentResults(foods: List<Food>, onSelect: (Food) -> Unit) {
         return
     }
     LazyColumn(
+        modifier = Modifier.fillMaxSize(),
         contentPadding = androidx.compose.foundation.layout.PaddingValues(16.dp),
         verticalArrangement = Arrangement.spacedBy(8.dp),
     ) {
-        items(foods, key = { it.id }) { food -> FoodRow(food, onSelect) }
+        items(foods, key = { it.id }, contentType = { "food-row" }) { food ->
+            FoodRow(food, onSelect)
+        }
     }
 }
 
@@ -412,10 +438,11 @@ private fun CustomResults(
         return
     }
     LazyColumn(
+        modifier = Modifier.fillMaxSize(),
         contentPadding = androidx.compose.foundation.layout.PaddingValues(16.dp),
         verticalArrangement = Arrangement.spacedBy(8.dp),
     ) {
-        items(foods, key = { it.id }) { food ->
+        items(foods, key = { it.id }, contentType = { "custom-food-row" }) { food ->
             Card(modifier = Modifier.fillMaxWidth()) {
                 Row(
                     verticalAlignment = Alignment.CenterVertically,

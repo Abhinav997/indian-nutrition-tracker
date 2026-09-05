@@ -14,6 +14,7 @@ import com.indian.nutrition.tracker.domain.model.Food
 import com.indian.nutrition.tracker.domain.model.FoodSource
 import com.indian.nutrition.tracker.domain.model.MealType
 import com.indian.nutrition.tracker.domain.model.OffCacheProduct
+import com.indian.nutrition.tracker.domain.model.ServingUnit
 import com.indian.nutrition.tracker.util.DateUtils
 import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -28,12 +29,16 @@ import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import kotlin.math.max
 import kotlin.math.roundToInt
+import java.time.LocalDate
 
 enum class SearchTab { SEARCH, FREQUENT, CUSTOM }
 
-/** Search screen state: tabs, debounced OFF lookup, local master + custom CRUD. */
+/** Food-log overlay state: source/list modes, debounced OFF lookup, local master + custom CRUD. */
 @OptIn(FlowPreview::class)
-class SearchViewModel(container: AppContainer) : ViewModel() {
+class SearchViewModel(
+    container: AppContainer,
+    private val loggingDate: LocalDate = DateUtils.today(),
+) : ViewModel() {
 
     private val foodRepository: FoodRepository = container.foodRepository
     private val customFoodRepository: CustomFoodRepository = container.customFoodRepository
@@ -154,7 +159,7 @@ class SearchViewModel(container: AppContainer) : ViewModel() {
         val grams = max(1, (servingGrams * quantity).roundToInt())
         viewModelScope.launch {
             logRepository.add(
-                date = DateUtils.today(),
+                date = loggingDate,
                 foodId = food.id,
                 foodName = food.name,
                 source = food.source.name,
@@ -179,6 +184,7 @@ class SearchViewModel(container: AppContainer) : ViewModel() {
         typicalServingDescription: String?,
         typicalServingGrams: Int?,
         notes: String?,
+        servingUnit: ServingUnit,
         editId: String?,
     ) {
         val cleanName = name.trim()
@@ -195,9 +201,10 @@ class SearchViewModel(container: AppContainer) : ViewModel() {
                 fiberPer100g = fiberPer100g,
                 typicalServingDescription = typicalServingDescription?.trim()
                     ?.takeIf { it.isNotEmpty() },
-                typicalServingGrams = typicalServingGrams,
+                typicalServingGrams = typicalServingGrams?.coerceIn(1, 100_000),
                 notes = notes?.trim()?.takeIf { it.isNotEmpty() },
                 createdAt = now,
+                servingUnit = servingUnit,
             )
             if (editId == null) customFoodRepository.add(food) else customFoodRepository.update(food)
         }

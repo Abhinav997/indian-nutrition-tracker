@@ -3,6 +3,15 @@ package com.indian.nutrition.tracker.domain.model
 /** Where a food entry comes from. */
 enum class FoodSource { NIN, OFF, CUSTOM }
 
+/** Unit shown when selecting a serving. Nutrition values remain per 100 g. */
+enum class ServingUnit(val label: String) {
+    GRAMS("g"),
+    MILLILITRES("ml"),
+    PIECE("piece"),
+    CUP("cup"),
+    BOWL("bowl"),
+}
+
 /** Meal slots used for grouping daily logs. */
 enum class MealType(val displayName: String) {
     BREAKFAST("Breakfast"),
@@ -27,4 +36,5 @@ data class Food(
     val category: String? = null,
     val barcode: String? = null,
     val imageUrl: String? = null,
+    val servingUnit: ServingUnit = ServingUnit.GRAMS,
 )
