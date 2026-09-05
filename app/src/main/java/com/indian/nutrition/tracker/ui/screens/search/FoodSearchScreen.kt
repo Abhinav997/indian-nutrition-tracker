@@ -19,6 +19,7 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material.icons.filled.Search
@@ -141,11 +142,11 @@ fun FoodSearchScreen(
                         leadingIcon = { Icon(Icons.Filled.Search, contentDescription = null) },
                         trailingIcon = {
                             if (query.isNotEmpty()) {
-                                IconButton(
-                                    onClick = { viewModel.setQuery("") },
-                                    contentDescription = "Clear search",
-                                ) {
-                                    Text("✕")
+                                IconButton(onClick = { viewModel.setQuery("") }) {
+                                    Icon(
+                                        imageVector = Icons.Filled.Close,
+                                        contentDescription = "Clear search",
+                                    )
                                 }
                             }
                         },
