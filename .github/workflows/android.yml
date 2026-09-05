@@ -66,6 +66,9 @@ jobs:
       - name: Run unit tests (off search)
         run: ./gradlew :app:testDebugUnitTest --tests "*OffSearchRepositoryTest" --stacktrace
 
+      - name: Run unit tests (chart math)
+        run: ./gradlew :app:testDebugUnitTest --tests "*ChartMathTest" --stacktrace
+
 
       - name: Upload debug APK
         uses: actions/upload-artifact@v4
