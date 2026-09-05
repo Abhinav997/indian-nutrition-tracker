@@ -18,7 +18,23 @@ have been removed (see git history); the native rewrite is in progress:
 - [x] Phase 5 — progress charts
 - [x] Phase 6 — calculator/settings + CSV/JSON export & import
 - [x] Phase 7 — tests & hardening
-- [ ] Phase 8 — release readiness *(in progress)*
+- [x] Phase 8 — release readiness
+
+## ⚠️ Upgrading from the old Capacitor/Web version
+
+The old app stored data inside a WebView (localStorage). The new native app
+uses Room + DataStore, which is a **completely separate storage layer**.
+**Your old data will not carry over automatically.**
+
+Before updating:
+
+1. **Export your data** — open the old app → Calculator → **Backup JSON**
+2. **Update** the app (it installs over the existing one)
+3. **Import your data** — open the new app → Calculator → Data Management →
+   **Import JSON** → choose **Replace All** (or Merge to keep any new entries)
+
+If you update without exporting first, your old logs, weights, and water
+history will be lost. The JSON backup file is the only way to migrate.
 
 ## Features
 
