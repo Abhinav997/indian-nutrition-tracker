@@ -3,8 +3,8 @@ package com.indian.nutrition.tracker.data.export
 import com.indian.nutrition.tracker.domain.model.DailyLog
 import com.indian.nutrition.tracker.domain.model.WaterLog
 import com.indian.nutrition.tracker.domain.model.WeightLog
+import com.indian.nutrition.tracker.util.NumberUtils
 import java.time.LocalDate
-import kotlin.math.roundToInt
 
 /**
  * CSV export with the web app's exact schema (byte-identical header and
@@ -62,9 +62,9 @@ object CsvExporter {
             sb.append(',').append(log.source.name)
             sb.append(',').append(log.servingGrams)
             sb.append(',').append(log.calories)
-            sb.append(',').append(trimmed(log.protein))
-            sb.append(',').append(trimmed(log.carbs))
-            sb.append(',').append(trimmed(log.fat))
+            sb.append(',').append(NumberUtils.trimmed(log.protein))
+            sb.append(',').append(NumberUtils.trimmed(log.carbs))
+            sb.append(',').append(NumberUtils.trimmed(log.fat))
             sb.append('\n')
         }
         sb.append(WATER_COMMENT)
@@ -77,18 +77,11 @@ object CsvExporter {
         sb.append(WEIGHT_COMMENT)
         weights.forEach { w ->
             sb.append("WEIGHT,${w.date},")
-            sb.append(trimmed(w.weightKg))
+            sb.append(NumberUtils.trimmed(w.weightKg))
             sb.append(',').append(w.note?.let { quote(it) } ?: "")
             sb.append('\n')
         }
         return sb.toString()
-    }
-
-    /** Double formatting that avoids trailing ".0" for whole values (JS parity). */
-    internal fun trimmed(value: Double): String {
-        val rounded = (value * 10).roundToInt() / 10.0
-        return if (rounded == rounded.toLong().toDouble()) rounded.toLong().toString()
-        else rounded.toString()
     }
 
     private fun quote(value: String): String =

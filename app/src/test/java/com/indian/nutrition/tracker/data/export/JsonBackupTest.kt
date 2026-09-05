@@ -134,4 +134,28 @@ class JsonBackupTest {
         assertTrue(d is JsonBackup.ImportResult.Error)
         assertTrue((d as JsonBackup.ImportResult.Error).message.contains("bad date"))
     }
+
+    @Test
+    fun rejectsServingAboveMaximumAndBlankNames() {
+        val huge = sampleExport().replace("\"serving_grams\": 150", "\"serving_grams\": 5001")
+        val h = JsonBackup.parse(huge)
+        assertTrue(h is JsonBackup.ImportResult.Error)
+        assertTrue((h as JsonBackup.ImportResult.Error).message.contains("serving"))
+
+        val blank = sampleExport().replace("\"food_name\": \"Dal\"", "\"food_name\": \"  \"")
+        val b = JsonBackup.parse(blank)
+        assertTrue(b is JsonBackup.ImportResult.Error)
+        assertTrue((b as JsonBackup.ImportResult.Error).message.contains("food name"))
+    }
+
+    @Test
+    fun roundedBoundariesAreAccepted() {
+        val ok = sampleExport()
+            .replace("\"serving_grams\": 150", "\"serving_grams\": 5000")
+            .replace("\"weight_kg\": 82.5", "\"weight_kg\": 350.0")
+            .replace("\"amount_ml\": 250", "\"amount_ml\": 10000")
+        val r = JsonBackup.parse(ok)
+        assertTrue(r is JsonBackup.ImportResult.Success)
+    }
+
 }

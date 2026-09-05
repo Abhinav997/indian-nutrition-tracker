@@ -32,6 +32,7 @@ import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.indian.nutrition.tracker.ui.screens.progress.ChartMetric
+import com.indian.nutrition.tracker.util.NumberUtils
 import com.indian.nutrition.tracker.ui.screens.progress.ChartSeries
 import java.time.format.DateTimeFormatter
 import java.util.Locale
@@ -86,8 +87,8 @@ fun ProgressionChart(
             val point = selectedIndex?.let { series.points.getOrNull(it) }
             Text(
                 text = point?.let {
-                    "${it.date}: ${formatValue(it.value, unit)}" +
-                        if (it.target > 0.0) " (Target: ${formatValue(it.target, unit)})" else ""
+                    "${it.date}: ${NumberUtils.formatValue(it.value, unit)}" +
+                        if (it.target > 0.0) " (Target: ${NumberUtils.formatValue(it.target, unit)})" else ""
                 } ?: "Touch or drag over data points for exact values",
                 style = MaterialTheme.typography.bodySmall,
                 color = if (point != null) MaterialTheme.colorScheme.onSurface else
@@ -98,7 +99,7 @@ fun ProgressionChart(
                 verticalAlignment = Alignment.CenterVertically,
             ) {
                 LegendDot(seriesColor(series.metric), "Logged")
-                LegendDash(TARGET_LINE, "Target (${formatValue(series.target, unit)})")
+                LegendDash(TARGET_LINE, "Target (${NumberUtils.formatValue(series.target, unit)})")
             }
         }
 
@@ -179,7 +180,7 @@ fun ProgressionChart(
                     )
                     labelPaint.color = TARGET_LINE.toArgb()
                     drawContext.canvas.nativeCanvas.drawText(
-                        "Target ${formatValue(series.target, unit)}",
+                        "Target ${NumberUtils.formatValue(series.target, unit)}",
                         w - padR, ty - 4f, labelPaint,
                     )
                 }
@@ -289,11 +290,6 @@ private fun seriesColor(metric: ChartMetric): Color = when (metric) {
     ChartMetric.CALORIES -> CALORIES_COLOR
     ChartMetric.PROTEIN -> PROTEIN_COLOR
     ChartMetric.WATER -> WATER_COLOR
-}
-
-private fun formatValue(value: Double, unit: String): String {
-    if (unit == "kcal" || unit == "ml") return "${value.roundToInt()} $unit"
-    return "${(value * 10).roundToInt() / 10.0} $unit"
 }
 
 @Composable

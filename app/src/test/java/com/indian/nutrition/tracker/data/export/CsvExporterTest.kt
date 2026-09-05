@@ -5,6 +5,7 @@ import com.indian.nutrition.tracker.domain.model.FoodSource
 import com.indian.nutrition.tracker.domain.model.MealType
 import com.indian.nutrition.tracker.domain.model.WaterLog
 import com.indian.nutrition.tracker.domain.model.WeightLog
+import com.indian.nutrition.tracker.util.NumberUtils
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
@@ -15,18 +16,27 @@ class CsvExporterTest {
 
     private val today = LocalDate.of(2026, 9, 5)
 
-    private fun log(date: LocalDate, name: String = "Dal", created: Long = 1L) = DailyLog(
+    private fun log(
+        date: LocalDate,
+        name: String = "Dal",
+        created: Long = 1L,
+        serving: Int = 150,
+        kcal: Int = 180,
+        protein: Double = 9.0,
+        carbs: Double = 28.0,
+        fat: Double = 2.0,
+    ) = DailyLog(
         id = "l1", date = date, foodId = "nin_1", foodName = name, source = FoodSource.NIN,
-        servingGrams = 150, calories = 180, protein = 9.0, carbs = 28.0, fat = 2.0,
+        servingGrams = serving, calories = kcal, protein = protein, carbs = carbs, fat = fat,
         mealType = MealType.LUNCH, createdAt = created,
     )
 
-    private fun water(date: LocalDate) = WaterLog(
-        id = "w1", date = date, amountMl = 250, time = "7:00 AM", createdAt = 1L,
+    private fun water(date: LocalDate, amount: Int = 250) = WaterLog(
+        id = "w1", date = date, amountMl = amount, time = "7:00 AM", createdAt = 1L,
     )
 
-    private fun weight(date: LocalDate, note: String? = null) = WeightLog(
-        id = "wt1", date = date, weightKg = 82.0, note = note, createdAt = 1L,
+    private fun weight(date: LocalDate, note: String? = null, kg: Double = 82.0) = WeightLog(
+        id = "wt1", date = date, weightKg = kg, note = note, createdAt = 1L,
     )
 
     @Test
@@ -95,9 +105,28 @@ class CsvExporterTest {
 
     @Test
     fun wholeDoublesPrintWithoutDecimal() {
-        assertEquals("82", CsvExporter.trimmed(82.0))
-        assertEquals("82.5", CsvExporter.trimmed(82.5))
-        assertEquals("0", CsvExporter.trimmed(0.0))
-        assertEquals("20.1", CsvExporter.trimmed(20.05)) // rounds to 0.1
+        assertEquals("82", NumberUtils.trimmed(82.0))
+        assertEquals("82.5", NumberUtils.trimmed(82.5))
+        assertEquals("0", NumberUtils.trimmed(0.0))
+        assertEquals("20.1", NumberUtils.trimmed(20.05)) // rounds to 0.1
     }
+
+    @Test
+    fun hugeAndFutureValuesSerializeLosslessly() {
+        val csv = CsvExporter.export(
+            dailyLogs = listOf(
+                log(today, name = "Feast", serving = 4999, kcal = 9876, protein = 400.0, carbs = 500.0, fat = 300.0),
+                log(LocalDate.of(2027, 1, 1), name = "Future Meal"),
+            ),
+            waterLogs = listOf(WaterLog("w2", LocalDate.of(2027, 1, 1), 10000, "12:00", 9L)),
+            weightLogs = listOf(WeightLog("wg2", today, 350.0, "max", 9L)),
+            days = 0,
+            today = today,
+        )
+        assertTrue(csv.contains("FOOD,$today,Lunch,\"Feast\",NIN,4999,9876,400,500,300"))
+        assertTrue(csv.contains("FOOD,2027-01-01,Lunch,\"Future Meal\",NIN,150,180,9,28,2"))
+        assertTrue(csv.contains("WATER,2027-01-01,\"12:00\",10000"))
+        assertTrue(csv.contains("WEIGHT,$today,350,\"max\""))
+    }
+
 }

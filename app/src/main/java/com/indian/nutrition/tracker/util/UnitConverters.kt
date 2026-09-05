@@ -10,13 +10,11 @@ object UnitConverters {
     private const val KG_PER_LB = 0.45359237
     private const val LB_PER_KG = 2.20462
 
-    private fun round1(value: Double): Double = (value * 10).roundToInt() / 10.0
-
     /** kg → lb (1 decimal, as the web app did). */
-    fun kgToLb(kg: Double): Double = round1(kg * LB_PER_KG)
+    fun kgToLb(kg: Double): Double = NumberUtils.round1(kg * LB_PER_KG)
 
     /** lb → kg (1 decimal). */
-    fun lbToKg(lb: Double): Double = round1(lb / LB_PER_KG)
+    fun lbToKg(lb: Double): Double = NumberUtils.round1(lb / LB_PER_KG)
 
     /** Format a weight in the user's selected unit, e.g. "82.0 kg" or "180.8 lb". */
     fun formatWeight(kg: Double, unit: UnitSystem): String =
