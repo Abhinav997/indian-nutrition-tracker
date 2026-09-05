@@ -93,13 +93,13 @@ Add android.sync.suppressAgpWarnings=LIBRARY_CONSTRAINTS_SHOULD_BE_DISABLED to t
 > Task :app:compileDebugNavigationResources
 > Task :app:createDebugCompatibleScreenManifests
 > Task :app:extractDeepLinksDebug
+> Task :app:mergeDebugResources
 > Task :app:processDebugMainManifest
 > Task :app:processDebugManifest
 > Task :app:preDebugAndroidTestBuild SKIPPED
 > Task :app:generateDebugAndroidTestResValues
 > Task :app:generateDebugAndroidTestResources
 > Task :app:packageDebugAndroidTestResources
-> Task :app:mergeDebugResources
 > Task :app:processDebugAndroidTestNavigationResources
 > Task :app:processDebugManifestForPackage
 > Task :app:parseDebugAndroidTestLocalResources
@@ -144,10 +144,10 @@ Add android.sync.suppressAgpWarnings=LIBRARY_CONSTRAINTS_SHOULD_BE_DISABLED to t
 > Task :app:processDebugAndroidTestResources
 > Task :app:compileDebugKotlin
 > Task :app:compileDebugJavaWithJavac NO-SOURCE
-> Task :app:processDebugJavaRes
 > Task :app:bundleDebugClassesToCompileJar
-> Task :app:mergeDebugJavaResource
+> Task :app:processDebugJavaRes
 > Task :app:kspDebugAndroidTestKotlin
+> Task :app:mergeDebugJavaResource
 > Task :app:dexBuilderDebug
 > Task :app:mergeProjectDexDebug
 > Task :app:packageDebug
@@ -155,8 +155,8 @@ Add android.sync.suppressAgpWarnings=LIBRARY_CONSTRAINTS_SHOULD_BE_DISABLED to t
 > Task :app:compileDebugAndroidTestKotlin
 > Task :app:compileDebugAndroidTestJavaWithJavac NO-SOURCE
 > Task :app:processDebugAndroidTestJavaRes
-> Task :app:dexBuilderDebugAndroidTest
 > Task :app:mergeDebugAndroidTestJavaResource
+> Task :app:dexBuilderDebugAndroidTest
 > Task :app:mergeProjectDexDebugAndroidTest
 > Task :app:packageDebugAndroidTest
 > Task :app:createDebugAndroidTestApkListingFileRedirect
@@ -165,7 +165,7 @@ Add android.sync.suppressAgpWarnings=LIBRARY_CONSTRAINTS_SHOULD_BE_DISABLED to t
 Running tests on devices: test(AVD) - 14
 
 > Task :app:connectedDebugAndroidTest FAILED
-gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/__reactivecircus_android-emulator-runner-1788609109888.json
+gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/__reactivecircus_android-emulator-runner-1788609661714.json
 
 [Incubating] Problems report is available at: file:///home/runner/work/indian-nutrition-tracker/indian-nutrition-tracker/build/reports/problems/problems-report.html
 
@@ -187,5 +187,5 @@ You can use '--warning-mode all' to show the individual deprecation warnings and
 
 For more on this, please refer to https://docs.gradle.org/9.7.1/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
 
-BUILD FAILED in 3m 41s
+BUILD FAILED in 3m 47s
 73 actionable tasks: 73 executed
