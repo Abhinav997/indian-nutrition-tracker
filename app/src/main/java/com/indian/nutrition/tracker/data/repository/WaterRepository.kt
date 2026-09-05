@@ -34,6 +34,10 @@ class WaterRepository(private val dao: WaterLogDao) {
         return log
     }
 
+    suspend fun update(log: WaterLog, amountMl: Int) {
+        dao.insert(log.copy(amountMl = amountMl).toEntity())
+    }
+
     suspend fun delete(id: String) = dao.deleteById(id)
 
     suspend fun clear() = dao.deleteAll()

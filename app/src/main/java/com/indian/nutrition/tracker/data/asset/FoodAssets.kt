@@ -3,6 +3,7 @@ package com.indian.nutrition.tracker.data.asset
 import android.content.Context
 import com.indian.nutrition.tracker.domain.model.Food
 import com.indian.nutrition.tracker.domain.model.FoodSource
+import com.indian.nutrition.tracker.domain.model.ServingUnit
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 
@@ -23,6 +24,7 @@ data class FoodDto(
     val category: String? = null,
     val barcode: String? = null,
     val imageUrl: String? = null,
+    val servingUnit: String? = null,
 )
 
 /** Loads and parses the curated food datasets shipped with the app. */
@@ -49,6 +51,8 @@ object FoodAssets {
         category = category,
         barcode = barcode,
         imageUrl = imageUrl,
+        servingUnit = ServingUnit.entries.firstOrNull { it.name == this@toFood.servingUnit }
+            ?: ServingUnit.GRAMS,
     )
 
     private fun load(context: Context, asset: String): List<Food> {

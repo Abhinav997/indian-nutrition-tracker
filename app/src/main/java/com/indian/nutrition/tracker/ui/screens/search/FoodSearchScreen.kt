@@ -61,6 +61,8 @@ import com.indian.nutrition.tracker.domain.model.MealType
 import com.indian.nutrition.tracker.ui.appViewModel
 import com.indian.nutrition.tracker.ui.components.CustomFoodDialog
 import com.indian.nutrition.tracker.ui.components.ServingSheet
+import com.indian.nutrition.tracker.util.DateUtils
+import java.time.LocalDate
 
 /**
  * Food search screen (port of the web FoodSearchScreen):
@@ -71,15 +73,17 @@ import com.indian.nutrition.tracker.ui.components.ServingSheet
 fun FoodSearchScreen(
     container: AppContainer,
     initialMeal: MealType = MealType.LUNCH,
+    loggingDate: LocalDate = DateUtils.today(),
     snackbarHostState: SnackbarHostState,
 ) {
-    val viewModel = appViewModel(container) { SearchViewModel(it) }
+    val viewModel = appViewModel(container) { SearchViewModel(it, loggingDate) }
     val tab by viewModel.tab.collectAsStateWithLifecycle()
     val query by viewModel.query.collectAsStateWithLifecycle()
     val sourceFilter by viewModel.sourceFilter.collectAsStateWithLifecycle()
     val results by viewModel.results.collectAsStateWithLifecycle()
     val frequent by viewModel.frequent.collectAsStateWithLifecycle()
     val customFoods by viewModel.customFoods.collectAsStateWithLifecycle()
+    val masterFoods by viewModel.master.collectAsStateWithLifecycle()
     val offLoading by viewModel.offLoading.collectAsStateWithLifecycle()
     val offError by viewModel.offError.collectAsStateWithLifecycle()
     val offline by viewModel.offline.collectAsStateWithLifecycle()
@@ -182,7 +186,7 @@ fun FoodSearchScreen(
                     modifier = Modifier.fillMaxWidth(),
                 ) {
                     Text(
-                        "Logging for: Today",
+                        "Logging for: ${DateUtils.dayLabel(loggingDate)}",
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                     )
@@ -230,6 +234,7 @@ fun FoodSearchScreen(
                         typicalServingDescription = food.typicalServingDescription,
                         typicalServingGrams = food.typicalServingGrams,
                         category = "Custom Foods",
+                        servingUnit = food.servingUnit,
                     )
                 },
                 onEdit = { food ->
@@ -260,8 +265,9 @@ fun FoodSearchScreen(
     if (showCustomDialog) {
         CustomFoodDialog(
             foodToEdit = editingCustom,
+            availableFoods = masterFoods,
             onDismiss = { showCustomDialog = false },
-            onSave = { name, kcal, protein, carbs, fat, fiber, servingDesc, servingGrams, notes ->
+            onSave = { name, kcal, protein, carbs, fat, fiber, servingDesc, servingGrams, notes, servingUnit ->
                 viewModel.saveCustomFood(
                     name = name,
                     kcalPer100g = kcal,
@@ -272,6 +278,7 @@ fun FoodSearchScreen(
                     typicalServingDescription = servingDesc,
                     typicalServingGrams = servingGrams,
                     notes = notes,
+                    servingUnit = servingUnit,
                     editId = editingCustom?.id,
                 )
                 showCustomDialog = false
@@ -358,7 +365,9 @@ private fun SearchResults(
                 ),
                 verticalArrangement = Arrangement.spacedBy(8.dp),
             ) {
-                items(results, key = { it.id }) { food -> FoodRow(food, onSelect) }
+                items(results, key = { it.id }, contentType = { "food-row" }) { food ->
+                    FoodRow(food, onSelect)
+                }
             }
         }
     }
@@ -378,7 +387,9 @@ private fun FrequentResults(foods: List<Food>, onSelect: (Food) -> Unit) {
         contentPadding = androidx.compose.foundation.layout.PaddingValues(16.dp),
         verticalArrangement = Arrangement.spacedBy(8.dp),
     ) {
-        items(foods, key = { it.id }) { food -> FoodRow(food, onSelect) }
+        items(foods, key = { it.id }, contentType = { "food-row" }) { food ->
+            FoodRow(food, onSelect)
+        }
     }
 }
 
@@ -415,7 +426,7 @@ private fun CustomResults(
         contentPadding = androidx.compose.foundation.layout.PaddingValues(16.dp),
         verticalArrangement = Arrangement.spacedBy(8.dp),
     ) {
-        items(foods, key = { it.id }) { food ->
+        items(foods, key = { it.id }, contentType = { "custom-food-row" }) { food ->
             Card(modifier = Modifier.fillMaxWidth()) {
                 Row(
                     verticalAlignment = Alignment.CenterVertically,

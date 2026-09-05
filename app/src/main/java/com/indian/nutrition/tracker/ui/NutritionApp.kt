@@ -29,11 +29,14 @@ import com.indian.nutrition.tracker.ui.screens.home.HomeScreen
 import com.indian.nutrition.tracker.ui.screens.progress.ProgressScreen
 import com.indian.nutrition.tracker.ui.screens.search.FoodSearchScreen
 import com.indian.nutrition.tracker.ui.theme.NutritionTrackerTheme
+import com.indian.nutrition.tracker.util.DateUtils
+import java.time.LocalDate
 
 private const val SEARCH_MEAL_ARG = "meal"
+private const val SEARCH_DATE_ARG = "date"
 
-/** Search route with an optional meal preset (e.g. `search?meal=BREAKFAST`). */
-private const val SEARCH_ROUTE_PATTERN = "search?meal={$SEARCH_MEAL_ARG}"
+/** Search route with optional meal and date presets. */
+private const val SEARCH_ROUTE_PATTERN = "search?meal={$SEARCH_MEAL_ARG}&date={$SEARCH_DATE_ARG}"
 
 /**
  * Root composable: Material 3 theme, app scaffold with bottom navigation,
@@ -79,8 +82,10 @@ fun NutritionApp(container: AppContainer) {
                 composable(AppDestination.Home.route) {
                     HomeScreen(
                         container = container,
-                        onOpenFoodSearch = { meal ->
-                            navController.navigate("search?$SEARCH_MEAL_ARG=${meal.name}") {
+                        onOpenFoodSearch = { meal, date ->
+                            navController.navigate(
+                                "search?$SEARCH_MEAL_ARG=${meal.name}&$SEARCH_DATE_ARG=$date",
+                            ) {
                                 launchSingleTop = true
                             }
                         },
@@ -93,13 +98,21 @@ fun NutritionApp(container: AppContainer) {
                             type = NavType.StringType
                             defaultValue = MealType.LUNCH.name
                         },
+                        navArgument(SEARCH_DATE_ARG) {
+                            type = NavType.StringType
+                            defaultValue = DateUtils.today().toString()
+                        },
                     ),
                 ) { entry ->
                     val mealName = entry.arguments?.getString(SEARCH_MEAL_ARG)
                     val meal = MealType.entries.firstOrNull { it.name == mealName } ?: MealType.LUNCH
+                    val loggingDate = entry.arguments?.getString(SEARCH_DATE_ARG)
+                        ?.let { runCatching { LocalDate.parse(it) }.getOrNull() }
+                        ?: DateUtils.today()
                     FoodSearchScreen(
                         container = container,
                         initialMeal = meal,
+                        loggingDate = loggingDate,
                         snackbarHostState = snackbarHostState,
                     )
                 }

@@ -11,6 +11,7 @@ import com.indian.nutrition.tracker.domain.model.Food
 import com.indian.nutrition.tracker.domain.model.FoodSource
 import com.indian.nutrition.tracker.domain.model.MealType
 import com.indian.nutrition.tracker.domain.model.OffCacheProduct
+import com.indian.nutrition.tracker.domain.model.ServingUnit
 import com.indian.nutrition.tracker.domain.model.WaterLog
 import com.indian.nutrition.tracker.domain.model.WeightLog
 import java.time.LocalDate
@@ -94,6 +95,7 @@ fun CustomFoodEntity.toDomain() = CustomFood(
     typicalServingGrams = typicalServingGrams,
     notes = notes,
     createdAt = createdAt,
+    servingUnit = ServingUnit.entries.firstOrNull { it.name == servingUnit } ?: ServingUnit.GRAMS,
 )
 
 fun CustomFood.toEntity() = CustomFoodEntity(
@@ -108,6 +110,7 @@ fun CustomFood.toEntity() = CustomFoodEntity(
     typicalServingGrams = typicalServingGrams,
     notes = notes,
     createdAt = createdAt,
+    servingUnit = servingUnit.name,
 )
 
 fun OffCacheEntity.toDomain() = OffCacheProduct(

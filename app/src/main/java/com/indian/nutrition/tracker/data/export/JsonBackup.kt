@@ -9,6 +9,7 @@ import com.indian.nutrition.tracker.domain.model.GoalType
 import com.indian.nutrition.tracker.domain.model.MealType
 import com.indian.nutrition.tracker.domain.model.ProteinBasis
 import com.indian.nutrition.tracker.domain.model.Sex
+import com.indian.nutrition.tracker.domain.model.ServingUnit
 import com.indian.nutrition.tracker.domain.model.UnitSystem
 import com.indian.nutrition.tracker.domain.model.UserSettings
 import com.indian.nutrition.tracker.domain.model.WaterLog
@@ -102,6 +103,7 @@ data class CustomFoodDto(
     @SerialName("typical_serving_grams") val typicalServingGrams: Int? = null,
     val notes: String? = null,
     @SerialName("created_at") val createdAt: Long,
+    @SerialName("serving_unit") val servingUnit: String = "GRAMS",
 )
 
 object JsonBackup {
@@ -179,6 +181,9 @@ object JsonBackup {
             if (c.kcalPer100g < 0.0 || c.proteinPer100g < 0.0 ||
                 c.carbsPer100g < 0.0 || c.fatPer100g < 0.0
             ) errors += "custom food #$i: negative macro"
+            if (c.typicalServingGrams != null && c.typicalServingGrams !in 1..100_000) {
+                errors += "custom food #$i: serving weight ${c.typicalServingGrams}"
+            }
         }
 
         return if (errors.isEmpty()) ImportResult.Success(backup) else
@@ -255,6 +260,7 @@ fun CustomFoodDto.toDomain(): CustomFood = CustomFood(
     typicalServingGrams = typicalServingGrams,
     notes = notes,
     createdAt = createdAt,
+    servingUnit = ServingUnit.entries.firstOrNull { it.name == servingUnit } ?: ServingUnit.GRAMS,
 )
 
 // --- Domain → DTO ---
@@ -295,7 +301,7 @@ fun CustomFood.toDto(): CustomFoodDto = CustomFoodDto(
     id = id, name = name, kcalPer100g = kcalPer100g, proteinPer100g = proteinPer100g,
     carbsPer100g = carbsPer100g, fatPer100g = fatPer100g, fiberPer100g = fiberPer100g,
     typicalServingDescription = typicalServingDescription, typicalServingGrams = typicalServingGrams,
-    notes = notes, createdAt = createdAt,
+    notes = notes, createdAt = createdAt, servingUnit = servingUnit.name,
 )
 
 // --- Coercion helpers (web labels → native enums; unknown → default) ---

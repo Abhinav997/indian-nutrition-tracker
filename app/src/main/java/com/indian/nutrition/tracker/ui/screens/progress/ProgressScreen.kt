@@ -16,11 +16,13 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Delete
+import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material.icons.filled.Scale
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
@@ -68,9 +70,11 @@ fun ProgressScreen(container: AppContainer) {
     val dateRange by viewModel.dateRange.collectAsStateWithLifecycle()
 
     var showWeightSheet by remember { mutableStateOf(false) }
+    var editingWeight by remember { mutableStateOf<WeightLog?>(null) }
 
     val s = settings ?: return LoadingProgress()
 
+    val listState = rememberLazyListState()
     val dates = remember(dateRange) { ChartMath.rangeDates(dateRange) }
     val calorieMap = remember(dailyLogs) { ChartMath.dailyCalories(dailyLogs) }
     val proteinMap = remember(dailyLogs) { ChartMath.dailyProtein(dailyLogs) }
@@ -92,6 +96,7 @@ fun ProgressScreen(container: AppContainer) {
     }
 
     LazyColumn(
+        state = listState,
         modifier = Modifier.fillMaxSize(),
         contentPadding = PaddingValues(16.dp),
         verticalArrangement = Arrangement.spacedBy(12.dp),
@@ -151,24 +156,30 @@ fun ProgressScreen(container: AppContainer) {
                 )
             }
         } else {
-            items(weightLogs.reversed(), key = { it.id }) { log ->
+            items(weightLogs.reversed(), key = { it.id }, contentType = { "weight-history-row" }) { log ->
                 WeightHistoryRow(
                     log = log,
                     settings = s,
+                    onEdit = { editingWeight = it },
                     onDelete = viewModel::deleteWeight,
                 )
             }
         }
     }
 
-    if (showWeightSheet) {
+    if (showWeightSheet || editingWeight != null) {
         WeightSheet(
             unitSystem = s.unitSystem,
             currentWeightKg = s.currentWeightKg,
-            onDismiss = { showWeightSheet = false },
-            onSave = { kg, note ->
-                viewModel.addWeight(kg, note)
+            weightLog = editingWeight,
+            onDismiss = {
                 showWeightSheet = false
+                editingWeight = null
+            },
+            onSave = { kg, note ->
+                viewModel.saveWeight(editingWeight?.date ?: java.time.LocalDate.now(), kg, note)
+                showWeightSheet = false
+                editingWeight = null
             },
         )
     }
@@ -194,9 +205,13 @@ private fun StatsBanner(
     val diffFromTarget = ((latest - target) * 10).roundToInt() / 10.0
     val bmi = UnitConverters.calculateBmi(latest, settings.heightCm)
 
+    val bannerContainer = MaterialTheme.colorScheme.primaryContainer
+    val bannerText = MaterialTheme.colorScheme.onPrimaryContainer
+    val bannerMuted = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = 0.72f)
+
     Card(
         modifier = Modifier.fillMaxWidth(),
-        colors = CardDefaults.cardColors(containerColor = Color(0xFF0F172A)),
+        colors = CardDefaults.cardColors(containerColor = bannerContainer),
     ) {
         Column(modifier = Modifier.padding(16.dp)) {
             Row(
@@ -208,13 +223,13 @@ private fun StatsBanner(
                     Text(
                         "PROGRESS & TRENDS",
                         style = MaterialTheme.typography.labelSmall,
-                        color = Color(0xFF2DD4BF),
+                        color = MaterialTheme.colorScheme.primary,
                         fontWeight = FontWeight.Bold,
                     )
                     Text(
                         "Body Composition & Intake",
                         style = MaterialTheme.typography.titleMedium,
-                        color = Color.White,
+                        color = bannerText,
                     )
                 }
                 Button(onClick = onLogWeight, modifier = Modifier.testTag("progress-log-weight-btn")) {
@@ -235,24 +250,25 @@ private fun StatsBanner(
                     sub = bmi?.let {
                         "${it.bmi} · ${it.category.name.lowercase().replaceFirstChar { c -> c.uppercase() }}"
                     } ?: "",
-                    valueColor = Color.White,
-                    subColor = Color(0xFF5EEAD4),
+                    valueColor = bannerText,
+                    subColor = MaterialTheme.colorScheme.primary,
                 )
                 BannerStat(
                     label = "Net Change",
                     value = (if (diffFromStart > 0) "+" else "") +
                         UnitConverters.formatWeight(diffFromStart, settings.unitSystem),
                     sub = "From start",
-                    valueColor = if (diffFromStart <= 0) Color(0xFF34D399) else Color(0xFFFBBF24),
-                    subColor = Color(0xFF94A3B8),
+                    valueColor = if (diffFromStart <= 0) MaterialTheme.colorScheme.tertiary
+                    else MaterialTheme.colorScheme.secondary,
+                    subColor = bannerMuted,
                 )
                 BannerStat(
                     label = "Goal Target",
                     value = UnitConverters.formatWeight(target, settings.unitSystem),
                     sub = if (abs(diffFromTarget) <= 0.2) "Reached!"
                     else "${UnitConverters.formatWeight(abs(diffFromTarget), settings.unitSystem)} left",
-                    valueColor = Color(0xFF5EEAD4),
-                    subColor = Color(0xFF94A3B8),
+                    valueColor = MaterialTheme.colorScheme.primary,
+                    subColor = bannerMuted,
                 )
             }
         }
@@ -271,18 +287,19 @@ private fun BannerStat(
         Text(
             label.uppercase(),
             style = MaterialTheme.typography.labelSmall,
-            color = Color(0xFF94A3B8),
+            color = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = 0.72f),
         )
         Text(value, style = MaterialTheme.typography.titleMedium, color = valueColor, fontWeight = FontWeight.Black)
         Text(sub, style = MaterialTheme.typography.labelSmall, color = subColor)
     }
 }
 
+@Composable
 private fun metricColor(metric: ChartMetric): Color = when (metric) {
-    ChartMetric.WEIGHT -> Color(0xFF0D9488)
-    ChartMetric.CALORIES -> Color(0xFFF59E0B)
-    ChartMetric.PROTEIN -> Color(0xFF10B981)
-    ChartMetric.WATER -> Color(0xFF0284C7)
+    ChartMetric.WEIGHT -> MaterialTheme.colorScheme.primary
+    ChartMetric.CALORIES -> MaterialTheme.colorScheme.secondary
+    ChartMetric.PROTEIN -> MaterialTheme.colorScheme.tertiary
+    ChartMetric.WATER -> MaterialTheme.colorScheme.primary
 }
 
 @Composable
@@ -356,7 +373,7 @@ private fun WeightSummaryGrid(settings: UserSettings, weightLogs: List<WeightLog
                 ((latest - starting) * 10.0).roundToInt() / 10.0, settings.unitSystem,
             ),
             valueColor = MaterialTheme.colorScheme.primary,
-            footerColor = Color(0xFF059669),
+            footerColor = MaterialTheme.colorScheme.tertiary,
             modifier = Modifier.weight(1f),
         )
         SummaryTile(
@@ -454,7 +471,12 @@ private fun WeightHistoryHeader(count: Int, onAdd: () -> Unit) {
 }
 
 @Composable
-private fun WeightHistoryRow(log: WeightLog, settings: UserSettings, onDelete: (String) -> Unit) {
+private fun WeightHistoryRow(
+    log: WeightLog,
+    settings: UserSettings,
+    onEdit: (WeightLog) -> Unit,
+    onDelete: (String) -> Unit,
+) {
     val dateFormatter = remember { DateTimeFormatter.ofPattern("EEE, MMM d, yyyy", Locale.US) }
     Card(modifier = Modifier.fillMaxWidth()) {
         Row(
@@ -489,6 +511,12 @@ private fun WeightHistoryRow(log: WeightLog, settings: UserSettings, onDelete: (
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                     )
                 }
+            }
+            IconButton(
+                onClick = { onEdit(log) },
+                modifier = Modifier.testTag("edit-weight-${log.id}"),
+            ) {
+                Icon(Icons.Filled.Edit, contentDescription = "Edit weight entry")
             }
             IconButton(onClick = { onDelete(log.id) }) {
                 Icon(

@@ -27,6 +27,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.dp
 import com.indian.nutrition.tracker.domain.model.UnitSystem
+import com.indian.nutrition.tracker.domain.model.WeightLog
 import com.indian.nutrition.tracker.util.UnitConverters
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -34,17 +35,19 @@ import com.indian.nutrition.tracker.util.UnitConverters
 fun WeightSheet(
     unitSystem: UnitSystem,
     currentWeightKg: Double,
+    weightLog: WeightLog? = null,
     onDismiss: () -> Unit,
     onSave: (weightKg: Double, note: String?) -> Unit,
 ) {
-    var unit by rememberSaveable { mutableStateOf(unitSystem) }
-    var input by rememberSaveable {
+    val startingWeightKg = weightLog?.weightKg ?: currentWeightKg
+    var unit by rememberSaveable(weightLog?.id) { mutableStateOf(unitSystem) }
+    var input by rememberSaveable(weightLog?.id) {
         mutableStateOf(
-            if (unitSystem == UnitSystem.LB) UnitConverters.kgToLb(currentWeightKg).toString()
-            else currentWeightKg.toString()
+            if (unitSystem == UnitSystem.LB) UnitConverters.kgToLb(startingWeightKg).toString()
+            else startingWeightKg.toString()
         )
     }
-    var note by rememberSaveable { mutableStateOf("") }
+    var note by rememberSaveable(weightLog?.id) { mutableStateOf(weightLog?.note.orEmpty()) }
 
     val weightKg = if (unit == UnitSystem.LB) UnitConverters.lbToKg(input.toDoubleOrNull() ?: 0.0)
     else input.toDoubleOrNull() ?: 0.0
@@ -67,7 +70,10 @@ fun WeightSheet(
                 horizontalArrangement = Arrangement.SpaceBetween,
                 modifier = Modifier.fillMaxWidth(),
             ) {
-                Text("Log Body Weight", style = MaterialTheme.typography.titleMedium)
+                Text(
+                    if (weightLog == null) "Log Body Weight" else "Edit Body Weight",
+                    style = MaterialTheme.typography.titleMedium,
+                )
                 IconButton(
                     onClick = onDismiss,
                     modifier = Modifier.testTag("close-log-weight-btn"),

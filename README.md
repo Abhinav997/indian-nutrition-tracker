@@ -36,6 +36,9 @@ Before updating:
 If you update without exporting first, your old logs, weights, and water
 history will be lost. The JSON backup file is the only way to migrate.
 
+The native app also migrates its Room database in place when new local fields
+are added; existing logs and custom foods are preserved during an app update.
+
 ## Features
 
 - **Food logging** from three sources: a curated NIN/IFCT 2017 database
@@ -47,6 +50,8 @@ history will be lost. The JSON backup file is the only way to migrate.
   Breakfast/Lunch/Snack/Dinner, weight + BMI summary, water tracker.
 - **Progress charts**: weight trend, daily calories/protein/water vs targets.
 - **Data export/import**: CSV and JSON backup with round-trip fidelity.
+- **Editing & recipes**: edit food, water, and weight entries; build custom recipes from database ingredients with calculated macros; choose g, ml, pieces, cups, or bowls for custom servings.
+- **System-aware UI**: follows system light/dark mode, uses dynamic system colours on Android 12+, and switches to dark surfaces while Battery Saver is active.
 - **Privacy-first**: all data stored on-device (Room + DataStore). No accounts.
 
 ## Requirements

@@ -7,6 +7,7 @@ import com.indian.nutrition.tracker.data.export.JsonBackup
 import com.indian.nutrition.tracker.data.export.toDomain
 import com.indian.nutrition.tracker.data.repository.CustomFoodRepository
 import com.indian.nutrition.tracker.data.repository.LogRepository
+import com.indian.nutrition.tracker.data.repository.OffCacheRepository
 import com.indian.nutrition.tracker.data.repository.SettingsRepository
 import com.indian.nutrition.tracker.data.repository.WaterRepository
 import com.indian.nutrition.tracker.data.repository.WeightRepository
@@ -20,6 +21,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 
@@ -31,6 +33,7 @@ class CalculatorViewModel(container: AppContainer) : ViewModel() {
     private val weightRepository: WeightRepository = container.weightRepository
     private val waterRepository: WaterRepository = container.waterRepository
     private val customFoodRepository: CustomFoodRepository = container.customFoodRepository
+    private val offCacheRepository: OffCacheRepository = container.offCacheRepository
 
     val settings: StateFlow<UserSettings?> = settingsRepository.settings
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), null)
@@ -46,6 +49,10 @@ class CalculatorViewModel(container: AppContainer) : ViewModel() {
 
     val customFoods: StateFlow<List<CustomFood>> = customFoodRepository.observeAll()
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), emptyList())
+
+    val offCacheCount: StateFlow<Int> = offCacheRepository.observeAll()
+        .map { it.size }
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), 0)
 
     private val _message = MutableStateFlow<String?>(null)
     val message: StateFlow<String?> = _message.asStateFlow()
@@ -63,6 +70,11 @@ class CalculatorViewModel(container: AppContainer) : ViewModel() {
         waterRepository.clear()
         weightRepository.clear()
         _message.value = "All logged data reset to 0."
+    }
+
+    fun clearOffCache() = viewModelScope.launch {
+        offCacheRepository.clear()
+        _message.value = "Cached Open Food Facts results cleared."
     }
 
     /** Builds the JSON export document from current state. */

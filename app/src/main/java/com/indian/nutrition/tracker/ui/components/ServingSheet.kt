@@ -28,6 +28,7 @@ import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.dp
 import com.indian.nutrition.tracker.domain.model.Food
 import com.indian.nutrition.tracker.domain.model.MealType
+import com.indian.nutrition.tracker.domain.model.ServingUnit
 import kotlin.math.max
 import kotlin.math.roundToInt
 
@@ -39,11 +40,26 @@ fun ServingSheet(
     onSave: (servingGrams: Int, quantity: Double, mealType: MealType) -> Unit,
     initialMeal: MealType = MealType.LUNCH,
 ) {
-    var grams by rememberSaveable(food.id) { mutableStateOf("${food.typicalServingGrams ?: 100}") }
+    val unit = food.servingUnit
+    val defaultAmount = if (unit == ServingUnit.GRAMS || unit == ServingUnit.MILLILITRES) {
+        food.typicalServingGrams ?: 100
+    } else {
+        1
+    }
+    var amount by rememberSaveable(food.id) { mutableStateOf(defaultAmount.toString()) }
     var multiplier by rememberSaveable(food.id) { mutableStateOf(1.0) }
     var mealType by rememberSaveable(food.id) { mutableStateOf(initialMeal) }
 
-    val effectiveGrams = max(1, (grams.toDoubleOrNull() ?: 0.0).times(multiplier).roundToInt())
+    val amountValue = amount.toDoubleOrNull() ?: 0.0
+    // For pieces/cups/bowls, typicalServingGrams stores the approximate
+    // weight of one unit so calories remain compatible with the per-100g data.
+    val gramsPerUnit = if (unit == ServingUnit.GRAMS || unit == ServingUnit.MILLILITRES) {
+        1.0
+    } else {
+        (food.typicalServingGrams ?: 100).toDouble()
+    }
+    val baseGrams = max(1, (amountValue * gramsPerUnit).roundToInt())
+    val effectiveGrams = max(1, (baseGrams * multiplier).roundToInt())
     val kcal = (food.kcalPer100g * effectiveGrams / 100).roundToInt()
     val protein = food.proteinPer100g * effectiveGrams / 100
     val carbs = food.carbsPer100g * effectiveGrams / 100
@@ -95,24 +111,27 @@ fun ServingSheet(
 
             Text("Portion", style = MaterialTheme.typography.labelMedium)
             Row(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
-                val presets = buildList {
-                    food.typicalServingGrams?.let { add(it)
-                    }
-                    add(50); add(100); add(150); add(200)
-                }.distinct().sorted()
+                val presets = if (unit == ServingUnit.GRAMS || unit == ServingUnit.MILLILITRES) {
+                    buildList {
+                        food.typicalServingGrams?.let { add(it) }
+                        add(50); add(100); add(150); add(200)
+                    }.distinct().sorted()
+                } else {
+                    listOf(1, 2, 3)
+                }
                 presets.forEach { preset ->
                     FilterChip(
-                        selected = grams.toIntOrNull() == preset && multiplier == 1.0,
-                        onClick = { grams = preset.toString(); multiplier = 1.0 },
-                        label = { Text("${preset}g") },
+                        selected = amount.toIntOrNull() == preset && multiplier == 1.0,
+                        onClick = { amount = preset.toString(); multiplier = 1.0 },
+                        label = { Text("$preset ${unit.label}") },
                     )
                 }
             }
 
             OutlinedTextField(
-                value = grams,
-                onValueChange = { grams = it.filter { c -> c.isDigit() }.take(4) },
-                label = { Text("Serving (g)") },
+                value = amount,
+                onValueChange = { amount = it.filter { c -> c.isDigit() }.take(6) },
+                label = { Text("Serving (${unit.label})") },
                 singleLine = true,
                 modifier = Modifier.fillMaxWidth().testTag("serving-grams-input"),
             )
@@ -147,7 +166,7 @@ fun ServingSheet(
             }
 
             Button(
-                onClick = { onSave(effectiveGrams, multiplier, mealType) },
+                onClick = { onSave(baseGrams, multiplier, mealType) },
                 modifier = Modifier.fillMaxWidth().testTag("confirm-add-serving-btn"),
             ) { Text("Add to log") }
         }

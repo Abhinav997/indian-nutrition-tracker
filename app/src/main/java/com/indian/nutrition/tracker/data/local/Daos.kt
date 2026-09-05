@@ -73,7 +73,8 @@ interface CustomFoodDao {
 
     @Query("UPDATE custom_foods SET name = :name, kcalPer100g = :kcal, proteinPer100g = :protein, " +
         "carbsPer100g = :carbs, fatPer100g = :fat, fiberPer100g = :fiber, " +
-        "typicalServingDescription = :servingDesc, typicalServingGrams = :servingGrams, notes = :notes " +
+        "typicalServingDescription = :servingDesc, typicalServingGrams = :servingGrams, " +
+        "notes = :notes, servingUnit = :servingUnit " +
         "WHERE id = :id")
     suspend fun update(
         id: String,
@@ -86,6 +87,7 @@ interface CustomFoodDao {
         servingDesc: String?,
         servingGrams: Int?,
         notes: String?,
+        servingUnit: String,
     )
 
     @Query("DELETE FROM custom_foods WHERE id = :id")

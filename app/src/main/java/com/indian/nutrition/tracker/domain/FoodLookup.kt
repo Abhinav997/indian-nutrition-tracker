@@ -36,6 +36,7 @@ object FoodLookup {
                 typicalServingDescription = c.typicalServingDescription ?: "1 serving",
                 typicalServingGrams = c.typicalServingGrams ?: 100,
                 category = "Custom Foods",
+                servingUnit = c.servingUnit,
             )
         }
         return dedupeByName(custom + ninFoods + packagedFoods + offCacheFoods)

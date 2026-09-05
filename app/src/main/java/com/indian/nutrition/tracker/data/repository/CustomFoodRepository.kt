@@ -34,6 +34,7 @@ class CustomFoodRepository(private val dao: CustomFoodDao) {
             servingDesc = food.typicalServingDescription,
             servingGrams = food.typicalServingGrams,
             notes = food.notes,
+            servingUnit = food.servingUnit.name,
         )
     }
 

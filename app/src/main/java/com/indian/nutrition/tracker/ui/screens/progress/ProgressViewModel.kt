@@ -68,12 +68,26 @@ class ProgressViewModel(container: AppContainer) : ViewModel() {
         }
     }
 
-    fun deleteWeight(id: String) = viewModelScope.launch { weightRepository.delete(id) }
+    fun deleteWeight(id: String) = viewModelScope.launch {
+        weightRepository.delete(id)
+        // Keep the profile summary in sync when the latest weigh-in is
+        // removed. The previous measurement becomes the current one.
+        val remaining = weightRepository.observeAll().first()
+        if (remaining.isNotEmpty()) {
+            val saved = settingsRepository.settings.first()
+            settingsRepository.save(saved.copy(currentWeightKg = remaining.last().weightKg))
+        }
+    }
 
-    fun addWeight(weightKg: Double, note: String?) = viewModelScope.launch {
-        weightRepository.upsert(DateUtils.today(), weightKg, note)
-        // Web parity: the most recent weigh-in updates current weight.
+    fun addWeight(weightKg: Double, note: String?) =
+        saveWeight(DateUtils.today(), weightKg, note)
+
+    fun saveWeight(date: java.time.LocalDate, weightKg: Double, note: String?) = viewModelScope.launch {
+        weightRepository.upsert(date, weightKg, note)
+        // The profile follows the latest dated measurement, not merely the
+        // last button press (important when editing an older entry).
+        val latest = weightRepository.observeAll().first().lastOrNull()?.weightKg ?: weightKg
         val saved = settingsRepository.settings.first()
-        settingsRepository.save(saved.copy(currentWeightKg = weightKg))
+        settingsRepository.save(saved.copy(currentWeightKg = latest))
     }
 }

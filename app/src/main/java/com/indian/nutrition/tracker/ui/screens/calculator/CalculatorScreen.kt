@@ -14,6 +14,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.AlertDialog
@@ -26,6 +27,7 @@ import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.RadioButton
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -77,6 +79,7 @@ fun CalculatorScreen(
     val waterLogs by viewModel.waterLogs.collectAsStateWithLifecycle()
     val weightLogs by viewModel.weightLogs.collectAsStateWithLifecycle()
     val message by viewModel.message.collectAsStateWithLifecycle()
+    val offCacheCount by viewModel.offCacheCount.collectAsStateWithLifecycle()
 
     val context = LocalContext.current
     val scope = rememberCoroutineScope()
@@ -163,14 +166,21 @@ fun CalculatorScreen(
     }
 
     // --- SAF launchers ---
-    fun writeUri(uri: android.net.Uri, content: String) {
+    fun writeUri(uri: android.net.Uri, content: String, format: String) {
         scope.launch {
-            withContext(Dispatchers.IO) {
+            val error = withContext(Dispatchers.IO) {
                 runCatching {
-                    context.contentResolver.openOutputStream(uri)?.use {
-                        it.write(content.toByteArray(Charsets.UTF_8))
-                    }
-                }
+                    val output = context.contentResolver.openOutputStream(uri)
+                        ?: throw IllegalStateException("The selected location is not writable")
+                    output.use { it.write(content.toByteArray(Charsets.UTF_8)) }
+                }.exceptionOrNull()
+            }
+            if (error == null) {
+                snackbarHostState.showSnackbar("$format exported successfully")
+            } else {
+                snackbarHostState.showSnackbar(
+                    "Could not export $format: ${error.message ?: "storage error"}",
+                )
             }
         }
     }
@@ -181,13 +191,13 @@ fun CalculatorScreen(
         if (uri != null) {
             val days = exportDays.toIntOrNull() ?: 0
             val content = CsvExporter.export(dailyLogs, waterLogs, weightLogs, days)
-            writeUri(uri, content)
+            writeUri(uri, content, "CSV")
         }
     }
 
     val jsonExportLauncher = rememberLauncherForActivityResult(
         ActivityResultContracts.CreateDocument("application/json"),
-    ) { uri -> if (uri != null) writeUri(uri, viewModel.exportJson()) }
+    ) { uri -> if (uri != null) writeUri(uri, viewModel.exportJson(), "JSON backup") }
 
     val jsonImportLauncher = rememberLauncherForActivityResult(
         ActivityResultContracts.OpenDocument(),
@@ -213,7 +223,9 @@ fun CalculatorScreen(
         }
     }
 
+    val listState = rememberLazyListState()
     LazyColumn(
+        state = listState,
         modifier = Modifier.fillMaxSize(),
         contentPadding = PaddingValues(16.dp),
         verticalArrangement = Arrangement.spacedBy(12.dp),
@@ -348,6 +360,8 @@ fun CalculatorScreen(
                     jsonExportLauncher.launch("nutrition_weight_backup_${LocalDate.now()}.json")
                 },
                 onImportJson = { jsonImportLauncher.launch(arrayOf("application/json", "text/plain")) },
+                offCacheCount = offCacheCount,
+                onClearOffCache = viewModel::clearOffCache,
                 onClearLogs = { showClearConfirm = true },
             )
         }
@@ -684,6 +698,8 @@ private fun DataManagementCard(
     onExportCsv: () -> Unit,
     onExportJson: () -> Unit,
     onImportJson: () -> Unit,
+    offCacheCount: Int,
+    onClearOffCache: () -> Unit,
     onClearLogs: () -> Unit,
 ) {
     Card(modifier = Modifier.fillMaxWidth()) {
@@ -709,6 +725,22 @@ private fun DataManagementCard(
                     onClick = onClearLogs,
                     modifier = Modifier.weight(1f).testTag("clear-all-logs-zero-btn"),
                 ) { Text("Reset to 0") }
+            }
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.SpaceBetween,
+                modifier = Modifier.fillMaxWidth(),
+            ) {
+                Text(
+                    "Open Food Facts cache: $offCacheCount items",
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                )
+                TextButton(
+                    onClick = onClearOffCache,
+                    enabled = offCacheCount > 0,
+                    modifier = Modifier.testTag("clear-off-cache-btn"),
+                ) { Text("Clear cache") }
             }
         }
     }

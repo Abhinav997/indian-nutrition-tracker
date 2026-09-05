@@ -18,6 +18,7 @@ import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.flatMapLatest
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
@@ -56,10 +57,16 @@ class HomeViewModel(container: AppContainer) : ViewModel() {
     fun nextDay() { _selectedDate.value = _selectedDate.value.plusDays(1) }
     fun jumpToToday() { _selectedDate.value = DateUtils.today() }
 
+    fun updateLog(log: DailyLog) = viewModelScope.launch { logRepository.update(log) }
+
     fun deleteLog(id: String) = viewModelScope.launch { logRepository.delete(id) }
 
     fun addWater(amountMl: Int) = viewModelScope.launch {
         waterRepository.add(_selectedDate.value, amountMl, null)
+    }
+
+    fun updateWater(log: WaterLog, amountMl: Int) = viewModelScope.launch {
+        waterRepository.update(log, amountMl)
     }
 
     fun deleteWater(id: String) = viewModelScope.launch { waterRepository.delete(id) }
@@ -70,7 +77,13 @@ class HomeViewModel(container: AppContainer) : ViewModel() {
         settings.value?.let { settingsRepository.save(it.copy(currentWeightKg = weightKg)) }
     }
 
-    fun deleteWeight(id: String) = viewModelScope.launch { weightRepository.delete(id) }
+    fun deleteWeight(id: String) = viewModelScope.launch {
+        weightRepository.delete(id)
+        val remaining = weightRepository.observeAll().first()
+        if (remaining.isNotEmpty()) {
+            settings.value?.let { settingsRepository.save(it.copy(currentWeightKg = remaining.last().weightKg)) }
+        }
+    }
 
     companion object {
         fun round1(value: Double): Double = (value * 10).roundToInt() / 10.0
