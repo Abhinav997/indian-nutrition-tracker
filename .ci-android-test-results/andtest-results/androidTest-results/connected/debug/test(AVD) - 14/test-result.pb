@@ -1,4 +1,4 @@
-ì
+ì
 ^
 DaoInstrumentedTest'com.indian.nutrition.tracker.data.localdailyLogInsertReplaceAndDelete"‡
 
@@ -58,31 +58,9 @@ _
 	AppUiTestcom.indian.nutrition.tracker.ui1test03_addFoodOpensSearchAndCanCreateCustomRecipe"ˆ
 
 logcatandroidò
-ï/home/runner/work/indian-nutrition-tracker/indian-nutrition-tracker/app/build/outputs/androidTest-results/connected/debug/test(AVD) - 14/logcat-com.indian.nutrition.tracker.ui.AppUiTest-test03_addFoodOpensSearchAndCanCreateCustomRecipe.txtÿ
+ï/home/runner/work/indian-nutrition-tracker/indian-nutrition-tracker/app/build/outputs/androidTest-results/connected/debug/test(AVD) - 14/logcat-com.indian.nutrition.tracker.ui.AppUiTest-test03_addFoodOpensSearchAndCanCreateCustomRecipe.txtè
 \
-	AppUiTestcom.indian.nutrition.tracker.ui.test04_calculatorRendersProfileAndSavesTargets”
-Öandroidx.compose.ui.test.ComposeTimeoutException: Condition still not satisfied after 20000 ms
-	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$AndroidComposeUiTestImpl.waitUntil(ComposeUiTest.android.kt:441)
-	at androidx.compose.ui.test.junit4.AndroidComposeTestRule.waitUntil(AndroidComposeTestRule.android.kt:306)
-	at com.indian.nutrition.tracker.ui.AppUiTest.waitForText(AppUiTest.kt:66)
-	at com.indian.nutrition.tracker.ui.AppUiTest.waitForText$default(AppUiTest.kt:65)
-	at com.indian.nutrition.tracker.ui.AppUiTest.test04_calculatorRendersProfileAndSavesTargets(AppUiTest.kt:167)
-java.lang.RuntimeExceptionœ
-java.lang.RuntimeException: androidx.compose.ui.test.ComposeTimeoutException: Condition still not satisfied after 20000 ms
-	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$AndroidComposeUiTestImpl.waitUntil(ComposeUiTest.android.kt:441)
-	at androidx.compose.ui.test.junit4.AndroidComposeTestRule.waitUntil(AndroidComposeTestRule.android.kt:306)
-	at com.indian.nutrition.tracker.ui.AppUiTest.waitForText(AppUiTest.kt:66)
-	at com.indian.nutrition.tracker.ui.AppUiTest.waitForText$default(AppUiTest.kt:65)
-	at com.indian.nutrition.tracker.ui.AppUiTest.test04_calculatorRendersProfileAndSavesTargets(AppUiTest.kt:167)
-
-	at com.android.tools.androidtest.testengine.descriptor.AndroidDynamicTestDescriptor.execute(AndroidDynamicTestDescriptor.kt:68)
-	at com.android.tools.androidtest.testengine.descriptor.AndroidDynamicTestDescriptor.execute(AndroidDynamicTestDescriptor.kt:36)
-	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387)
-	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312)
-	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843)
-	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808)
-	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188)
-"…
+	AppUiTestcom.indian.nutrition.tracker.ui.test04_calculatorRendersProfileAndSavesTargets"…
 
 logcatandroidï
 ì/home/runner/work/indian-nutrition-tracker/indian-nutrition-tracker/app/build/outputs/androidTest-results/connected/debug/test(AVD) - 14/logcat-com.indian.nutrition.tracker.ui.AppUiTest-test04_calculatorRendersProfileAndSavesTargets.txt*µ

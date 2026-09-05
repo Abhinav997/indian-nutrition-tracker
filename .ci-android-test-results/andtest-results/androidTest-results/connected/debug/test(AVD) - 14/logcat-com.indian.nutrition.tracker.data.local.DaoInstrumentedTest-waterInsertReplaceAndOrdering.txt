@@ -1,2 +1,2 @@
-09-05 13:53:54.034  2350  2369 I TestRunner: started: waterInsertReplaceAndOrdering(com.indian.nutrition.tracker.data.local.DaoInstrumentedTest)
-09-05 13:53:54.066  2350  2369 I TestRunner: finished: waterInsertReplaceAndOrdering(com.indian.nutrition.tracker.data.local.DaoInstrumentedTest)
+09-05 14:06:12.795  2381  2401 I TestRunner: started: waterInsertReplaceAndOrdering(com.indian.nutrition.tracker.data.local.DaoInstrumentedTest)
+09-05 14:06:12.856  2381  2401 I TestRunner: finished: waterInsertReplaceAndOrdering(com.indian.nutrition.tracker.data.local.DaoInstrumentedTest)
