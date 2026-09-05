@@ -114,9 +114,11 @@ jobs:
         if: failure()
         run: |
           cp /tmp/gradle-build.log .ci-build-error.log
-          git add -f .ci-build-error.log
-          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -m "ci: capture build error log [skip ci]" >/dev/null 2>&1 || true
           for i in 1 2 3 4 5 6 7 8; do
+            git fetch -q origin "$GITHUB_REF_NAME" || true
+            git rebase -q "origin/$GITHUB_REF_NAME" >/dev/null 2>&1 || true
+            git add -f .ci-build-error.log
+            git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -m "ci: capture build error log [skip ci]" >/dev/null 2>&1 || true
             git push origin "HEAD:$GITHUB_REF_NAME" >/dev/null 2>&1 && exit 0
             sleep 10
           done
@@ -180,9 +182,11 @@ jobs:
         if: failure()
         run: |
           cp /tmp/gradle-instr.log .ci-build-error.log
-          git add -f .ci-build-error.log
-          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -m "ci: capture instrumented log [skip ci]" >/dev/null 2>&1 || true
           for i in 1 2 3 4 5 6 7 8; do
+            git fetch -q origin "$GITHUB_REF_NAME" || true
+            git rebase -q "origin/$GITHUB_REF_NAME" >/dev/null 2>&1 || true
+            git add -f .ci-build-error.log
+            git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -m "ci: capture instrumented log [skip ci]" >/dev/null 2>&1 || true
             git push origin "HEAD:$GITHUB_REF_NAME" >/dev/null 2>&1 && exit 0
             sleep 10
           done
