@@ -89,7 +89,8 @@ class CalculatorViewModel(container: AppContainer) : ViewModel() {
             weightRepository.importAll(backup.weightLogs.map { it.toDomain() })
             customFoodRepository.importAll(backup.customFoods.map { it.toDomain() })
             _message.value = "Backup imported (${backup.dailyLogs.size} foods, " +
-                "${backup.weightLogs.size} weights, ${backup.waterLogs.size} waters)"
+                "${backup.weightLogs.size} weights, ${backup.waterLogs.size} waters, " +
+                "${backup.customFoods.size} custom recipes)"
             onDone()
         }
     }
