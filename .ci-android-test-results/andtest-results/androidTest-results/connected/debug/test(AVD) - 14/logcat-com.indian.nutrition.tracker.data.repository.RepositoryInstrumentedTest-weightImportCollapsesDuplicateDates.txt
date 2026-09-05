@@ -1,2 +1,2 @@
-09-05 13:05:26.885  2347  2367 I TestRunner: started: weightImportCollapsesDuplicateDates(com.indian.nutrition.tracker.data.repository.RepositoryInstrumentedTest)
-09-05 13:05:26.909  2347  2367 I TestRunner: finished: weightImportCollapsesDuplicateDates(com.indian.nutrition.tracker.data.repository.RepositoryInstrumentedTest)
+09-05 13:46:15.510  2360  2379 I TestRunner: started: weightImportCollapsesDuplicateDates(com.indian.nutrition.tracker.data.repository.RepositoryInstrumentedTest)
+09-05 13:46:15.536  2360  2379 I TestRunner: finished: weightImportCollapsesDuplicateDates(com.indian.nutrition.tracker.data.repository.RepositoryInstrumentedTest)

@@ -1,52 +1,38 @@
 <?xml version='1.0' encoding='UTF-8' ?>
-<testsuites tests="13" failures="3" errors="0" skipped="0" time="0.000" timestamp="2026-09-05T13:06:05" hostname="localhost">
-  <testsuite name="com.indian.nutrition.tracker.data.local.DaoInstrumentedTest" tests="5" failures="0" errors="0" skipped="0" time="0.246" timestamp="2026-09-05T13:06:05" hostname="localhost">
+<testsuites tests="13" failures="1" errors="0" skipped="0" time="0.000" timestamp="2026-09-05T13:46:46" hostname="localhost">
+  <testsuite name="com.indian.nutrition.tracker.data.local.DaoInstrumentedTest" tests="5" failures="0" errors="0" skipped="0" time="0.277" timestamp="2026-09-05T13:46:46" hostname="localhost">
     <properties>
       <property name="device" value="emulator-5554" />
     </properties>
-    <testcase name="dailyLogInsertReplaceAndDelete" classname="com.indian.nutrition.tracker.data.local.DaoInstrumentedTest" time="0.075" />
-    <testcase name="waterInsertReplaceAndOrdering" classname="com.indian.nutrition.tracker.data.local.DaoInstrumentedTest" time="0.055" />
-    <testcase name="weightUpsertUpdateAndUniqueDate" classname="com.indian.nutrition.tracker.data.local.DaoInstrumentedTest" time="0.035" />
-    <testcase name="offCacheEvictionAndCounting" classname="com.indian.nutrition.tracker.data.local.DaoInstrumentedTest" time="0.032" />
-    <testcase name="customFoodInsertUpdateAndClear" classname="com.indian.nutrition.tracker.data.local.DaoInstrumentedTest" time="0.049" />
+    <testcase name="dailyLogInsertReplaceAndDelete" classname="com.indian.nutrition.tracker.data.local.DaoInstrumentedTest" time="0.093" />
+    <testcase name="waterInsertReplaceAndOrdering" classname="com.indian.nutrition.tracker.data.local.DaoInstrumentedTest" time="0.051" />
+    <testcase name="weightUpsertUpdateAndUniqueDate" classname="com.indian.nutrition.tracker.data.local.DaoInstrumentedTest" time="0.036" />
+    <testcase name="offCacheEvictionAndCounting" classname="com.indian.nutrition.tracker.data.local.DaoInstrumentedTest" time="0.042" />
+    <testcase name="customFoodInsertUpdateAndClear" classname="com.indian.nutrition.tracker.data.local.DaoInstrumentedTest" time="0.055" />
   </testsuite>
-  <testsuite name="com.indian.nutrition.tracker.data.repository.RepositoryInstrumentedTest" tests="4" failures="0" errors="0" skipped="0" time="0.191" timestamp="2026-09-05T13:06:05" hostname="localhost">
+  <testsuite name="com.indian.nutrition.tracker.data.repository.RepositoryInstrumentedTest" tests="4" failures="0" errors="0" skipped="0" time="0.199" timestamp="2026-09-05T13:46:46" hostname="localhost">
     <properties>
       <property name="device" value="emulator-5554" />
     </properties>
-    <testcase name="logAndWaterImportKeepIdsAndReplaceOnConflict" classname="com.indian.nutrition.tracker.data.repository.RepositoryInstrumentedTest" time="0.055" />
-    <testcase name="customImportAndClearAllTables" classname="com.indian.nutrition.tracker.data.repository.RepositoryInstrumentedTest" time="0.086" />
-    <testcase name="weightImportCollapsesDuplicateDates" classname="com.indian.nutrition.tracker.data.repository.RepositoryInstrumentedTest" time="0.024" />
-    <testcase name="weightUpsertIsOneRowPerDate" classname="com.indian.nutrition.tracker.data.repository.RepositoryInstrumentedTest" time="0.026" />
+    <testcase name="logAndWaterImportKeepIdsAndReplaceOnConflict" classname="com.indian.nutrition.tracker.data.repository.RepositoryInstrumentedTest" time="0.054" />
+    <testcase name="customImportAndClearAllTables" classname="com.indian.nutrition.tracker.data.repository.RepositoryInstrumentedTest" time="0.090" />
+    <testcase name="weightImportCollapsesDuplicateDates" classname="com.indian.nutrition.tracker.data.repository.RepositoryInstrumentedTest" time="0.026" />
+    <testcase name="weightUpsertIsOneRowPerDate" classname="com.indian.nutrition.tracker.data.repository.RepositoryInstrumentedTest" time="0.029" />
   </testsuite>
-  <testsuite name="com.indian.nutrition.tracker.ui.AppUiTest" tests="4" failures="3" errors="0" skipped="0" time="38.418" timestamp="2026-09-05T13:06:05" hostname="localhost">
+  <testsuite name="com.indian.nutrition.tracker.ui.AppUiTest" tests="4" failures="1" errors="0" skipped="0" time="29.912" timestamp="2026-09-05T13:46:46" hostname="localhost">
     <properties>
       <property name="device" value="emulator-5554" />
     </properties>
-    <testcase name="test01_homeRendersAndWaterQuickAddWorks" classname="com.indian.nutrition.tracker.ui.AppUiTest" time="16.681">
-      <failure>androidx.compose.ui.test.ComposeTimeoutException: Condition still not satisfied after 15000 ms
+    <testcase name="test01_homeRendersAndWaterQuickAddWorks" classname="com.indian.nutrition.tracker.ui.AppUiTest" time="2.459" />
+    <testcase name="test02_weightSheetLogsAndUpdatesSummary" classname="com.indian.nutrition.tracker.ui.AppUiTest" time="2.771" />
+    <testcase name="test03_addFoodOpensSearchAndCanCreateCustomRecipe" classname="com.indian.nutrition.tracker.ui.AppUiTest" time="3.195" />
+    <testcase name="test04_calculatorRendersProfileAndSavesTargets" classname="com.indian.nutrition.tracker.ui.AppUiTest" time="21.487">
+      <failure>androidx.compose.ui.test.ComposeTimeoutException: Condition still not satisfied after 20000 ms
 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$AndroidComposeUiTestImpl.waitUntil(ComposeUiTest.android.kt:441)
 	at androidx.compose.ui.test.junit4.AndroidComposeTestRule.waitUntil(AndroidComposeTestRule.android.kt:306)
-	at com.indian.nutrition.tracker.ui.AppUiTest.waitForTag(AppUiTest.kt:54)
-	at com.indian.nutrition.tracker.ui.AppUiTest.waitForTag$default(AppUiTest.kt:53)
-	at com.indian.nutrition.tracker.ui.AppUiTest.test01_homeRendersAndWaterQuickAddWorks(AppUiTest.kt:78)
-</failure>
-    </testcase>
-    <testcase name="test02_weightSheetLogsAndUpdatesSummary" classname="com.indian.nutrition.tracker.ui.AppUiTest" time="2.610" />
-    <testcase name="test03_addFoodOpensSearchAndCanCreateCustomRecipe" classname="com.indian.nutrition.tracker.ui.AppUiTest" time="3.014">
-      <failure>java.lang.AssertionError: Semantic Node has no parent layout with a Scroll SemanticsAction
-	at androidx.compose.ui.test.ActionsKt.scrollToNode(Actions.kt:92)
-	at androidx.compose.ui.test.ActionsKt.performScrollTo(Actions.kt:77)
-	at com.indian.nutrition.tracker.ui.AppUiTest.test03_addFoodOpensSearchAndCanCreateCustomRecipe(AppUiTest.kt:124)
-</failure>
-    </testcase>
-    <testcase name="test04_calculatorRendersProfileAndSavesTargets" classname="com.indian.nutrition.tracker.ui.AppUiTest" time="16.113">
-      <failure>androidx.compose.ui.test.ComposeTimeoutException: Condition still not satisfied after 15000 ms
-	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$AndroidComposeUiTestImpl.waitUntil(ComposeUiTest.android.kt:441)
-	at androidx.compose.ui.test.junit4.AndroidComposeTestRule.waitUntil(AndroidComposeTestRule.android.kt:306)
-	at com.indian.nutrition.tracker.ui.AppUiTest.waitForTag(AppUiTest.kt:54)
-	at com.indian.nutrition.tracker.ui.AppUiTest.waitForTag$default(AppUiTest.kt:53)
-	at com.indian.nutrition.tracker.ui.AppUiTest.test04_calculatorRendersProfileAndSavesTargets(AppUiTest.kt:140)
+	at com.indian.nutrition.tracker.ui.AppUiTest.waitForText(AppUiTest.kt:66)
+	at com.indian.nutrition.tracker.ui.AppUiTest.waitForText$default(AppUiTest.kt:65)
+	at com.indian.nutrition.tracker.ui.AppUiTest.test04_calculatorRendersProfileAndSavesTargets(AppUiTest.kt:159)
 </failure>
     </testcase>
   </testsuite>
