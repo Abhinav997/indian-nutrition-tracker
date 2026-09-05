@@ -212,48 +212,54 @@ fun FoodSearchScreen(
             }
         }
 
-        when (tab) {
-            SearchTab.SEARCH -> SearchResults(
-                results = results,
-                loading = offLoading,
-                error = offError,
-                onSelect = { food -> servingFood = food },
-                onCreateCustom = {
-                    editingCustom = null
-                    showCustomDialog = true
-                },
-            )
+        Box(
+            modifier = Modifier
+                .weight(1f)
+                .fillMaxWidth(),
+        ) {
+            when (tab) {
+                SearchTab.SEARCH -> SearchResults(
+                    results = results,
+                    loading = offLoading,
+                    error = offError,
+                    onSelect = { food -> servingFood = food },
+                    onCreateCustom = {
+                        editingCustom = null
+                        showCustomDialog = true
+                    },
+                )
 
-            SearchTab.FREQUENT -> FrequentResults(frequent, onSelect = { food -> servingFood = food })
+                SearchTab.FREQUENT -> FrequentResults(frequent, onSelect = { food -> servingFood = food })
 
-            SearchTab.CUSTOM -> CustomResults(
-                foods = customFoods,
-                onLog = { food ->
-                    servingFood = Food(
-                        id = food.id,
-                        name = food.name,
-                        source = FoodSource.CUSTOM,
-                        kcalPer100g = food.kcalPer100g,
-                        proteinPer100g = food.proteinPer100g,
-                        carbsPer100g = food.carbsPer100g,
-                        fatPer100g = food.fatPer100g,
-                        fiberPer100g = food.fiberPer100g,
-                        typicalServingDescription = food.typicalServingDescription,
-                        typicalServingGrams = food.typicalServingGrams,
-                        category = "Custom Foods",
-                        servingUnit = food.servingUnit,
-                    )
-                },
-                onEdit = { food ->
-                    editingCustom = food
-                    showCustomDialog = true
-                },
-                onDelete = { deletingCustom = it },
-                onCreate = {
-                    editingCustom = null
-                    showCustomDialog = true
-                },
-            )
+                SearchTab.CUSTOM -> CustomResults(
+                    foods = customFoods,
+                    onLog = { food ->
+                        servingFood = Food(
+                            id = food.id,
+                            name = food.name,
+                            source = FoodSource.CUSTOM,
+                            kcalPer100g = food.kcalPer100g,
+                            proteinPer100g = food.proteinPer100g,
+                            carbsPer100g = food.carbsPer100g,
+                            fatPer100g = food.fatPer100g,
+                            fiberPer100g = food.fiberPer100g,
+                            typicalServingDescription = food.typicalServingDescription,
+                            typicalServingGrams = food.typicalServingGrams,
+                            category = "Custom Foods",
+                            servingUnit = food.servingUnit,
+                        )
+                    },
+                    onEdit = { food ->
+                        editingCustom = food
+                        showCustomDialog = true
+                    },
+                    onDelete = { deletingCustom = it },
+                    onCreate = {
+                        editingCustom = null
+                        showCustomDialog = true
+                    },
+                )
+            }
         }
     }
 
