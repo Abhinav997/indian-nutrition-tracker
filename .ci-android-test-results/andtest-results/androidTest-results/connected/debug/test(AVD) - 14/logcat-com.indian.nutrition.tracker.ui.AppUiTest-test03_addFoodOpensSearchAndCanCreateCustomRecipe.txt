@@ -1,106 +1,102 @@
-09-05 13:46:20.812  2360  2379 I TestRunner: started: test03_addFoodOpensSearchAndCanCreateCustomRecipe(com.indian.nutrition.tracker.ui.AppUiTest)
-09-05 13:46:20.817  2360  2379 D IdlingRegistry: Registering idling resources: [androidx.compose.ui.test.EspressoLink@250fd5]
-09-05 13:46:20.820  2360  2379 W Settings: Setting always_finish_activities has moved from android.provider.Settings.System to android.provider.Settings.Global, returning read-only value.
-09-05 13:46:20.826   800   874 D SplashScreenView: Build android.window.SplashScreenView{7e35d81 V.E...... ......ID 0,0-0,0}
-09-05 13:46:20.826   800   874 D SplashScreenView: Icon: view: null drawable: null size: 0
-09-05 13:46:20.826   800   874 D SplashScreenView: Branding: view: android.view.View{5124e26 G.ED..... ......I. 0,0-0,0 #10204ef android:id/splashscreen_branding_view} drawable: null size w: 0 h: 0
-09-05 13:46:20.842  2360  2360 D LifecycleMonitor: Lifecycle status change: com.indian.nutrition.tracker.MainActivity@32bbc89 in: PRE_ON_CREATE
-09-05 13:46:20.842  2360  2360 V ActivityScenario: Activity lifecycle changed event received but ignored because the reported transition was not ON_CREATE while the last known transition was PRE_ON_CREATE
-09-05 13:46:20.844   389   389 I BpBinder: onLastStrongRef automatically unlinking death recipients: 
-09-05 13:46:20.859  2360  2360 D LifecycleMonitor: Lifecycle status change: com.indian.nutrition.tracker.MainActivity@32bbc89 in: CREATED
-09-05 13:46:20.859  2360  2360 V ActivityScenario: Update currentActivityStage to CREATED, currentActivity=com.indian.nutrition.tracker.MainActivity@32bbc89
-09-05 13:46:20.869  2360  2360 D LifecycleMonitor: Lifecycle status change: com.indian.nutrition.tracker.MainActivity@32bbc89 in: STARTED
-09-05 13:46:20.869  2360  2360 V ActivityScenario: Update currentActivityStage to STARTED, currentActivity=com.indian.nutrition.tracker.MainActivity@32bbc89
-09-05 13:46:20.870  2360  2360 D LifecycleMonitor: Lifecycle status change: com.indian.nutrition.tracker.MainActivity@32bbc89 in: RESUMED
-09-05 13:46:20.870  2360  2360 V ActivityScenario: Update currentActivityStage to RESUMED, currentActivity=com.indian.nutrition.tracker.MainActivity@32bbc89
-09-05 13:46:20.881  2360  2360 D AutofillManager: Fill dialog is enabled:false, hints=[]
-09-05 13:46:20.953  1057  1057 W FrameTracker: Missing SF jank callback for vsyncId: 4376, CUJ=J<LAUNCHER_APP_CLOSE_TO_HOME>
-09-05 13:46:21.021   505   525 W ziparchive: Unable to open '/data/app/~~S_mm4nUVmgjVRPjso6MW1A==/com.indian.nutrition.tracker-QVhmkyg-fU994iU4JH_Yyg==/base.dm': No such file or directory
-09-05 13:46:21.022   505   525 I ActivityTaskManager: Displayed com.indian.nutrition.tracker/.MainActivity for user 0: +199ms
-09-05 13:46:21.036   800   870 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=falsecallback=android.view.ViewRootImpl$$ExternalSyntheticLambda17@4240980
-09-05 13:46:21.037   505  1783 W InputManager-JNI: Input channel object '4a1dd18 Splash Screen com.indian.nutrition.tracker (client)' was disposed without first being removed with the input manager!
-09-05 13:46:21.038   505   863 I ImeTracker: com.indian.nutrition.tracker:9cb16db4: onRequestHide at ORIGIN_SERVER_HIDE_INPUT reason HIDE_UNSPECIFIED_WINDOW
-09-05 13:46:21.039   505   863 I ImeTracker: com.indian.nutrition.tracker:9cb16db4: onCancelled at PHASE_SERVER_SHOULD_HIDE
-09-05 13:46:21.041  1057  1114 I ImeTracker: com.android.launcher3:16b8329a: onRequestHide at ORIGIN_CLIENT_HIDE_SOFT_INPUT reason HIDE_SOFT_INPUT
-09-05 13:46:21.042  1057  1114 I ImeTracker: com.android.launcher3:16b8329a: onFailed at PHASE_CLIENT_VIEW_SERVED
-09-05 13:46:21.292  2360  2360 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
-09-05 13:46:21.292  2360  2360 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
-09-05 13:46:21.848   800   800 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
-09-05 13:46:22.074  2360  2360 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
-09-05 13:46:22.074  2360  2360 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
-09-05 13:46:22.319  2360  2387 D EGL_emulation: app_time_stats: avg=140.35ms min=2.36ms max=488.65ms count=9
-09-05 13:46:22.336   800   880 D EGL_emulation: app_time_stats: avg=197.34ms min=6.44ms max=1236.15ms count=8
-09-05 13:46:22.336   505  1783 I ImeTracker: com.indian.nutrition.tracker:60f2bf24: onRequestHide at ORIGIN_SERVER_HIDE_INPUT reason HIDE_UNSPECIFIED_WINDOW
-09-05 13:46:22.336   505  1783 I ImeTracker: com.indian.nutrition.tracker:60f2bf24: onCancelled at PHASE_SERVER_SHOULD_HIDE
-09-05 13:46:22.480  2360  2360 I ImeTracker: com.indian.nutrition.tracker:db3f732c: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT_BY_INSETS_API
-09-05 13:46:22.480  2360  2360 D InsetsController: show(ime(), fromIme=false)
-09-05 13:46:22.481  2360  2360 D InputMethodManager: showSoftInput() view=androidx.compose.ui.platform.AndroidComposeView{fd246ab VFED..... .F....ID 0,0-320,616 aid=1073741825} flags=0 reason=SHOW_SOFT_INPUT_BY_INSETS_API
-09-05 13:46:22.484  1389  1389 I LatinIME: Starting input. Cursor position = 0,0
-09-05 13:46:22.632   789   789 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
-09-05 13:46:22.635  2360  2360 I ImeTracker: com.indian.nutrition.tracker:8bc4c797: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT
-09-05 13:46:22.635  2360  2360 D InputMethodManager: showSoftInput() view=androidx.compose.ui.platform.AndroidComposeView{fd246ab VFED..... .F....ID 0,0-320,616 aid=1073741825} flags=0 reason=SHOW_SOFT_INPUT
-09-05 13:46:22.670  2360  2360 D InsetsController: show(ime(), fromIme=true)
-09-05 13:46:22.672  2360  2360 D InsetsController: show(ime(), fromIme=true)
-09-05 13:46:22.672  2360  2360 I ImeTracker: com.indian.nutrition.tracker:8bc4c797: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
-09-05 13:46:22.705  2360  2360 I ImeTracker: com.indian.nutrition.tracker:db3f732c: onShown
-09-05 13:46:22.762   505  1047 I ImeTracker: com.indian.nutrition.tracker:5f858e3c: onRequestShow at ORIGIN_SERVER_START_INPUT reason ATTACH_NEW_INPUT
-09-05 13:46:22.763  2360  2360 I ImeTracker: com.indian.nutrition.tracker:22003baa: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT_BY_INSETS_API
-09-05 13:46:22.763  2360  2360 D InsetsController: show(ime(), fromIme=false)
-09-05 13:46:22.764  2360  2360 I ImeTracker: com.indian.nutrition.tracker:22003baa: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
-09-05 13:46:22.766  1389  1389 I LatinIME: Starting input. Cursor position = 0,0
-09-05 13:46:22.975  2360  2360 I ImeTracker: com.indian.nutrition.tracker:33f515b3: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT
-09-05 13:46:22.976  2360  2360 D InputMethodManager: showSoftInput() view=androidx.compose.ui.platform.AndroidComposeView{fd246ab VFED..... .F....ID 0,0-320,616 aid=1073741825} flags=0 reason=SHOW_SOFT_INPUT
-09-05 13:46:22.995  2360  2360 D InsetsController: show(ime(), fromIme=true)
-09-05 13:46:22.995  2360  2360 I ImeTracker: com.indian.nutrition.tracker:5f858e3c: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
-09-05 13:46:22.997  2360  2360 D InsetsController: show(ime(), fromIme=true)
-09-05 13:46:22.997  2360  2360 I ImeTracker: com.indian.nutrition.tracker:33f515b3: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
-09-05 13:46:23.140   505  1783 I ImeTracker: com.indian.nutrition.tracker:9d7deb9: onRequestShow at ORIGIN_SERVER_START_INPUT reason ATTACH_NEW_INPUT
-09-05 13:46:23.142  2360  2360 I ImeTracker: com.indian.nutrition.tracker:1dc42bee: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT_BY_INSETS_API
-09-05 13:46:23.142  2360  2360 D InsetsController: show(ime(), fromIme=false)
-09-05 13:46:23.142  2360  2360 I ImeTracker: com.indian.nutrition.tracker:1dc42bee: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
-09-05 13:46:23.144  1389  1389 I LatinIME: Starting input. Cursor position = 0,0
-09-05 13:46:23.341  2360  2360 I ImeTracker: com.indian.nutrition.tracker:ac67edfb: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT
-09-05 13:46:23.341  2360  2360 D InputMethodManager: showSoftInput() view=androidx.compose.ui.platform.AndroidComposeView{fd246ab VFED..... .F....ID 0,0-320,616 aid=1073741825} flags=0 reason=SHOW_SOFT_INPUT
-09-05 13:46:23.356  2360  2360 D InsetsController: show(ime(), fromIme=true)
-09-05 13:46:23.357  2360  2360 I ImeTracker: com.indian.nutrition.tracker:9d7deb9: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
-09-05 13:46:23.357  2360  2360 D InsetsController: show(ime(), fromIme=true)
-09-05 13:46:23.357  2360  2360 I ImeTracker: com.indian.nutrition.tracker:ac67edfb: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
-09-05 13:46:23.458  2360  2387 D EGL_emulation: app_time_stats: avg=127.11ms min=50.68ms max=289.50ms count=9
-09-05 13:46:23.471  2360  2360 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=falsecallback=ImeCallback=ImeOnBackInvokedCallback@188624232 Callback=android.window.IOnBackInvokedCallback$Stub$Proxy@dd7fded
-09-05 13:46:23.471  2360  2360 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=falsecallback=android.view.ViewRootImpl$$ExternalSyntheticLambda17@24d1d3c
-09-05 13:46:23.507   505  1047 W InputManager-JNI: Input channel object '9ea4fb7 com.indian.nutrition.tracker/com.indian.nutrition.tracker.MainActivity (client)' was disposed without first being removed with the input manager!
-09-05 13:46:23.534   800   880 D EGL_emulation: app_time_stats: avg=598.96ms min=14.96ms max=1182.95ms count=2
-09-05 13:46:23.576  2360  2360 I ImeTracker: com.indian.nutrition.tracker:85e6f4e: onRequestHide at ORIGIN_CLIENT_HIDE_SOFT_INPUT reason HIDE_SOFT_INPUT
-09-05 13:46:23.576  2360  2360 I ImeTracker: com.indian.nutrition.tracker:85e6f4e: onFailed at PHASE_CLIENT_VIEW_SERVED
-09-05 13:46:23.585   505  1047 I ImeTracker: com.indian.nutrition.tracker:8658ac42: onRequestHide at ORIGIN_SERVER_HIDE_INPUT reason HIDE_UNSPECIFIED_WINDOW
-09-05 13:46:23.587   505   586 I ImeTracker: com.indian.nutrition.tracker:8658ac42: onFailed at PHASE_WM_HAS_IME_INSETS_CONTROL_TARGET
-09-05 13:46:23.588  2360  2387 D EGL_emulation: app_time_stats: avg=1268.94ms min=1268.94ms max=1268.94ms count=1
-09-05 13:46:23.600  2360  2360 E ImeBackDispatcher: Ime callback not found. Ignoring unregisterReceivedCallback. callbackId: 188624232
-09-05 13:46:23.617   800   874 D SplashScreenView: Build android.window.SplashScreenView{205e612 V.E...... ......ID 0,0-0,0}
-09-05 13:46:23.617   800   874 D SplashScreenView: Icon: view: null drawable: null size: 0
-09-05 13:46:23.617   800   874 D SplashScreenView: Branding: view: android.view.View{c88a1e3 G.ED..... ......I. 0,0-0,0 #10204ef android:id/splashscreen_branding_view} drawable: null size w: 0 h: 0
-09-05 13:46:23.621  2360  2360 D LifecycleMonitor: Lifecycle status change: com.indian.nutrition.tracker.MainActivity@32bbc89 in: PAUSED
-09-05 13:46:23.622  2360  2360 V ActivityScenario: Update currentActivityStage to PAUSED, currentActivity=com.indian.nutrition.tracker.MainActivity@32bbc89
-09-05 13:46:23.627   389   389 I BpBinder: onLastStrongRef automatically unlinking death recipients: 
-09-05 13:46:23.686  2402  2421 W OpenGLRenderer: Failed to initialize 101010-2 format, error = EGL_SUCCESS
-09-05 13:46:23.806   505   525 W ziparchive: Unable to open '/data/app/~~lmKVuIgCMWYZbOwvaOgDkg==/com.indian.nutrition.tracker.test-eWA8MD_HAQs8ot_DlAGn8A==/base.dm': No such file or directory
-09-05 13:46:23.807   505   525 I ActivityTaskManager: Displayed com.indian.nutrition.tracker.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity for user 0: +195ms
-09-05 13:46:23.821   800   870 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=falsecallback=android.view.ViewRootImpl$$ExternalSyntheticLambda17@a1cb755
-09-05 13:46:23.822   505  1701 W InputManager-JNI: Input channel object '7d20b77 Splash Screen com.indian.nutrition.tracker.test (client)' was disposed without first being removed with the input manager!
-09-05 13:46:23.827   389   389 I BpBinder: onLastStrongRef automatically unlinking death recipients: 
-09-05 13:46:23.840  2360  2360 D LifecycleMonitor: Lifecycle status change: com.indian.nutrition.tracker.MainActivity@32bbc89 in: STOPPED
-09-05 13:46:23.840  2360  2360 V ActivityScenario: Update currentActivityStage to STOPPED, currentActivity=com.indian.nutrition.tracker.MainActivity@32bbc89
-09-05 13:46:23.903   505  2279 I ImeTracker: com.android.launcher3:6fd4761: onRequestHide at ORIGIN_SERVER_HIDE_INPUT reason HIDE_UNSPECIFIED_WINDOW
-09-05 13:46:23.905   505  2279 I ImeTracker: com.android.launcher3:6fd4761: onCancelled at PHASE_SERVER_SHOULD_HIDE
-09-05 13:46:23.921  2402  2402 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=falsecallback=android.view.ViewRootImpl$$ExternalSyntheticLambda17@94ffde6
-09-05 13:46:23.934   505   572 W InputManager-JNI: Input channel object 'a7c4c05 com.indian.nutrition.tracker.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity (client)' was disposed without first being removed with the input manager!
-09-05 13:46:23.956  2360  2367 W trition.tracker: Cleared Reference was only reachable from finalizer (only reported once)
-09-05 13:46:23.965  2360  2367 I trition.tracker: Background concurrent copying GC freed 475056(21MB) AllocSpace objects, 13(300KB) LOS objects, 49% free, 8968KB/17MB, paused 2.826ms,28us total 124.168ms
-09-05 13:46:23.981  2360  2369 W System  : A resource failed to call release. 
-09-05 13:46:23.981  2360  2369 W System  : A resource failed to call release. 
-09-05 13:46:23.998  2360  2360 D LifecycleMonitor: Lifecycle status change: com.indian.nutrition.tracker.MainActivity@32bbc89 in: DESTROYED
-09-05 13:46:23.999  2360  2360 V ActivityScenario: Update currentActivityStage to DESTROYED, currentActivity=null
-09-05 13:46:23.999  2360  2360 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=falsecallback=android.view.ViewRootImpl$$ExternalSyntheticLambda17@206a177
-09-05 13:46:24.002  2360  2379 D IdlingRegistry: Unregistering idling resources: [androidx.compose.ui.test.EspressoLink@250fd5]
-09-05 13:46:24.002   505   872 W InputManager-JNI: Input channel object '8f74fa9 com.indian.nutrition.tracker/com.indian.nutrition.tracker.MainActivity (client)' was disposed without first being removed with the input manager!
-09-05 13:46:24.008  2360  2379 I TestRunner: finished: test03_addFoodOpensSearchAndCanCreateCustomRecipe(com.indian.nutrition.tracker.ui.AppUiTest)
+09-05 13:53:57.237  2350  2369 I TestRunner: started: test03_addFoodOpensSearchAndCanCreateCustomRecipe(com.indian.nutrition.tracker.ui.AppUiTest)
+09-05 13:53:57.239  2350  2369 D IdlingRegistry: Registering idling resources: [androidx.compose.ui.test.EspressoLink@7bf06d7]
+09-05 13:53:57.241  2350  2369 W Settings: Setting always_finish_activities has moved from android.provider.Settings.System to android.provider.Settings.Global, returning read-only value.
+09-05 13:53:57.245   795   854 D SplashScreenView: Build android.window.SplashScreenView{cfc192 V.E...... ......ID 0,0-0,0}
+09-05 13:53:57.245   795   854 D SplashScreenView: Icon: view: null drawable: null size: 0
+09-05 13:53:57.245   795   854 D SplashScreenView: Branding: view: android.view.View{e5c1763 G.ED..... ......I. 0,0-0,0 #10204ef android:id/splashscreen_branding_view} drawable: null size w: 0 h: 0
+09-05 13:53:57.257  2350  2350 D LifecycleMonitor: Lifecycle status change: com.indian.nutrition.tracker.MainActivity@b5a63eb in: PRE_ON_CREATE
+09-05 13:53:57.257  2350  2350 V ActivityScenario: Activity lifecycle changed event received but ignored because the reported transition was not ON_CREATE while the last known transition was PRE_ON_CREATE
+09-05 13:53:57.263  2350  2350 D LifecycleMonitor: Lifecycle status change: com.indian.nutrition.tracker.MainActivity@b5a63eb in: CREATED
+09-05 13:53:57.263  2350  2350 V ActivityScenario: Update currentActivityStage to CREATED, currentActivity=com.indian.nutrition.tracker.MainActivity@b5a63eb
+09-05 13:53:57.263   390   390 I BpBinder: onLastStrongRef automatically unlinking death recipients: 
+09-05 13:53:57.264  2350  2350 D LifecycleMonitor: Lifecycle status change: com.indian.nutrition.tracker.MainActivity@b5a63eb in: STARTED
+09-05 13:53:57.264  2350  2350 V ActivityScenario: Update currentActivityStage to STARTED, currentActivity=com.indian.nutrition.tracker.MainActivity@b5a63eb
+09-05 13:53:57.265  2350  2350 D LifecycleMonitor: Lifecycle status change: com.indian.nutrition.tracker.MainActivity@b5a63eb in: RESUMED
+09-05 13:53:57.267  2350  2350 V ActivityScenario: Update currentActivityStage to RESUMED, currentActivity=com.indian.nutrition.tracker.MainActivity@b5a63eb
+09-05 13:53:57.272  2350  2350 D AutofillManager: Fill dialog is enabled:false, hints=[]
+09-05 13:53:57.346   507   524 W ziparchive: Unable to open '/data/app/~~2hySYnWP8S_gS-tgD6kA9w==/com.indian.nutrition.tracker-18zX24WwVa3BfeYio3Ss3g==/base.dm': No such file or directory
+09-05 13:53:57.346   507   524 I ActivityTaskManager: Displayed com.indian.nutrition.tracker/.MainActivity for user 0: +102ms
+09-05 13:53:57.354   795   853 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=falsecallback=android.view.ViewRootImpl$$ExternalSyntheticLambda17@7b880d5
+09-05 13:53:57.355   507  1527 W InputManager-JNI: Input channel object '898644a Splash Screen com.indian.nutrition.tracker (client)' was disposed without first being removed with the input manager!
+09-05 13:53:57.355  1044  1044 W FrameTracker: Missing SF jank callback for vsyncId: 3843, CUJ=J<LAUNCHER_APP_CLOSE_TO_HOME>
+09-05 13:53:57.355  1044  1044 W FrameTracker: Missing SF jank callback for vsyncId: 3960, CUJ=J<LAUNCHER_APP_CLOSE_TO_HOME>
+09-05 13:53:57.355  1044  1091 I ImeTracker: com.android.launcher3:8c377639: onRequestHide at ORIGIN_CLIENT_HIDE_SOFT_INPUT reason HIDE_SOFT_INPUT
+09-05 13:53:57.356   507   565 I ImeTracker: com.android.launcher3:8c377639: onCancelled at PHASE_SERVER_SHOULD_HIDE
+09-05 13:53:57.366   507   850 I ImeTracker: com.indian.nutrition.tracker:ee4e060b: onRequestHide at ORIGIN_SERVER_HIDE_INPUT reason HIDE_UNSPECIFIED_WINDOW
+09-05 13:53:57.366   507   850 I ImeTracker: com.indian.nutrition.tracker:ee4e060b: onCancelled at PHASE_SERVER_SHOULD_HIDE
+09-05 13:53:57.372   507  2448 W OpenGLRenderer: Failed to initialize 101010-2 format, error = EGL_SUCCESS
+09-05 13:53:57.522  2350  2350 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+09-05 13:53:57.522  2350  2350 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+09-05 13:53:58.008  2350  2350 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+09-05 13:53:58.008  2350  2350 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+09-05 13:53:58.139   507   520 I ImeTracker: com.indian.nutrition.tracker:f46d6cc6: onRequestHide at ORIGIN_SERVER_HIDE_INPUT reason HIDE_UNSPECIFIED_WINDOW
+09-05 13:53:58.139   507   520 I ImeTracker: com.indian.nutrition.tracker:f46d6cc6: onCancelled at PHASE_SERVER_SHOULD_HIDE
+09-05 13:53:58.232  2350  2350 I ImeTracker: com.indian.nutrition.tracker:ee84fa18: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT_BY_INSETS_API
+09-05 13:53:58.232  2350  2350 D InsetsController: show(ime(), fromIme=false)
+09-05 13:53:58.232  2350  2350 D InputMethodManager: showSoftInput() view=androidx.compose.ui.platform.AndroidComposeView{2441c66 VFED..... .F....ID 0,0-320,616 aid=1073741825} flags=0 reason=SHOW_SOFT_INPUT_BY_INSETS_API
+09-05 13:53:58.235  1364  1364 I LatinIME: Starting input. Cursor position = 0,0
+09-05 13:53:58.314  2350  2350 I ImeTracker: com.indian.nutrition.tracker:31f80cd8: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT
+09-05 13:53:58.315  2350  2350 D InputMethodManager: showSoftInput() view=androidx.compose.ui.platform.AndroidComposeView{2441c66 VFED..... .F....ID 0,0-320,616 aid=1073741825} flags=0 reason=SHOW_SOFT_INPUT
+09-05 13:53:58.337   507  1527 I ImeTracker: com.indian.nutrition.tracker:ee84fa18: onFailed at PHASE_WM_SHOW_IME_RUNNER
+09-05 13:53:58.338  2350  2350 D InsetsController: show(ime(), fromIme=true)
+09-05 13:53:58.368  2350  2350 I ImeTracker: com.indian.nutrition.tracker:31f80cd8: onShown
+09-05 13:53:58.540   507   520 I ImeTracker: com.indian.nutrition.tracker:caccf2d4: onRequestShow at ORIGIN_SERVER_START_INPUT reason ATTACH_NEW_INPUT
+09-05 13:53:58.540  2350  2350 I ImeTracker: com.indian.nutrition.tracker:63952579: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT_BY_INSETS_API
+09-05 13:53:58.540  2350  2350 D InsetsController: show(ime(), fromIme=false)
+09-05 13:53:58.540  2350  2350 I ImeTracker: com.indian.nutrition.tracker:63952579: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
+09-05 13:53:58.543  2350  2350 W RemoteInputConnectionImpl: getTextAfterCursor on inactive InputConnection
+09-05 13:53:58.544  2350  2350 I ImeTracker: com.indian.nutrition.tracker:65c527c0: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT
+09-05 13:53:58.544  2350  2350 D InputMethodManager: showSoftInput() view=androidx.compose.ui.platform.AndroidComposeView{2441c66 VFED..... .F...... 0,0-320,616 aid=1073741825} flags=0 reason=SHOW_SOFT_INPUT
+09-05 13:53:58.546  2350  2350 W RemoteInputConnectionImpl: getTextBeforeCursor on inactive InputConnection
+09-05 13:53:58.546  2350  2350 W RemoteInputConnectionImpl: getTextAfterCursor on inactive InputConnection
+09-05 13:53:58.547  1364  1364 I LatinIME: Starting input. Cursor position = 0,0
+09-05 13:53:58.555  2350  2350 D InsetsController: show(ime(), fromIme=true)
+09-05 13:53:58.555  2350  2350 I ImeTracker: com.indian.nutrition.tracker:caccf2d4: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
+09-05 13:53:58.555  2350  2350 D InsetsController: show(ime(), fromIme=true)
+09-05 13:53:58.556  2350  2350 I ImeTracker: com.indian.nutrition.tracker:65c527c0: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
+09-05 13:53:58.722   507   520 I ImeTracker: com.indian.nutrition.tracker:7610773d: onRequestShow at ORIGIN_SERVER_START_INPUT reason ATTACH_NEW_INPUT
+09-05 13:53:58.723  2350  2350 I ImeTracker: com.indian.nutrition.tracker:b4fd5e4f: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT_BY_INSETS_API
+09-05 13:53:58.723  2350  2350 D InsetsController: show(ime(), fromIme=false)
+09-05 13:53:58.723  1364  1364 I LatinIME: Starting input. Cursor position = 0,0
+09-05 13:53:58.724  2350  2350 I ImeTracker: com.indian.nutrition.tracker:b4fd5e4f: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
+09-05 13:53:58.730  2350  2350 I ImeTracker: com.indian.nutrition.tracker:14e21d28: onRequestShow at ORIGIN_CLIENT_SHOW_SOFT_INPUT reason SHOW_SOFT_INPUT
+09-05 13:53:58.730  2350  2350 D InputMethodManager: showSoftInput() view=androidx.compose.ui.platform.AndroidComposeView{2441c66 VFED..... .F...... 0,0-320,616 aid=1073741825} flags=0 reason=SHOW_SOFT_INPUT
+09-05 13:53:58.737  2350  2350 D InsetsController: show(ime(), fromIme=true)
+09-05 13:53:58.737  2350  2350 I ImeTracker: com.indian.nutrition.tracker:7610773d: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
+09-05 13:53:58.738  2350  2350 D InsetsController: show(ime(), fromIme=true)
+09-05 13:53:58.738  2350  2350 I ImeTracker: com.indian.nutrition.tracker:14e21d28: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
+09-05 13:53:58.803  2350  2350 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=falsecallback=ImeCallback=ImeOnBackInvokedCallback@223450073 Callback=android.window.IOnBackInvokedCallback$Stub$Proxy@d49d60e
+09-05 13:53:58.803  2350  2350 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=falsecallback=android.view.ViewRootImpl$$ExternalSyntheticLambda17@dfcfa6b
+09-05 13:53:58.820   507   520 W InputManager-JNI: Input channel object '5fb3c76 com.indian.nutrition.tracker/com.indian.nutrition.tracker.MainActivity (client)' was disposed without first being removed with the input manager!
+09-05 13:53:58.835   795   869 D EGL_emulation: app_time_stats: avg=164.64ms min=12.44ms max=720.49ms count=10
+09-05 13:53:58.855  2350  2350 I ImeTracker: com.indian.nutrition.tracker:d83ad5bd: onRequestHide at ORIGIN_CLIENT_HIDE_SOFT_INPUT reason HIDE_SOFT_INPUT
+09-05 13:53:58.855  2350  2350 I ImeTracker: com.indian.nutrition.tracker:d83ad5bd: onFailed at PHASE_CLIENT_VIEW_SERVED
+09-05 13:53:58.860   507   850 I ImeTracker: com.indian.nutrition.tracker:940e273: onRequestHide at ORIGIN_SERVER_HIDE_INPUT reason HIDE_UNSPECIFIED_WINDOW
+09-05 13:53:58.861   507   850 I ImeTracker: com.indian.nutrition.tracker:940e273: onFailed at PHASE_WM_HAS_IME_INSETS_CONTROL_TARGET
+09-05 13:53:58.862  2350  2376 D EGL_emulation: app_time_stats: avg=137.12ms min=2.84ms max=708.87ms count=11
+09-05 13:53:58.870  2350  2350 E ImeBackDispatcher: Ime callback not found. Ignoring unregisterReceivedCallback. callbackId: 223450073
+09-05 13:53:58.887   795   854 D SplashScreenView: Build android.window.SplashScreenView{ed6909f V.E...... ......ID 0,0-0,0}
+09-05 13:53:58.887   795   854 D SplashScreenView: Icon: view: null drawable: null size: 0
+09-05 13:53:58.887   795   854 D SplashScreenView: Branding: view: android.view.View{b6635ec G.ED..... ......I. 0,0-0,0 #10204ef android:id/splashscreen_branding_view} drawable: null size w: 0 h: 0
+09-05 13:53:58.890  2350  2350 D LifecycleMonitor: Lifecycle status change: com.indian.nutrition.tracker.MainActivity@b5a63eb in: PAUSED
+09-05 13:53:58.890  2350  2350 V ActivityScenario: Update currentActivityStage to PAUSED, currentActivity=com.indian.nutrition.tracker.MainActivity@b5a63eb
+09-05 13:53:58.896   390   390 I BpBinder: onLastStrongRef automatically unlinking death recipients: 
+09-05 13:53:58.921  2394  2412 W OpenGLRenderer: Failed to initialize 101010-2 format, error = EGL_SUCCESS
+09-05 13:53:58.923  2350  2455 D ProfileInstaller: Installing profile for com.indian.nutrition.tracker
+09-05 13:53:59.034   507   524 W ziparchive: Unable to open '/data/app/~~bOX-j7D-v5IOr6SCjU4R2g==/com.indian.nutrition.tracker.test-oELjWmUvu7bsviUR3Fsj3Q==/base.dm': No such file or directory
+09-05 13:53:59.034   507   524 I ActivityTaskManager: Displayed com.indian.nutrition.tracker.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity for user 0: +148ms
+09-05 13:53:59.047   390   390 I BpBinder: onLastStrongRef automatically unlinking death recipients: 
+09-05 13:53:59.050  2350  2350 D LifecycleMonitor: Lifecycle status change: com.indian.nutrition.tracker.MainActivity@b5a63eb in: STOPPED
+09-05 13:53:59.050  2350  2350 V ActivityScenario: Update currentActivityStage to STOPPED, currentActivity=com.indian.nutrition.tracker.MainActivity@b5a63eb
+09-05 13:53:59.059   795   853 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=falsecallback=android.view.ViewRootImpl$$ExternalSyntheticLambda17@facc316
+09-05 13:53:59.060   507   850 W InputManager-JNI: Input channel object '2478d1 Splash Screen com.indian.nutrition.tracker.test (client)' was disposed without first being removed with the input manager!
+09-05 13:53:59.086   507   565 I ImeTracker: com.android.launcher3:c14ef84b: onRequestHide at ORIGIN_SERVER_HIDE_INPUT reason HIDE_UNSPECIFIED_WINDOW
+09-05 13:53:59.086   507   565 I ImeTracker: com.android.launcher3:c14ef84b: onCancelled at PHASE_SERVER_SHOULD_HIDE
+09-05 13:53:59.101  2350  2350 D LifecycleMonitor: Lifecycle status change: com.indian.nutrition.tracker.MainActivity@b5a63eb in: DESTROYED
+09-05 13:53:59.101  2350  2350 V ActivityScenario: Update currentActivityStage to DESTROYED, currentActivity=null
+09-05 13:53:59.103  2350  2369 D IdlingRegistry: Unregistering idling resources: [androidx.compose.ui.test.EspressoLink@7bf06d7]
+09-05 13:53:59.111  2350  2350 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=falsecallback=android.view.ViewRootImpl$$ExternalSyntheticLambda17@d72d269
+09-05 13:53:59.112   507   850 W InputManager-JNI: Input channel object '33c1b33 com.indian.nutrition.tracker/com.indian.nutrition.tracker.MainActivity (client)' was disposed without first being removed with the input manager!
+09-05 13:53:59.113  2394  2394 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=falsecallback=android.view.ViewRootImpl$$ExternalSyntheticLambda17@92bf19d
+09-05 13:53:59.118   507  1185 W InputManager-JNI: Input channel object '27c7109 com.indian.nutrition.tracker.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity (client)' was disposed without first being removed with the input manager!
+09-05 13:53:59.119  2350  2369 I TestRunner: finished: test03_addFoodOpensSearchAndCanCreateCustomRecipe(com.indian.nutrition.tracker.ui.AppUiTest)

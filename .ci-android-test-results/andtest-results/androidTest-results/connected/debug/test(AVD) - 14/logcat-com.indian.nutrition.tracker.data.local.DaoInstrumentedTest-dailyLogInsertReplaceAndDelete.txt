@@ -1,2 +1,2 @@
-09-05 13:46:15.002  2360  2379 I TestRunner: started: dailyLogInsertReplaceAndDelete(com.indian.nutrition.tracker.data.local.DaoInstrumentedTest)
-09-05 13:46:15.156  2360  2379 I TestRunner: finished: dailyLogInsertReplaceAndDelete(com.indian.nutrition.tracker.data.local.DaoInstrumentedTest)
+09-05 13:53:53.951  2350  2369 I TestRunner: started: dailyLogInsertReplaceAndDelete(com.indian.nutrition.tracker.data.local.DaoInstrumentedTest)
+09-05 13:53:54.028  2350  2369 I TestRunner: finished: dailyLogInsertReplaceAndDelete(com.indian.nutrition.tracker.data.local.DaoInstrumentedTest)

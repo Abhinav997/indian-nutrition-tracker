@@ -66,14 +66,14 @@ _
 	at androidx.compose.ui.test.junit4.AndroidComposeTestRule.waitUntil(AndroidComposeTestRule.android.kt:306)
 	at com.indian.nutrition.tracker.ui.AppUiTest.waitForText(AppUiTest.kt:66)
 	at com.indian.nutrition.tracker.ui.AppUiTest.waitForText$default(AppUiTest.kt:65)
-	at com.indian.nutrition.tracker.ui.AppUiTest.test04_calculatorRendersProfileAndSavesTargets(AppUiTest.kt:159)
+	at com.indian.nutrition.tracker.ui.AppUiTest.test04_calculatorRendersProfileAndSavesTargets(AppUiTest.kt:167)
 java.lang.RuntimeExceptionœ
 java.lang.RuntimeException: androidx.compose.ui.test.ComposeTimeoutException: Condition still not satisfied after 20000 ms
 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$AndroidComposeUiTestImpl.waitUntil(ComposeUiTest.android.kt:441)
 	at androidx.compose.ui.test.junit4.AndroidComposeTestRule.waitUntil(AndroidComposeTestRule.android.kt:306)
 	at com.indian.nutrition.tracker.ui.AppUiTest.waitForText(AppUiTest.kt:66)
 	at com.indian.nutrition.tracker.ui.AppUiTest.waitForText$default(AppUiTest.kt:65)
-	at com.indian.nutrition.tracker.ui.AppUiTest.test04_calculatorRendersProfileAndSavesTargets(AppUiTest.kt:159)
+	at com.indian.nutrition.tracker.ui.AppUiTest.test04_calculatorRendersProfileAndSavesTargets(AppUiTest.kt:167)
 
 	at com.android.tools.androidtest.testengine.descriptor.AndroidDynamicTestDescriptor.execute(AndroidDynamicTestDescriptor.kt:68)
 	at com.android.tools.androidtest.testengine.descriptor.AndroidDynamicTestDescriptor.execute(AndroidDynamicTestDescriptor.kt:36)
