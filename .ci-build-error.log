@@ -65,42 +65,79 @@ WARNING: The property android.dependency.excludeLibraryComponentsFromConstraints
 To suppress this warning, add android.generateSyncIssueWhenLibraryConstraintsAreEnabled=false to gradle.properties
 Add android.sync.suppressAgpWarnings=LIBRARY_CONSTRAINTS_SHOULD_BE_DISABLED to the gradle.properties file to suppress this warning.
 
+> Task :app:checkKotlinGradlePluginConfigurationErrors SKIPPED
 > Task :app:preBuild UP-TO-DATE
 > Task :app:preDebugBuild UP-TO-DATE
-> Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
-> Task :app:checkKotlinGradlePluginConfigurationErrors SKIPPED
 > Task :app:generateDebugResValues
 > Task :app:generateDebugResources
 > Task :app:packageDebugResources
 > Task :app:processDebugNavigationResources
+<<<<<<< HEAD
 > Task :app:generateDebugAssets UP-TO-DATE
 > Task :app:javaPreCompileDebug
 > Task :app:parseDebugLocalResources
-> Task :app:mergeDebugAssets
-> Task :app:compressDebugAssets
-> Task :app:generateDebugRFile
-> Task :app:generateDebugGlobalSynthetics
-> Task :app:checkDebugDuplicateClasses
-> Task :app:desugarDebugFileDependencies
-> Task :app:mergeLibDexDebug
+=======
+> Task :app:javaPreCompileDebug
+> Task :app:parseDebugLocalResources
 > Task :app:checkDebugAarMetadata
 > Task :app:mapDebugSourceSetPaths
 > Task :app:compileDebugNavigationResources
+> Task :app:generateDebugRFile
 > Task :app:mergeDebugResources
 > Task :app:createDebugCompatibleScreenManifests
 > Task :app:extractDeepLinksDebug
 > Task :app:processDebugMainManifest
 > Task :app:processDebugManifest
+> Task :app:preDebugAndroidTestBuild SKIPPED
+> Task :app:generateDebugAndroidTestResValues
+> Task :app:generateDebugAndroidTestResources
+> Task :app:packageDebugAndroidTestResources
 > Task :app:processDebugManifestForPackage
+> Task :app:processDebugAndroidTestNavigationResources
+> Task :app:javaPreCompileDebugAndroidTest
+> Task :app:generateDebugAssets UP-TO-DATE
+> Task :app:parseDebugAndroidTestLocalResources
+>>>>>>> bff6f48 (ci: capture instrumented log [skip ci])
+> Task :app:mergeDebugAssets
+> Task :app:compressDebugAssets
 > Task :app:processDebugResources
+> Task :app:generateDebugGlobalSynthetics
+> Task :app:checkDebugDuplicateClasses
+> Task :app:desugarDebugFileDependencies
+> Task :app:mergeLibDexDebug
 > Task :app:mergeDebugJniLibFolders
 > Task :app:mergeDebugNativeLibs
 > Task :app:stripDebugDebugSymbols
 > Task :app:validateSigningDebug
 > Task :app:writeDebugAppMetadata
 > Task :app:writeDebugSigningConfigVersions
+<<<<<<< HEAD
 > Task :app:l8DexDesugarLibDebug
 > Task :app:kspDebugKotlin
+=======
+> Task :app:generateDebugAndroidTestAssets UP-TO-DATE
+> Task :app:mergeDebugAndroidTestAssets
+> Task :app:compressDebugAndroidTestAssets
+> Task :app:generateDebugAndroidTestGlobalSynthetics
+> Task :app:checkDebugAndroidTestDuplicateClasses
+> Task :app:desugarDebugAndroidTestFileDependencies
+> Task :app:mergeExtDexDebugAndroidTest
+> Task :app:mergeLibDexDebugAndroidTest
+> Task :app:checkDebugAndroidTestAarMetadata
+> Task :app:mapDebugAndroidTestSourceSetPaths
+> Task :app:compileDebugAndroidTestNavigationResources
+> Task :app:mergeDebugAndroidTestResources
+> Task :app:mergeDebugAndroidTestManifest
+> Task :app:processDebugAndroidTestManifest
+> Task :app:processDebugAndroidTestResources
+> Task :app:mergeDebugAndroidTestJniLibFolders
+> Task :app:mergeDebugAndroidTestNativeLibs NO-SOURCE
+> Task :app:stripDebugAndroidTestDebugSymbols NO-SOURCE
+> Task :app:validateSigningDebugAndroidTest
+> Task :app:writeDebugAndroidTestSigningConfigVersions
+> Task :app:kspDebugKotlin
+> Task :app:l8DexDesugarLibDebug
+>>>>>>> bff6f48 (ci: capture instrumented log [skip ci])
 > Task :app:mergeExtDexDebug
 
 > Task :app:compileDebugKotlin
@@ -109,9 +146,13 @@ e: file:///home/runner/work/indian-nutrition-tracker/indian-nutrition-tracker/ap
 e: file:///home/runner/work/indian-nutrition-tracker/indian-nutrition-tracker/app/src/main/java/com/indian/nutrition/tracker/ui/components/CustomFoodDialog.kt:196:39 Cannot access 'fun round1(value: Double): Double': it is private in file.
 e: file:///home/runner/work/indian-nutrition-tracker/indian-nutrition-tracker/app/src/main/java/com/indian/nutrition/tracker/ui/components/EditFoodLogSheet.kt:28:39 Unresolved reference 'KeyboardOptions'.
 e: file:///home/runner/work/indian-nutrition-tracker/indian-nutrition-tracker/app/src/main/java/com/indian/nutrition/tracker/ui/components/EditFoodLogSheet.kt:86:35 Unresolved reference 'KeyboardOptions'.
+<<<<<<< HEAD
 
 > Task :app:compileDebugKotlin FAILED
 gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/__run_2-1788628619386.json
+=======
+gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/__reactivecircus_android-emulator-runner-1788628689558.json
+>>>>>>> bff6f48 (ci: capture instrumented log [skip ci])
 
 [Incubating] Problems report is available at: file:///home/runner/work/indian-nutrition-tracker/indian-nutrition-tracker/build/reports/problems/problems-report.html
 
@@ -123,10 +164,15 @@ Execution failed for task ':app:compileDebugKotlin' (registered by plugin 'org.j
    > Compilation error. See log for more details
 
 * Try:
+<<<<<<< HEAD
+=======
+> Run with --stacktrace option to get the stack trace.
+>>>>>>> bff6f48 (ci: capture instrumented log [skip ci])
 > Run with --info or --debug option to get more log output.
 > Run with --scan to get full insights from a Build Scan (powered by Develocity).
 > Get more help at https://help.gradle.org.
 
+<<<<<<< HEAD
 * Exception is:
 org.gradle.api.tasks.TaskExecutionException: Execution failed for task ':app:compileDebugKotlin' (registered by plugin 'org.jetbrains.kotlin.android').
 	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.lambda$executeIfValid$1(ExecuteActionsTaskExecuter.java:135)
@@ -313,11 +359,18 @@ Caused by: org.jetbrains.kotlin.gradle.tasks.CompilationErrorException: Compilat
 	... 2 more
 
 
+=======
+>>>>>>> bff6f48 (ci: capture instrumented log [skip ci])
 Deprecated Gradle features were used in this build, making it incompatible with Gradle 10.
 
 You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
 
 For more on this, please refer to https://docs.gradle.org/9.7.1/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
 
+<<<<<<< HEAD
 BUILD FAILED in 49s
 33 actionable tasks: 33 executed
+=======
+BUILD FAILED in 59s
+57 actionable tasks: 57 executed
+>>>>>>> bff6f48 (ci: capture instrumented log [skip ci])
