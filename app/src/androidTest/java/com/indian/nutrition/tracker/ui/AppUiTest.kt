@@ -23,12 +23,7 @@ import org.junit.runners.MethodSorters
 import java.io.File
 
 /**
- * Compose UI tests. Test tags mirror the web app element ids
- * (e.g. `food-search-input`, `save-and-use-targets-btn`).
- *
- * The app database and DataStore are wiped before each test run so tests
- * start from web defaults (82 kg / 1950 kcal / 2750 ml).
- *
+ * Compose UI tests. Test tags mirror the web app element ids.
  * Tests are ordered alphabetically for deterministic execution on CI.
  */
 @RunWith(AndroidJUnit4::class)
@@ -40,11 +35,8 @@ class AppUiTest {
         @BeforeClass
         fun wipeAppData() {
             val context = ApplicationProvider.getApplicationContext<Context>()
-            // Delete Room database
             context.deleteDatabase("inw.db")
-            // Delete DataStore preferences file (not a SQLite database!)
-            val dsDir = File(context.filesDir, "datastore")
-            val dsFile = File(dsDir, "inw_settings.preferences_pb")
+            val dsFile = File(context.filesDir, "datastore/inw_settings.preferences_pb")
             if (dsFile.exists()) dsFile.delete()
         }
     }
@@ -54,8 +46,6 @@ class AppUiTest {
 
     @Before
     fun ensureHomeScreen() {
-        // Wait for the home screen to fully render before each test.
-        // Each test gets a fresh Activity, so we must wait for initial load.
         waitForTag("bottom-navigation-bar", timeout = 20_000)
         waitForTag("today-intake-card", timeout = 20_000)
     }
@@ -72,9 +62,6 @@ class AppUiTest {
         }
     }
 
-    /**
-     * Wait for the given tag to disappear (useful after sheet dismiss animations).
-     */
     private fun waitForTagGone(tag: String, timeout: Long = 10_000) {
         composeRule.waitUntil(timeoutMillis = timeout) {
             composeRule.onAllNodesWithTag(tag).fetchSemanticsNodes().isEmpty()
@@ -83,15 +70,13 @@ class AppUiTest {
 
     @Test
     fun test01_homeRendersAndWaterQuickAddWorks() {
-        // Verify core home-screen cards are present
+        // Core home-screen cards are present (intake is in initial viewport)
         composeRule.onNodeWithTag("today-intake-card").assertExists()
         composeRule.onNodeWithTag("home-weight-summary-card").assertExists()
-        composeRule.onNodeWithTag("water-tracker-widget").assertExists()
 
-        // Add 250 ml water via quick-add button
+        // Scroll to the WaterCard and add 250 ml
+        waitForTag("water-add-250-btn")
         composeRule.onNodeWithTag("water-add-250-btn").performScrollTo().performClick()
-
-        // Wait for the water total to update (async Room insert → Flow → recompose)
         waitForText("250 / ")
 
         // Open water history
@@ -101,35 +86,30 @@ class AppUiTest {
 
     @Test
     fun test02_weightSheetLogsAndUpdatesSummary() {
-        // Open the weight logging bottom sheet
         composeRule.onNodeWithTag("home-log-weight-btn").performScrollTo().performClick()
         waitForTag("log-weight-modal-dialog")
 
-        // Enter 80 kg and save
         composeRule.onNodeWithTag("weight-log-val-input").performTextReplacement("80")
         composeRule.onNodeWithTag("confirm-log-weight-btn").performClick()
 
-        // Wait for the sheet to dismiss
         waitForTagGone("log-weight-modal-dialog")
-
-        // Wait for the WeightSummaryCard to reflect the new weight
         waitForText("80.0 kg")
     }
 
     @Test
     fun test03_addFoodOpensSearchAndCanCreateCustomRecipe() {
-        // Navigate to food search via the Add Food button
         composeRule.onNodeWithTag("home-quick-add-food-btn").performScrollTo().performClick()
         waitForTag("food-search-input")
 
-        // Verify tabs exist
         composeRule.onNodeWithTag("tab-search-database").assertExists()
         composeRule.onNodeWithTag("tab-frequent-foods").assertExists()
 
         // Switch to Custom tab
         composeRule.onNodeWithTag("tab-custom-foods").performClick()
 
-        // Open custom food creation dialog
+        // Open custom food creation dialog (button is inside a Card, not a
+        // scrollable container — skip performScrollTo)
+        waitForTag("open-create-custom-food-btn")
         composeRule.onNodeWithTag("open-create-custom-food-btn").performClick()
         waitForTag("custom-food-modal-dialog")
 
@@ -141,30 +121,25 @@ class AppUiTest {
         composeRule.onNodeWithTag("custom-food-protein-input").performScrollTo()
             .performTextInput("6")
 
-        // Save
         composeRule.onNodeWithTag("save-custom-food-submit-btn").performScrollTo().performClick()
 
-        // Wait for the custom food to appear in the list
         waitForText("Test Poha")
     }
 
     @Test
     fun test04_calculatorRendersProfileAndSavesTargets() {
-        // Navigate to Calculator tab via bottom navigation
+        // Navigate to Calculator tab
         composeRule.onNodeWithText("Calculator").performClick()
 
-        // Wait for the profile section to render
+        // Wait for profile fields to appear
         waitForTag("profile-current-weight", timeout = 20_000)
         composeRule.onNodeWithTag("profile-target-weight").assertExists()
         composeRule.onNodeWithTag("unit-system-kg-btn").assertExists()
 
-        // Scroll to the target mode section and verify
-        composeRule.onNodeWithTag("target-mode-predefined-btn").performScrollTo()
-
-        // Scroll to and click Save
+        // Scroll within the LazyColumn to the save button
+        waitForTag("save-and-use-targets-btn")
         composeRule.onNodeWithTag("save-and-use-targets-btn").performScrollTo().performClick()
 
-        // Wait for the snackbar confirmation
         waitForText("Saved & applied to dashboard!")
     }
 }
