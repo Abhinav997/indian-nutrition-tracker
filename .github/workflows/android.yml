@@ -181,7 +181,9 @@ jobs:
           force-avd-creation: true
           emulator-options: -no-snapshot -no-window -gpu swiftshader_indirect -no-audio -no-boot-anim -camera-back none
           script: |
-            ./gradlew :app:connectedDebugAndroidTest 2>&1 | tee /tmp/gradle-instr.log || true
+            set -o pipefail
+            GRADLE_RC=0
+            ./gradlew :app:connectedDebugAndroidTest 2>&1 | tee /tmp/gradle-instr.log || GRADLE_RC=$?
             echo "" >> /tmp/gradle-instr.log
             echo "=== TEST RESULT XML ===" >> /tmp/gradle-instr.log
             find app/build/outputs/androidTest-results -name "*.xml" -exec cat {} \; >> /tmp/gradle-instr.log 2>/dev/null || true
@@ -192,7 +194,7 @@ jobs:
             mkdir -p /tmp/andtest-results
             cp -r app/build/outputs/androidTest-results /tmp/andtest-results/ 2>/dev/null || true
             cp -r app/build/reports/androidTests/connected/debug /tmp/andtest-results/report 2>/dev/null || true
-            exit 1
+            exit $GRADLE_RC
 
       - name: Capture instrumentation log (on failure)
         if: failure()
