@@ -1,0 +1,2 @@
+rootProject.name = "indian-nutrition-tracker"
+include ':app'

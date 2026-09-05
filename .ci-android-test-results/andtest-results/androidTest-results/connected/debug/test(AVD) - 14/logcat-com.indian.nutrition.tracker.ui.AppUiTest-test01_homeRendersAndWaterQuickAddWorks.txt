@@ -1,0 +1,113 @@
+09-05 14:06:13.195  2381  2401 I TestRunner: started: test01_homeRendersAndWaterQuickAddWorks(com.indian.nutrition.tracker.ui.AppUiTest)
+09-05 14:06:13.209  2381  2401 I Tracing : Tracer added: class androidx.test.platform.tracing.AndroidXTracer
+09-05 14:06:13.216  2381  2381 W trition.tracker: Accessing hidden method Landroid/os/MessageQueue;->next()Landroid/os/Message; (unsupported, reflection, allowed)
+09-05 14:06:13.216  2381  2381 W trition.tracker: Accessing hidden field Landroid/os/MessageQueue;->mMessages:Landroid/os/Message; (unsupported, reflection, allowed)
+09-05 14:06:13.216  2381  2381 W trition.tracker: Accessing hidden method Landroid/os/Message;->recycleUnchecked()V (unsupported, reflection, allowed)
+09-05 14:06:13.217  2381  2401 D IdlingRegistry: Registering idling resources: [androidx.compose.ui.test.EspressoLink@585f934]
+09-05 14:06:13.227  2381  2401 W Settings: Setting always_finish_activities has moved from android.provider.Settings.System to android.provider.Settings.Global, returning read-only value.
+09-05 14:06:13.241   801   853 D SplashScreenView: Build android.window.SplashScreenView{77917fb V.E...... ......ID 0,0-0,0}
+09-05 14:06:13.241   801   853 D SplashScreenView: Icon: view: null drawable: null size: 0
+09-05 14:06:13.241   801   853 D SplashScreenView: Branding: view: android.view.View{affe018 G.ED..... ......I. 0,0-0,0 #10204ef android:id/splashscreen_branding_view} drawable: null size w: 0 h: 0
+09-05 14:06:13.258  2381  2411 D libEGL  : loaded /vendor/lib64/egl/libEGL_emulation.so
+09-05 14:06:13.259   388   388 I BpBinder: onLastStrongRef automatically unlinking death recipients: 
+09-05 14:06:13.268  2381  2411 D libEGL  : loaded /vendor/lib64/egl/libGLESv1_CM_emulation.so
+09-05 14:06:13.270  2381  2411 D libEGL  : loaded /vendor/lib64/egl/libGLESv2_emulation.so
+09-05 14:06:13.274  2381  2381 D LifecycleMonitor: Lifecycle status change: com.indian.nutrition.tracker.MainActivity@ca69dcd in: PRE_ON_CREATE
+09-05 14:06:13.274  2381  2381 V ActivityScenario: Activity lifecycle changed event received but ignored because the reported transition was not ON_CREATE while the last known transition was PRE_ON_CREATE
+09-05 14:06:13.280  1026  1660 D EGL_emulation: app_time_stats: avg=35191.05ms min=55.49ms max=210595.53ms count=6
+09-05 14:06:13.300  2381  2381 D LifecycleMonitor: Lifecycle status change: com.indian.nutrition.tracker.MainActivity@ca69dcd in: CREATED
+09-05 14:06:13.301  2381  2381 V ActivityScenario: Update currentActivityStage to CREATED, currentActivity=com.indian.nutrition.tracker.MainActivity@ca69dcd
+09-05 14:06:13.302  2381  2381 D LifecycleMonitor: Lifecycle status change: com.indian.nutrition.tracker.MainActivity@ca69dcd in: STARTED
+09-05 14:06:13.302  2381  2381 V ActivityScenario: Update currentActivityStage to STARTED, currentActivity=com.indian.nutrition.tracker.MainActivity@ca69dcd
+09-05 14:06:13.304  2381  2381 D LifecycleMonitor: Lifecycle status change: com.indian.nutrition.tracker.MainActivity@ca69dcd in: RESUMED
+09-05 14:06:13.304  2381  2381 V ActivityScenario: Update currentActivityStage to RESUMED, currentActivity=com.indian.nutrition.tracker.MainActivity@ca69dcd
+09-05 14:06:13.306  2381  2381 D CompatibilityChangeReporter: Compat change id reported: 237531167; UID 10141; state: DISABLED
+09-05 14:06:13.307  2381  2381 W OpenGLRenderer: Unknown dataspace 0
+09-05 14:06:13.444   801   858 D EGL_emulation: app_time_stats: avg=7931.59ms min=7931.59ms max=7931.59ms count=1
+09-05 14:06:13.698   388   400 W ServiceManagerCppClient: Permission failure: android.permission.ROTATE_SURFACE_FLINGER from uid=10141 pid=0
+09-05 14:06:13.698   388   400 D PermissionCache: checking android.permission.ROTATE_SURFACE_FLINGER for uid=10141 => denied (147 us)
+09-05 14:06:13.698   388   400 W ServiceManagerCppClient: Permission failure: android.permission.INTERNAL_SYSTEM_WINDOW from uid=10141 pid=0
+09-05 14:06:13.698   388   400 D PermissionCache: checking android.permission.INTERNAL_SYSTEM_WINDOW for uid=10141 => denied (108 us)
+09-05 14:06:13.698   388   400 W ServiceManagerCppClient: Permission failure: android.permission.ACCESS_SURFACE_FLINGER from uid=10141 pid=0
+09-05 14:06:13.698   388   400 D PermissionCache: checking android.permission.ACCESS_SURFACE_FLINGER for uid=10141 => denied (84 us)
+09-05 14:06:13.704  2381  2409 W OpenGLRenderer: Failed to initialize 101010-2 format, error = EGL_SUCCESS
+09-05 14:06:13.717   133   133 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device VINTF manifest.
+09-05 14:06:13.717  2381  2409 I Gralloc4: mapper 4.x is not supported
+09-05 14:06:14.013   504   517 W ServiceManagerCppClient: Permission failure: android.permission.ROTATE_SURFACE_FLINGER from uid=10141 pid=0
+09-05 14:06:14.013   504   517 D PermissionCache: checking android.permission.ROTATE_SURFACE_FLINGER for uid=10141 => denied (168 us)
+09-05 14:06:14.013   504   517 W ServiceManagerCppClient: Permission failure: android.permission.INTERNAL_SYSTEM_WINDOW from uid=10141 pid=0
+09-05 14:06:14.013   504   517 D PermissionCache: checking android.permission.INTERNAL_SYSTEM_WINDOW for uid=10141 => denied (19 us)
+09-05 14:06:14.013   504   517 W ServiceManagerCppClient: Permission failure: android.permission.ACCESS_SURFACE_FLINGER from uid=10141 pid=0
+09-05 14:06:14.013   504   517 D PermissionCache: checking android.permission.ACCESS_SURFACE_FLINGER for uid=10141 => denied (11 us)
+09-05 14:06:14.015  2381  2381 I Choreographer: Skipped 41 frames!  The application may be doing too much work on its main thread.
+09-05 14:06:14.018   504   523 W ziparchive: Unable to open '/data/app/~~SKihUqpJMKqARAmfFGsPbQ==/com.indian.nutrition.tracker-ThL8JZoEplJTZPDJrE3QJw==/base.dm': No such file or directory
+09-05 14:06:14.019   504   523 I ActivityTaskManager: Displayed com.indian.nutrition.tracker/.MainActivity for user 0: +786ms
+09-05 14:06:14.029   801   848 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=falsecallback=android.view.ViewRootImpl$$ExternalSyntheticLambda17@6c83be2
+09-05 14:06:14.030  1026  1086 I ImeTracker: com.android.launcher3:af25d52d: onRequestHide at ORIGIN_CLIENT_HIDE_SOFT_INPUT reason HIDE_SOFT_INPUT
+09-05 14:06:14.030  2381  2395 I OpenGLRenderer: Davey! duration=716ms; Flags=1, FrameTimelineVsyncId=2697, IntendedVsync=243925250627, Vsync=243925250627, InputEventId=0, HandleInputStart=243932768515, AnimationStart=243932773915, PerformTraversalsStart=243932777231, DrawStart=244356947779, FrameDeadline=243941917293, FrameInterval=243932655344, FrameStartTime=16666666, SyncQueued=244367906513, SyncStart=244368094417, IssueDrawCommandsStart=244368420294, SwapBuffers=244488664224, FrameCompleted=244642119533, DequeueBufferDuration=3807, QueueBufferDuration=322702, GpuCompleted=244642119533, SwapBuffersCompleted=244628988403, DisplayPresentTime=0, CommandSubmissionCompleted=244488664224, 
+09-05 14:06:14.030   504  1753 I ImeTracker: com.android.launcher3:af25d52d: onCancelled at PHASE_SERVER_SHOULD_HIDE
+09-05 14:06:14.031   504   517 W InputManager-JNI: Input channel object 'f616327 Splash Screen com.indian.nutrition.tracker (client)' was disposed without first being removed with the input manager!
+09-05 14:06:14.034   504   517 I ImeTracker: com.indian.nutrition.tracker:d84c9b9b: onRequestHide at ORIGIN_SERVER_HIDE_INPUT reason HIDE_UNSPECIFIED_WINDOW
+09-05 14:06:14.034   504   517 I ImeTracker: com.indian.nutrition.tracker:d84c9b9b: onCancelled at PHASE_SERVER_SHOULD_HIDE
+09-05 14:06:15.008   801   853 D SplashScreenView: Build android.window.SplashScreenView{c5b5342 V.E...... ......ID 0,0-0,0}
+09-05 14:06:15.008   801   853 D SplashScreenView: Icon: view: null drawable: null size: 0
+09-05 14:06:15.008   801   853 D SplashScreenView: Branding: view: android.view.View{d4cbf53 G.ED..... ......I. 0,0-0,0 #10204ef android:id/splashscreen_branding_view} drawable: null size w: 0 h: 0
+09-05 14:06:15.017  2381  2381 D LifecycleMonitor: Lifecycle status change: com.indian.nutrition.tracker.MainActivity@ca69dcd in: PAUSED
+09-05 14:06:15.017  2381  2381 V ActivityScenario: Update currentActivityStage to PAUSED, currentActivity=com.indian.nutrition.tracker.MainActivity@ca69dcd
+09-05 14:06:15.021   326   326 D Zygote  : Forked child process 2424
+09-05 14:06:15.025   388   388 I BpBinder: onLastStrongRef automatically unlinking death recipients: 
+09-05 14:06:15.046  2424  2424 I on.tracker.test: Late-enabling -Xcheck:jni
+09-05 14:06:15.048   388   596 D PermissionCache: checking android.permission.READ_FRAME_BUFFER for uid=1000 => granted (445 us)
+09-05 14:06:15.055  2424  2424 I on.tracker.test: Using CollectorTypeCC GC.
+09-05 14:06:15.055  2424  2424 W on.tracker.test: Unexpected CPU variant for x86: x86_64.
+09-05 14:06:15.055  2424  2424 W on.tracker.test: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, tremont, kabylake, default
+09-05 14:06:15.058   403   417 I adbd    : jdwp connection from 2424
+09-05 14:06:15.067   133   133 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device VINTF manifest.
+09-05 14:06:15.067   504  1912 I Gralloc4: mapper 4.x is not supported
+09-05 14:06:15.102   504  2439 W OpenGLRenderer: Failed to initialize 101010-2 format, error = EGL_SUCCESS
+09-05 14:06:15.112  2424  2424 D CompatibilityChangeReporter: Compat change id reported: 171979766; UID 10142; state: ENABLED
+09-05 14:06:15.113  2424  2424 D CompatibilityChangeReporter: Compat change id reported: 242716250; UID 10142; state: ENABLED
+09-05 14:06:15.122  2424  2424 W ziparchive: Unable to open '/data/app/~~2rojRIjNAlYOo1NLkSISNQ==/com.indian.nutrition.tracker.test-AzZhu7F9v2WGj20scBUbQg==/base.dm': No such file or directory
+09-05 14:06:15.122  2424  2424 W ziparchive: Unable to open '/data/app/~~2rojRIjNAlYOo1NLkSISNQ==/com.indian.nutrition.tracker.test-AzZhu7F9v2WGj20scBUbQg==/base.dm': No such file or directory
+09-05 14:06:15.202  2424  2424 D nativeloader: Configuring clns-6 for other apk /data/app/~~2rojRIjNAlYOo1NLkSISNQ==/com.indian.nutrition.tracker.test-AzZhu7F9v2WGj20scBUbQg==/base.apk. target_sdk_version=36, uses_libraries=, library_path=/data/app/~~2rojRIjNAlYOo1NLkSISNQ==/com.indian.nutrition.tracker.test-AzZhu7F9v2WGj20scBUbQg==/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.indian.nutrition.tracker.test
+09-05 14:06:15.209  2424  2424 V GraphicsEnvironment: Currently set values for:
+09-05 14:06:15.209  2424  2424 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[]
+09-05 14:06:15.209  2424  2424 V GraphicsEnvironment:   angle_gl_driver_selection_values=[]
+09-05 14:06:15.209  2424  2424 V GraphicsEnvironment: ANGLE GameManagerService for com.indian.nutrition.tracker.test: false
+09-05 14:06:15.209  2424  2424 V GraphicsEnvironment: com.indian.nutrition.tracker.test is not listed in per-application setting
+09-05 14:06:15.209  2424  2424 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+09-05 14:06:15.220  2424  2445 D libEGL  : loaded /vendor/lib64/egl/libEGL_emulation.so
+09-05 14:06:15.222  2424  2445 D libEGL  : loaded /vendor/lib64/egl/libGLESv1_CM_emulation.so
+09-05 14:06:15.225  2424  2445 D libEGL  : loaded /vendor/lib64/egl/libGLESv2_emulation.so
+09-05 14:06:15.239  2424  2424 D CompatibilityChangeReporter: Compat change id reported: 237531167; UID 10142; state: DISABLED
+09-05 14:06:15.241  2424  2424 W OpenGLRenderer: Unknown dataspace 0
+09-05 14:06:15.249  2381  2381 D LifecycleMonitor: Lifecycle status change: com.indian.nutrition.tracker.MainActivity@ca69dcd in: STOPPED
+09-05 14:06:15.249  2381  2381 V ActivityScenario: Update currentActivityStage to STOPPED, currentActivity=com.indian.nutrition.tracker.MainActivity@ca69dcd
+09-05 14:06:15.263   388   399 W ServiceManagerCppClient: Permission failure: android.permission.ROTATE_SURFACE_FLINGER from uid=10142 pid=0
+09-05 14:06:15.263   388   597 W ServiceManagerCppClient: Permission failure: android.permission.ROTATE_SURFACE_FLINGER from uid=10142 pid=2424
+09-05 14:06:15.263   388   597 D PermissionCache: checking android.permission.ROTATE_SURFACE_FLINGER for uid=10142 => denied (79 us)
+09-05 14:06:15.263   388   399 D PermissionCache: checking android.permission.ROTATE_SURFACE_FLINGER for uid=10142 => denied (266 us)
+09-05 14:06:15.264   388   399 W ServiceManagerCppClient: Permission failure: android.permission.INTERNAL_SYSTEM_WINDOW from uid=10142 pid=0
+09-05 14:06:15.264   388   597 W ServiceManagerCppClient: Permission failure: android.permission.INTERNAL_SYSTEM_WINDOW from uid=10142 pid=2424
+09-05 14:06:15.264   388   399 D PermissionCache: checking android.permission.INTERNAL_SYSTEM_WINDOW for uid=10142 => denied (843 us)
+09-05 14:06:15.264   388   597 D PermissionCache: checking android.permission.INTERNAL_SYSTEM_WINDOW for uid=10142 => denied (847 us)
+09-05 14:06:15.265   388   597 W ServiceManagerCppClient: Permission failure: android.permission.ACCESS_SURFACE_FLINGER from uid=10142 pid=2424
+09-05 14:06:15.265   388   597 D PermissionCache: checking android.permission.ACCESS_SURFACE_FLINGER for uid=10142 => denied (679 us)
+09-05 14:06:15.269  2424  2443 W OpenGLRenderer: Failed to initialize 101010-2 format, error = EGL_SUCCESS
+09-05 14:06:15.269   388   399 W ServiceManagerCppClient: Permission failure: android.permission.ACCESS_SURFACE_FLINGER from uid=10142 pid=0
+09-05 14:06:15.269   388   399 D PermissionCache: checking android.permission.ACCESS_SURFACE_FLINGER for uid=10142 => denied (4959 us)
+09-05 14:06:15.275   388   388 I BpBinder: onLastStrongRef automatically unlinking death recipients: 
+09-05 14:06:15.283   133   133 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device VINTF manifest.
+09-05 14:06:15.283  2424  2443 I Gralloc4: mapper 4.x is not supported
+09-05 14:06:15.323  2381  2381 D LifecycleMonitor: Lifecycle status change: com.indian.nutrition.tracker.MainActivity@ca69dcd in: DESTROYED
+09-05 14:06:15.324  2381  2381 V ActivityScenario: Update currentActivityStage to DESTROYED, currentActivity=null
+09-05 14:06:15.325  2381  2381 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=falsecallback=android.view.ViewRootImpl$$ExternalSyntheticLambda17@74e38e4
+09-05 14:06:15.330  2381  2401 D IdlingRegistry: Unregistering idling resources: [androidx.compose.ui.test.EspressoLink@585f934]
+09-05 14:06:15.471   504  1912 W InputManager-JNI: Input channel object 'ea6e870 com.indian.nutrition.tracker/com.indian.nutrition.tracker.MainActivity (client)' was disposed without first being removed with the input manager!
+09-05 14:06:15.472   504  2304 W ServiceManagerCppClient: Permission failure: android.permission.ROTATE_SURFACE_FLINGER from uid=10142 pid=0
+09-05 14:06:15.473   504  2304 D PermissionCache: checking android.permission.ROTATE_SURFACE_FLINGER for uid=10142 => denied (914 us)
+09-05 14:06:15.473   504  2304 W ServiceManagerCppClient: Permission failure: android.permission.INTERNAL_SYSTEM_WINDOW from uid=10142 pid=0
+09-05 14:06:15.473   504  2304 D PermissionCache: checking android.permission.INTERNAL_SYSTEM_WINDOW for uid=10142 => denied (157 us)
+09-05 14:06:15.473   504  2304 W ServiceManagerCppClient: Permission failure: android.permission.ACCESS_SURFACE_FLINGER from uid=10142 pid=0
+09-05 14:06:15.473   504  2304 D PermissionCache: checking android.permission.ACCESS_SURFACE_FLINGER for uid=10142 => denied (111 us)
+09-05 14:06:15.481  2381  2401 I TestRunner: finished: test01_homeRendersAndWaterQuickAddWorks(com.indian.nutrition.tracker.ui.AppUiTest)

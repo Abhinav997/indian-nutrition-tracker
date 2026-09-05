@@ -1,0 +1,2 @@
+09-05 12:20:59.809  2351  2370 I TestRunner: started: customFoodInsertUpdateAndClear(com.indian.nutrition.tracker.data.local.DaoInstrumentedTest)
+09-05 12:20:59.843  2351  2370 I TestRunner: finished: customFoodInsertUpdateAndClear(com.indian.nutrition.tracker.data.local.DaoInstrumentedTest)

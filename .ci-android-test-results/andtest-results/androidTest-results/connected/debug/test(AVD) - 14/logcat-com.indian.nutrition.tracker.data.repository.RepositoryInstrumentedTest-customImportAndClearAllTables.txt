@@ -1,0 +1,2 @@
+09-05 14:06:13.055  2381  2401 I TestRunner: started: customImportAndClearAllTables(com.indian.nutrition.tracker.data.repository.RepositoryInstrumentedTest)
+09-05 14:06:13.140  2381  2401 I TestRunner: finished: customImportAndClearAllTables(com.indian.nutrition.tracker.data.repository.RepositoryInstrumentedTest)

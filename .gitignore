@@ -1,8 +1,20 @@
-node_modules/
+# Gradle
+.gradle/
 build/
-dist/
-coverage/
+local.properties
+
+# Android Studio / IDE
+.idea/
+*.iml
+captures/
+*.hprof
+
+# Generated / build outputs
+*.apk
+*.aab
+*.class
+
+# OS & logs
 .DS_Store
 *.log
-.env*
-!.env.example
+

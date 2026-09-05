@@ -1,6 +1,0 @@
-{
-  "name": "Indian Nutrition & Weight Tracker",
-  "description": "Personal calorie, protein, and weight tracker optimized for Indian foods with NIN/IFCT database, Open Food Facts, and Mifflin-St Jeor target calculator.",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
-}
