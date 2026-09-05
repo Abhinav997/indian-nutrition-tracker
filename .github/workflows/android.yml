@@ -181,8 +181,9 @@ jobs:
           force-avd-creation: true
           emulator-options: -no-snapshot -no-window -gpu swiftshader_indirect -no-audio -no-boot-anim -camera-back none
           script: |
-            ./gradlew :app:connectedDebugAndroidTest 2>&1 | tee /tmp/gradle-instr.log
-            GRADLE_RC=${PIPESTATUS[0]}
+            ./gradlew :app:connectedDebugAndroidTest > /tmp/gradle-instr.log 2>&1
+            GRADLE_RC=$?
+            cat /tmp/gradle-instr.log
             echo "" >> /tmp/gradle-instr.log
             echo "=== TEST RESULT XML ===" >> /tmp/gradle-instr.log
             find app/build/outputs/androidTest-results -name "*.xml" -exec cat {} \; >> /tmp/gradle-instr.log 2>/dev/null || true
