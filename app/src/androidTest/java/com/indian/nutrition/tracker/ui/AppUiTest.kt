@@ -1,7 +1,6 @@
 package com.indian.nutrition.tracker.ui
 
 import android.content.Context
-import androidx.compose.ui.test.assertExists
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import androidx.compose.ui.test.onAllNodesWithTag
 import androidx.compose.ui.test.onAllNodesWithText
