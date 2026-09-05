@@ -124,8 +124,8 @@ class ChartMathTest {
         val kcalMap = mapOf(d(0) to 2100.0, d(1) to 1800.0)
         val dates = ChartMath.rangeDates(DateRange.D7, today)
         val avg = ChartMath.average(kcalMap, dates, 0)
-        assertEquals(557, avg)
-        assertEquals(0, ChartMath.average(emptyMap(), dates, 0))
+        assertEquals(557.0, avg, 0.001)
+        assertEquals(0.0, ChartMath.average(emptyMap(), dates, 0), 0.001)
     }
 
     @Test
