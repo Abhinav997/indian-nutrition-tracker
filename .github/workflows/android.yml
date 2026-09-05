@@ -181,13 +181,11 @@ jobs:
           force-avd-creation: true
           emulator-options: -no-snapshot -no-window -gpu swiftshader_indirect -no-audio -no-boot-anim -camera-back none
           script: |
-            set +e
-            ./gradlew :app:connectedDebugAndroidTest 2>&1 | tee /tmp/gradle-instr.log
-            TEST_EXIT=${PIPESTATUS[0]}
-            # Append test results to the gradle log so it gets captured
+            ./gradlew :app:connectedDebugAndroidTest 2>&1 | tee /tmp/gradle-instr.log || true
             echo "" >> /tmp/gradle-instr.log
             echo "=== TEST RESULT XML ===" >> /tmp/gradle-instr.log
-            find app/build/outputs/androidTest-results -name "*.xml" -print0 2>/dev/null | while IFS= read -r -d '' f; do
+            find app/build/outputs/androidTest-results -name "*.xml" 2>/dev/null >> /tmp/gradle-instr.log
+            for f in $(find app/build/outputs/androidTest-results -name "*.xml" 2>/dev/null); do
               echo "--- $f ---" >> /tmp/gradle-instr.log
               cat "$f" >> /tmp/gradle-instr.log
             done
@@ -198,7 +196,7 @@ jobs:
             mkdir -p /tmp/andtest-results
             cp -r app/build/outputs/androidTest-results /tmp/andtest-results/ 2>/dev/null || true
             cp -r app/build/reports/androidTests/connected/debug /tmp/andtest-results/report 2>/dev/null || true
-            exit ${TEST_EXIT}
+            exit 1
 
       - name: Capture instrumentation log (on failure)
         if: failure()
