@@ -36,6 +36,7 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
@@ -465,23 +466,26 @@ private fun ProfileCard(
                             selected = unitSystem == u,
                             onClick = { onUnitToggle(u) },
                             label = { Text(u.name.lowercase()) },
+                            modifier = Modifier.testTag(
+                                if (u == UnitSystem.KG) "unit-system-kg-btn" else "unit-system-lb-btn",
+                            ),
                         )
                     }
                 }
             }
 
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.fillMaxWidth()) {
-                NumberField("Current Weight (${unitSystem.name.lowercase()})", currentWeight, onCurrentWeight, Modifier.weight(1f))
-                NumberField("Target Weight (${unitSystem.name.lowercase()})", targetWeight, onTargetWeight, Modifier.weight(1f))
+                NumberField("Current Weight (${unitSystem.name.lowercase()})", currentWeight, onCurrentWeight, Modifier.weight(1f), tag = "profile-current-weight")
+                NumberField("Target Weight (${unitSystem.name.lowercase()})", targetWeight, onTargetWeight, Modifier.weight(1f), tag = "profile-target-weight")
             }
 
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.fillMaxWidth()) {
-                NumberField("Height (cm)", heightCm, onHeight, Modifier.weight(1f))
-                NumberField("Age (years)", ageYears, onAge, Modifier.weight(1f))
+                NumberField("Height (cm)", heightCm, onHeight, Modifier.weight(1f), tag = "profile-height-cm")
+                NumberField("Age (years)", ageYears, onAge, Modifier.weight(1f), tag = "profile-age-years")
             }
 
             SectionLabel("Biological Sex")
-            ChipRow(Sex.entries.map { it.name to sexLabel(it) }, sex, onSex)
+            ChipRow(Sex.entries.map { it.name to sexLabel(it) }, sex, onSex, tag = "profile-sex-select")
 
             SectionLabel("Activity Level (TDEE Multiplier)")
             ChipRow(
@@ -491,10 +495,11 @@ private fun ProfileCard(
                 },
                 activity,
                 onActivity,
+                tag = "profile-activity-level-select",
             )
 
             SectionLabel("Goal Strategy")
-            ChipRow(GoalType.entries.map { it.name to it.name }, goal, { onGoal(GoalType.valueOf(it)) })
+            ChipRow(GoalType.entries.map { it.name to it.name }, goal, { onGoal(GoalType.valueOf(it)) }, tag = "profile-goal-rate-select")
 
             SectionLabel("Rate of Change (${unitSystem.name.lowercase()}/wk)")
             val rates = when (GoalType.valueOf(goal)) {
@@ -506,6 +511,7 @@ private fun ProfileCard(
                 rates.map { it.toString() to "${it} kg/wk" },
                 goalRate.toString(),
                 { onGoalRate(it.toDouble()) },
+                tag = "profile-goal-rate-values",
             )
 
             SectionLabel("Protein Target Basis")
@@ -536,11 +542,13 @@ private fun ChipRow(
     options: List<Pair<String, String>>,
     selected: String,
     onSelect: (String) -> Unit,
+    tag: String? = null,
 ) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .horizontalScroll(rememberScrollState()),
+            .horizontalScroll(rememberScrollState())
+            .let { if (tag != null) it.testTag(tag) else it },
         horizontalArrangement = Arrangement.spacedBy(6.dp),
     ) {
         options.forEach { (value, label) ->
@@ -559,6 +567,7 @@ private fun NumberField(
     value: String,
     onChange: (String) -> Unit,
     modifier: Modifier = Modifier,
+    tag: String? = null,
 ) {
     OutlinedTextField(
         value = value,
@@ -566,7 +575,7 @@ private fun NumberField(
         label = { Text(label) },
         singleLine = true,
         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal),
-        modifier = modifier,
+        modifier = if (tag != null) modifier.testTag(tag) else modifier,
     )
 }
 
@@ -591,9 +600,11 @@ private fun ResultsCard(
 
             Row(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
                 FilterChip(selected = !customMode, onClick = { onModeChange(false) },
-                    label = { Text("Pre-defined (Auto Formula)") })
+                    label = { Text("Pre-defined (Auto Formula)") },
+                    modifier = Modifier.testTag("target-mode-predefined-btn"))
                 FilterChip(selected = customMode, onClick = { onModeChange(true) },
-                    label = { Text("Custom Manual Targets") })
+                    label = { Text("Custom Manual Targets") },
+                    modifier = Modifier.testTag("target-mode-custom-btn"))
             }
 
             if (!customMode) {
@@ -634,7 +645,7 @@ private fun ResultsCard(
                 )
             }
 
-            Button(onClick = onSave, modifier = Modifier.fillMaxWidth()) {
+            Button(onClick = onSave, modifier = Modifier.fillMaxWidth().testTag("save-and-use-targets-btn")) {
                 Text("Save & Use These Targets")
             }
         }
@@ -680,12 +691,24 @@ private fun DataManagementCard(
             Text("Data Management & Export", style = MaterialTheme.typography.titleSmall, fontWeight = FontWeight.Bold)
             NumberField("Days to export (0 = all)", exportDays, onExportDays, Modifier.fillMaxWidth())
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.fillMaxWidth()) {
-                OutlinedButton(onClick = onExportCsv, modifier = Modifier.weight(1f)) { Text("Export CSV") }
-                OutlinedButton(onClick = onExportJson, modifier = Modifier.weight(1f)) { Text("Backup JSON") }
+                OutlinedButton(
+                    onClick = onExportCsv,
+                    modifier = Modifier.weight(1f).testTag("export-csv-btn"),
+                ) { Text("Export CSV") }
+                OutlinedButton(
+                    onClick = onExportJson,
+                    modifier = Modifier.weight(1f).testTag("export-json-btn"),
+                ) { Text("Backup JSON") }
             }
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.fillMaxWidth()) {
-                OutlinedButton(onClick = onImportJson, modifier = Modifier.weight(1f)) { Text("Import JSON") }
-                OutlinedButton(onClick = onClearLogs, modifier = Modifier.weight(1f)) { Text("Reset to 0") }
+                OutlinedButton(
+                    onClick = onImportJson,
+                    modifier = Modifier.weight(1f).testTag("import-json-btn"),
+                ) { Text("Import JSON") }
+                OutlinedButton(
+                    onClick = onClearLogs,
+                    modifier = Modifier.weight(1f).testTag("clear-all-logs-zero-btn"),
+                ) { Text("Reset to 0") }
             }
         }
     }

@@ -13,6 +13,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
@@ -51,7 +52,7 @@ fun NutritionApp(container: AppContainer) {
             containerColor = MaterialTheme.colorScheme.background,
             snackbarHost = { SnackbarHost(snackbarHostState) },
             bottomBar = {
-                NavigationBar {
+                NavigationBar(modifier = Modifier.testTag("bottom-navigation-bar")) {
                     AppDestination.all.forEach { destination ->
                         NavigationBarItem(
                             selected = currentDestination?.hierarchy

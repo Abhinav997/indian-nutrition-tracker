@@ -37,6 +37,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
@@ -216,7 +217,7 @@ private fun StatsBanner(
                         color = Color.White,
                     )
                 }
-                Button(onClick = onLogWeight) {
+                Button(onClick = onLogWeight, modifier = Modifier.testTag("progress-log-weight-btn")) {
                     Icon(Icons.Filled.Add, contentDescription = null, modifier = Modifier.size(16.dp))
                     Spacer(Modifier.width(4.dp))
                     Text("Log Weight")

@@ -25,6 +25,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -60,7 +61,7 @@ fun HomeScreen(container: AppContainer, onOpenFoodSearch: (MealType) -> Unit) {
         verticalArrangement = Arrangement.spacedBy(12.dp),
     ) {
         item {
-            Column {
+            Column(modifier = Modifier.testTag("app-top-header")) {
                 Text(
                     text = if (selectedDate == DateUtils.today()) "Today's Intake" else
                         "Intake · ${DateUtils.dayLabel(selectedDate)}",
@@ -149,7 +150,7 @@ private fun IntakeCard(logs: List<DailyLog>, settings: UserSettings, onAddFood: 
     val totalCarbs = HomeViewModel.round1(logs.sumOf { it.carbs })
     val totalFat = HomeViewModel.round1(logs.sumOf { it.fat })
 
-    Card(modifier = Modifier.fillMaxWidth()) {
+    Card(modifier = Modifier.fillMaxWidth().testTag("today-intake-card")) {
         Column(modifier = Modifier.padding(12.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
             Row(
                 verticalAlignment = Alignment.CenterVertically,
@@ -164,7 +165,7 @@ private fun IntakeCard(logs: List<DailyLog>, settings: UserSettings, onAddFood: 
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                     )
                 }
-                Button(onClick = onAddFood) {
+                Button(onClick = onAddFood, modifier = Modifier.testTag("home-quick-add-food-btn")) {
                     Icon(Icons.Filled.Add, contentDescription = null)
                     Text("Add Food", modifier = Modifier.padding(start = 4.dp))
                 }
@@ -204,7 +205,7 @@ private fun WeightSummaryCard(
     val latest = weightLogs.lastOrNull()?.weightKg ?: settings.currentWeightKg
     val bmi = UnitConverters.calculateBmi(latest, settings.heightCm)
 
-    Card(modifier = Modifier.fillMaxWidth()) {
+    Card(modifier = Modifier.fillMaxWidth().testTag("home-weight-summary-card")) {
         Row(
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.SpaceBetween,
@@ -230,7 +231,7 @@ private fun WeightSummaryCard(
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )
             }
-            Button(onClick = onLogWeight) { Text("Log Weight") }
+            Button(onClick = onLogWeight, modifier = Modifier.testTag("home-log-weight-btn")) { Text("Log Weight") }
         }
     }
 }
@@ -257,7 +258,7 @@ private fun MealSection(
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                     )
                 }
-                IconButton(onClick = { onAdd(meal) }) {
+                IconButton(onClick = { onAdd(meal) }, modifier = Modifier.testTag("meal-add-${meal.name}")) {
                     Icon(Icons.Filled.Add, contentDescription = "Add to ${meal.displayName}")
                 }
             }

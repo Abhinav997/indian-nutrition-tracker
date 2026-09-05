@@ -21,6 +21,7 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import com.indian.nutrition.tracker.domain.model.CustomFood
@@ -56,6 +57,7 @@ fun CustomFoodDialog(
 
     AlertDialog(
         onDismissRequest = onDismiss,
+        modifier = Modifier.testTag("custom-food-modal-dialog"),
         title = {
             Text(if (foodToEdit == null) "Create Custom Food / Recipe" else "Edit Custom Food")
         },
@@ -71,29 +73,29 @@ fun CustomFoodDialog(
                     onValueChange = { name = it },
                     label = { Text("Food / Recipe Name *") },
                     singleLine = true,
-                    modifier = Modifier.fillMaxWidth(),
+                    modifier = Modifier.fillMaxWidth().testTag("custom-food-name-input"),
                 )
 
                 Row(
                     horizontalArrangement = Arrangement.spacedBy(8.dp),
                     modifier = Modifier.fillMaxWidth(),
                 ) {
-                    MacroField("Calories (kcal) *", kcal, { kcal = it }, Modifier.weight(1f))
-                    MacroField("Protein (g) *", protein, { protein = it }, Modifier.weight(1f))
+                    MacroField("Calories (kcal) *", kcal, { kcal = it }, Modifier.weight(1f).testTag("custom-food-kcal-input"))
+                    MacroField("Protein (g) *", protein, { protein = it }, Modifier.weight(1f).testTag("custom-food-protein-input"))
                 }
                 Row(
                     horizontalArrangement = Arrangement.spacedBy(8.dp),
                     modifier = Modifier.fillMaxWidth(),
                 ) {
-                    MacroField("Carbs (g)", carbs, { carbs = it }, Modifier.weight(1f))
-                    MacroField("Fat (g)", fat, { fat = it }, Modifier.weight(1f))
+                    MacroField("Carbs (g)", carbs, { carbs = it }, Modifier.weight(1f).testTag("custom-food-carbs-input"))
+                    MacroField("Fat (g)", fat, { fat = it }, Modifier.weight(1f).testTag("custom-food-fat-input"))
                 }
                 Row(
                     horizontalArrangement = Arrangement.spacedBy(8.dp),
                     modifier = Modifier.fillMaxWidth(),
                 ) {
-                    MacroField("Fiber (g)", fiber, { fiber = it }, Modifier.weight(1f))
-                    MacroField("Serving grams", servingGrams, { servingGrams = it }, Modifier.weight(1f))
+                    MacroField("Fiber (g)", fiber, { fiber = it }, Modifier.weight(1f).testTag("custom-food-fiber-input"))
+                    MacroField("Serving grams", servingGrams, { servingGrams = it }, Modifier.weight(1f).testTag("custom-food-serving-grams-input"))
                 }
 
                 OutlinedButton(
@@ -112,13 +114,13 @@ fun CustomFoodDialog(
                     onValueChange = { servingDesc = it },
                     label = { Text("Typical Serving Desc (e.g. 1 bowl)") },
                     singleLine = true,
-                    modifier = Modifier.fillMaxWidth(),
+                    modifier = Modifier.fillMaxWidth().testTag("custom-food-serving-desc-input"),
                 )
                 OutlinedTextField(
                     value = notes,
                     onValueChange = { notes = it },
                     label = { Text("Recipe Ingredients / Notes (optional)") },
-                    modifier = Modifier.fillMaxWidth(),
+                    modifier = Modifier.fillMaxWidth().testTag("custom-food-notes-input"),
                 )
 
                 if (showValidation) {
@@ -150,6 +152,7 @@ fun CustomFoodDialog(
                         )
                     }
                 },
+                modifier = Modifier.testTag("save-custom-food-submit-btn"),
             ) { Text(if (foodToEdit == null) "Save Custom Food" else "Update Food") }
         },
         dismissButton = { TextButton(onClick = onDismiss) { Text("Cancel") } },

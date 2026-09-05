@@ -26,6 +26,7 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.dp
 import com.indian.nutrition.tracker.domain.model.WaterLog
 import kotlin.math.ceil
@@ -48,7 +49,7 @@ fun WaterCard(
     var showCustom by rememberSaveable { mutableStateOf(false) }
     var customAmount by rememberSaveable { mutableStateOf("250") }
 
-    Card(modifier = modifier.fillMaxWidth()) {
+    Card(modifier = modifier.fillMaxWidth().testTag("water-tracker-widget")) {
         Column(modifier = Modifier.padding(12.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
             Row(
                 verticalAlignment = Alignment.CenterVertically,
@@ -63,7 +64,7 @@ fun WaterCard(
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                     )
                 }
-                OutlinedButton(onClick = { showHistory = !showHistory }) {
+                OutlinedButton(onClick = { showHistory = !showHistory }, modifier = Modifier.testTag("toggle-water-history-btn")) {
                     Text(if (showHistory) "Hide Logs" else "Logs (${logs.size})")
                 }
             }
@@ -102,10 +103,10 @@ fun WaterCard(
             }
 
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                FilledTonalButton(onClick = { onAddWater(250) }) { Text("+250") }
-                FilledTonalButton(onClick = { onAddWater(500) }) { Text("+500") }
-                FilledTonalButton(onClick = { onAddWater(750) }) { Text("+750") }
-                OutlinedButton(onClick = { showCustom = !showCustom }) { Text("Custom") }
+                FilledTonalButton(onClick = { onAddWater(250) }, modifier = Modifier.testTag("water-add-250-btn")) { Text("+250") }
+                FilledTonalButton(onClick = { onAddWater(500) }, modifier = Modifier.testTag("water-add-500-btn")) { Text("+500") }
+                FilledTonalButton(onClick = { onAddWater(750) }, modifier = Modifier.testTag("water-add-750-btn")) { Text("+750") }
+                OutlinedButton(onClick = { showCustom = !showCustom }, modifier = Modifier.testTag("water-add-custom-toggle-btn")) { Text("Custom") }
             }
 
             if (showCustom) {

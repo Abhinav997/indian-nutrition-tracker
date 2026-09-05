@@ -46,6 +46,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -113,6 +114,13 @@ fun FoodSearchScreen(
                         Tab(
                             selected = tab == t,
                             onClick = { viewModel.setTab(t) },
+                            modifier = Modifier.testTag(
+                                when (t) {
+                                    SearchTab.SEARCH -> "tab-search-database"
+                                    SearchTab.FREQUENT -> "tab-frequent-foods"
+                                    SearchTab.CUSTOM -> "tab-custom-foods"
+                                }
+                            ),
                             text = {
                                 Text(
                                     when (t) {
@@ -140,7 +148,7 @@ fun FoodSearchScreen(
                         },
                         label = { Text("Search Indian foods, dal, roti…") },
                         singleLine = true,
-                        modifier = Modifier.fillMaxWidth(),
+                        modifier = Modifier.fillMaxWidth().testTag("food-search-input"),
                     )
 
                     Row(
@@ -174,10 +182,13 @@ fun FoodSearchScreen(
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                     )
-                    Button(onClick = {
-                        editingCustom = null
-                        showCustomDialog = true
-                    }) {
+                    Button(
+                        onClick = {
+                            editingCustom = null
+                            showCustomDialog = true
+                        },
+                        modifier = Modifier.testTag("open-create-custom-food-btn"),
+                    ) {
                         Icon(Icons.Filled.Add, contentDescription = null, modifier = Modifier.size(16.dp))
                         Spacer(Modifier.width(4.dp))
                         Text("New Custom Recipe")

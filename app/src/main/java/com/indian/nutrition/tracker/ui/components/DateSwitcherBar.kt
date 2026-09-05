@@ -15,6 +15,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.dp
 import com.indian.nutrition.tracker.util.DateUtils
 import java.time.LocalDate
@@ -42,7 +43,7 @@ fun DateSwitcherBar(
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.SpaceBetween,
         ) {
-            IconButton(onClick = onPrevious) {
+            IconButton(onClick = onPrevious, modifier = Modifier.testTag("prev-date-button")) {
                 Icon(Icons.AutoMirrored.Filled.KeyboardArrowLeft, contentDescription = "Previous day")
             }
             Text(
@@ -50,7 +51,7 @@ fun DateSwitcherBar(
                 style = MaterialTheme.typography.titleSmall,
                 modifier = Modifier.padding(horizontal = 4.dp),
             )
-            IconButton(onClick = onNext) {
+            IconButton(onClick = onNext, modifier = Modifier.testTag("next-date-button")) {
                 Icon(Icons.AutoMirrored.Filled.KeyboardArrowRight, contentDescription = "Next day")
             }
         }
@@ -59,7 +60,7 @@ fun DateSwitcherBar(
     if (selectedDate != today) {
         androidx.compose.material3.TextButton(
             onClick = onToday,
-            modifier = Modifier.padding(top = 2.dp),
+            modifier = Modifier.padding(top = 2.dp).testTag("jump-to-today-btn"),
         ) {
             Text(text = "Jump to Today", style = MaterialTheme.typography.labelMedium)
         }
