@@ -174,18 +174,27 @@ jobs:
           arch: x86_64
           target: default
           disable-animations: true
+          force-avd-creation: true
+          emulator-options: -no-snapshot -no-window -gpu swiftshader_indirect -no-audio -no-boot-anim -camera-back none
           script: |
             ./gradlew :app:connectedDebugAndroidTest --stacktrace 2>&1 | tee /tmp/gradle-instr.log
-            exit ${PIPESTATUS[0]}
+            TEST_EXIT=${PIPESTATUS[0]}
+            adb logcat -d 2>/dev/null | tail -600 > /tmp/instr-logcat.txt || true
+            mkdir -p /tmp/andtest-results
+            cp -r app/build/outputs/androidTest-results /tmp/andtest-results/ 2>/dev/null || true
+            cp -r app/build/reports/androidTests/connected/debug /tmp/andtest-results/report 2>/dev/null || true
+            exit ${TEST_EXIT}
 
       - name: Capture instrumentation log (on failure)
         if: failure()
         run: |
           cp /tmp/gradle-instr.log .ci-build-error.log
+          cp /tmp/instr-logcat.txt .ci-logcat.txt 2>/dev/null || true
+          cp -r /tmp/andtest-results .ci-android-test-results 2>/dev/null || true
           for i in 1 2 3 4 5 6 7 8; do
             git fetch -q origin "$GITHUB_REF_NAME" || true
             git rebase -q "origin/$GITHUB_REF_NAME" >/dev/null 2>&1 || true
-            git add -f .ci-build-error.log
+            git add -f .ci-build-error.log .ci-logcat.txt .ci-android-test-results >/dev/null 2>&1 || true
             git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -m "ci: capture instrumented log [skip ci]" >/dev/null 2>&1 || true
             git push origin "HEAD:$GITHUB_REF_NAME" >/dev/null 2>&1 && exit 0
             sleep 10
