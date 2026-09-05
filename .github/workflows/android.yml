@@ -184,11 +184,7 @@ jobs:
             ./gradlew :app:connectedDebugAndroidTest 2>&1 | tee /tmp/gradle-instr.log || true
             echo "" >> /tmp/gradle-instr.log
             echo "=== TEST RESULT XML ===" >> /tmp/gradle-instr.log
-            find app/build/outputs/androidTest-results -name "*.xml" 2>/dev/null >> /tmp/gradle-instr.log
-            for f in $(find app/build/outputs/androidTest-results -name "*.xml" 2>/dev/null); do
-              echo "--- $f ---" >> /tmp/gradle-instr.log
-              cat "$f" >> /tmp/gradle-instr.log
-            done
+            find app/build/outputs/androidTest-results -name "*.xml" -exec cat {} \; >> /tmp/gradle-instr.log 2>/dev/null || true
             echo "=== LOGCAT ===" >> /tmp/gradle-instr.log
             adb logcat -d 2>/dev/null | tail -300 >> /tmp/gradle-instr.log || true
             echo "=== END ===" >> /tmp/gradle-instr.log
