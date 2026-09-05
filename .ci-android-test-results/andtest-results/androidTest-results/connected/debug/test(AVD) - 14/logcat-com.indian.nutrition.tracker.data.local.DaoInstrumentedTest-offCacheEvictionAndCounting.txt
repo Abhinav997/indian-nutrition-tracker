@@ -1,2 +1,2 @@
-09-05 12:33:21.853  2342  2361 I TestRunner: started: offCacheEvictionAndCounting(com.indian.nutrition.tracker.data.local.DaoInstrumentedTest)
-09-05 12:33:21.894  2342  2361 I TestRunner: finished: offCacheEvictionAndCounting(com.indian.nutrition.tracker.data.local.DaoInstrumentedTest)
+09-05 13:05:26.654  2347  2367 I TestRunner: started: offCacheEvictionAndCounting(com.indian.nutrition.tracker.data.local.DaoInstrumentedTest)
+09-05 13:05:26.686  2347  2367 I TestRunner: finished: offCacheEvictionAndCounting(com.indian.nutrition.tracker.data.local.DaoInstrumentedTest)

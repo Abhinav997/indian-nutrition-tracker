@@ -1,173 +1,179 @@
-09-05 12:33:22.154  2342  2361 I TestRunner: started: test01_homeRendersAndWaterQuickAddWorks(com.indian.nutrition.tracker.ui.AppUiTest)
-09-05 12:33:22.168  2342  2361 I Tracing : Tracer added: class androidx.test.platform.tracing.AndroidXTracer
-09-05 12:33:22.176  2342  2342 W trition.tracker: Accessing hidden method Landroid/os/MessageQueue;->next()Landroid/os/Message; (unsupported, reflection, allowed)
-09-05 12:33:22.176  2342  2342 W trition.tracker: Accessing hidden field Landroid/os/MessageQueue;->mMessages:Landroid/os/Message; (unsupported, reflection, allowed)
-09-05 12:33:22.177   796   796 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
-09-05 12:33:22.177  2342  2342 W trition.tracker: Accessing hidden method Landroid/os/Message;->recycleUnchecked()V (unsupported, reflection, allowed)
-09-05 12:33:22.178  2342  2361 D IdlingRegistry: Registering idling resources: [androidx.compose.ui.test.EspressoLink@bf58485]
-09-05 12:33:22.187  2342  2361 W Settings: Setting always_finish_activities has moved from android.provider.Settings.System to android.provider.Settings.Global, returning read-only value.
-09-05 12:33:22.209  2342  2370 D libEGL  : loaded /vendor/lib64/egl/libEGL_emulation.so
-09-05 12:33:22.211   796   847 D SplashScreenView: Build android.window.SplashScreenView{b53c5ed V.E...... ......ID 0,0-0,0}
-09-05 12:33:22.211   796   847 D SplashScreenView: Icon: view: null drawable: null size: 0
-09-05 12:33:22.211   796   847 D SplashScreenView: Branding: view: android.view.View{b47ac22 G.ED..... ......I. 0,0-0,0 #10204ef android:id/splashscreen_branding_view} drawable: null size w: 0 h: 0
-09-05 12:33:22.221   389   389 I BpBinder: onLastStrongRef automatically unlinking death recipients: 
-09-05 12:33:22.227  2342  2342 D LifecycleMonitor: Lifecycle status change: com.indian.nutrition.tracker.MainActivity@35ef68a in: PRE_ON_CREATE
-09-05 12:33:22.227  2342  2342 V ActivityScenario: Activity lifecycle changed event received but ignored because the reported transition was not ON_CREATE while the last known transition was PRE_ON_CREATE
-09-05 12:33:22.229  2342  2370 D libEGL  : loaded /vendor/lib64/egl/libGLESv1_CM_emulation.so
-09-05 12:33:22.242  2342  2370 D libEGL  : loaded /vendor/lib64/egl/libGLESv2_emulation.so
-09-05 12:33:22.248  1051  1551 D EGL_emulation: app_time_stats: avg=37201.09ms min=55.03ms max=222731.27ms count=6
-09-05 12:33:22.256  2342  2342 D LifecycleMonitor: Lifecycle status change: com.indian.nutrition.tracker.MainActivity@35ef68a in: CREATED
-09-05 12:33:22.256  2342  2342 V ActivityScenario: Update currentActivityStage to CREATED, currentActivity=com.indian.nutrition.tracker.MainActivity@35ef68a
-09-05 12:33:22.262  2342  2342 D LifecycleMonitor: Lifecycle status change: com.indian.nutrition.tracker.MainActivity@35ef68a in: STARTED
-09-05 12:33:22.264  2342  2342 V ActivityScenario: Update currentActivityStage to STARTED, currentActivity=com.indian.nutrition.tracker.MainActivity@35ef68a
-09-05 12:33:22.267  2342  2342 D LifecycleMonitor: Lifecycle status change: com.indian.nutrition.tracker.MainActivity@35ef68a in: RESUMED
-09-05 12:33:22.267  2342  2342 V ActivityScenario: Update currentActivityStage to RESUMED, currentActivity=com.indian.nutrition.tracker.MainActivity@35ef68a
-09-05 12:33:22.270  2342  2342 D CompatibilityChangeReporter: Compat change id reported: 237531167; UID 10141; state: DISABLED
-09-05 12:33:22.273  2342  2342 W OpenGLRenderer: Unknown dataspace 0
-09-05 12:33:22.423   796   861 D EGL_emulation: app_time_stats: avg=20249.37ms min=20249.37ms max=20249.37ms count=1
-09-05 12:33:22.709   389   599 W ServiceManagerCppClient: Permission failure: android.permission.ROTATE_SURFACE_FLINGER from uid=10141 pid=0
-09-05 12:33:22.709   389   599 D PermissionCache: checking android.permission.ROTATE_SURFACE_FLINGER for uid=10141 => denied (135 us)
-09-05 12:33:22.709   389   599 W ServiceManagerCppClient: Permission failure: android.permission.INTERNAL_SYSTEM_WINDOW from uid=10141 pid=0
-09-05 12:33:22.709   389   599 D PermissionCache: checking android.permission.INTERNAL_SYSTEM_WINDOW for uid=10141 => denied (274 us)
-09-05 12:33:22.709   389   599 W ServiceManagerCppClient: Permission failure: android.permission.ACCESS_SURFACE_FLINGER from uid=10141 pid=0
-09-05 12:33:22.710   389   599 D PermissionCache: checking android.permission.ACCESS_SURFACE_FLINGER for uid=10141 => denied (338 us)
-09-05 12:33:22.710   389  1063 W ServiceManagerCppClient: Permission failure: android.permission.ACCESS_SURFACE_FLINGER from uid=10141 pid=2342
-09-05 12:33:22.710   389  1063 D PermissionCache: checking android.permission.ACCESS_SURFACE_FLINGER for uid=10141 => denied (482 us)
-09-05 12:33:22.717  2342  2369 W OpenGLRenderer: Failed to initialize 101010-2 format, error = EGL_SUCCESS
-09-05 12:33:22.731   133   133 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device VINTF manifest.
-09-05 12:33:22.731  2342  2369 I Gralloc4: mapper 4.x is not supported
-09-05 12:33:23.042   505  1128 W ServiceManagerCppClient: Permission failure: android.permission.ROTATE_SURFACE_FLINGER from uid=10141 pid=0
-09-05 12:33:23.042   505  1128 D PermissionCache: checking android.permission.ROTATE_SURFACE_FLINGER for uid=10141 => denied (177 us)
-09-05 12:33:23.042   505  1128 W ServiceManagerCppClient: Permission failure: android.permission.INTERNAL_SYSTEM_WINDOW from uid=10141 pid=0
-09-05 12:33:23.042   505  1128 D PermissionCache: checking android.permission.INTERNAL_SYSTEM_WINDOW for uid=10141 => denied (23 us)
-09-05 12:33:23.042   505  1128 W ServiceManagerCppClient: Permission failure: android.permission.ACCESS_SURFACE_FLINGER from uid=10141 pid=0
-09-05 12:33:23.042   505  1128 D PermissionCache: checking android.permission.ACCESS_SURFACE_FLINGER for uid=10141 => denied (12 us)
-09-05 12:33:23.043  2342  2342 I Choreographer: Skipped 44 frames!  The application may be doing too much work on its main thread.
-09-05 12:33:23.048   505   522 W ziparchive: Unable to open '/data/app/~~1DreSiBWSQzQovpiX2IsBA==/com.indian.nutrition.tracker-MFB3oJ9AybHInxMwUkb1_Q==/base.dm': No such file or directory
-09-05 12:33:23.049   505   522 I ActivityTaskManager: Displayed com.indian.nutrition.tracker/.MainActivity for user 0: +854ms
-09-05 12:33:23.053  1051  1080 I ImeTracker: com.android.launcher3:a3f51b2a: onRequestHide at ORIGIN_CLIENT_HIDE_SOFT_INPUT reason HIDE_SOFT_INPUT
-09-05 12:33:23.053   505  1753 I ImeTracker: com.android.launcher3:a3f51b2a: onCancelled at PHASE_SERVER_SHOULD_HIDE
-09-05 12:33:23.061  2342  2353 I OpenGLRenderer: Davey! duration=766ms; Flags=1, FrameTimelineVsyncId=2664, IntendedVsync=256235641496, Vsync=256235641496, InputEventId=0, HandleInputStart=256240164252, AnimationStart=256240167548, PerformTraversalsStart=256240169271, DrawStart=256708270055, FrameDeadline=256252308162, FrameInterval=256240143354, FrameStartTime=16666666, SyncQueued=256717892734, SyncStart=256718089741, IssueDrawCommandsStart=256718417663, SwapBuffers=256849154958, FrameCompleted=257002530430, DequeueBufferDuration=3065, QueueBufferDuration=287317, GpuCompleted=257002530430, SwapBuffersCompleted=256989673298, DisplayPresentTime=0, CommandSubmissionCompleted=256849154958, 
-09-05 12:33:23.064   796   846 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=falsecallback=android.view.ViewRootImpl$$ExternalSyntheticLambda17@98d179c
-09-05 12:33:23.066   505  1753 W InputManager-JNI: Input channel object '2768ab7 Splash Screen com.indian.nutrition.tracker (client)' was disposed without first being removed with the input manager!
-09-05 12:33:23.066   505  1128 I ImeTracker: com.indian.nutrition.tracker:eec32534: onRequestHide at ORIGIN_SERVER_HIDE_INPUT reason HIDE_UNSPECIFIED_WINDOW
-09-05 12:33:23.067   505  1128 I ImeTracker: com.indian.nutrition.tracker:eec32534: onCancelled at PHASE_SERVER_SHOULD_HIDE
-09-05 12:33:23.395   796   847 D SplashScreenView: Build android.window.SplashScreenView{1357ac9 V.E...... ......ID 0,0-0,0}
-09-05 12:33:23.395   796   847 D SplashScreenView: Icon: view: null drawable: null size: 0
-09-05 12:33:23.395   796   847 D SplashScreenView: Branding: view: android.view.View{fa4b5ce G.ED..... ......I. 0,0-0,0 #10204ef android:id/splashscreen_branding_view} drawable: null size w: 0 h: 0
-09-05 12:33:23.399  2342  2342 D LifecycleMonitor: Lifecycle status change: com.indian.nutrition.tracker.MainActivity@35ef68a in: PAUSED
-09-05 12:33:23.400  2342  2342 V ActivityScenario: Update currentActivityStage to PAUSED, currentActivity=com.indian.nutrition.tracker.MainActivity@35ef68a
-09-05 12:33:23.404   389   389 I BpBinder: onLastStrongRef automatically unlinking death recipients: 
-09-05 12:33:23.407   326   326 D Zygote  : Forked child process 2384
-09-05 12:33:23.417   389  1063 D PermissionCache: checking android.permission.READ_FRAME_BUFFER for uid=1000 => granted (253 us)
-09-05 12:33:23.424   133   133 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device VINTF manifest.
-09-05 12:33:23.424   505  1578 I Gralloc4: mapper 4.x is not supported
-09-05 12:33:23.442  2384  2384 I on.tracker.test: Late-enabling -Xcheck:jni
-09-05 12:33:23.462  2384  2384 I on.tracker.test: Using CollectorTypeCC GC.
-09-05 12:33:23.463  2384  2384 W on.tracker.test: Unexpected CPU variant for x86: x86_64.
-09-05 12:33:23.463  2384  2384 W on.tracker.test: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, tremont, kabylake, default
-09-05 12:33:23.465   399   418 I adbd    : jdwp connection from 2384
-09-05 12:33:23.467   505  2387 W OpenGLRenderer: Failed to initialize 101010-2 format, error = EGL_SUCCESS
-09-05 12:33:23.498  2384  2384 D CompatibilityChangeReporter: Compat change id reported: 171979766; UID 10142; state: ENABLED
-09-05 12:33:23.499  2384  2384 D CompatibilityChangeReporter: Compat change id reported: 242716250; UID 10142; state: ENABLED
-09-05 12:33:23.505  2384  2384 W ziparchive: Unable to open '/data/app/~~moA5oZIzNeN_Kk2rq8h6qg==/com.indian.nutrition.tracker.test-JxYPkYsei0ne-wxqmvTFpw==/base.dm': No such file or directory
-09-05 12:33:23.505  2384  2384 W ziparchive: Unable to open '/data/app/~~moA5oZIzNeN_Kk2rq8h6qg==/com.indian.nutrition.tracker.test-JxYPkYsei0ne-wxqmvTFpw==/base.dm': No such file or directory
-09-05 12:33:23.521  2384  2384 D nativeloader: Configuring clns-6 for other apk /data/app/~~moA5oZIzNeN_Kk2rq8h6qg==/com.indian.nutrition.tracker.test-JxYPkYsei0ne-wxqmvTFpw==/base.apk. target_sdk_version=36, uses_libraries=, library_path=/data/app/~~moA5oZIzNeN_Kk2rq8h6qg==/com.indian.nutrition.tracker.test-JxYPkYsei0ne-wxqmvTFpw==/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.indian.nutrition.tracker.test
-09-05 12:33:23.530  2384  2384 V GraphicsEnvironment: Currently set values for:
-09-05 12:33:23.531  2384  2384 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[]
-09-05 12:33:23.531  2384  2384 V GraphicsEnvironment:   angle_gl_driver_selection_values=[]
-09-05 12:33:23.531  2384  2384 V GraphicsEnvironment: ANGLE GameManagerService for com.indian.nutrition.tracker.test: false
-09-05 12:33:23.531  2384  2384 V GraphicsEnvironment: com.indian.nutrition.tracker.test is not listed in per-application setting
-09-05 12:33:23.532  2384  2384 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
-09-05 12:33:23.570  2384  2384 D CompatibilityChangeReporter: Compat change id reported: 237531167; UID 10142; state: DISABLED
-09-05 12:33:23.572  2384  2384 W OpenGLRenderer: Unknown dataspace 0
-09-05 12:33:23.574  2384  2405 D libEGL  : loaded /vendor/lib64/egl/libEGL_emulation.so
-09-05 12:33:23.575  2384  2405 D libEGL  : loaded /vendor/lib64/egl/libGLESv1_CM_emulation.so
-09-05 12:33:23.583  2384  2405 D libEGL  : loaded /vendor/lib64/egl/libGLESv2_emulation.so
-09-05 12:33:23.596  2342  2342 D LifecycleMonitor: Lifecycle status change: com.indian.nutrition.tracker.MainActivity@35ef68a in: STOPPED
-09-05 12:33:23.597  2342  2342 V ActivityScenario: Update currentActivityStage to STOPPED, currentActivity=com.indian.nutrition.tracker.MainActivity@35ef68a
-09-05 12:33:23.619   389   403 W ServiceManagerCppClient: Permission failure: android.permission.ROTATE_SURFACE_FLINGER from uid=10142 pid=0
-09-05 12:33:23.619   389   403 D PermissionCache: checking android.permission.ROTATE_SURFACE_FLINGER for uid=10142 => denied (371 us)
-09-05 12:33:23.620   389   403 W ServiceManagerCppClient: Permission failure: android.permission.INTERNAL_SYSTEM_WINDOW from uid=10142 pid=0
-09-05 12:33:23.620   389   403 D PermissionCache: checking android.permission.INTERNAL_SYSTEM_WINDOW for uid=10142 => denied (808 us)
-09-05 12:33:23.621   389   389 I BpBinder: onLastStrongRef automatically unlinking death recipients: 
-09-05 12:33:23.625   389   403 W ServiceManagerCppClient: Permission failure: android.permission.ACCESS_SURFACE_FLINGER from uid=10142 pid=0
-09-05 12:33:23.625   389   403 D PermissionCache: checking android.permission.ACCESS_SURFACE_FLINGER for uid=10142 => denied (4643 us)
-09-05 12:33:23.625   389   554 W ServiceManagerCppClient: Permission failure: android.permission.ROTATE_SURFACE_FLINGER from uid=10142 pid=2384
-09-05 12:33:23.625   389   554 D PermissionCache: checking android.permission.ROTATE_SURFACE_FLINGER for uid=10142 => denied (6327 us)
-09-05 12:33:23.630  2384  2403 W OpenGLRenderer: Failed to initialize 101010-2 format, error = EGL_SUCCESS
-09-05 12:33:23.648   133   133 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device VINTF manifest.
-09-05 12:33:23.649  2384  2403 I Gralloc4: mapper 4.x is not supported
-09-05 12:33:23.652  2342  2342 D LifecycleMonitor: Lifecycle status change: com.indian.nutrition.tracker.MainActivity@35ef68a in: DESTROYED
-09-05 12:33:23.653  2342  2342 V ActivityScenario: Update currentActivityStage to DESTROYED, currentActivity=null
-09-05 12:33:23.662  2342  2361 D IdlingRegistry: Unregistering idling resources: [androidx.compose.ui.test.EspressoLink@bf58485]
-09-05 12:33:23.663  2342  2342 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=falsecallback=android.view.ViewRootImpl$$ExternalSyntheticLambda17@3fdac75
-09-05 12:33:23.666   505  1578 W InputManager-JNI: Input channel object '2dfc9c0 com.indian.nutrition.tracker/com.indian.nutrition.tracker.MainActivity (client)' was disposed without first being removed with the input manager!
-09-05 12:33:23.670  2342  2361 E TestRunner: failed: test01_homeRendersAndWaterQuickAddWorks(com.indian.nutrition.tracker.ui.AppUiTest)
-09-05 12:33:23.676  2342  2361 E TestRunner: ----- begin exception -----
-09-05 12:33:23.676  2342  2361 E TestRunner: java.lang.AssertionError: Failed: assertExists.
-09-05 12:33:23.676  2342  2361 E TestRunner: Reason: Expected exactly '1' node but could not find any node that satisfies: (TestTag = 'water-tracker-widget')
-09-05 12:33:23.676  2342  2361 E TestRunner: 
-09-05 12:33:23.676  2342  2361 E TestRunner: 	at androidx.compose.ui.test.SemanticsNodeInteraction.fetchOneOrThrow(SemanticsNodeInteraction.kt:178)
-09-05 12:33:23.676  2342  2361 E TestRunner: 	at androidx.compose.ui.test.SemanticsNodeInteraction.fetchOneOrThrow$default(SemanticsNodeInteraction.kt:150)
-09-05 12:33:23.676  2342  2361 E TestRunner: 	at androidx.compose.ui.test.SemanticsNodeInteraction.assertExists(SemanticsNodeInteraction.kt:125)
-09-05 12:33:23.676  2342  2361 E TestRunner: 	at androidx.compose.ui.test.SemanticsNodeInteraction.assertExists$default(SemanticsNodeInteraction.kt:124)
-09-05 12:33:23.676  2342  2361 E TestRunner: 	at com.indian.nutrition.tracker.ui.AppUiTest.test01_homeRendersAndWaterQuickAddWorks(AppUiTest.kt:89)
-09-05 12:33:23.676  2342  2361 E TestRunner: 	at java.lang.reflect.Method.invoke(Native Method)
-09-05 12:33:23.676  2342  2361 E TestRunner: 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
-09-05 12:33:23.676  2342  2361 E TestRunner: 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-09-05 12:33:23.676  2342  2361 E TestRunner: 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
-09-05 12:33:23.676  2342  2361 E TestRunner: 	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-09-05 12:33:23.676  2342  2361 E TestRunner: 	at androidx.test.internal.runner.junit4.statement.RunBefores.evaluate(RunBefores.java:80)
-09-05 12:33:23.676  2342  2361 E TestRunner: 	at org.junit.rules.ExternalResource$1.evaluate(ExternalResource.java:54)
-09-05 12:33:23.676  2342  2361 E TestRunner: 	at androidx.compose.ui.test.junit4.AndroidComposeTestRule$apply$1$evaluate$1.invoke(AndroidComposeTestRule.android.kt:272)
-09-05 12:33:23.676  2342  2361 E TestRunner: 	at androidx.compose.ui.test.junit4.AndroidComposeTestRule$apply$1$evaluate$1.invoke(AndroidComposeTestRule.android.kt:271)
-09-05 12:33:23.676  2342  2361 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$AndroidComposeUiTestImpl.withDisposableContent(ComposeUiTest.android.kt:505)
-09-05 12:33:23.676  2342  2361 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1$1$1$1$1$1.invoke(ComposeUiTest.android.kt:333)
-09-05 12:33:23.676  2342  2361 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.withComposeIdlingResource(ComposeUiTest.android.kt:385)
-09-05 12:33:23.676  2342  2361 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.access$withComposeIdlingResource(ComposeUiTest.android.kt:219)
-09-05 12:33:23.676  2342  2361 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1$1$1$1$1.invoke(ComposeUiTest.android.kt:332)
-09-05 12:33:23.676  2342  2361 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.withWindowRecomposer(ComposeUiTest.android.kt:359)
-09-05 12:33:23.676  2342  2361 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.access$withWindowRecomposer(ComposeUiTest.android.kt:219)
-09-05 12:33:23.676  2342  2361 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1$1$1$1.invoke(ComposeUiTest.android.kt:331)
-09-05 12:33:23.676  2342  2361 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.withTestCoroutines(ComposeUiTest.android.kt:372)
-09-05 12:33:23.676  2342  2361 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.access$withTestCoroutines(ComposeUiTest.android.kt:219)
-09-05 12:33:23.676  2342  2361 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1$1$1.invoke(ComposeUiTest.android.kt:330)
-09-05 12:33:23.676  2342  2361 E TestRunner: 	at androidx.compose.ui.test.EspressoLink.withStrategy(EspressoLink.android.kt:66)
-09-05 12:33:23.676  2342  2361 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1$1.invoke(ComposeUiTest.android.kt:329)
-09-05 12:33:23.676  2342  2361 E TestRunner: 	at androidx.compose.ui.test.IdlingResourceRegistry.withRegistry(IdlingResourceRegistry.jvm.kt:155)
-09-05 12:33:23.676  2342  2361 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1.invoke(ComposeUiTest.android.kt:328)
-09-05 12:33:23.676  2342  2361 E TestRunner: 	at androidx.compose.ui.test.ComposeRootRegistry.withRegistry(ComposeRootRegistry.android.kt:146)
-09-05 12:33:23.676  2342  2361 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.runTest(ComposeUiTest.android.kt:327)
-09-05 12:33:23.676  2342  2361 E TestRunner: 	at androidx.compose.ui.test.junit4.AndroidComposeTestRule$apply$1.evaluate(AndroidComposeTestRule.android.kt:271)
-09-05 12:33:23.676  2342  2361 E TestRunner: 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-09-05 12:33:23.676  2342  2361 E TestRunner: 	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
-09-05 12:33:23.676  2342  2361 E TestRunner: 	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
-09-05 12:33:23.676  2342  2361 E TestRunner: 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
-09-05 12:33:23.676  2342  2361 E TestRunner: 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
-09-05 12:33:23.676  2342  2361 E TestRunner: 	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
-09-05 12:33:23.677  2342  2361 E TestRunner: 	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
-09-05 12:33:23.677  2342  2361 E TestRunner: 	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
-09-05 12:33:23.677  2342  2361 E TestRunner: 	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
-09-05 12:33:23.677  2342  2361 E TestRunner: 	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
-09-05 12:33:23.677  2342  2361 E TestRunner: 	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
-09-05 12:33:23.677  2342  2361 E TestRunner: 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-09-05 12:33:23.677  2342  2361 E TestRunner: 	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
-09-05 12:33:23.677  2342  2361 E TestRunner: 	at androidx.test.ext.junit.runners.AndroidJUnit4.run(AndroidJUnit4.java:162)
-09-05 12:33:23.677  2342  2361 E TestRunner: 	at org.junit.runners.Suite.runChild(Suite.java:128)
-09-05 12:33:23.677  2342  2361 E TestRunner: 	at org.junit.runners.Suite.runChild(Suite.java:27)
-09-05 12:33:23.677  2342  2361 E TestRunner: 	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
-09-05 12:33:23.677  2342  2361 E TestRunner: 	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
-09-05 12:33:23.677  2342  2361 E TestRunner: 	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
-09-05 12:33:23.677  2342  2361 E TestRunner: 	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
-09-05 12:33:23.677  2342  2361 E TestRunner: 	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
-09-05 12:33:23.677  2342  2361 E TestRunner: 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-09-05 12:33:23.677  2342  2361 E TestRunner: 	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
-09-05 12:33:23.677  2342  2361 E TestRunner: 	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
-09-05 12:33:23.677  2342  2361 E TestRunner: 	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
-09-05 12:33:23.677  2342  2361 E TestRunner: 	at androidx.test.internal.runner.TestExecutor.execute(TestExecutor.java:68)
-09-05 12:33:23.677  2342  2361 E TestRunner: 	at androidx.test.internal.runner.TestExecutor.execute(TestExecutor.java:59)
-09-05 12:33:23.677  2342  2361 E TestRunner: 	at androidx.test.runner.AndroidJUnitRunner.onStart(AndroidJUnitRunner.java:467)
-09-05 12:33:23.677  2342  2361 E TestRunner: 	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2402)
-09-05 12:33:23.677  2342  2361 E TestRunner: ----- end exception -----
-09-05 12:33:23.680  2342  2361 I TestRunner: finished: test01_homeRendersAndWaterQuickAddWorks(com.indian.nutrition.tracker.ui.AppUiTest)
+09-05 13:05:26.941  2347  2367 I TestRunner: started: test01_homeRendersAndWaterQuickAddWorks(com.indian.nutrition.tracker.ui.AppUiTest)
+09-05 13:05:26.955  2347  2367 I Tracing : Tracer added: class androidx.test.platform.tracing.AndroidXTracer
+09-05 13:05:26.963  2347  2347 W trition.tracker: Accessing hidden method Landroid/os/MessageQueue;->next()Landroid/os/Message; (unsupported, reflection, allowed)
+09-05 13:05:26.963  2347  2347 W trition.tracker: Accessing hidden field Landroid/os/MessageQueue;->mMessages:Landroid/os/Message; (unsupported, reflection, allowed)
+09-05 13:05:26.963  2347  2347 W trition.tracker: Accessing hidden method Landroid/os/Message;->recycleUnchecked()V (unsupported, reflection, allowed)
+09-05 13:05:26.964  2347  2367 D IdlingRegistry: Registering idling resources: [androidx.compose.ui.test.EspressoLink@d43f936]
+09-05 13:05:26.973  2347  2367 W Settings: Setting always_finish_activities has moved from android.provider.Settings.System to android.provider.Settings.Global, returning read-only value.
+09-05 13:05:26.992   798   862 D SplashScreenView: Build android.window.SplashScreenView{df25321 V.E...... ......ID 0,0-0,0}
+09-05 13:05:26.992   798   862 D SplashScreenView: Icon: view: null drawable: null size: 0
+09-05 13:05:26.992   798   862 D SplashScreenView: Branding: view: android.view.View{207a346 G.ED..... ......I. 0,0-0,0 #10204ef android:id/splashscreen_branding_view} drawable: null size w: 0 h: 0
+09-05 13:05:26.996   389   389 I BpBinder: onLastStrongRef automatically unlinking death recipients: 
+09-05 13:05:27.019  2347  2347 D LifecycleMonitor: Lifecycle status change: com.indian.nutrition.tracker.MainActivity@92f2527 in: PRE_ON_CREATE
+09-05 13:05:27.019  2347  2347 V ActivityScenario: Activity lifecycle changed event received but ignored because the reported transition was not ON_CREATE while the last known transition was PRE_ON_CREATE
+09-05 13:05:27.020  1049  1625 D EGL_emulation: app_time_stats: avg=42296.23ms min=13.73ms max=211220.02ms count=5
+09-05 13:05:27.024  2347  2376 D libEGL  : loaded /vendor/lib64/egl/libEGL_emulation.so
+09-05 13:05:27.033  2347  2376 D libEGL  : loaded /vendor/lib64/egl/libGLESv1_CM_emulation.so
+09-05 13:05:27.035  2347  2376 D libEGL  : loaded /vendor/lib64/egl/libGLESv2_emulation.so
+09-05 13:05:27.059  2347  2347 D LifecycleMonitor: Lifecycle status change: com.indian.nutrition.tracker.MainActivity@92f2527 in: CREATED
+09-05 13:05:27.060  2347  2347 V ActivityScenario: Update currentActivityStage to CREATED, currentActivity=com.indian.nutrition.tracker.MainActivity@92f2527
+09-05 13:05:27.061  2347  2347 D LifecycleMonitor: Lifecycle status change: com.indian.nutrition.tracker.MainActivity@92f2527 in: STARTED
+09-05 13:05:27.064  2347  2347 V ActivityScenario: Update currentActivityStage to STARTED, currentActivity=com.indian.nutrition.tracker.MainActivity@92f2527
+09-05 13:05:27.073  2347  2347 D LifecycleMonitor: Lifecycle status change: com.indian.nutrition.tracker.MainActivity@92f2527 in: RESUMED
+09-05 13:05:27.073  2347  2347 V ActivityScenario: Update currentActivityStage to RESUMED, currentActivity=com.indian.nutrition.tracker.MainActivity@92f2527
+09-05 13:05:27.076  2347  2347 D CompatibilityChangeReporter: Compat change id reported: 237531167; UID 10141; state: DISABLED
+09-05 13:05:27.077  2347  2347 W OpenGLRenderer: Unknown dataspace 0
+09-05 13:05:27.192   798   874 D EGL_emulation: app_time_stats: avg=8050.60ms min=8050.60ms max=8050.60ms count=1
+09-05 13:05:27.517   389   404 W ServiceManagerCppClient: Permission failure: android.permission.ROTATE_SURFACE_FLINGER from uid=10141 pid=0
+09-05 13:05:27.517   389   404 D PermissionCache: checking android.permission.ROTATE_SURFACE_FLINGER for uid=10141 => denied (116 us)
+09-05 13:05:27.517   389   608 W ServiceManagerCppClient: Permission failure: android.permission.INTERNAL_SYSTEM_WINDOW from uid=10141 pid=2347
+09-05 13:05:27.517   389   608 D PermissionCache: checking android.permission.INTERNAL_SYSTEM_WINDOW for uid=10141 => denied (121 us)
+09-05 13:05:27.517   389   608 W ServiceManagerCppClient: Permission failure: android.permission.ACCESS_SURFACE_FLINGER from uid=10141 pid=2347
+09-05 13:05:27.517   389   608 D PermissionCache: checking android.permission.ACCESS_SURFACE_FLINGER for uid=10141 => denied (105 us)
+09-05 13:05:27.517   389   404 W ServiceManagerCppClient: Permission failure: android.permission.INTERNAL_SYSTEM_WINDOW from uid=10141 pid=0
+09-05 13:05:27.517   389   404 D PermissionCache: checking android.permission.INTERNAL_SYSTEM_WINDOW for uid=10141 => denied (730 us)
+09-05 13:05:27.523  2347  2374 W OpenGLRenderer: Failed to initialize 101010-2 format, error = EGL_SUCCESS
+09-05 13:05:27.536   134   134 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device VINTF manifest.
+09-05 13:05:27.536  2347  2374 I Gralloc4: mapper 4.x is not supported
+09-05 13:05:27.818   505   884 W ServiceManagerCppClient: Permission failure: android.permission.ROTATE_SURFACE_FLINGER from uid=10141 pid=0
+09-05 13:05:27.818   505   884 D PermissionCache: checking android.permission.ROTATE_SURFACE_FLINGER for uid=10141 => denied (151 us)
+09-05 13:05:27.818   505   884 W ServiceManagerCppClient: Permission failure: android.permission.INTERNAL_SYSTEM_WINDOW from uid=10141 pid=0
+09-05 13:05:27.818   505   884 D PermissionCache: checking android.permission.INTERNAL_SYSTEM_WINDOW for uid=10141 => denied (20 us)
+09-05 13:05:27.818   505   884 W ServiceManagerCppClient: Permission failure: android.permission.ACCESS_SURFACE_FLINGER from uid=10141 pid=0
+09-05 13:05:27.818   505   884 D PermissionCache: checking android.permission.ACCESS_SURFACE_FLINGER for uid=10141 => denied (17 us)
+09-05 13:05:27.819  2347  2347 I Choreographer: Skipped 36 frames!  The application may be doing too much work on its main thread.
+09-05 13:05:27.822   505   522 W ziparchive: Unable to open '/data/app/~~P0o6CUzISVRZwi49BGChrQ==/com.indian.nutrition.tracker-ft6EcII08qYGwnsguzjxAQ==/base.dm': No such file or directory
+09-05 13:05:27.823   505   522 I ActivityTaskManager: Displayed com.indian.nutrition.tracker/.MainActivity for user 0: +844ms
+09-05 13:05:27.835   505   884 I ImeTracker: com.indian.nutrition.tracker:7d092dc8: onRequestHide at ORIGIN_SERVER_HIDE_INPUT reason HIDE_UNSPECIFIED_WINDOW
+09-05 13:05:27.835   505   884 I ImeTracker: com.indian.nutrition.tracker:7d092dc8: onCancelled at PHASE_SERVER_SHOULD_HIDE
+09-05 13:05:27.839   798   860 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=falsecallback=android.view.ViewRootImpl$$ExternalSyntheticLambda17@631b5a0
+09-05 13:05:27.839   505   872 W InputManager-JNI: Input channel object '728d3e2 Splash Screen com.indian.nutrition.tracker (client)' was disposed without first being removed with the input manager!
+09-05 13:05:27.841  1049  1077 I ImeTracker: com.android.launcher3:e64af6f8: onRequestHide at ORIGIN_CLIENT_HIDE_SOFT_INPUT reason HIDE_SOFT_INPUT
+09-05 13:05:27.842  1049  1077 I ImeTracker: com.android.launcher3:e64af6f8: onFailed at PHASE_CLIENT_VIEW_SERVED
+09-05 13:05:29.111   798   798 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+09-05 13:05:31.626  2347  2390 D ProfileInstaller: Installing profile for com.indian.nutrition.tracker
+09-05 13:05:33.664   782   782 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+09-05 13:05:39.111   798   798 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+09-05 13:05:41.856   782   782 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+09-05 13:05:43.142   798   862 D SplashScreenView: Build android.window.SplashScreenView{f68f13d V.E...... ......ID 0,0-0,0}
+09-05 13:05:43.142   798   862 D SplashScreenView: Icon: view: null drawable: null size: 0
+09-05 13:05:43.142   798   862 D SplashScreenView: Branding: view: android.view.View{b5d7d32 G.ED..... ......I. 0,0-0,0 #10204ef android:id/splashscreen_branding_view} drawable: null size w: 0 h: 0
+09-05 13:05:43.149  2347  2347 D LifecycleMonitor: Lifecycle status change: com.indian.nutrition.tracker.MainActivity@92f2527 in: PAUSED
+09-05 13:05:43.149  2347  2347 V ActivityScenario: Update currentActivityStage to PAUSED, currentActivity=com.indian.nutrition.tracker.MainActivity@92f2527
+09-05 13:05:43.155   326   326 D Zygote  : Forked child process 2391
+09-05 13:05:43.162   389   389 I BpBinder: onLastStrongRef automatically unlinking death recipients: 
+09-05 13:05:43.169   389   403 D PermissionCache: checking android.permission.READ_FRAME_BUFFER for uid=1000 => granted (243 us)
+09-05 13:05:43.174   134   134 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device VINTF manifest.
+09-05 13:05:43.174   505   518 I Gralloc4: mapper 4.x is not supported
+09-05 13:05:43.178  2391  2391 I on.tracker.test: Late-enabling -Xcheck:jni
+09-05 13:05:43.191  2391  2391 I on.tracker.test: Using CollectorTypeCC GC.
+09-05 13:05:43.192  2391  2391 W on.tracker.test: Unexpected CPU variant for x86: x86_64.
+09-05 13:05:43.192  2391  2391 W on.tracker.test: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, tremont, kabylake, default
+09-05 13:05:43.201   402   417 I adbd    : jdwp connection from 2391
+09-05 13:05:43.222   505  2406 W OpenGLRenderer: Failed to initialize 101010-2 format, error = EGL_SUCCESS
+09-05 13:05:43.231  2391  2391 D CompatibilityChangeReporter: Compat change id reported: 171979766; UID 10142; state: ENABLED
+09-05 13:05:43.232  2391  2391 D CompatibilityChangeReporter: Compat change id reported: 242716250; UID 10142; state: ENABLED
+09-05 13:05:43.239  2391  2391 W ziparchive: Unable to open '/data/app/~~Q1FeMcn1u1cD1kE28eQtmA==/com.indian.nutrition.tracker.test-iBxoldObPRtsmYlq2jDDhg==/base.dm': No such file or directory
+09-05 13:05:43.242  2391  2391 W ziparchive: Unable to open '/data/app/~~Q1FeMcn1u1cD1kE28eQtmA==/com.indian.nutrition.tracker.test-iBxoldObPRtsmYlq2jDDhg==/base.dm': No such file or directory
+09-05 13:05:43.320  2391  2391 D nativeloader: Configuring clns-6 for other apk /data/app/~~Q1FeMcn1u1cD1kE28eQtmA==/com.indian.nutrition.tracker.test-iBxoldObPRtsmYlq2jDDhg==/base.apk. target_sdk_version=36, uses_libraries=, library_path=/data/app/~~Q1FeMcn1u1cD1kE28eQtmA==/com.indian.nutrition.tracker.test-iBxoldObPRtsmYlq2jDDhg==/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/com.indian.nutrition.tracker.test
+09-05 13:05:43.327  2391  2391 V GraphicsEnvironment: Currently set values for:
+09-05 13:05:43.327  2391  2391 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[]
+09-05 13:05:43.327  2391  2391 V GraphicsEnvironment:   angle_gl_driver_selection_values=[]
+09-05 13:05:43.328  2391  2391 V GraphicsEnvironment: ANGLE GameManagerService for com.indian.nutrition.tracker.test: false
+09-05 13:05:43.328  2391  2391 V GraphicsEnvironment: com.indian.nutrition.tracker.test is not listed in per-application setting
+09-05 13:05:43.329  2391  2391 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+09-05 13:05:43.338  2391  2412 D libEGL  : loaded /vendor/lib64/egl/libEGL_emulation.so
+09-05 13:05:43.340  2391  2412 D libEGL  : loaded /vendor/lib64/egl/libGLESv1_CM_emulation.so
+09-05 13:05:43.343  2391  2412 D libEGL  : loaded /vendor/lib64/egl/libGLESv2_emulation.so
+09-05 13:05:43.359  2391  2391 D CompatibilityChangeReporter: Compat change id reported: 237531167; UID 10142; state: DISABLED
+09-05 13:05:43.360  2391  2391 W OpenGLRenderer: Unknown dataspace 0
+09-05 13:05:43.369  2347  2347 D LifecycleMonitor: Lifecycle status change: com.indian.nutrition.tracker.MainActivity@92f2527 in: STOPPED
+09-05 13:05:43.370  2347  2347 V ActivityScenario: Update currentActivityStage to STOPPED, currentActivity=com.indian.nutrition.tracker.MainActivity@92f2527
+09-05 13:05:43.384   389   404 W ServiceManagerCppClient: Permission failure: android.permission.ROTATE_SURFACE_FLINGER from uid=10142 pid=0
+09-05 13:05:43.384   389   404 D PermissionCache: checking android.permission.ROTATE_SURFACE_FLINGER for uid=10142 => denied (315 us)
+09-05 13:05:43.384   389   404 W ServiceManagerCppClient: Permission failure: android.permission.INTERNAL_SYSTEM_WINDOW from uid=10142 pid=0
+09-05 13:05:43.384   389   404 D PermissionCache: checking android.permission.INTERNAL_SYSTEM_WINDOW for uid=10142 => denied (417 us)
+09-05 13:05:43.385   389   404 W ServiceManagerCppClient: Permission failure: android.permission.ACCESS_SURFACE_FLINGER from uid=10142 pid=0
+09-05 13:05:43.385   389   404 D PermissionCache: checking android.permission.ACCESS_SURFACE_FLINGER for uid=10142 => denied (475 us)
+09-05 13:05:43.385   389   608 W ServiceManagerCppClient: Permission failure: android.permission.ROTATE_SURFACE_FLINGER from uid=10142 pid=2391
+09-05 13:05:43.386   389   608 D PermissionCache: checking android.permission.ROTATE_SURFACE_FLINGER for uid=10142 => denied (1648 us)
+09-05 13:05:43.390  2391  2410 W OpenGLRenderer: Failed to initialize 101010-2 format, error = EGL_SUCCESS
+09-05 13:05:43.405   134   134 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device VINTF manifest.
+09-05 13:05:43.405  2391  2410 I Gralloc4: mapper 4.x is not supported
+09-05 13:05:43.424  2347  2347 D LifecycleMonitor: Lifecycle status change: com.indian.nutrition.tracker.MainActivity@92f2527 in: DESTROYED
+09-05 13:05:43.426  2347  2347 V ActivityScenario: Update currentActivityStage to DESTROYED, currentActivity=null
+09-05 13:05:43.428  2347  2347 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=falsecallback=android.view.ViewRootImpl$$ExternalSyntheticLambda17@5c9e166
+09-05 13:05:43.441  2347  2367 D IdlingRegistry: Unregistering idling resources: [androidx.compose.ui.test.EspressoLink@d43f936]
+09-05 13:05:43.613   505   518 W InputManager-JNI: Input channel object '7214760 com.indian.nutrition.tracker/com.indian.nutrition.tracker.MainActivity (client)' was disposed without first being removed with the input manager!
+09-05 13:05:43.615   505  1537 W ServiceManagerCppClient: Permission failure: android.permission.ROTATE_SURFACE_FLINGER from uid=10142 pid=0
+09-05 13:05:43.615   505  1537 D PermissionCache: checking android.permission.ROTATE_SURFACE_FLINGER for uid=10142 => denied (246 us)
+09-05 13:05:43.615   505  1537 W ServiceManagerCppClient: Permission failure: android.permission.INTERNAL_SYSTEM_WINDOW from uid=10142 pid=0
+09-05 13:05:43.615   505  1537 D PermissionCache: checking android.permission.INTERNAL_SYSTEM_WINDOW for uid=10142 => denied (36 us)
+09-05 13:05:43.615   505  1537 W ServiceManagerCppClient: Permission failure: android.permission.ACCESS_SURFACE_FLINGER from uid=10142 pid=0
+09-05 13:05:43.615   505  1537 D PermissionCache: checking android.permission.ACCESS_SURFACE_FLINGER for uid=10142 => denied (21 us)
+09-05 13:05:43.618  2347  2367 E TestRunner: failed: test01_homeRendersAndWaterQuickAddWorks(com.indian.nutrition.tracker.ui.AppUiTest)
+09-05 13:05:43.620  2347  2367 E TestRunner: ----- begin exception -----
+09-05 13:05:43.620  2347  2367 E TestRunner: androidx.compose.ui.test.ComposeTimeoutException: Condition still not satisfied after 15000 ms
+09-05 13:05:43.620  2347  2367 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$AndroidComposeUiTestImpl.waitUntil(ComposeUiTest.android.kt:441)
+09-05 13:05:43.620  2347  2367 E TestRunner: 	at androidx.compose.ui.test.junit4.AndroidComposeTestRule.waitUntil(AndroidComposeTestRule.android.kt:306)
+09-05 13:05:43.620  2347  2367 E TestRunner: 	at com.indian.nutrition.tracker.ui.AppUiTest.waitForTag(AppUiTest.kt:54)
+09-05 13:05:43.620  2347  2367 E TestRunner: 	at com.indian.nutrition.tracker.ui.AppUiTest.waitForTag$default(AppUiTest.kt:53)
+09-05 13:05:43.620  2347  2367 E TestRunner: 	at com.indian.nutrition.tracker.ui.AppUiTest.test01_homeRendersAndWaterQuickAddWorks(AppUiTest.kt:78)
+09-05 13:05:43.620  2347  2367 E TestRunner: 	at java.lang.reflect.Method.invoke(Native Method)
+09-05 13:05:43.620  2347  2367 E TestRunner: 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+09-05 13:05:43.620  2347  2367 E TestRunner: 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+09-05 13:05:43.620  2347  2367 E TestRunner: 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+09-05 13:05:43.620  2347  2367 E TestRunner: 	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+09-05 13:05:43.620  2347  2367 E TestRunner: 	at androidx.test.internal.runner.junit4.statement.RunBefores.evaluate(RunBefores.java:80)
+09-05 13:05:43.620  2347  2367 E TestRunner: 	at org.junit.rules.ExternalResource$1.evaluate(ExternalResource.java:54)
+09-05 13:05:43.620  2347  2367 E TestRunner: 	at androidx.compose.ui.test.junit4.AndroidComposeTestRule$apply$1$evaluate$1.invoke(AndroidComposeTestRule.android.kt:272)
+09-05 13:05:43.620  2347  2367 E TestRunner: 	at androidx.compose.ui.test.junit4.AndroidComposeTestRule$apply$1$evaluate$1.invoke(AndroidComposeTestRule.android.kt:271)
+09-05 13:05:43.620  2347  2367 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$AndroidComposeUiTestImpl.withDisposableContent(ComposeUiTest.android.kt:505)
+09-05 13:05:43.620  2347  2367 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1$1$1$1$1$1.invoke(ComposeUiTest.android.kt:333)
+09-05 13:05:43.620  2347  2367 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.withComposeIdlingResource(ComposeUiTest.android.kt:385)
+09-05 13:05:43.620  2347  2367 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.access$withComposeIdlingResource(ComposeUiTest.android.kt:219)
+09-05 13:05:43.620  2347  2367 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1$1$1$1$1.invoke(ComposeUiTest.android.kt:332)
+09-05 13:05:43.620  2347  2367 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.withWindowRecomposer(ComposeUiTest.android.kt:359)
+09-05 13:05:43.620  2347  2367 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.access$withWindowRecomposer(ComposeUiTest.android.kt:219)
+09-05 13:05:43.620  2347  2367 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1$1$1$1.invoke(ComposeUiTest.android.kt:331)
+09-05 13:05:43.620  2347  2367 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.withTestCoroutines(ComposeUiTest.android.kt:372)
+09-05 13:05:43.620  2347  2367 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.access$withTestCoroutines(ComposeUiTest.android.kt:219)
+09-05 13:05:43.620  2347  2367 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1$1$1.invoke(ComposeUiTest.android.kt:330)
+09-05 13:05:43.620  2347  2367 E TestRunner: 	at androidx.compose.ui.test.EspressoLink.withStrategy(EspressoLink.android.kt:66)
+09-05 13:05:43.620  2347  2367 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1$1.invoke(ComposeUiTest.android.kt:329)
+09-05 13:05:43.620  2347  2367 E TestRunner: 	at androidx.compose.ui.test.IdlingResourceRegistry.withRegistry(IdlingResourceRegistry.jvm.kt:155)
+09-05 13:05:43.620  2347  2367 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1.invoke(ComposeUiTest.android.kt:328)
+09-05 13:05:43.620  2347  2367 E TestRunner: 	at androidx.compose.ui.test.ComposeRootRegistry.withRegistry(ComposeRootRegistry.android.kt:146)
+09-05 13:05:43.620  2347  2367 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.runTest(ComposeUiTest.android.kt:327)
+09-05 13:05:43.620  2347  2367 E TestRunner: 	at androidx.compose.ui.test.junit4.AndroidComposeTestRule$apply$1.evaluate(AndroidComposeTestRule.android.kt:271)
+09-05 13:05:43.620  2347  2367 E TestRunner: 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+09-05 13:05:43.620  2347  2367 E TestRunner: 	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+09-05 13:05:43.620  2347  2367 E TestRunner: 	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+09-05 13:05:43.620  2347  2367 E TestRunner: 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+09-05 13:05:43.620  2347  2367 E TestRunner: 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+09-05 13:05:43.620  2347  2367 E TestRunner: 	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+09-05 13:05:43.620  2347  2367 E TestRunner: 	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+09-05 13:05:43.621  2347  2367 E TestRunner: 	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+09-05 13:05:43.621  2347  2367 E TestRunner: 	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+09-05 13:05:43.621  2347  2367 E TestRunner: 	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+09-05 13:05:43.621  2347  2367 E TestRunner: 	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+09-05 13:05:43.621  2347  2367 E TestRunner: 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+09-05 13:05:43.621  2347  2367 E TestRunner: 	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+09-05 13:05:43.621  2347  2367 E TestRunner: 	at androidx.test.ext.junit.runners.AndroidJUnit4.run(AndroidJUnit4.java:162)
+09-05 13:05:43.621  2347  2367 E TestRunner: 	at org.junit.runners.Suite.runChild(Suite.java:128)
+09-05 13:05:43.621  2347  2367 E TestRunner: 	at org.junit.runners.Suite.runChild(Suite.java:27)
+09-05 13:05:43.621  2347  2367 E TestRunner: 	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+09-05 13:05:43.621  2347  2367 E TestRunner: 	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+09-05 13:05:43.621  2347  2367 E TestRunner: 	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+09-05 13:05:43.621  2347  2367 E TestRunner: 	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+09-05 13:05:43.621  2347  2367 E TestRunner: 	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+09-05 13:05:43.621  2347  2367 E TestRunner: 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+09-05 13:05:43.621  2347  2367 E TestRunner: 	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+09-05 13:05:43.621  2347  2367 E TestRunner: 	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+09-05 13:05:43.621  2347  2367 E TestRunner: 	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+09-05 13:05:43.621  2347  2367 E TestRunner: 	at androidx.test.internal.runner.TestExecutor.execute(TestExecutor.java:68)
+09-05 13:05:43.621  2347  2367 E TestRunner: 	at androidx.test.internal.runner.TestExecutor.execute(TestExecutor.java:59)
+09-05 13:05:43.621  2347  2367 E TestRunner: 	at androidx.test.runner.AndroidJUnitRunner.onStart(AndroidJUnitRunner.java:467)
+09-05 13:05:43.621  2347  2367 E TestRunner: 	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2402)
+09-05 13:05:43.621  2347  2367 E TestRunner: ----- end exception -----
+09-05 13:05:43.623  2347  2367 I TestRunner: finished: test01_homeRendersAndWaterQuickAddWorks(com.indian.nutrition.tracker.ui.AppUiTest)

@@ -1,2 +1,2 @@
-09-05 12:33:22.121  2342  2361 I TestRunner: started: weightUpsertIsOneRowPerDate(com.indian.nutrition.tracker.data.repository.RepositoryInstrumentedTest)
-09-05 12:33:22.150  2342  2361 I TestRunner: finished: weightUpsertIsOneRowPerDate(com.indian.nutrition.tracker.data.repository.RepositoryInstrumentedTest)
+09-05 13:05:26.912  2347  2367 I TestRunner: started: weightUpsertIsOneRowPerDate(com.indian.nutrition.tracker.data.repository.RepositoryInstrumentedTest)
+09-05 13:05:26.938  2347  2367 I TestRunner: finished: weightUpsertIsOneRowPerDate(com.indian.nutrition.tracker.data.repository.RepositoryInstrumentedTest)
