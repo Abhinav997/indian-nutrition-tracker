@@ -1,0 +1,123 @@
+09-05 12:33:29.433  2342  2361 I TestRunner: started: test04_calculatorRendersProfileAndSavesTargets(com.indian.nutrition.tracker.ui.AppUiTest)
+09-05 12:33:29.437  2342  2361 D IdlingRegistry: Registering idling resources: [androidx.compose.ui.test.EspressoLink@2cc4886]
+09-05 12:33:29.446  2342  2361 W Settings: Setting always_finish_activities has moved from android.provider.Settings.System to android.provider.Settings.Global, returning read-only value.
+09-05 12:33:29.456   796   847 D SplashScreenView: Build android.window.SplashScreenView{5e5e51a V.E...... ......ID 0,0-0,0}
+09-05 12:33:29.456   796   847 D SplashScreenView: Icon: view: null drawable: null size: 0
+09-05 12:33:29.456   796   847 D SplashScreenView: Branding: view: android.view.View{acca84b G.ED..... ......I. 0,0-0,0 #10204ef android:id/splashscreen_branding_view} drawable: null size w: 0 h: 0
+09-05 12:33:29.465  2342  2342 D LifecycleMonitor: Lifecycle status change: com.indian.nutrition.tracker.MainActivity@311c66a in: PRE_ON_CREATE
+09-05 12:33:29.465  2342  2342 V ActivityScenario: Activity lifecycle changed event received but ignored because the reported transition was not ON_CREATE while the last known transition was PRE_ON_CREATE
+09-05 12:33:29.471   389   389 I BpBinder: onLastStrongRef automatically unlinking death recipients: 
+09-05 12:33:29.475  2342  2342 D LifecycleMonitor: Lifecycle status change: com.indian.nutrition.tracker.MainActivity@311c66a in: CREATED
+09-05 12:33:29.475  2342  2342 V ActivityScenario: Update currentActivityStage to CREATED, currentActivity=com.indian.nutrition.tracker.MainActivity@311c66a
+09-05 12:33:29.477  2342  2342 D LifecycleMonitor: Lifecycle status change: com.indian.nutrition.tracker.MainActivity@311c66a in: STARTED
+09-05 12:33:29.477  2342  2342 V ActivityScenario: Update currentActivityStage to STARTED, currentActivity=com.indian.nutrition.tracker.MainActivity@311c66a
+09-05 12:33:29.478  2342  2342 D LifecycleMonitor: Lifecycle status change: com.indian.nutrition.tracker.MainActivity@311c66a in: RESUMED
+09-05 12:33:29.479  2342  2342 V ActivityScenario: Update currentActivityStage to RESUMED, currentActivity=com.indian.nutrition.tracker.MainActivity@311c66a
+09-05 12:33:29.485  2342  2342 D AutofillManager: Fill dialog is enabled:false, hints=[]
+09-05 12:33:29.595  1051  1051 W FrameTracker: Missing SF jank callback for vsyncId: 5290, CUJ=J<LAUNCHER_APP_CLOSE_TO_HOME>
+09-05 12:33:29.595  1051  1051 W FrameTracker: Missing SF jank callback for vsyncId: 5489, CUJ=J<LAUNCHER_APP_CLOSE_TO_HOME>
+09-05 12:33:29.600   505   522 W ziparchive: Unable to open '/data/app/~~1DreSiBWSQzQovpiX2IsBA==/com.indian.nutrition.tracker-MFB3oJ9AybHInxMwUkb1_Q==/base.dm': No such file or directory
+09-05 12:33:29.601   505   522 I ActivityTaskManager: Displayed com.indian.nutrition.tracker/.MainActivity for user 0: +151ms
+09-05 12:33:29.612   796   846 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=falsecallback=android.view.ViewRootImpl$$ExternalSyntheticLambda17@1d44a7d
+09-05 12:33:29.613   505  1753 W InputManager-JNI: Input channel object 'd449a3 Splash Screen com.indian.nutrition.tracker (client)' was disposed without first being removed with the input manager!
+09-05 12:33:29.614  1051  1080 I ImeTracker: com.android.launcher3:ab40f297: onRequestHide at ORIGIN_CLIENT_HIDE_SOFT_INPUT reason HIDE_SOFT_INPUT
+09-05 12:33:29.615   505   859 I ImeTracker: com.indian.nutrition.tracker:2957d1dd: onRequestHide at ORIGIN_SERVER_HIDE_INPUT reason HIDE_UNSPECIFIED_WINDOW
+09-05 12:33:29.615   505   859 I ImeTracker: com.indian.nutrition.tracker:2957d1dd: onCancelled at PHASE_SERVER_SHOULD_HIDE
+09-05 12:33:29.616   505  1689 I ImeTracker: com.android.launcher3:ab40f297: onCancelled at PHASE_SERVER_CLIENT_FOCUSED
+09-05 12:33:29.636  1370  1421 D EGL_emulation: app_time_stats: avg=173.16ms min=25.99ms max=370.59ms count=8
+09-05 12:33:29.797  2342  2342 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+09-05 12:33:29.797  2342  2342 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+09-05 12:33:30.231   796   847 D SplashScreenView: Build android.window.SplashScreenView{e186e21 V.E...... ......ID 0,0-0,0}
+09-05 12:33:30.231   796   847 D SplashScreenView: Icon: view: null drawable: null size: 0
+09-05 12:33:30.231   796   847 D SplashScreenView: Branding: view: android.view.View{7b2246 G.ED..... ......I. 0,0-0,0 #10204ef android:id/splashscreen_branding_view} drawable: null size w: 0 h: 0
+09-05 12:33:30.234  2342  2342 D LifecycleMonitor: Lifecycle status change: com.indian.nutrition.tracker.MainActivity@311c66a in: PAUSED
+09-05 12:33:30.235  2342  2342 V ActivityScenario: Update currentActivityStage to PAUSED, currentActivity=com.indian.nutrition.tracker.MainActivity@311c66a
+09-05 12:33:30.254   389   389 I BpBinder: onLastStrongRef automatically unlinking death recipients: 
+09-05 12:33:30.267  2384  2403 W OpenGLRenderer: Failed to initialize 101010-2 format, error = EGL_SUCCESS
+09-05 12:33:30.471   389   389 I BpBinder: onLastStrongRef automatically unlinking death recipients: 
+09-05 12:33:30.496  2342  2342 D LifecycleMonitor: Lifecycle status change: com.indian.nutrition.tracker.MainActivity@311c66a in: STOPPED
+09-05 12:33:30.496  2342  2342 V ActivityScenario: Update currentActivityStage to STOPPED, currentActivity=com.indian.nutrition.tracker.MainActivity@311c66a
+09-05 12:33:30.513   505  1753 I ImeTracker: com.android.launcher3:6c3022b9: onRequestHide at ORIGIN_SERVER_HIDE_INPUT reason HIDE_UNSPECIFIED_WINDOW
+09-05 12:33:30.513   505  1753 I ImeTracker: com.android.launcher3:6c3022b9: onCancelled at PHASE_SERVER_SHOULD_HIDE
+09-05 12:33:30.517   796   861 D EGL_emulation: app_time_stats: avg=147.91ms min=8.59ms max=843.98ms count=10
+09-05 12:33:30.528   796   846 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=falsecallback=android.view.ViewRootImpl$$ExternalSyntheticLambda17@8b13ca0
+09-05 12:33:30.530   505  2265 W InputManager-JNI: Input channel object '82cd7c4 Splash Screen com.indian.nutrition.tracker.test (client)' was disposed without first being removed with the input manager!
+09-05 12:33:30.548  2384  2384 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=falsecallback=android.view.ViewRootImpl$$ExternalSyntheticLambda17@9443d40
+09-05 12:33:30.550   505  2265 W InputManager-JNI: Input channel object 'bae1e65 com.indian.nutrition.tracker.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity (client)' was disposed without first being removed with the input manager!
+09-05 12:33:30.588  2342  2349 W trition.tracker: Cleared Reference was only reachable from finalizer (only reported once)
+09-05 12:33:30.591  2342  2349 I trition.tracker: Background concurrent copying GC freed 507031(22MB) AllocSpace objects, 15(340KB) LOS objects, 49% free, 10052KB/19MB, paused 1.262ms,9us total 122.226ms
+09-05 12:33:30.604  2342  2351 W System  : A resource failed to call release. 
+09-05 12:33:30.605  2342  2351 W System  : A resource failed to call release. 
+09-05 12:33:30.631  2342  2342 D LifecycleMonitor: Lifecycle status change: com.indian.nutrition.tracker.MainActivity@311c66a in: DESTROYED
+09-05 12:33:30.631  2342  2342 V ActivityScenario: Update currentActivityStage to DESTROYED, currentActivity=null
+09-05 12:33:30.634  2342  2361 D IdlingRegistry: Unregistering idling resources: [androidx.compose.ui.test.EspressoLink@2cc4886]
+09-05 12:33:30.635  2342  2342 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=falsecallback=android.view.ViewRootImpl$$ExternalSyntheticLambda17@e0bda0
+09-05 12:33:30.636   505  1750 W InputManager-JNI: Input channel object '578facc com.indian.nutrition.tracker/com.indian.nutrition.tracker.MainActivity (client)' was disposed without first being removed with the input manager!
+09-05 12:33:30.639  2342  2361 E TestRunner: failed: test04_calculatorRendersProfileAndSavesTargets(com.indian.nutrition.tracker.ui.AppUiTest)
+09-05 12:33:30.642  2342  2361 E TestRunner: ----- begin exception -----
+09-05 12:33:30.642  2342  2361 E TestRunner: java.lang.AssertionError: Action performScrollTo() failed.
+09-05 12:33:30.642  2342  2361 E TestRunner: Reason: Expected exactly '1' node but could not find any node that satisfies: (TestTag = 'target-mode-predefined-btn')
+09-05 12:33:30.642  2342  2361 E TestRunner: 
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at androidx.compose.ui.test.SemanticsNodeInteraction.fetchOneOrThrow(SemanticsNodeInteraction.kt:178)
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at androidx.compose.ui.test.SemanticsNodeInteraction.fetchOneOrThrow$default(SemanticsNodeInteraction.kt:150)
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at androidx.compose.ui.test.SemanticsNodeInteraction.fetchSemanticsNode(SemanticsNodeInteraction.kt:84)
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at androidx.compose.ui.test.ActionsKt.performScrollTo(Actions.kt:76)
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at com.indian.nutrition.tracker.ui.AppUiTest.test04_calculatorRendersProfileAndSavesTargets(AppUiTest.kt:162)
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at java.lang.reflect.Method.invoke(Native Method)
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at androidx.test.internal.runner.junit4.statement.RunBefores.evaluate(RunBefores.java:80)
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at org.junit.rules.ExternalResource$1.evaluate(ExternalResource.java:54)
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at androidx.compose.ui.test.junit4.AndroidComposeTestRule$apply$1$evaluate$1.invoke(AndroidComposeTestRule.android.kt:272)
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at androidx.compose.ui.test.junit4.AndroidComposeTestRule$apply$1$evaluate$1.invoke(AndroidComposeTestRule.android.kt:271)
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$AndroidComposeUiTestImpl.withDisposableContent(ComposeUiTest.android.kt:505)
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1$1$1$1$1$1.invoke(ComposeUiTest.android.kt:333)
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.withComposeIdlingResource(ComposeUiTest.android.kt:385)
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.access$withComposeIdlingResource(ComposeUiTest.android.kt:219)
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1$1$1$1$1.invoke(ComposeUiTest.android.kt:332)
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.withWindowRecomposer(ComposeUiTest.android.kt:359)
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.access$withWindowRecomposer(ComposeUiTest.android.kt:219)
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1$1$1$1.invoke(ComposeUiTest.android.kt:331)
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.withTestCoroutines(ComposeUiTest.android.kt:372)
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.access$withTestCoroutines(ComposeUiTest.android.kt:219)
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1$1$1.invoke(ComposeUiTest.android.kt:330)
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at androidx.compose.ui.test.EspressoLink.withStrategy(EspressoLink.android.kt:66)
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1$1.invoke(ComposeUiTest.android.kt:329)
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at androidx.compose.ui.test.IdlingResourceRegistry.withRegistry(IdlingResourceRegistry.jvm.kt:155)
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1.invoke(ComposeUiTest.android.kt:328)
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at androidx.compose.ui.test.ComposeRootRegistry.withRegistry(ComposeRootRegistry.android.kt:146)
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.runTest(ComposeUiTest.android.kt:327)
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at androidx.compose.ui.test.junit4.AndroidComposeTestRule$apply$1.evaluate(AndroidComposeTestRule.android.kt:271)
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+09-05 12:33:30.643  2342  2361 E TestRunner: 	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+09-05 12:33:30.643  2342  2361 E TestRunner: 	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+09-05 12:33:30.643  2342  2361 E TestRunner: 	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+09-05 12:33:30.643  2342  2361 E TestRunner: 	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+09-05 12:33:30.643  2342  2361 E TestRunner: 	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+09-05 12:33:30.643  2342  2361 E TestRunner: 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+09-05 12:33:30.643  2342  2361 E TestRunner: 	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+09-05 12:33:30.643  2342  2361 E TestRunner: 	at androidx.test.ext.junit.runners.AndroidJUnit4.run(AndroidJUnit4.java:162)
+09-05 12:33:30.643  2342  2361 E TestRunner: 	at org.junit.runners.Suite.runChild(Suite.java:128)
+09-05 12:33:30.643  2342  2361 E TestRunner: 	at org.junit.runners.Suite.runChild(Suite.java:27)
+09-05 12:33:30.643  2342  2361 E TestRunner: 	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+09-05 12:33:30.643  2342  2361 E TestRunner: 	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+09-05 12:33:30.643  2342  2361 E TestRunner: 	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+09-05 12:33:30.643  2342  2361 E TestRunner: 	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+09-05 12:33:30.643  2342  2361 E TestRunner: 	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+09-05 12:33:30.643  2342  2361 E TestRunner: 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+09-05 12:33:30.643  2342  2361 E TestRunner: 	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+09-05 12:33:30.643  2342  2361 E TestRunner: 	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+09-05 12:33:30.643  2342  2361 E TestRunner: 	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+09-05 12:33:30.643  2342  2361 E TestRunner: 	at androidx.test.internal.runner.TestExecutor.execute(TestExecutor.java:68)
+09-05 12:33:30.643  2342  2361 E TestRunner: 	at androidx.test.internal.runner.TestExecutor.execute(TestExecutor.java:59)
+09-05 12:33:30.643  2342  2361 E TestRunner: 	at androidx.test.runner.AndroidJUnitRunner.onStart(AndroidJUnitRunner.java:467)
+09-05 12:33:30.643  2342  2361 E TestRunner: 	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2402)
+09-05 12:33:30.643  2342  2361 E TestRunner: ----- end exception -----
+09-05 12:33:30.648  2342  2361 I TestRunner: finished: test04_calculatorRendersProfileAndSavesTargets(com.indian.nutrition.tracker.ui.AppUiTest)

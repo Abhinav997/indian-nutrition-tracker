@@ -93,19 +93,19 @@ Add android.sync.suppressAgpWarnings=LIBRARY_CONSTRAINTS_SHOULD_BE_DISABLED to t
 > Task :app:compileDebugNavigationResources
 > Task :app:createDebugCompatibleScreenManifests
 > Task :app:extractDeepLinksDebug
-> Task :app:mergeDebugResources
 > Task :app:processDebugMainManifest
+> Task :app:mergeDebugResources
 > Task :app:processDebugManifest
 > Task :app:preDebugAndroidTestBuild SKIPPED
 > Task :app:generateDebugAndroidTestResValues
 > Task :app:generateDebugAndroidTestResources
 > Task :app:packageDebugAndroidTestResources
 > Task :app:processDebugAndroidTestNavigationResources
+> Task :app:javaPreCompileDebugAndroidTest
 > Task :app:processDebugManifestForPackage
 > Task :app:parseDebugAndroidTestLocalResources
-> Task :app:javaPreCompileDebugAndroidTest
-> Task :app:generateDebugAndroidTestRFile
 > Task :app:generateDebugAssets UP-TO-DATE
+> Task :app:generateDebugAndroidTestRFile
 > Task :app:mergeDebugAssets
 > Task :app:compressDebugAssets
 > Task :app:processDebugResources
@@ -115,8 +115,8 @@ Add android.sync.suppressAgpWarnings=LIBRARY_CONSTRAINTS_SHOULD_BE_DISABLED to t
 > Task :app:kspDebugKotlin
 > Task :app:l8DexDesugarLibDebug
 > Task :app:mergeExtDexDebug
-> Task :app:mergeDebugJniLibFolders
 > Task :app:mergeLibDexDebug
+> Task :app:mergeDebugJniLibFolders
 > Task :app:mergeDebugNativeLibs
 > Task :app:validateSigningDebug
 > Task :app:writeDebugAppMetadata
@@ -126,12 +126,12 @@ Add android.sync.suppressAgpWarnings=LIBRARY_CONSTRAINTS_SHOULD_BE_DISABLED to t
 > Task :app:mergeDebugAndroidTestAssets
 > Task :app:compressDebugAndroidTestAssets
 > Task :app:generateDebugAndroidTestGlobalSynthetics
-> Task :app:checkDebugAndroidTestDuplicateClasses
 > Task :app:desugarDebugAndroidTestFileDependencies
-> Task :app:mergeLibDexDebugAndroidTest
+> Task :app:checkDebugAndroidTestDuplicateClasses
 > Task :app:checkDebugAndroidTestAarMetadata
 > Task :app:mapDebugAndroidTestSourceSetPaths
 > Task :app:compileDebugAndroidTestNavigationResources
+> Task :app:mergeLibDexDebugAndroidTest
 > Task :app:mergeExtDexDebugAndroidTest
 > Task :app:mergeDebugAndroidTestManifest
 > Task :app:processDebugAndroidTestManifest
@@ -144,28 +144,28 @@ Add android.sync.suppressAgpWarnings=LIBRARY_CONSTRAINTS_SHOULD_BE_DISABLED to t
 > Task :app:processDebugAndroidTestResources
 > Task :app:compileDebugKotlin
 > Task :app:compileDebugJavaWithJavac NO-SOURCE
-> Task :app:bundleDebugClassesToCompileJar
 > Task :app:processDebugJavaRes
-> Task :app:kspDebugAndroidTestKotlin
+> Task :app:bundleDebugClassesToCompileJar
 > Task :app:mergeDebugJavaResource
-> Task :app:compileDebugAndroidTestKotlin
+> Task :app:kspDebugAndroidTestKotlin
 > Task :app:dexBuilderDebug
+> Task :app:mergeProjectDexDebug
+> Task :app:packageDebug
+> Task :app:createDebugApkListingFileRedirect
+> Task :app:compileDebugAndroidTestKotlin
 > Task :app:compileDebugAndroidTestJavaWithJavac NO-SOURCE
 > Task :app:processDebugAndroidTestJavaRes
-> Task :app:mergeProjectDexDebug
 > Task :app:mergeDebugAndroidTestJavaResource
 > Task :app:dexBuilderDebugAndroidTest
 > Task :app:mergeProjectDexDebugAndroidTest
 > Task :app:packageDebugAndroidTest
 > Task :app:createDebugAndroidTestApkListingFileRedirect
-> Task :app:packageDebug
-> Task :app:createDebugApkListingFileRedirect
 
 > Task :app:connectedDebugAndroidTest
 Running tests on devices: test(AVD) - 14
 
 > Task :app:connectedDebugAndroidTest FAILED
-gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/__reactivecircus_android-emulator-runner-1788610722722.json
+gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/__reactivecircus_android-emulator-runner-1788611385103.json
 
 [Incubating] Problems report is available at: file:///home/runner/work/indian-nutrition-tracker/indian-nutrition-tracker/build/reports/problems/problems-report.html
 
@@ -187,64 +187,36 @@ You can use '--warning-mode all' to show the individual deprecation warnings and
 
 For more on this, please refer to https://docs.gradle.org/9.7.1/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
 
-BUILD FAILED in 2m 26s
+BUILD FAILED in 3m 56s
 73 actionable tasks: 73 executed
 
 === TEST RESULT XML ===
 <?xml version='1.0' encoding='UTF-8' ?>
-<testsuites tests="12" failures="3" errors="0" skipped="0" time="0.000" timestamp="2026-09-05T12:21:03" hostname="localhost">
-  <testsuite name="com.indian.nutrition.tracker.data.local.DaoInstrumentedTest" tests="5" failures="1" errors="0" skipped="0" time="0.135" timestamp="2026-09-05T12:21:03" hostname="localhost">
+<testsuites tests="13" failures="3" errors="0" skipped="0" time="0.000" timestamp="2026-09-05T12:33:30" hostname="localhost">
+  <testsuite name="com.indian.nutrition.tracker.data.local.DaoInstrumentedTest" tests="5" failures="0" errors="0" skipped="0" time="0.269" timestamp="2026-09-05T12:33:30" hostname="localhost">
     <properties>
       <property name="device" value="emulator-5554" />
     </properties>
-    <testcase name="dailyLogInsertReplaceAndDelete" classname="com.indian.nutrition.tracker.data.local.DaoInstrumentedTest" time="0.036" />
-    <testcase name="waterInsertReplaceAndOrdering" classname="com.indian.nutrition.tracker.data.local.DaoInstrumentedTest" time="0.026" />
-    <testcase name="weightUpsertUpdateAndUniqueDate" classname="com.indian.nutrition.tracker.data.local.DaoInstrumentedTest" time="0.018">
-      <failure>java.lang.AssertionError
-	at org.junit.Assert.fail(Assert.java:87)
-	at org.junit.Assert.assertTrue(Assert.java:42)
-	at org.junit.Assert.assertTrue(Assert.java:53)
-	at com.indian.nutrition.tracker.data.local.DaoInstrumentedTest$weightUpsertUpdateAndUniqueDate$1.invokeSuspend(DaoInstrumentedTest.kt:91)
-	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
-	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:104)
-	at kotlinx.coroutines.test.TestDispatcher.processEvent$kotlinx_coroutines_test(TestDispatcher.kt:24)
-	at kotlinx.coroutines.test.TestCoroutineScheduler.tryRunNextTaskUnless$kotlinx_coroutines_test(TestCoroutineScheduler.kt:99)
-	at kotlinx.coroutines.test.TestBuildersKt__TestBuildersKt$runTest$2$1$workRunner$1.invokeSuspend(TestBuilders.kt:327)
-	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
-	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:104)
-	at kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:277)
-	at kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:95)
-	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking(Builders.kt:69)
-	at kotlinx.coroutines.BuildersKt.runBlocking(Unknown Source:1)
-	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking$default(Builders.kt:48)
-	at kotlinx.coroutines.BuildersKt.runBlocking$default(Unknown Source:1)
-	at kotlinx.coroutines.test.TestBuildersJvmKt.createTestResult(TestBuildersJvm.kt:10)
-	at kotlinx.coroutines.test.TestBuildersKt__TestBuildersKt.runTest-8Mi8wO0(TestBuilders.kt:310)
-	at kotlinx.coroutines.test.TestBuildersKt.runTest-8Mi8wO0(Unknown Source:1)
-	at kotlinx.coroutines.test.TestBuildersKt__TestBuildersKt.runTest-8Mi8wO0(TestBuilders.kt:168)
-	at kotlinx.coroutines.test.TestBuildersKt.runTest-8Mi8wO0(Unknown Source:1)
-	at kotlinx.coroutines.test.TestBuildersKt__TestBuildersKt.runTest-8Mi8wO0$default(TestBuilders.kt:160)
-	at kotlinx.coroutines.test.TestBuildersKt.runTest-8Mi8wO0$default(Unknown Source:1)
-	at com.indian.nutrition.tracker.data.local.DaoInstrumentedTest.weightUpsertUpdateAndUniqueDate(DaoInstrumentedTest.kt:69)
-</failure>
-    </testcase>
-    <testcase name="offCacheEvictionAndCounting" classname="com.indian.nutrition.tracker.data.local.DaoInstrumentedTest" time="0.024" />
-    <testcase name="customFoodInsertUpdateAndClear" classname="com.indian.nutrition.tracker.data.local.DaoInstrumentedTest" time="0.031" />
+    <testcase name="dailyLogInsertReplaceAndDelete" classname="com.indian.nutrition.tracker.data.local.DaoInstrumentedTest" time="0.079" />
+    <testcase name="waterInsertReplaceAndOrdering" classname="com.indian.nutrition.tracker.data.local.DaoInstrumentedTest" time="0.058" />
+    <testcase name="weightUpsertUpdateAndUniqueDate" classname="com.indian.nutrition.tracker.data.local.DaoInstrumentedTest" time="0.034" />
+    <testcase name="offCacheEvictionAndCounting" classname="com.indian.nutrition.tracker.data.local.DaoInstrumentedTest" time="0.041" />
+    <testcase name="customFoodInsertUpdateAndClear" classname="com.indian.nutrition.tracker.data.local.DaoInstrumentedTest" time="0.057" />
   </testsuite>
-  <testsuite name="com.indian.nutrition.tracker.data.repository.RepositoryInstrumentedTest" tests="4" failures="0" errors="0" skipped="0" time="0.103" timestamp="2026-09-05T12:21:03" hostname="localhost">
+  <testsuite name="com.indian.nutrition.tracker.data.repository.RepositoryInstrumentedTest" tests="4" failures="0" errors="0" skipped="0" time="0.186" timestamp="2026-09-05T12:33:30" hostname="localhost">
     <properties>
       <property name="device" value="emulator-5554" />
     </properties>
-    <testcase name="logAndWaterImportKeepIdsAndReplaceOnConflict" classname="com.indian.nutrition.tracker.data.repository.RepositoryInstrumentedTest" time="0.031" />
-    <testcase name="customImportAndClearAllTables" classname="com.indian.nutrition.tracker.data.repository.RepositoryInstrumentedTest" time="0.043" />
-    <testcase name="weightImportCollapsesDuplicateDates" classname="com.indian.nutrition.tracker.data.repository.RepositoryInstrumentedTest" time="0.014" />
-    <testcase name="weightUpsertIsOneRowPerDate" classname="com.indian.nutrition.tracker.data.repository.RepositoryInstrumentedTest" time="0.015" />
+    <testcase name="logAndWaterImportKeepIdsAndReplaceOnConflict" classname="com.indian.nutrition.tracker.data.repository.RepositoryInstrumentedTest" time="0.051" />
+    <testcase name="customImportAndClearAllTables" classname="com.indian.nutrition.tracker.data.repository.RepositoryInstrumentedTest" time="0.086" />
+    <testcase name="weightImportCollapsesDuplicateDates" classname="com.indian.nutrition.tracker.data.repository.RepositoryInstrumentedTest" time="0.022" />
+    <testcase name="weightUpsertIsOneRowPerDate" classname="com.indian.nutrition.tracker.data.repository.RepositoryInstrumentedTest" time="0.027" />
   </testsuite>
-  <testsuite name="com.indian.nutrition.tracker.ui.AppUiTest" tests="3" failures="2" errors="0" skipped="0" time="3.080" timestamp="2026-09-05T12:21:03" hostname="localhost">
+  <testsuite name="com.indian.nutrition.tracker.ui.AppUiTest" tests="4" failures="3" errors="0" skipped="0" time="8.305" timestamp="2026-09-05T12:33:30" hostname="localhost">
     <properties>
       <property name="device" value="emulator-5554" />
     </properties>
-    <testcase name="test01_homeRendersAndWaterQuickAddWorks" classname="com.indian.nutrition.tracker.ui.AppUiTest" time="1.010">
+    <testcase name="test01_homeRendersAndWaterQuickAddWorks" classname="com.indian.nutrition.tracker.ui.AppUiTest" time="1.527">
       <failure>java.lang.AssertionError: Failed: assertExists.
 Reason: Expected exactly '1' node but could not find any node that satisfies: (TestTag = 'water-tracker-widget')
 
@@ -255,416 +227,326 @@ Reason: Expected exactly '1' node but could not find any node that satisfies: (T
 	at com.indian.nutrition.tracker.ui.AppUiTest.test01_homeRendersAndWaterQuickAddWorks(AppUiTest.kt:89)
 </failure>
     </testcase>
-    <testcase name="test02_weightSheetLogsAndUpdatesSummary" classname="com.indian.nutrition.tracker.ui.AppUiTest" time="1.534" />
-    <testcase name="test03_addFoodOpensSearchAndCanCreateCustomRecipe" classname="com.indian.nutrition.tracker.ui.AppUiTest" time="0.536">
-      <failure>kotlinx.serialization.json.internal.JsonDecodingException: Unexpected JSON token at offset 8778: Unexpected symbol '.' in numeric literal at path: $[22].typicalServingGrams
-JSON input: .....",
-    "typicalServingGrams": 30.4,
-    "brand": "Optimum Nu.....
-	at kotlinx.serialization.json.internal.JsonExceptionsKt.JsonDecodingException(JsonExceptions.kt:24)
-	at kotlinx.serialization.json.internal.JsonExceptionsKt.JsonDecodingException(JsonExceptions.kt:32)
-	at kotlinx.serialization.json.internal.AbstractJsonLexer.fail(AbstractJsonLexer.kt:580)
-	at kotlinx.serialization.json.internal.AbstractJsonLexer.fail$default(AbstractJsonLexer.kt:578)
-	at kotlinx.serialization.json.internal.AbstractJsonLexer.consumeNumericLiteral(AbstractJsonLexer.kt:636)
-	at kotlinx.serialization.json.internal.StreamingJsonDecoder.decodeInt(StreamingJsonDecoder.kt:297)
-	at kotlinx.serialization.internal.IntSerializer.deserialize(Primitives.kt:96)
-	at kotlinx.serialization.internal.IntSerializer.deserialize(Primitives.kt:92)
-	at kotlinx.serialization.json.internal.StreamingJsonDecoder.decodeSerializableValue(StreamingJsonDecoder.kt:69)
-	at kotlinx.serialization.encoding.AbstractDecoder.decodeSerializableValue(AbstractDecoder.kt:43)
-	at kotlinx.serialization.encoding.AbstractDecoder.decodeNullableSerializableElement(AbstractDecoder.kt:78)
-	at com.indian.nutrition.tracker.data.asset.FoodDto$$serializer.deserialize(FoodAssets.kt:10)
-	at com.indian.nutrition.tracker.data.asset.FoodDto$$serializer.deserialize(FoodAssets.kt:10)
-	at kotlinx.serialization.json.internal.StreamingJsonDecoder.decodeSerializableValue(StreamingJsonDecoder.kt:69)
-	at kotlinx.serialization.encoding.AbstractDecoder.decodeSerializableValue(AbstractDecoder.kt:43)
-	at kotlinx.serialization.encoding.AbstractDecoder.decodeSerializableElement(AbstractDecoder.kt:70)
-	at kotlinx.serialization.json.internal.StreamingJsonDecoder.decodeSerializableElement(StreamingJsonDecoder.kt:168)
-	at kotlinx.serialization.encoding.CompositeDecoder$DefaultImpls.decodeSerializableElement$default(Decoding.kt:538)
-	at kotlinx.serialization.internal.CollectionLikeSerializer.readElement(CollectionSerializers.kt:80)
-	at kotlinx.serialization.internal.AbstractCollectionSerializer.readElement$default(CollectionSerializers.kt:51)
-	at kotlinx.serialization.internal.AbstractCollectionSerializer.merge(CollectionSerializers.kt:36)
-	at kotlinx.serialization.internal.AbstractCollectionSerializer.deserialize(CollectionSerializers.kt:43)
-	at kotlinx.serialization.json.internal.StreamingJsonDecoder.decodeSerializableValue(StreamingJsonDecoder.kt:69)
-	at kotlinx.serialization.json.Json.decodeFromString(Json.kt:165)
-	at com.indian.nutrition.tracker.data.asset.FoodAssets.load(FoodAssets.kt:66)
-	at com.indian.nutrition.tracker.data.asset.FoodAssets.loadAll(FoodAssets.kt:58)
-	at com.indian.nutrition.tracker.data.repository.FoodRepository.ensureLoaded(FoodRepository.kt:29)
-	at com.indian.nutrition.tracker.data.repository.FoodRepository.masterList(FoodRepository.kt:44)
-	at com.indian.nutrition.tracker.ui.screens.search.SearchViewModel$master$1.invokeSuspend(SearchViewModel.kt:77)
-	at com.indian.nutrition.tracker.ui.screens.search.SearchViewModel$master$1.invoke(Unknown Source:13)
-	at com.indian.nutrition.tracker.ui.screens.search.SearchViewModel$master$1.invoke(Unknown Source:6)
-	at kotlinx.coroutines.flow.FlowKt__ZipKt$combine$1$1.invokeSuspend(Zip.kt:29)
-	at kotlinx.coroutines.flow.FlowKt__ZipKt$combine$1$1.invoke(Unknown Source:13)
-	at kotlinx.coroutines.flow.FlowKt__ZipKt$combine$1$1.invoke(Unknown Source:6)
-	at kotlinx.coroutines.flow.internal.CombineKt$combineInternal$2.invokeSuspend(Combine.kt:73)
-	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
-	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:104)
-	at kotlinx.coroutines.EventLoop.processUnconfinedEvent(EventLoop.common.kt:65)
-	at kotlinx.coroutines.DispatchedTaskKt.resumeUnconfined(DispatchedTask.kt:241)
-	at kotlinx.coroutines.DispatchedTaskKt.dispatch(DispatchedTask.kt:159)
-	at kotlinx.coroutines.CancellableContinuationImpl.dispatchResume(CancellableContinuationImpl.kt:466)
-	at kotlinx.coroutines.CancellableContinuationImpl.resumeImpl(CancellableContinuationImpl.kt:500)
-	at kotlinx.coroutines.CancellableContinuationImpl.resumeImpl$default(CancellableContinuationImpl.kt:489)
-	at kotlinx.coroutines.CancellableContinuationImpl.resumeWith(CancellableContinuationImpl.kt:364)
-	at kotlinx.coroutines.flow.SharedFlowImpl.tryEmit(SharedFlow.kt:409)
-	at kotlinx.coroutines.flow.internal.SubscriptionCountStateFlow.increment(AbstractSharedFlow.kt:125)
-	at kotlinx.coroutines.flow.internal.AbstractSharedFlow.allocateSlot(AbstractSharedFlow.kt:64)
-	at kotlinx.coroutines.flow.StateFlowImpl.collect(StateFlow.kt:382)
-	at kotlinx.coroutines.flow.ReadonlyStateFlow.collect(Unknown Source:2)
-	at androidx.lifecycle.compose.FlowExtKt$collectAsStateWithLifecycle$1$1$1.invokeSuspend(FlowExt.kt:174)
-	at androidx.lifecycle.compose.FlowExtKt$collectAsStateWithLifecycle$1$1$1.invoke(Unknown Source:8)
-	at androidx.lifecycle.compose.FlowExtKt$collectAsStateWithLifecycle$1$1$1.invoke(Unknown Source:4)
-	at androidx.lifecycle.RepeatOnLifecycleKt$repeatOnLifecycle$3$1$1$1$1$1$1.invokeSuspend(RepeatOnLifecycle.kt:111)
-	at androidx.lifecycle.RepeatOnLifecycleKt$repeatOnLifecycle$3$1$1$1$1$1$1.invoke(Unknown Source:8)
-	at androidx.lifecycle.RepeatOnLifecycleKt$repeatOnLifecycle$3$1$1$1$1$1$1.invoke(Unknown Source:4)
-	at kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:61)
-	at kotlinx.coroutines.CoroutineScopeKt.coroutineScope(CoroutineScope.kt:261)
-	at androidx.lifecycle.RepeatOnLifecycleKt$repeatOnLifecycle$3$1$1$1$1.invokeSuspend(RepeatOnLifecycle.kt:110)
-	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
-	at androidx.compose.ui.test.ApplyingContinuationInterceptor$SendApplyContinuation.resumeWith(ApplyingContinuationInterceptor.kt:65)
-	at androidx.compose.ui.test.FrameDeferringContinuationInterceptor$TrampolinedTask.resume(FrameDeferringContinuationInterceptor.jvm.kt:137)
-	at androidx.compose.ui.test.FrameDeferringContinuationInterceptor.runWithoutResumingCoroutines(FrameDeferringContinuationInterceptor.jvm.kt:75)
-	at androidx.compose.ui.test.TestMonotonicFrameClock.performFrame(TestMonotonicFrameClock.jvm.kt:132)
-	at androidx.compose.ui.test.TestMonotonicFrameClock.access$performFrame(TestMonotonicFrameClock.jvm.kt:53)
-	at androidx.compose.ui.test.TestMonotonicFrameClock$withFrameNanos$2$1$2.invokeSuspend(TestMonotonicFrameClock.jvm.kt:110)
-	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
-	at kotlinx.coroutines.DispatchedTaskKt.resume(DispatchedTask.kt:231)
-	at kotlinx.coroutines.DispatchedTaskKt.dispatch(DispatchedTask.kt:164)
-	at kotlinx.coroutines.CancellableContinuationImpl.dispatchResume(CancellableContinuationImpl.kt:466)
-	at kotlinx.coroutines.CancellableContinuationImpl.resumeImpl(CancellableContinuationImpl.kt:500)
-	at kotlinx.coroutines.CancellableContinuationImpl.resumeImpl$default(CancellableContinuationImpl.kt:489)
-	at kotlinx.coroutines.CancellableContinuationImpl.resumeUndispatched(CancellableContinuationImpl.kt:587)
-	at kotlinx.coroutines.test.CancellableContinuationRunnable.run(TestDispatcher.kt:60)
-	at kotlinx.coroutines.test.TestDispatcher.processEvent$kotlinx_coroutines_test(TestDispatcher.kt:24)
-	at kotlinx.coroutines.test.TestCoroutineScheduler.runCurrent(TestCoroutineScheduler.kt:132)
-	at androidx.compose.ui.test.AbstractMainTestClock$advanceDispatcher$1.invoke(AbstractMainTestClock.jvm.kt:72)
-	at androidx.compose.ui.test.AbstractMainTestClock$advanceDispatcher$1.invoke(AbstractMainTestClock.jvm.kt:65)
-	at androidx.compose.ui.test.AndroidSynchronization_androidKt.runOnUiThread(AndroidSynchronization.android.kt:33)
-	at androidx.compose.ui.test.MainTestClockImpl$1.invoke(MainTestClockImpl.android.kt:29)
-	at androidx.compose.ui.test.MainTestClockImpl$1.invoke(MainTestClockImpl.android.kt:29)
-	at androidx.compose.ui.test.AbstractMainTestClock.advanceDispatcher(AbstractMainTestClock.jvm.kt:65)
-	at androidx.compose.ui.test.AbstractMainTestClock.advanceTimeByFrame(AbstractMainTestClock.jvm.kt:36)
-	at androidx.compose.ui.test.ComposeIdlingResource.isIdleNow(ComposeIdlingResource.android.kt:73)
-	at androidx.compose.ui.test.IdlingResourceRegistry.areAllResourcesIdle(IdlingResourceRegistry.jvm.kt:122)
-	at androidx.compose.ui.test.IdlingResourceRegistry.isIdleOrEnsurePolling$ui_test_release(IdlingResourceRegistry.jvm.kt:101)
-	at androidx.compose.ui.test.EspressoLink.isIdleNow(EspressoLink.android.kt:44)
-	at androidx.test.espresso.base.IdlingResourceRegistry.allResourcesAreIdle(IdlingResourceRegistry.java:281)
-	at androidx.test.espresso.base.IdlingResourceRegistry$6.isIdleNow(IdlingResourceRegistry.java:320)
-	at androidx.test.espresso.base.UiControllerImpl.loopMainThreadUntilIdle(UiControllerImpl.java:407)
-	at androidx.test.espresso.Espresso.lambda$onIdle$2(Espresso.java:340)
-	at androidx.test.espresso.Espresso$$ExternalSyntheticLambda1.call(D8$$SyntheticClass:0)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at android.os.Handler.handleCallback(Handler.java:958)
-	at android.os.Handler.dispatchMessage(Handler.java:99)
-	at android.os.Looper.loopOnce(Looper.java:205)
-	at android.os.Looper.loop(Looper.java:294)
-	at android.app.ActivityThread.main(ActivityThread.java:8177)
-	at java.lang.reflect.Method.invoke(Native Method)
-	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:552)
-	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:971)
-	Suppressed: kotlinx.coroutines.internal.DiagnosticCoroutineContextException: [StandaloneCoroutine{Cancelling}@58aa39b, Dispatchers.Main.immediate]
+    <testcase name="test02_weightSheetLogsAndUpdatesSummary" classname="com.indian.nutrition.tracker.ui.AppUiTest" time="2.592" />
+    <testcase name="test03_addFoodOpensSearchAndCanCreateCustomRecipe" classname="com.indian.nutrition.tracker.ui.AppUiTest" time="2.973">
+      <failure>java.lang.AssertionError: Semantic Node has no parent layout with a Scroll SemanticsAction
+	at androidx.compose.ui.test.ActionsKt.scrollToNode(Actions.kt:92)
+	at androidx.compose.ui.test.ActionsKt.performScrollTo(Actions.kt:77)
+	at com.indian.nutrition.tracker.ui.AppUiTest.test03_addFoodOpensSearchAndCanCreateCustomRecipe(AppUiTest.kt:145)
+</failure>
+    </testcase>
+    <testcase name="test04_calculatorRendersProfileAndSavesTargets" classname="com.indian.nutrition.tracker.ui.AppUiTest" time="1.213">
+      <failure>java.lang.AssertionError: Action performScrollTo() failed.
+Reason: Expected exactly '1' node but could not find any node that satisfies: (TestTag = 'target-mode-predefined-btn')
+
+	at androidx.compose.ui.test.SemanticsNodeInteraction.fetchOneOrThrow(SemanticsNodeInteraction.kt:178)
+	at androidx.compose.ui.test.SemanticsNodeInteraction.fetchOneOrThrow$default(SemanticsNodeInteraction.kt:150)
+	at androidx.compose.ui.test.SemanticsNodeInteraction.fetchSemanticsNode(SemanticsNodeInteraction.kt:84)
+	at androidx.compose.ui.test.ActionsKt.performScrollTo(Actions.kt:76)
+	at com.indian.nutrition.tracker.ui.AppUiTest.test04_calculatorRendersProfileAndSavesTargets(AppUiTest.kt:162)
 </failure>
     </testcase>
   </testsuite>
 </testsuites>
 === LOGCAT ===
-09-05 12:21:03.059  2351  2351 E AndroidRuntime: 	at androidx.lifecycle.compose.FlowExtKt$collectAsStateWithLifecycle$1$1$1.invoke(Unknown Source:4)
-09-05 12:21:03.059  2351  2351 E AndroidRuntime: 	at androidx.lifecycle.RepeatOnLifecycleKt$repeatOnLifecycle$3$1$1$1$1$1$1.invokeSuspend(RepeatOnLifecycle.kt:111)
-09-05 12:21:03.059  2351  2351 E AndroidRuntime: 	at androidx.lifecycle.RepeatOnLifecycleKt$repeatOnLifecycle$3$1$1$1$1$1$1.invoke(Unknown Source:8)
-09-05 12:21:03.059  2351  2351 E AndroidRuntime: 	at androidx.lifecycle.RepeatOnLifecycleKt$repeatOnLifecycle$3$1$1$1$1$1$1.invoke(Unknown Source:4)
-09-05 12:21:03.059  2351  2351 E AndroidRuntime: 	at kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:61)
-09-05 12:21:03.059  2351  2351 E AndroidRuntime: 	at kotlinx.coroutines.CoroutineScopeKt.coroutineScope(CoroutineScope.kt:261)
-09-05 12:21:03.059  2351  2351 E AndroidRuntime: 	at androidx.lifecycle.RepeatOnLifecycleKt$repeatOnLifecycle$3$1$1$1$1.invokeSuspend(RepeatOnLifecycle.kt:110)
-09-05 12:21:03.059  2351  2351 E AndroidRuntime: 	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
-09-05 12:21:03.059  2351  2351 E AndroidRuntime: 	at androidx.compose.ui.test.ApplyingContinuationInterceptor$SendApplyContinuation.resumeWith(ApplyingContinuationInterceptor.kt:65)
-09-05 12:21:03.059  2351  2351 E AndroidRuntime: 	at androidx.compose.ui.test.FrameDeferringContinuationInterceptor$TrampolinedTask.resume(FrameDeferringContinuationInterceptor.jvm.kt:137)
-09-05 12:21:03.059  2351  2351 E AndroidRuntime: 	at androidx.compose.ui.test.FrameDeferringContinuationInterceptor.runWithoutResumingCoroutines(FrameDeferringContinuationInterceptor.jvm.kt:75)
-09-05 12:21:03.059  2351  2351 E AndroidRuntime: 	at androidx.compose.ui.test.TestMonotonicFrameClock.performFrame(TestMonotonicFrameClock.jvm.kt:132)
-09-05 12:21:03.059  2351  2351 E AndroidRuntime: 	at androidx.compose.ui.test.TestMonotonicFrameClock.access$performFrame(TestMonotonicFrameClock.jvm.kt:53)
-09-05 12:21:03.059  2351  2351 E AndroidRuntime: 	at androidx.compose.ui.test.TestMonotonicFrameClock$withFrameNanos$2$1$2.invokeSuspend(TestMonotonicFrameClock.jvm.kt:110)
-09-05 12:21:03.059  2351  2351 E AndroidRuntime: 	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
-09-05 12:21:03.059  2351  2351 E AndroidRuntime: 	at kotlinx.coroutines.DispatchedTaskKt.resume(DispatchedTask.kt:231)
-09-05 12:21:03.059  2351  2351 E AndroidRuntime: 	at kotlinx.coroutines.DispatchedTaskKt.dispatch(DispatchedTask.kt:164)
-09-05 12:21:03.059  2351  2351 E AndroidRuntime: 	at kotlinx.coroutines.CancellableContinuationImpl.dispatchResume(CancellableContinuationImpl.kt:466)
-09-05 12:21:03.059  2351  2351 E AndroidRuntime: 	at kotlinx.coroutines.CancellableContinuationImpl.resumeImpl(CancellableContinuationImpl.kt:500)
-09-05 12:21:03.059  2351  2351 E AndroidRuntime: 	at kotlinx.coroutines.CancellableContinuationImpl.resumeImpl$default(CancellableContinuationImpl.kt:489)
-09-05 12:21:03.059  2351  2351 E AndroidRuntime: 	at kotlinx.coroutines.CancellableContinuationImpl.resumeUndispatched(CancellableContinuationImpl.kt:587)
-09-05 12:21:03.059  2351  2351 E AndroidRuntime: 	at kotlinx.coroutines.test.CancellableContinuationRunnable.run(TestDispatcher.kt:60)
-09-05 12:21:03.059  2351  2351 E AndroidRuntime: 	at kotlinx.coroutines.test.TestDispatcher.processEvent$kotlinx_coroutines_test(TestDispatcher.kt:24)
-09-05 12:21:03.059  2351  2351 E AndroidRuntime: 	at kotlinx.coroutines.test.TestCoroutineScheduler.runCurrent(TestCoroutineScheduler.kt:132)
-09-05 12:21:03.059  2351  2351 E AndroidRuntime: 	at androidx.compose.ui.test.AbstractMainTestClock$advanceDispatcher$1.invoke(AbstractMainTestClock.jvm.kt:72)
-09-05 12:21:03.059  2351  2351 E AndroidRuntime: 	at androidx.compose.ui.test.AbstractMainTestClock$advanceDispatcher$1.invoke(AbstractMainTestClock.jvm.kt:65)
-09-05 12:21:03.059  2351  2351 E AndroidRuntime: 	at androidx.compose.ui.test.AndroidSynchronization_androidKt.runOnUiThread(AndroidSynchronization.android.kt:33)
-09-05 12:21:03.060  2351  2351 E AndroidRuntime: 	at androidx.compose.ui.test.MainTestClockImpl$1.invoke(MainTestClockImpl.android.kt:29)
-09-05 12:21:03.060  2351  2351 E AndroidRuntime: 	at androidx.compose.ui.test.MainTestClockImpl$1.invoke(MainTestClockImpl.android.kt:29)
-09-05 12:21:03.060  2351  2351 E AndroidRuntime: 	at androidx.compose.ui.test.AbstractMainTestClock.advanceDispatcher(AbstractMainTestClock.jvm.kt:65)
-09-05 12:21:03.060  2351  2351 E AndroidRuntime: 	at androidx.compose.ui.test.AbstractMainTestClock.advanceTimeByFrame(AbstractMainTestClock.jvm.kt:36)
-09-05 12:21:03.060  2351  2351 E AndroidRuntime: 	at androidx.compose.ui.test.ComposeIdlingResource.isIdleNow(ComposeIdlingResource.android.kt:73)
-09-05 12:21:03.060  2351  2351 E AndroidRuntime: 	at androidx.compose.ui.test.IdlingResourceRegistry.areAllResourcesIdle(IdlingResourceRegistry.jvm.kt:122)
-09-05 12:21:03.060  2351  2351 E AndroidRuntime: 	at androidx.compose.ui.test.IdlingResourceRegistry.isIdleOrEnsurePolling$ui_test_release(IdlingResourceRegistry.jvm.kt:101)
-09-05 12:21:03.060  2351  2351 E AndroidRuntime: 	at androidx.compose.ui.test.EspressoLink.isIdleNow(EspressoLink.android.kt:44)
-09-05 12:21:03.060  2351  2351 E AndroidRuntime: 	at androidx.test.espresso.base.IdlingResourceRegistry.allResourcesAreIdle(IdlingResourceRegistry.java:281)
-09-05 12:21:03.060  2351  2351 E AndroidRuntime: 	at androidx.test.espresso.base.IdlingResourceRegistry$6.isIdleNow(IdlingResourceRegistry.java:320)
-09-05 12:21:03.060  2351  2351 E AndroidRuntime: 	at androidx.test.espresso.base.UiControllerImpl.loopMainThreadUntilIdle(UiControllerImpl.java:407)
-09-05 12:21:03.060  2351  2351 E AndroidRuntime: 	at androidx.test.espresso.Espresso.lambda$onIdle$2(Espresso.java:340)
-09-05 12:21:03.060  2351  2351 E AndroidRuntime: 	at androidx.test.espresso.Espresso$$ExternalSyntheticLambda1.call(D8$$SyntheticClass:0)
-09-05 12:21:03.060  2351  2351 E AndroidRuntime: 	at java.util.concurrent.FutureTask.run(FutureTask.java:264)
-09-05 12:21:03.060  2351  2351 E AndroidRuntime: 	at android.os.Handler.handleCallback(Handler.java:958)
-09-05 12:21:03.060  2351  2351 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:99)
-09-05 12:21:03.060  2351  2351 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:205)
-09-05 12:21:03.060  2351  2351 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:294)
-09-05 12:21:03.060  2351  2351 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:8177)
-09-05 12:21:03.060  2351  2351 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
-09-05 12:21:03.060  2351  2351 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:552)
-09-05 12:21:03.060  2351  2351 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:971)
-09-05 12:21:03.060  2351  2351 E AndroidRuntime: 	Suppressed: kotlinx.coroutines.internal.DiagnosticCoroutineContextException: [StandaloneCoroutine{Cancelling}@58aa39b, Dispatchers.Main.immediate]
-09-05 12:21:03.067  2351  2351 I Process : Sending signal. PID: 2351 SIG: 9
-09-05 12:21:03.068   504  2447 I DropBoxManagerService: add tag=data_app_crash isTagEnabled=true flags=0x2
-09-05 12:21:03.082   504   572 I ActivityManager: Process com.indian.nutrition.tracker (pid 2351) has died: fg  TOP 
-09-05 12:21:03.083   504   524 D DisplayManagerService: Drop pending events for gone uid 10141
-09-05 12:21:03.083   504  2216 I ImeTracker: com.indian.nutrition.tracker:2056be1b: onRequestHide at ORIGIN_SERVER_HIDE_INPUT reason HIDE_REMOVE_CLIENT
-09-05 12:21:03.083   504  2216 I ImeTracker: com.indian.nutrition.tracker:2056be1b: onCancelled at PHASE_SERVER_SHOULD_HIDE
-09-05 12:21:03.083   504  2216 I WindowManager: WIN DEATH: Window{d9d7737 u0 com.indian.nutrition.tracker/com.indian.nutrition.tracker.MainActivity}
-09-05 12:21:03.083   504  2216 W InputManager-JNI: Input channel object 'd9d7737 com.indian.nutrition.tracker/com.indian.nutrition.tracker.MainActivity (client)' was disposed without first being removed with the input manager!
-09-05 12:21:03.084   504   535 I libprocessgroup: Successfully killed process cgroup uid 10141 pid 2351 in 0ms
-09-05 12:21:03.088   325   325 I Zygote  : Process 2351 exited due to signal 9 (Killed)
-09-05 12:21:03.088   504   572 W ActivityTaskManager: Force removing ActivityRecord{fed8f5e u0 com.indian.nutrition.tracker/.MainActivity t12}: app died, no saved state
-09-05 12:21:03.088   793   820 V WindowManagerShell: Transition requested: android.os.BinderProxy@b50ac39 TransitionRequestInfo { type = CLOSE, triggerTask = TaskInfo{userId=0 taskId=12 displayId=0 isRunning=true baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.indian.nutrition.tracker/.MainActivity } baseActivity=ComponentInfo{com.indian.nutrition.tracker/com.indian.nutrition.tracker.MainActivity} topActivity=ComponentInfo{com.indian.nutrition.tracker/com.indian.nutrition.tracker.MainActivity} origActivity=null realActivity=ComponentInfo{com.indian.nutrition.tracker/com.indian.nutrition.tracker.MainActivity} numActivities=1 lastActiveTime=165602 supportsMultiWindow=true resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{android.window.IWindowContainerToken$Stub$Proxy@2e8e27e} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=false launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=null topActivityInfo=ActivityInfo{d9f03df com.indian.nutrition.tracker.MainActivity} launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=true isVisible=true isVisibleRequested=true isSleeping=false topActivityInSizeCompat=false topActivityEligibleForLetterboxEducation= false topActivityLetterboxed= false isFromDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 topActivityLetterboxHeight=-1 locusId=null displayAreaFeatureId=1 cameraCompatControlState=hidden}, remoteTransition = null, displayChange = null }
-09-05 12:21:03.090   504   572 W ActivityManager: Crash of app com.indian.nutrition.tracker running instrumentation ComponentInfo{com.indian.nutrition.tracker.test/androidx.test.runner.AndroidJUnitRunner}
-09-05 12:21:03.090   504   572 I ActivityManager: Force stopping com.indian.nutrition.tracker appid=10141 user=0: finished inst
-09-05 12:21:03.097  2338  2338 I app_process: System.exit called, status: 0
-09-05 12:21:03.097  2338  2338 I AndroidRuntime: VM exiting with result code 0.
-09-05 12:21:03.102   389   389 E BpTransactionCompletedListener: Failed to transact (-32)
-09-05 12:21:03.103   389   389 I BpBinder: onLastStrongRef automatically unlinking death recipients: 
-09-05 12:21:03.117   504   526 W ActivityManager: setHasOverlayUi called on unknown pid: 2351
-09-05 12:21:03.117   504   526 V WindowManager: Unknown focus tokens, dropping reportFocusChanged
-09-05 12:21:03.294     0     0 I binder  : 533:504 cannot find target node
-09-05 12:21:03.296     0     0 I binder  : 504:533 transaction async to 0:0 failed 125074/29189/-22, size 88-0 line 3210
-09-05 12:21:03.120   504   533 E IPCThreadState: Binder transaction failure: 125074/29189/-22
-09-05 12:21:03.120   504   533 W ActivityManager: Error shutting down UiAutomationConnection
-09-05 12:21:03.129   793   820 V WindowManagerShell: onTransitionReady android.os.BinderProxy@b50ac39: {id=13 t=CLOSE f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{android.window.IWindowContainerToken$Stub$Proxy@9e43b18} m=TO_FRONT f=SHOW_WALLPAPER|MOVE_TO_TOP leash=Surface(name=Task=1)/@0x386d2f5 sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0},{null m=TO_FRONT f=IS_WALLPAPER leash=Surface(name=WallpaperWindowToken{c75820e token=android.os.Binder@554d009})/@0x32ca88a sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0}]}
-09-05 12:21:03.129   793   820 V WindowManagerShell: Playing animation for (#13)android.os.BinderProxy@b50ac39@0
-09-05 12:21:03.129   793   820 V WindowManagerShell:  try handler com.android.wm.shell.transition.DefaultMixedHandler@95c3c9c
-09-05 12:21:03.129   793   820 V WindowManagerShell:  try handler com.android.wm.shell.keyguard.KeyguardTransitionHandler@36586a5
-09-05 12:21:03.129   793   820 V WindowManagerShell:  try handler com.android.wm.shell.activityembedding.ActivityEmbeddingController@9deca7a
-09-05 12:21:03.129   793   820 V WindowManagerShell:  try handler com.android.wm.shell.recents.RecentsTransitionHandler@9e9922b
-09-05 12:21:03.129   793   820 V ShellRecents: RecentsTransitionHandler.startAnimation: no controller found
-09-05 12:21:03.129   793   820 V WindowManagerShell:  try handler com.android.wm.shell.pip.PipTransition@b3e8688
-09-05 12:21:03.129   504   523 V WindowManager: Sent Transition #13 createdAt=09-05 12:21:03.088 via request=TransitionRequestInfo { type = CLOSE, triggerTask = TaskInfo{userId=0 taskId=12 displayId=0 isRunning=true baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.indian.nutrition.tracker/.MainActivity } baseActivity=ComponentInfo{com.indian.nutrition.tracker/com.indian.nutrition.tracker.MainActivity} topActivity=ComponentInfo{com.indian.nutrition.tracker/com.indian.nutrition.tracker.MainActivity} origActivity=null realActivity=ComponentInfo{com.indian.nutrition.tracker/com.indian.nutrition.tracker.MainActivity} numActivities=1 lastActiveTime=165602 supportsMultiWindow=true resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{RemoteToken{9484fd3 Task{a88df3f #12 type=standard A=10141:com.indian.nutrition.tracker}}} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=false launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=null topActivityInfo=ActivityInfo{c4e7710 com.indian.nutrition.tracker.MainActivity} launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=true isVisible=true isVisibleRequested=true isSleeping=false topActivityInSizeCompat=false topActivityEligibleForLetterboxEducation= false topActivityLetterboxed= false isFromDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 topActivityLetterboxHeight=-1 locusId=null displayAreaFeatureId=1 cameraCompatControlState=hidden}, remoteTransition = null, displayChange = null }
-09-05 12:21:03.129   793   820 V WindowManagerShell:  try handler com.android.wm.shell.splitscreen.StageCoordinator@bcce821
-09-05 12:21:03.129   504   523 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
-09-05 12:21:03.129   793   820 V WindowManagerShell:  try handler com.android.wm.shell.transition.RemoteTransitionHandler@f7f1446
-09-05 12:21:03.129   504   523 V WindowManager:     info={id=13 t=CLOSE f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{RemoteToken{804b9e5 Task{cd80e53 #1 type=home}}} m=TO_FRONT f=SHOW_WALLPAPER|MOVE_TO_TOP leash=Surface(name=Task=1)/@0x455e181 sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0},{null m=TO_FRONT f=IS_WALLPAPER leash=Surface(name=WallpaperWindowToken{c75820e token=android.os.Binder@554d009})/@0x7c10ff7 sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0}]}
-09-05 12:21:03.129   793   820 V WindowManagerShell: Transition doesn't have explicit remote, search filters for match for {id=13 t=CLOSE f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{android.window.IWindowContainerToken$Stub$Proxy@9e43b18} m=TO_FRONT f=SHOW_WALLPAPER|MOVE_TO_TOP leash=Surface(name=Task=1)/@0x386d2f5 sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0},{null m=TO_FRONT f=IS_WALLPAPER leash=Surface(name=WallpaperWindowToken{c75820e token=android.os.Binder@554d009})/@0x32ca88a sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0}]}
-09-05 12:21:03.129   793   820 V WindowManagerShell:  Checking filter Pair{{types=[] flags=0x0] notFlags=0x100 checks=[{atype=home independent=true modes=[OPEN,TO_FRONT] flags=NONE mustBeTask=false order=TOP topActivity=ComponentInfo{com.android.launcher3/com.android.launcher3.uioverrides.QuickstepLauncher}},{atype=standard independent=true modes=[CLOSE,TO_BACK] flags=NONE mustBeTask=false order=ANY topActivity=null}]} RemoteTransition { remoteTransition = android.window.IRemoteTransition$Stub$Proxy@56d2607, appThread = android.app.IApplicationThread$Stub$Proxy@1798334, debugName = QuickstepLaunchHome }}
-09-05 12:21:03.129   793   820 V WindowManagerShell:  Delegate animation for #13 to null
-09-05 12:21:03.129   793   820 V WindowManagerShell:  try handler com.android.wm.shell.transition.DefaultTransitionHandler@4eee55d
-09-05 12:21:03.129   793   820 V WindowManagerShell: start default transition animation, info = {id=13 t=CLOSE f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{android.window.IWindowContainerToken$Stub$Proxy@9e43b18} m=TO_FRONT f=SHOW_WALLPAPER|MOVE_TO_TOP leash=Surface(name=Task=1)/@0x386d2f5 sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0},{null m=TO_FRONT f=IS_WALLPAPER leash=Surface(name=WallpaperWindowToken{c75820e token=android.os.Binder@554d009})/@0x32ca88a sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0}]}
-09-05 12:21:03.129   793   820 V WindowManagerShell: loadAnimation: anim=android.view.animation.AnimationSet@334c356 animAttr=0x10 type=CLOSE isEntrance=true
-09-05 12:21:03.130   793   820 V WindowManagerShell:  animated by com.android.wm.shell.transition.DefaultTransitionHandler@4eee55d
-09-05 12:21:03.137   793   820 V WindowManagerShell: Transition animation finished (aborted=false), notifying core (#13)android.os.BinderProxy@b50ac39@0
-09-05 12:21:03.138   504   523 V WindowManager: Finish Transition #13: created at 09-05 12:21:03.088 collect-started=0.017ms request-sent=0.067ms started=2.026ms ready=2.019ms sent=40.317ms finished=50.044ms
-09-05 12:21:03.138   793   820 V WindowManagerShell: Track 0 became idle
-09-05 12:21:03.138   793   820 V WindowManagerShell: All active transition animations finished
-09-05 12:21:03.138   504  2448 I ImeTracker: com.android.launcher3:b4eb02d4: onRequestHide at ORIGIN_SERVER_HIDE_INPUT reason HIDE_UNSPECIFIED_WINDOW
-09-05 12:21:03.138   504  2448 I ImeTracker: com.android.launcher3:b4eb02d4: onCancelled at PHASE_SERVER_SHOULD_HIDE
-09-05 12:21:03.338   793   793 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
-09-05 12:21:03.438   504   533 I ActivityManager: Force stopping com.indian.nutrition.tracker appid=10141 user=-1: deletePackageX
-09-05 12:21:03.438   504   533 E libprocessgroup: No such cgroup attribute: /sys/fs/cgroup/uid_4294877437/cgroup.freeze
-09-05 12:21:03.438   504   533 W libprocessgroup: Failed to apply Frozen process profile: No such file or directory
-09-05 12:21:03.439   504   533 E libprocessgroup: No such cgroup attribute: /sys/fs/cgroup/uid_4294877437/cgroup.freeze
-09-05 12:21:03.439   504   533 W libprocessgroup: Failed to apply Unfrozen process profile: No such file or directory
-09-05 12:21:03.618     0     0 I servicemanager: Since 'artd' could not be found, trying to start it as a lazy AIDL service. (if it's not configured to be a lazy service, it may be stuck starting or still starting).
-09-05 12:21:03.621     0     0 I init    : starting service 'artd'...
-09-05 12:21:03.638     0     0 I init    : ... started service 'artd' has pid 2479
-09-05 12:21:03.638     0     0 I init    : Control message: Processed ctl.interface_start for 'aidl/artd' from pid: 131 (/system/bin/servicemanager)
-09-05 12:21:03.466  2479  2479 I artd    : Starting artd
-09-05 12:21:03.466  2479  2479 I AidlLazyServiceRegistrar: Registering service artd
-09-05 12:21:03.470  2479  2480 I AidlLazyServiceRegistrar: Process has 1 (of 1 available) client(s) in use after notification artd has clients: 1
-09-05 12:21:03.471   504   556 I PermissionManager: Removing permission com.indian.nutrition.tracker.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION that used to be declared by com.indian.nutrition.tracker
-09-05 12:21:03.471   504   556 I PermissionManager: Permission ownership changed. Updating all permissions.
-09-05 12:21:03.471   504   556 W PermissionManager: Package com.android.adservices.api is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.adservices APEX instead.
-09-05 12:21:03.645     0     0 I BpBinder: onLastStrongRef automatically unlinking death recipients:
-09-05 12:21:03.647     0     0 I servicemanager: Notifying artd they do (previously: don't) have clients when service is guaranteed to be in use
-09-05 12:21:03.476   504   556 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
-09-05 12:21:03.476   504   556 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
-09-05 12:21:03.476   504   556 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
-09-05 12:21:03.476   504   556 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
-09-05 12:21:03.476   504   556 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
-09-05 12:21:03.476   504   556 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
-09-05 12:21:03.476   504   556 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
-09-05 12:21:03.476   504   556 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
-09-05 12:21:03.476   504   556 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
-09-05 12:21:03.476   504   556 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
-09-05 12:21:03.476   504   556 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
-09-05 12:21:03.476   504   556 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
-09-05 12:21:03.476   504   556 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
-09-05 12:21:03.484   504   556 D PackageManager: Instant App installer not found with android.intent.action.INSTALL_INSTANT_APP_PACKAGE
-09-05 12:21:03.484   504   556 D PackageManager: Clear ephemeral installer activity
-09-05 12:21:03.490   504   525 I DropBoxManagerService: add tag=system_server_strictmode isTagEnabled=true flags=0x2
-09-05 12:21:03.491   504   525 I DropBoxManagerService: add tag=system_server_strictmode isTagEnabled=true flags=0x2
-09-05 12:21:03.491   504   525 I DropBoxManagerService: add tag=system_server_strictmode isTagEnabled=true flags=0x2
-09-05 12:21:03.491   504   525 I DropBoxManagerService: add tag=system_server_strictmode isTagEnabled=true flags=0x2
-09-05 12:21:03.491   504   525 I DropBoxManagerService: add tag=system_server_strictmode isTagEnabled=true flags=0x2
-09-05 12:21:03.492   504   525 I DropBoxManagerService: add tag=system_server_strictmode isTagEnabled=true flags=0x2
-09-05 12:21:03.492   504   525 I DropBoxManagerService: add tag=system_server_strictmode isTagEnabled=true flags=0x2
-09-05 12:21:03.492   504   525 I DropBoxManagerService: add tag=system_server_strictmode isTagEnabled=true flags=0x2
-09-05 12:21:03.492   504   525 I DropBoxManagerService: add tag=system_server_strictmode isTagEnabled=true flags=0x2
-09-05 12:21:03.492   504   525 I DropBoxManagerService: add tag=system_server_strictmode isTagEnabled=true flags=0x2
-09-05 12:21:03.493   504  1788 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
-09-05 12:21:03.500   504   556 I ActivityManager: Force stopping com.indian.nutrition.tracker appid=10141 user=0: pkg removed
-09-05 12:21:03.515   999   999 D CarrierSvcBindHelper: onPackageRemoved: com.indian.nutrition.tracker
-09-05 12:21:03.516   999   999 D CarrierSvcBindHelper: No carrier app for: 0
-09-05 12:21:03.519   504   525 I DropBoxManagerService: add tag=system_app_strictmode isTagEnabled=true flags=0x2
-09-05 12:21:03.521   974   974 V MediaPlayerList: mPackageChangedBroadcastReceiver: action: android.intent.action.PACKAGE_REMOVED
-09-05 12:21:03.522   974   974 V MediaPlayerList: mPackageChangedBroadcastReceiver: action: android.intent.action.PACKAGE_REMOVED
-09-05 12:21:03.525   504   533 D ActivityManager: sync unfroze 1537 com.android.documentsui for 3
-09-05 12:21:03.527   504   716 W WifiService: Couldn't get PackageInfo for package:com.indian.nutrition.tracker
-09-05 12:21:03.527   504   716 D WifiService: Remove settings for package:com.indian.nutrition.tracker
-09-05 12:21:03.527   504   716 D WifiConfigManager: Remove all networks for app ApplicationInfo{20460d5 com.indian.nutrition.tracker}
-09-05 12:21:03.528  1402  1402 W MediaProvider: WorkProfileOwnerApps cache is empty
-09-05 12:21:03.529   504  1788 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
-09-05 12:21:03.533   504   597 I InputReader: Reconfiguring input devices, changes=KEYBOARD_LAYOUTS
-09-05 12:21:03.535   504   607 V StorageManagerService: Package com.indian.nutrition.tracker does not have legacy storage
-09-05 12:21:03.536   504   580 I RollbackManager: broadcast=ACTION_PACKAGE_FULLY_REMOVED pkg=com.indian.nutrition.tracker
-09-05 12:21:03.537   504   729 E AppOps  : attributionTag VCN not declared in manifest of android
-09-05 12:21:03.537   793   793 D ControlsListingControllerImpl: ServiceConfig reloaded, count: 0
-09-05 12:21:03.543   504   504 D ActivityManager: sync unfroze 1005 com.android.settings for 10
-09-05 12:21:03.543   504   504 D ActivityManager: sync unfroze 2117 com.android.localtransport for 10
-09-05 12:21:03.544   504   716 D WifiConfigStore: Writing to stores completed in 11 ms.
-09-05 12:21:03.544   504   716 I PasspointManager: No app ops listener found for com.indian.nutrition.tracker
-09-05 12:21:03.544   504   716 W WifiService: Couldn't get PackageInfo for package:com.indian.nutrition.tracker
-09-05 12:21:03.544   504   716 D WifiService: Remove settings for package:com.indian.nutrition.tracker
-09-05 12:21:03.544   504   716 D WifiConfigManager: Remove all networks for app ApplicationInfo{c79b3a7 com.indian.nutrition.tracker}
-09-05 12:21:03.544   504   504 D ActivityManager: sync unfroze 1958 com.android.dynsystem:dynsystem for 10
-09-05 12:21:03.545   504   504 D ActivityManager: sync unfroze 1931 com.android.dynsystem for 10
-09-05 12:21:03.545   504   504 D ActivityManager: sync unfroze 1460 com.android.keychain for 10
-09-05 12:21:03.546   793   850 D StylusManager: Stylus InputDevice changed: 13 virtio_input_multi_touch_10
-09-05 12:21:03.551   504   586 I RoleService: Granting default roles...
-09-05 12:21:03.552   504   716 D WifiConfigStore: Writing to stores completed in 8 ms.
-09-05 12:21:03.553   504   716 I PasspointManager: No app ops listener found for com.indian.nutrition.tracker
-09-05 12:21:03.553   504   504 I Telecom : CarModeTracker: Package com.indian.nutrition.tracker is not tracked.: SSH.oR@AH8🔒
-09-05 12:21:03.553   504   504 I Telecom : InCallController: updateCarModeForConnections: car mode apps: : SSH.oR@AH8🔒
-09-05 12:21:03.553   504   504 I Telecom : InCallController: update carmode current:UserHandle{0} parent:null: SSH.oR@AH8🔒
-09-05 12:21:03.554   504   572 D SafetySourceDataValidator: No cert check requested for package com.android.permissioncontroller
-09-05 12:21:03.555   793   850 D StylusManager: Stylus InputDevice changed: 12 virtio_input_multi_touch_9
-09-05 12:21:03.556   793   850 D StylusManager: Stylus InputDevice changed: 9 virtio_input_multi_touch_6
-09-05 12:21:03.556   793   850 D StylusManager: Stylus InputDevice changed: 11 virtio_input_multi_touch_8
-09-05 12:21:03.556   504   533 I ActivityManager: Force stopping com.indian.nutrition.tracker.test appid=10142 user=-1: deletePackageX
-09-05 12:21:03.557   504   533 E libprocessgroup: No such cgroup attribute: /sys/fs/cgroup/uid_4294877438/cgroup.freeze
-09-05 12:21:03.557   504   533 W libprocessgroup: Failed to apply Frozen process profile: No such file or directory
-09-05 12:21:03.557   504   524 D DisplayManagerService: Drop pending events for gone uid 10142
-09-05 12:21:03.558   504   533 I ActivityManager: Killing 2392:com.indian.nutrition.tracker.test/u0a142 (adj 900): stop com.indian.nutrition.tracker.test due to deletePackageX
-09-05 12:21:03.558   504   504 I ConditionProviders: Disallowing condition provider com.indian.nutrition.tracker (userSet: true)
-09-05 12:21:03.559   793   850 D StylusManager: Stylus InputDevice changed: 10 virtio_input_multi_touch_7
-09-05 12:21:03.559   793   850 D StylusManager: Stylus InputDevice changed: 5 virtio_input_multi_touch_2
-09-05 12:21:03.559   504   532 W WindowMagnificationMgr: requestConnection duplicated request: connect=false, mConnectionState=DISCONNECTED
-09-05 12:21:03.559   504   556 W PermissionManager: Package com.android.adservices.api is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.adservices APEX instead.
-09-05 12:21:03.562   504   533 E libprocessgroup: No such cgroup attribute: /sys/fs/cgroup/uid_4294877438/cgroup.freeze
-09-05 12:21:03.562   504   533 W libprocessgroup: Failed to apply Unfrozen process profile: No such file or directory
-09-05 12:21:03.563   325   325 I Zygote  : Process 2392 exited due to signal 9 (Killed)
-09-05 12:21:03.563   793   850 D StylusManager: Stylus InputDevice changed: 14 virtio_input_multi_touch_11
-09-05 12:21:03.565   504   556 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
-09-05 12:21:03.566   504   556 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
-09-05 12:21:03.566   504   556 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
-09-05 12:21:03.566   504   556 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
-09-05 12:21:03.566   504   556 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
-09-05 12:21:03.566   504   556 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
-09-05 12:21:03.566   504   556 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
-09-05 12:21:03.566   504   556 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
-09-05 12:21:03.566   504   556 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
-09-05 12:21:03.566   504   556 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
-09-05 12:21:03.566   504   556 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
-09-05 12:21:03.566   504   556 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
-09-05 12:21:03.566   504   556 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
-09-05 12:21:03.569   389   389 E BpTransactionCompletedListener: Failed to transact (-32)
-09-05 12:21:03.569   389   389 E BpTransactionCompletedListener: Failed to transact (-32)
-09-05 12:21:03.572   793   850 D StylusManager: Stylus InputDevice changed: 8 virtio_input_multi_touch_5
-09-05 12:21:03.573   504  1505 V ActivityManager: Got obituary of 2392:com.indian.nutrition.tracker.test
-09-05 12:21:03.573   504   526 W ActivityManager: setHasOverlayUi called on unknown pid: 2392
-09-05 12:21:03.577   793   850 D StylusManager: Stylus InputDevice changed: 4 virtio_input_multi_touch_1
-09-05 12:21:03.578  1460  2500 W KeyChain: Creating new DB.
-09-05 12:21:03.578   793   850 D StylusManager: Stylus InputDevice changed: 7 virtio_input_multi_touch_4
-09-05 12:21:03.583  1402  1838 I MediaProvider: Begin Intent { act=android.intent.action.PACKAGE_FULLY_REMOVED dat=package: flg=0x5000010 cmp=com.android.providers.media.module/com.android.providers.media.MediaService (has extras) }
-09-05 12:21:03.583  1402  1838 D MediaProvider: Deleted 0 Android/media items belonging to com.indian.nutrition.tracker on /data/user/0/com.android.providers.media.module/databases/external.db
-09-05 12:21:03.606  1402  1838 D MediaGrants: Removed 0 media_grants for 0 user for com.indian.nutrition.tracker. Reason: Package orphaned
-09-05 12:21:03.608   793   850 D StylusManager: Stylus InputDevice changed: 6 virtio_input_multi_touch_3
-09-05 12:21:03.609  1402  1838 I MediaProvider: End Intent { act=android.intent.action.PACKAGE_FULLY_REMOVED dat=package: flg=0x5000010 cmp=com.android.providers.media.module/com.android.providers.media.MediaService (has extras) }
-09-05 12:21:03.609   504   525 I DropBoxManagerService: add tag=system_app_strictmode isTagEnabled=true flags=0x2
-09-05 12:21:03.610   504   556 D PackageManager: Instant App installer not found with android.intent.action.INSTALL_INSTANT_APP_PACKAGE
-09-05 12:21:03.610   504   556 D PackageManager: Clear ephemeral installer activity
-09-05 12:21:03.610   504  2273 D OomAdjuster: Not killing cached processes
-09-05 12:21:03.612  1042  1042 D Launcher.Model: package removed received com.indian.nutrition.tracker
-09-05 12:21:03.612  1042  1113 D PackageUpdatedTask: Removing app iconcom.indian.nutrition.tracker
-09-05 12:21:03.613   504  1788 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
-09-05 12:21:03.615   504   515 I system_server: Background concurrent copying GC freed 339476(15MB) AllocSpace objects, 37(1116KB) LOS objects, 49% free, 20MB/41MB, paused 32us,339us total 128.802ms
-09-05 12:21:03.616  1042  1113 D ModelWriter: removing items from db . Reason: [removed because the corresponding package or component is removed. mOp=3 removedPackages=[com.indian.nutrition.tracker] removedComponents=[]]
-09-05 12:21:03.617   504   525 I DropBoxManagerService: add tag=system_server_strictmode isTagEnabled=true flags=0x2
-09-05 12:21:03.618   504   525 I DropBoxManagerService: add tag=system_server_strictmode isTagEnabled=true flags=0x2
-09-05 12:21:03.622   504   525 I DropBoxManagerService: add tag=system_server_strictmode isTagEnabled=true flags=0x2
-09-05 12:21:03.622   504   516 W JavaBinder: BinderProxy is being destroyed but the application did not call unlinkToDeath to unlink all of its death recipients beforehand.  Releasing leaked death recipient: com.android.server.am.ActivityManagerService$14
-09-05 12:21:03.622   504   516 I BpBinder: onLastStrongRef automatically unlinking death recipients: 
-09-05 12:21:03.624   504   525 I DropBoxManagerService: add tag=system_server_strictmode isTagEnabled=true flags=0x2
-09-05 12:21:03.624   504   556 I ActivityManager: Force stopping com.indian.nutrition.tracker.test appid=10142 user=0: pkg removed
-09-05 12:21:03.627   793   793 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
-09-05 12:21:03.642   324   355 I netd    : tetherGetStats() -> {[]} <1.65ms>
-09-05 12:21:03.645   324   355 I netd    : bandwidthRemoveInterfaceQuota(eth0) <0.35ms>
-09-05 12:21:03.646   324   355 I netd    : bandwidthSetInterfaceQuota(eth0, 9223372036854775807) <0.29ms>
-09-05 12:21:03.647   324   355 I netd    : bandwidthRemoveInterfaceQuota(eth0) <0.22ms>
-09-05 12:21:03.647   324   355 I netd    : bandwidthSetInterfaceQuota(eth0, 9223372036854775807) <0.24ms>
-09-05 12:21:03.648   504   792 D NetworkStatsObservers: Unregistering RequestInfo from pid/uid:504/1000(android) for DataUsageRequest [ requestId=3, networkTemplate=NetworkTemplate: matchRule=MOBILE, matchSubscriberIds=[310260...], matchWifiNetworkKeys=[], metered=YES, defaultNetwork=NO, thresholdInBytes=3578726 ] accessLevel:3
-09-05 12:21:03.648   504   714 D NetworkStatsObservers: Registering observer for RequestInfo from pid/uid:504/1000(android) for DataUsageRequest [ requestId=4, networkTemplate=NetworkTemplate: matchRule=MOBILE, matchSubscriberIds=[310260...], matchWifiNetworkKeys=[], metered=YES, defaultNetwork=NO, thresholdInBytes=3539080 ] accessLevel:3
-09-05 12:21:03.662   504  1788 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
-09-05 12:21:03.663   794   794 D PersistedStoragePackageUninstalledReceiver: Received android.intent.action.PACKAGE_FULLY_REMOVED for com.indian.nutrition.tracker for u0
-09-05 12:21:03.667   504   716 W WifiService: Couldn't get PackageInfo for package:com.indian.nutrition.tracker.test
-09-05 12:21:03.667   504   716 D WifiService: Remove settings for package:com.indian.nutrition.tracker.test
-09-05 12:21:03.667   504   716 D WifiConfigManager: Remove all networks for app ApplicationInfo{595dcc5 com.indian.nutrition.tracker.test}
-09-05 12:21:03.668   504   597 I InputReader: Reconfiguring input devices, changes=KEYBOARD_LAYOUTS
-09-05 12:21:03.668   504   607 V StorageManagerService: Package com.indian.nutrition.tracker.test does not have legacy storage
-09-05 12:21:03.668   504   580 I RollbackManager: broadcast=ACTION_PACKAGE_FULLY_REMOVED pkg=com.indian.nutrition.tracker.test
-09-05 12:21:03.669   999   999 D CarrierSvcBindHelper: onPackageRemoved: com.indian.nutrition.tracker.test
-09-05 12:21:03.669   793   793 D ControlsListingControllerImpl: ServiceConfig reloaded, count: 0
-09-05 12:21:03.669   974   974 V MediaPlayerList: mPackageChangedBroadcastReceiver: action: android.intent.action.PACKAGE_REMOVED
-09-05 12:21:03.670   974   974 V MediaPlayerList: mPackageChangedBroadcastReceiver: action: android.intent.action.PACKAGE_REMOVED
-09-05 12:21:03.670   999   999 D CarrierSvcBindHelper: No carrier app for: 0
-09-05 12:21:03.670   504   729 E AppOps  : attributionTag VCN not declared in manifest of android
-09-05 12:21:03.670  1402  1402 W MediaProvider: WorkProfileOwnerApps cache is empty
-09-05 12:21:03.673   504   716 D WifiConfigStore: Writing to stores completed in 2 ms.
-09-05 12:21:03.673   504   716 I PasspointManager: No app ops listener found for com.indian.nutrition.tracker.test
-09-05 12:21:03.673   504   716 W WifiService: Couldn't get PackageInfo for package:com.indian.nutrition.tracker.test
-09-05 12:21:03.673   504   716 D WifiService: Remove settings for package:com.indian.nutrition.tracker.test
-09-05 12:21:03.673   504   716 D WifiConfigManager: Remove all networks for app ApplicationInfo{75c99e6 com.indian.nutrition.tracker.test}
-09-05 12:21:03.675   504   716 D WifiConfigStore: Writing to stores completed in 2 ms.
-09-05 12:21:03.675   504   716 I PasspointManager: No app ops listener found for com.indian.nutrition.tracker.test
-09-05 12:21:03.682   504   525 I DropBoxManagerService: add tag=system_server_strictmode isTagEnabled=true flags=0x2
-09-05 12:21:03.682   504   504 I Telecom : CarModeTracker: Package com.indian.nutrition.tracker.test is not tracked.: SSH.oR@AII🔒
-09-05 12:21:03.682   504   504 I Telecom : InCallController: updateCarModeForConnections: car mode apps: : SSH.oR@AII🔒
-09-05 12:21:03.682   504   504 I Telecom : InCallController: update carmode current:UserHandle{0} parent:null: SSH.oR@AII🔒
-09-05 12:21:03.684   504   532 W WindowMagnificationMgr: requestConnection duplicated request: connect=false, mConnectionState=DISCONNECTED
-09-05 12:21:03.685  1042  1042 D Launcher.Model: package removed received com.indian.nutrition.tracker.test
-09-05 12:21:03.685  1042  1113 D PackageUpdatedTask: Removing app iconcom.indian.nutrition.tracker.test
-09-05 12:21:03.685   793   850 D StylusManager: Stylus InputDevice changed: 13 virtio_input_multi_touch_10
-09-05 12:21:03.685   504   525 I DropBoxManagerService: add tag=system_server_strictmode isTagEnabled=true flags=0x2
-09-05 12:21:03.687   324   355 I netd    : tetherGetStats() -> {[]} <0.32ms>
-09-05 12:21:03.688   504   504 I ConditionProviders: Disallowing condition provider com.indian.nutrition.tracker.test (userSet: true)
-09-05 12:21:03.689  1042  1113 D ModelWriter: removing items from db . Reason: [removed because the corresponding package or component is removed. mOp=3 removedPackages=[com.indian.nutrition.tracker.test] removedComponents=[]]
-09-05 12:21:03.690   793   850 D StylusManager: Stylus InputDevice changed: 12 virtio_input_multi_touch_9
-09-05 12:21:03.693   793   850 D StylusManager: Stylus InputDevice changed: 9 virtio_input_multi_touch_6
-09-05 12:21:03.693   793   850 D StylusManager: Stylus InputDevice changed: 11 virtio_input_multi_touch_8
-09-05 12:21:03.693  1402  1838 I MediaProvider: Begin Intent { act=android.intent.action.PACKAGE_FULLY_REMOVED dat=package: flg=0x5000010 cmp=com.android.providers.media.module/com.android.providers.media.MediaService (has extras) }
-09-05 12:21:03.693  1402  1838 D MediaProvider: Deleted 0 Android/media items belonging to com.indian.nutrition.tracker.test on /data/user/0/com.android.providers.media.module/databases/external.db
-09-05 12:21:03.694   793   850 D StylusManager: Stylus InputDevice changed: 10 virtio_input_multi_touch_7
-09-05 12:21:03.694   793   850 D StylusManager: Stylus InputDevice changed: 5 virtio_input_multi_touch_2
-09-05 12:21:03.694  1402  1838 D MediaGrants: Removed 0 media_grants for 0 user for com.indian.nutrition.tracker.test. Reason: Package orphaned
-09-05 12:21:03.694  1402  1838 I MediaProvider: End Intent { act=android.intent.action.PACKAGE_FULLY_REMOVED dat=package: flg=0x5000010 cmp=com.android.providers.media.module/com.android.providers.media.MediaService (has extras) }
-09-05 12:21:03.694   793   850 D StylusManager: Stylus InputDevice changed: 14 virtio_input_multi_touch_11
-09-05 12:21:03.698   504  2448 D SafetySourceDataValidator: No cert check requested for package com.android.permissioncontroller
-09-05 12:21:03.697   793   850 D StylusManager: Stylus InputDevice changed: 8 virtio_input_multi_touch_5
-09-05 12:21:03.698   793   850 D StylusManager: Stylus InputDevice changed: 4 virtio_input_multi_touch_1
-09-05 12:21:03.699   793   850 D StylusManager: Stylus InputDevice changed: 7 virtio_input_multi_touch_4
-09-05 12:21:03.699   793   850 D StylusManager: Stylus InputDevice changed: 6 virtio_input_multi_touch_3
-09-05 12:21:03.706   794   794 D PersistedStoragePackageUninstalledReceiver: Received android.intent.action.PACKAGE_FULLY_REMOVED for com.indian.nutrition.tracker.test for u0
-09-05 12:21:03.707   324   355 I netd    : tetherGetStats() -> {[]} <0.18ms>
-09-05 12:21:04.017  1364  1411 I LatinIME:LogUtils: Dictionary info: dictionary = main:en ; version = 54 ; date = 1414726273
-09-05 12:21:04.715     0     0 I logd    : logdr: UID=2000 GID=2000 PID=2516 n tail=0 logMask=99 pid=0 start=0ns deadline=0ns
-09-05 12:21:04.552   504   586 I RoleService: Granting default roles...
+09-05 12:33:30.551   505  1578 I WindowManager: setOnBackInvokedCallback(): No window state for package:com.indian.nutrition.tracker.test
+09-05 12:33:30.575   505  1750 W ActivityTaskManager: takeTaskSnapshot: taskId=15 not found or not visible
+09-05 12:33:30.588  2342  2349 W trition.tracker: Cleared Reference was only reachable from finalizer (only reported once)
+09-05 12:33:30.591  2342  2349 I trition.tracker: Background concurrent copying GC freed 507031(22MB) AllocSpace objects, 15(340KB) LOS objects, 49% free, 10052KB/19MB, paused 1.262ms,9us total 122.226ms
+09-05 12:33:30.604  2342  2351 W System  : A resource failed to call release. 
+09-05 12:33:30.605  2342  2351 W System  : A resource failed to call release. 
+09-05 12:33:30.630   154  2317 I keystore2: system/security/keystore2/src/watchdog.rs:319 - Watchdog thread idle -> terminating. Have a great day.
+09-05 12:33:30.631  2342  2342 D LifecycleMonitor: Lifecycle status change: com.indian.nutrition.tracker.MainActivity@311c66a in: DESTROYED
+09-05 12:33:30.631  2342  2342 V ActivityScenario: Update currentActivityStage to DESTROYED, currentActivity=null
+09-05 12:33:30.634  2342  2361 D IdlingRegistry: Unregistering idling resources: [androidx.compose.ui.test.EspressoLink@2cc4886]
+09-05 12:33:30.635  2342  2342 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=falsecallback=android.view.ViewRootImpl$$ExternalSyntheticLambda17@e0bda0
+09-05 12:33:30.635   505  1750 D CoreBackPreview: Window{578facc u0 com.indian.nutrition.tracker/com.indian.nutrition.tracker.MainActivity}: Setting back callback null
+09-05 12:33:30.636   505  1750 W InputManager-JNI: Input channel object '578facc com.indian.nutrition.tracker/com.indian.nutrition.tracker.MainActivity (client)' was disposed without first being removed with the input manager!
+09-05 12:33:30.639  2342  2361 E TestRunner: failed: test04_calculatorRendersProfileAndSavesTargets(com.indian.nutrition.tracker.ui.AppUiTest)
+09-05 12:33:30.642  2342  2361 E TestRunner: ----- begin exception -----
+09-05 12:33:30.642  2342  2361 E TestRunner: java.lang.AssertionError: Action performScrollTo() failed.
+09-05 12:33:30.642  2342  2361 E TestRunner: Reason: Expected exactly '1' node but could not find any node that satisfies: (TestTag = 'target-mode-predefined-btn')
+09-05 12:33:30.642  2342  2361 E TestRunner: 
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at androidx.compose.ui.test.SemanticsNodeInteraction.fetchOneOrThrow(SemanticsNodeInteraction.kt:178)
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at androidx.compose.ui.test.SemanticsNodeInteraction.fetchOneOrThrow$default(SemanticsNodeInteraction.kt:150)
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at androidx.compose.ui.test.SemanticsNodeInteraction.fetchSemanticsNode(SemanticsNodeInteraction.kt:84)
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at androidx.compose.ui.test.ActionsKt.performScrollTo(Actions.kt:76)
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at com.indian.nutrition.tracker.ui.AppUiTest.test04_calculatorRendersProfileAndSavesTargets(AppUiTest.kt:162)
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at java.lang.reflect.Method.invoke(Native Method)
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at androidx.test.internal.runner.junit4.statement.RunBefores.evaluate(RunBefores.java:80)
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at org.junit.rules.ExternalResource$1.evaluate(ExternalResource.java:54)
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at androidx.compose.ui.test.junit4.AndroidComposeTestRule$apply$1$evaluate$1.invoke(AndroidComposeTestRule.android.kt:272)
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at androidx.compose.ui.test.junit4.AndroidComposeTestRule$apply$1$evaluate$1.invoke(AndroidComposeTestRule.android.kt:271)
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$AndroidComposeUiTestImpl.withDisposableContent(ComposeUiTest.android.kt:505)
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1$1$1$1$1$1.invoke(ComposeUiTest.android.kt:333)
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.withComposeIdlingResource(ComposeUiTest.android.kt:385)
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.access$withComposeIdlingResource(ComposeUiTest.android.kt:219)
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1$1$1$1$1.invoke(ComposeUiTest.android.kt:332)
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.withWindowRecomposer(ComposeUiTest.android.kt:359)
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.access$withWindowRecomposer(ComposeUiTest.android.kt:219)
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1$1$1$1.invoke(ComposeUiTest.android.kt:331)
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.withTestCoroutines(ComposeUiTest.android.kt:372)
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.access$withTestCoroutines(ComposeUiTest.android.kt:219)
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1$1$1.invoke(ComposeUiTest.android.kt:330)
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at androidx.compose.ui.test.EspressoLink.withStrategy(EspressoLink.android.kt:66)
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1$1.invoke(ComposeUiTest.android.kt:329)
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at androidx.compose.ui.test.IdlingResourceRegistry.withRegistry(IdlingResourceRegistry.jvm.kt:155)
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1.invoke(ComposeUiTest.android.kt:328)
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at androidx.compose.ui.test.ComposeRootRegistry.withRegistry(ComposeRootRegistry.android.kt:146)
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.runTest(ComposeUiTest.android.kt:327)
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at androidx.compose.ui.test.junit4.AndroidComposeTestRule$apply$1.evaluate(AndroidComposeTestRule.android.kt:271)
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+09-05 12:33:30.642  2342  2361 E TestRunner: 	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+09-05 12:33:30.643  2342  2361 E TestRunner: 	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+09-05 12:33:30.643  2342  2361 E TestRunner: 	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+09-05 12:33:30.643  2342  2361 E TestRunner: 	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+09-05 12:33:30.643  2342  2361 E TestRunner: 	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+09-05 12:33:30.643  2342  2361 E TestRunner: 	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+09-05 12:33:30.643  2342  2361 E TestRunner: 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+09-05 12:33:30.643  2342  2361 E TestRunner: 	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+09-05 12:33:30.643  2342  2361 E TestRunner: 	at androidx.test.ext.junit.runners.AndroidJUnit4.run(AndroidJUnit4.java:162)
+09-05 12:33:30.643  2342  2361 E TestRunner: 	at org.junit.runners.Suite.runChild(Suite.java:128)
+09-05 12:33:30.643  2342  2361 E TestRunner: 	at org.junit.runners.Suite.runChild(Suite.java:27)
+09-05 12:33:30.643  2342  2361 E TestRunner: 	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+09-05 12:33:30.643  2342  2361 E TestRunner: 	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+09-05 12:33:30.643  2342  2361 E TestRunner: 	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+09-05 12:33:30.643  2342  2361 E TestRunner: 	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+09-05 12:33:30.643  2342  2361 E TestRunner: 	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+09-05 12:33:30.643  2342  2361 E TestRunner: 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+09-05 12:33:30.643  2342  2361 E TestRunner: 	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+09-05 12:33:30.643  2342  2361 E TestRunner: 	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+09-05 12:33:30.643  2342  2361 E TestRunner: 	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+09-05 12:33:30.643  2342  2361 E TestRunner: 	at androidx.test.internal.runner.TestExecutor.execute(TestExecutor.java:68)
+09-05 12:33:30.643  2342  2361 E TestRunner: 	at androidx.test.internal.runner.TestExecutor.execute(TestExecutor.java:59)
+09-05 12:33:30.643  2342  2361 E TestRunner: 	at androidx.test.runner.AndroidJUnitRunner.onStart(AndroidJUnitRunner.java:467)
+09-05 12:33:30.643  2342  2361 E TestRunner: 	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2402)
+09-05 12:33:30.643  2342  2361 E TestRunner: ----- end exception -----
+09-05 12:33:30.648  2342  2361 I TestRunner: finished: test04_calculatorRendersProfileAndSavesTargets(com.indian.nutrition.tracker.ui.AppUiTest)
+09-05 12:33:30.649  2342  2361 I TestRunner: run finished: 13 tests, 3 failed, 0 ignored
+09-05 12:33:30.668   505  1750 I ActivityManager: Force stopping com.indian.nutrition.tracker appid=10141 user=0: finished inst
+09-05 12:33:30.669  2329  2329 I app_process: System.exit called, status: 0
+09-05 12:33:30.669  2329  2329 I AndroidRuntime: VM exiting with result code 0.
+09-05 12:33:30.682   505  1750 E ActivityManager: Unable to freeze binder for 2342: -11
+09-05 12:33:30.683   505  1750 I ActivityManager: Killing 2342:com.indian.nutrition.tracker/u0a141 (adj 0): stop com.indian.nutrition.tracker due to finished inst
+09-05 12:33:30.685   505   523 D DisplayManagerService: Drop pending events for gone uid 10141
+09-05 12:33:30.871     0     0 I binder  : 505:1750 ioctl 400c620e 7e8027d8a930 returned -11
+09-05 12:33:30.873     0     0 I binder  : 505:1750 ioctl 400c620e 7e8027d8a930 returned -11
+09-05 12:33:30.703   505  2265 V ActivityManager: Got obituary of 2342:com.indian.nutrition.tracker
+09-05 12:33:30.703   505   527 W ActivityManager: setHasOverlayUi called on unknown pid: 2342
+09-05 12:33:30.895     0     0 I binder  : undelivered TRANSACTION_COMPLETE
+09-05 12:33:30.896     0     0 I binder  : undelivered transaction 124764, process died.
+09-05 12:33:30.704   326   326 I Zygote  : Process 2342 exited due to signal 9 (Killed)
+09-05 12:33:30.970   505   534 I ActivityManager: Force stopping com.indian.nutrition.tracker appid=10141 user=-1: deletePackageX
+09-05 12:33:30.971   505   534 E libprocessgroup: No such cgroup attribute: /sys/fs/cgroup/uid_4294877437/cgroup.freeze
+09-05 12:33:30.971   505   534 W libprocessgroup: Failed to apply Frozen process profile: No such file or directory
+09-05 12:33:30.971   505   534 E libprocessgroup: No such cgroup attribute: /sys/fs/cgroup/uid_4294877437/cgroup.freeze
+09-05 12:33:30.971   505   534 W libprocessgroup: Failed to apply Unfrozen process profile: No such file or directory
+09-05 12:33:31.167     0     0 I servicemanager: Since 'artd' could not be found, trying to start it as a lazy AIDL service. (if it's not configured to be a lazy service, it may be stuck starting or still starting).
+09-05 12:33:31.170     0     0 I init    : starting service 'artd'...
+09-05 12:33:31.187     0     0 I init    : ... started service 'artd' has pid 2486
+09-05 12:33:31.188     0     0 I init    : Control message: Processed ctl.interface_start for 'aidl/artd' from pid: 132 (/system/bin/servicemanager)
+09-05 12:33:31.003  2486  2486 I artd    : Starting artd
+09-05 12:33:31.004  2486  2486 I AidlLazyServiceRegistrar: Registering service artd
+09-05 12:33:31.008  2486  2487 I AidlLazyServiceRegistrar: Process has 1 (of 1 available) client(s) in use after notification artd has clients: 1
+09-05 12:33:31.199     0     0 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+09-05 12:33:31.200     0     0 I servicemanager: Notifying artd they do (previously: don't) have clients when service is guaranteed to be in use
+09-05 12:33:31.009   505   558 I PermissionManager: Removing permission com.indian.nutrition.tracker.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION that used to be declared by com.indian.nutrition.tracker
+09-05 12:33:31.009   505   558 I PermissionManager: Permission ownership changed. Updating all permissions.
+09-05 12:33:31.009   505   558 W PermissionManager: Package com.android.adservices.api is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.adservices APEX instead.
+09-05 12:33:31.016   505   558 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
+09-05 12:33:31.016   505   558 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
+09-05 12:33:31.016   505   558 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
+09-05 12:33:31.016   505   558 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
+09-05 12:33:31.016   505   558 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
+09-05 12:33:31.016   505   558 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
+09-05 12:33:31.016   505   558 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
+09-05 12:33:31.016   505   558 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
+09-05 12:33:31.016   505   558 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
+09-05 12:33:31.016   505   558 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
+09-05 12:33:31.016   505   558 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
+09-05 12:33:31.016   505   558 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
+09-05 12:33:31.016   505   558 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
+09-05 12:33:31.033   505   558 D PackageManager: Instant App installer not found with android.intent.action.INSTALL_INSTANT_APP_PACKAGE
+09-05 12:33:31.033   505   558 D PackageManager: Clear ephemeral installer activity
+09-05 12:33:31.037   505   526 I DropBoxManagerService: add tag=system_server_strictmode isTagEnabled=true flags=0x2
+09-05 12:33:31.038   505   526 I DropBoxManagerService: add tag=system_server_strictmode isTagEnabled=true flags=0x2
+09-05 12:33:31.039   505   526 I DropBoxManagerService: add tag=system_server_strictmode isTagEnabled=true flags=0x2
+09-05 12:33:31.040   505   526 I DropBoxManagerService: add tag=system_server_strictmode isTagEnabled=true flags=0x2
+09-05 12:33:31.040   505   526 I DropBoxManagerService: add tag=system_server_strictmode isTagEnabled=true flags=0x2
+09-05 12:33:31.040   505   526 I DropBoxManagerService: add tag=system_server_strictmode isTagEnabled=true flags=0x2
+09-05 12:33:31.040   505   526 I DropBoxManagerService: add tag=system_server_strictmode isTagEnabled=true flags=0x2
+09-05 12:33:31.040   505   526 I DropBoxManagerService: add tag=system_server_strictmode isTagEnabled=true flags=0x2
+09-05 12:33:31.041   505   526 I DropBoxManagerService: add tag=system_server_strictmode isTagEnabled=true flags=0x2
+09-05 12:33:31.041   505   526 I DropBoxManagerService: add tag=system_server_strictmode isTagEnabled=true flags=0x2
+09-05 12:33:31.048   505   558 I ActivityManager: Force stopping com.indian.nutrition.tracker appid=10141 user=0: pkg removed
+09-05 12:33:31.049   505  1857 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+09-05 12:33:31.065   505  1857 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+09-05 12:33:31.069  1004  1004 D CarrierSvcBindHelper: onPackageRemoved: com.indian.nutrition.tracker
+09-05 12:33:31.070   505   719 W WifiService: Couldn't get PackageInfo for package:com.indian.nutrition.tracker
+09-05 12:33:31.070   505   719 D WifiService: Remove settings for package:com.indian.nutrition.tracker
+09-05 12:33:31.070   505   719 D WifiConfigManager: Remove all networks for app ApplicationInfo{f78d2b9 com.indian.nutrition.tracker}
+09-05 12:33:31.070   505   583 I RollbackManager: broadcast=ACTION_PACKAGE_FULLY_REMOVED pkg=com.indian.nutrition.tracker
+09-05 12:33:31.073   505   612 V StorageManagerService: Package com.indian.nutrition.tracker does not have legacy storage
+09-05 12:33:31.073   505   732 E AppOps  : attributionTag VCN not declared in manifest of android
+09-05 12:33:31.073  1004  1004 D CarrierSvcBindHelper: No carrier app for: 0
+09-05 12:33:31.076   505   534 D ActivityManager: sync unfroze 1554 com.android.documentsui for 3
+09-05 12:33:31.079   505   526 I DropBoxManagerService: add tag=system_app_strictmode isTagEnabled=true flags=0x2
+09-05 12:33:31.083   505   533 W WindowMagnificationMgr: requestConnection duplicated request: connect=false, mConnectionState=DISCONNECTED
+09-05 12:33:31.087   505   505 D ActivityManager: sync unfroze 1005 com.android.settings for 10
+09-05 12:33:31.087   505   505 D ActivityManager: sync unfroze 2039 com.android.dynsystem:dynsystem for 10
+09-05 12:33:31.087   505   505 D ActivityManager: sync unfroze 2005 com.android.dynsystem for 10
+09-05 12:33:31.087   505   505 D ActivityManager: sync unfroze 1929 com.android.localtransport for 10
+09-05 12:33:31.087   505   505 D ActivityManager: sync unfroze 1586 com.android.keychain for 10
+09-05 12:33:31.091   977   977 V MediaPlayerList: mPackageChangedBroadcastReceiver: action: android.intent.action.PACKAGE_REMOVED
+09-05 12:33:31.092   505   602 I InputReader: Reconfiguring input devices, changes=KEYBOARD_LAYOUTS
+09-05 12:33:31.095   505   719 D WifiConfigStore: Writing to stores completed in 15 ms.
+09-05 12:33:31.095   505   719 I PasspointManager: No app ops listener found for com.indian.nutrition.tracker
+09-05 12:33:31.096   505   505 I Telecom : CarModeTracker: Package com.indian.nutrition.tracker is not tracked.: SSH.oR@AHQ🔒
+09-05 12:33:31.096   505   505 I Telecom : InCallController: updateCarModeForConnections: car mode apps: : SSH.oR@AHQ🔒
+09-05 12:33:31.097   505   505 I Telecom : InCallController: update carmode current:UserHandle{0} parent:null: SSH.oR@AHQ🔒
+09-05 12:33:31.098   505   719 W WifiService: Couldn't get PackageInfo for package:com.indian.nutrition.tracker
+09-05 12:33:31.098   505   719 D WifiService: Remove settings for package:com.indian.nutrition.tracker
+09-05 12:33:31.098   505   719 D WifiConfigManager: Remove all networks for app ApplicationInfo{c22199 com.indian.nutrition.tracker}
+09-05 12:33:31.104   505   719 D WifiConfigStore: Writing to stores completed in 5 ms.
+09-05 12:33:31.104   505   719 I PasspointManager: No app ops listener found for com.indian.nutrition.tracker
+09-05 12:33:31.105  1451  1451 W MediaProvider: WorkProfileOwnerApps cache is empty
+09-05 12:33:31.107   977   977 V MediaPlayerList: mPackageChangedBroadcastReceiver: action: android.intent.action.PACKAGE_REMOVED
+09-05 12:33:31.109   505   534 I ActivityManager: Force stopping com.indian.nutrition.tracker.test appid=10142 user=-1: deletePackageX
+09-05 12:33:31.109   505   534 E libprocessgroup: No such cgroup attribute: /sys/fs/cgroup/uid_4294877438/cgroup.freeze
+09-05 12:33:31.109   505   534 W libprocessgroup: Failed to apply Frozen process profile: No such file or directory
+09-05 12:33:31.111   505   523 D DisplayManagerService: Drop pending events for gone uid 10142
+09-05 12:33:31.113   505   534 I ActivityManager: Killing 2384:com.indian.nutrition.tracker.test/u0a142 (adj 900): stop com.indian.nutrition.tracker.test due to deletePackageX
+09-05 12:33:31.115   505  1643 D SafetySourceDataValidator: No cert check requested for package com.android.permissioncontroller
+09-05 12:33:31.121   505   534 E libprocessgroup: No such cgroup attribute: /sys/fs/cgroup/uid_4294877438/cgroup.freeze
+09-05 12:33:31.121   505   534 W libprocessgroup: Failed to apply Unfrozen process profile: No such file or directory
+09-05 12:33:31.122   505   558 W PermissionManager: Package com.android.adservices.api is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.adservices APEX instead.
+09-05 12:33:31.131   505   558 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
+09-05 12:33:31.131   505   558 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
+09-05 12:33:31.131   505   558 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
+09-05 12:33:31.131   505   558 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
+09-05 12:33:31.131   505   558 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
+09-05 12:33:31.131   505   558 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
+09-05 12:33:31.131   505   558 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
+09-05 12:33:31.131   505   558 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
+09-05 12:33:31.131   505   558 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
+09-05 12:33:31.131   505   558 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
+09-05 12:33:31.131   505   558 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
+09-05 12:33:31.131   505   558 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
+09-05 12:33:31.131   505   558 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
+09-05 12:33:31.134   326   326 I Zygote  : Process 2384 exited due to signal 9 (Killed)
+09-05 12:33:31.137   389   389 E BpTransactionCompletedListener: Failed to transact (-32)
+09-05 12:33:31.137   505   527 W ActivityManager: setHasOverlayUi called on unknown pid: 2384
+09-05 12:33:31.137   389   389 E BpTransactionCompletedListener: Failed to transact (-32)
+09-05 12:33:31.137   389   389 E BpTransactionCompletedListener: Failed to transact (-32)
+09-05 12:33:31.137   389   389 E BpTransactionCompletedListener: Failed to transact (-32)
+09-05 12:33:31.139   505   589 I RoleService: Granting default roles...
+09-05 12:33:31.145   796   862 D StylusManager: Stylus InputDevice changed: 12 virtio_input_multi_touch_9
+09-05 12:33:31.145   796   862 D StylusManager: Stylus InputDevice changed: 7 virtio_input_multi_touch_4
+09-05 12:33:31.146   796   862 D StylusManager: Stylus InputDevice changed: 11 virtio_input_multi_touch_8
+09-05 12:33:31.147   796   862 D StylusManager: Stylus InputDevice changed: 9 virtio_input_multi_touch_6
+09-05 12:33:31.152   796   862 D StylusManager: Stylus InputDevice changed: 10 virtio_input_multi_touch_7
+09-05 12:33:31.163  1586  2505 W KeyChain: Creating new DB.
+09-05 12:33:31.174   505   558 D PackageManager: Instant App installer not found with android.intent.action.INSTALL_INSTANT_APP_PACKAGE
+09-05 12:33:31.174   505   558 D PackageManager: Clear ephemeral installer activity
+09-05 12:33:31.176   505  1857 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+09-05 12:33:31.178   796   796 D ControlsListingControllerImpl: ServiceConfig reloaded, count: 0
+09-05 12:33:31.180   796   862 D StylusManager: Stylus InputDevice changed: 8 virtio_input_multi_touch_5
+09-05 12:33:31.189   796   808 I ndroid.systemui: Background concurrent copying GC freed 150130(7279KB) AllocSpace objects, 23(460KB) LOS objects, 49% free, 12MB/24MB, paused 27us,17us total 127.449ms
+09-05 12:33:31.193   505   526 I DropBoxManagerService: add tag=system_app_strictmode isTagEnabled=true flags=0x2
+09-05 12:33:31.194   505  1643 V ActivityManager: Got obituary of 2384:com.indian.nutrition.tracker.test
+09-05 12:33:31.195   505   534 D ActivityManager: sync unfroze 1751 android.process.media for 3
+09-05 12:33:31.200   796   862 D StylusManager: Stylus InputDevice changed: 13 virtio_input_multi_touch_10
+09-05 12:33:31.201   796   862 D StylusManager: Stylus InputDevice changed: 6 virtio_input_multi_touch_3
+09-05 12:33:31.201   796   862 D StylusManager: Stylus InputDevice changed: 4 virtio_input_multi_touch_1
+09-05 12:33:31.201   796   862 D StylusManager: Stylus InputDevice changed: 5 virtio_input_multi_touch_2
+09-05 12:33:31.201   796   862 D StylusManager: Stylus InputDevice changed: 14 virtio_input_multi_touch_11
+09-05 12:33:31.207   505   558 I ActivityManager: Force stopping com.indian.nutrition.tracker.test appid=10142 user=0: pkg removed
+09-05 12:33:31.213   505   505 I ConditionProviders: Disallowing condition provider com.indian.nutrition.tracker (userSet: true)
+09-05 12:33:31.214  1051  1051 D Launcher.Model: package removed received com.indian.nutrition.tracker
+09-05 12:33:31.215  1051  1083 D PackageUpdatedTask: Removing app iconcom.indian.nutrition.tracker
+09-05 12:33:31.218   505   526 I DropBoxManagerService: add tag=system_server_strictmode isTagEnabled=true flags=0x2
+09-05 12:33:31.219   505   526 I DropBoxManagerService: add tag=system_server_strictmode isTagEnabled=true flags=0x2
+09-05 12:33:31.219   505   526 I DropBoxManagerService: add tag=system_server_strictmode isTagEnabled=true flags=0x2
+09-05 12:33:31.220  1051  1083 D ModelWriter: removing items from db . Reason: [removed because the corresponding package or component is removed. mOp=3 removedPackages=[com.indian.nutrition.tracker] removedComponents=[]]
+09-05 12:33:31.223   505  1857 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+09-05 12:33:31.223   505   526 I DropBoxManagerService: add tag=system_server_strictmode isTagEnabled=true flags=0x2
+09-05 12:33:31.235  1451  1917 I MediaProvider: Begin Intent { act=android.intent.action.PACKAGE_FULLY_REMOVED dat=package: flg=0x5000010 cmp=com.android.providers.media.module/com.android.providers.media.MediaService (has extras) }
+09-05 12:33:31.236  1451  1917 D MediaProvider: Deleted 0 Android/media items belonging to com.indian.nutrition.tracker on /data/user/0/com.android.providers.media.module/databases/external.db
+09-05 12:33:31.237  1451  1917 D MediaGrants: Removed 0 media_grants for 0 user for com.indian.nutrition.tracker. Reason: Package orphaned
+09-05 12:33:31.237  1451  1917 I MediaProvider: End Intent { act=android.intent.action.PACKAGE_FULLY_REMOVED dat=package: flg=0x5000010 cmp=com.android.providers.media.module/com.android.providers.media.MediaService (has extras) }
+09-05 12:33:31.245  1004  1004 D CarrierSvcBindHelper: onPackageRemoved: com.indian.nutrition.tracker.test
+09-05 12:33:31.245  1004  1004 D CarrierSvcBindHelper: No carrier app for: 0
+09-05 12:33:31.246   977   977 V MediaPlayerList: mPackageChangedBroadcastReceiver: action: android.intent.action.PACKAGE_REMOVED
+09-05 12:33:31.247   977   977 V MediaPlayerList: mPackageChangedBroadcastReceiver: action: android.intent.action.PACKAGE_REMOVED
+09-05 12:33:31.252   796   796 D ControlsListingControllerImpl: ServiceConfig reloaded, count: 0
+09-05 12:33:31.252  1451  1451 W MediaProvider: WorkProfileOwnerApps cache is empty
+09-05 12:33:31.267   797   797 D PersistedStoragePackageUninstalledReceiver: Received android.intent.action.PACKAGE_FULLY_REMOVED for com.indian.nutrition.tracker for u0
+09-05 12:33:31.277   505  1643 D SafetySourceDataValidator: No cert check requested for package com.android.permissioncontroller
+09-05 12:33:31.281   797   797 D PersistedStoragePackageUninstalledReceiver: Received android.intent.action.PACKAGE_FULLY_REMOVED for com.indian.nutrition.tracker.test for u0
+09-05 12:33:31.281  1451  1917 I MediaProvider: Begin Intent { act=android.intent.action.PACKAGE_FULLY_REMOVED dat=package: flg=0x5000010 cmp=com.android.providers.media.module/com.android.providers.media.MediaService (has extras) }
+09-05 12:33:31.282  1451  1917 D MediaProvider: Deleted 0 Android/media items belonging to com.indian.nutrition.tracker.test on /data/user/0/com.android.providers.media.module/databases/external.db
+09-05 12:33:31.282  1451  1917 D MediaGrants: Removed 0 media_grants for 0 user for com.indian.nutrition.tracker.test. Reason: Package orphaned
+09-05 12:33:31.282  1451  1917 I MediaProvider: End Intent { act=android.intent.action.PACKAGE_FULLY_REMOVED dat=package: flg=0x5000010 cmp=com.android.providers.media.module/com.android.providers.media.MediaService (has extras) }
+09-05 12:33:31.286   505   719 W WifiService: Couldn't get PackageInfo for package:com.indian.nutrition.tracker.test
+09-05 12:33:31.286   505   719 D WifiService: Remove settings for package:com.indian.nutrition.tracker.test
+09-05 12:33:31.286   505   719 D WifiConfigManager: Remove all networks for app ApplicationInfo{d8e7ea6 com.indian.nutrition.tracker.test}
+09-05 12:33:31.287   505   612 V StorageManagerService: Package com.indian.nutrition.tracker.test does not have legacy storage
+09-05 12:33:31.287   505   583 I RollbackManager: broadcast=ACTION_PACKAGE_FULLY_REMOVED pkg=com.indian.nutrition.tracker.test
+09-05 12:33:31.288   505   602 I InputReader: Reconfiguring input devices, changes=KEYBOARD_LAYOUTS
+09-05 12:33:31.290   505   732 E AppOps  : attributionTag VCN not declared in manifest of android
+09-05 12:33:31.290   505   719 D WifiConfigStore: Writing to stores completed in 4 ms.
+09-05 12:33:31.290   505   719 I PasspointManager: No app ops listener found for com.indian.nutrition.tracker.test
+09-05 12:33:31.290   505   719 W WifiService: Couldn't get PackageInfo for package:com.indian.nutrition.tracker.test
+09-05 12:33:31.290   505   719 D WifiService: Remove settings for package:com.indian.nutrition.tracker.test
+09-05 12:33:31.290   505   719 D WifiConfigManager: Remove all networks for app ApplicationInfo{fe3ae39 com.indian.nutrition.tracker.test}
+09-05 12:33:31.295   505   505 I Telecom : CarModeTracker: Package com.indian.nutrition.tracker.test is not tracked.: SSH.oR@AHc🔒
+09-05 12:33:31.295   505   505 I Telecom : InCallController: updateCarModeForConnections: car mode apps: : SSH.oR@AHc🔒
+09-05 12:33:31.295   505   505 I Telecom : InCallController: update carmode current:UserHandle{0} parent:null: SSH.oR@AHc🔒
+09-05 12:33:31.299   325   362 I netd    : tetherGetStats() -> {[]} <1.33ms>
+09-05 12:33:31.311   505   505 I ConditionProviders: Disallowing condition provider com.indian.nutrition.tracker.test (userSet: true)
+09-05 12:33:31.313   505   533 W WindowMagnificationMgr: requestConnection duplicated request: connect=false, mConnectionState=DISCONNECTED
+09-05 12:33:31.316   796   862 D StylusManager: Stylus InputDevice changed: 12 virtio_input_multi_touch_9
+09-05 12:33:31.319   505   719 D WifiConfigStore: Writing to stores completed in 23 ms.
+09-05 12:33:31.320   505   719 I PasspointManager: No app ops listener found for com.indian.nutrition.tracker.test
+09-05 12:33:31.320   796   862 D StylusManager: Stylus InputDevice changed: 7 virtio_input_multi_touch_4
+09-05 12:33:31.322   796   862 D StylusManager: Stylus InputDevice changed: 11 virtio_input_multi_touch_8
+09-05 12:33:31.324   796   862 D StylusManager: Stylus InputDevice changed: 9 virtio_input_multi_touch_6
+09-05 12:33:31.326   796   862 D StylusManager: Stylus InputDevice changed: 10 virtio_input_multi_touch_7
+09-05 12:33:31.327   796   862 D StylusManager: Stylus InputDevice changed: 8 virtio_input_multi_touch_5
+09-05 12:33:31.329   325   362 I netd    : tetherGetStats() -> {[]} <0.25ms>
+09-05 12:33:31.333  1051  1051 D Launcher.Model: package removed received com.indian.nutrition.tracker.test
+09-05 12:33:31.333  1051  1083 D PackageUpdatedTask: Removing app iconcom.indian.nutrition.tracker.test
+09-05 12:33:31.334   796   862 D StylusManager: Stylus InputDevice changed: 13 virtio_input_multi_touch_10
+09-05 12:33:31.335   796   862 D StylusManager: Stylus InputDevice changed: 6 virtio_input_multi_touch_3
+09-05 12:33:31.336  1051  1083 D ModelWriter: removing items from db . Reason: [removed because the corresponding package or component is removed. mOp=3 removedPackages=[com.indian.nutrition.tracker.test] removedComponents=[]]
+09-05 12:33:31.337   796   862 D StylusManager: Stylus InputDevice changed: 4 virtio_input_multi_touch_1
+09-05 12:33:31.337   796   862 D StylusManager: Stylus InputDevice changed: 5 virtio_input_multi_touch_2
+09-05 12:33:31.344   505   514 I system_server: Background concurrent copying GC freed 495252(22MB) AllocSpace objects, 59(1556KB) LOS objects, 50% free, 23MB/47MB, paused 30us,53us total 308.151ms
+09-05 12:33:31.344   505   515 W JavaBinder: BinderProxy is being destroyed but the application did not call unlinkToDeath to unlink all of its death recipients beforehand.  Releasing leaked death recipient: com.android.server.am.ActivityManagerService$14
+09-05 12:33:31.344   505   515 I BpBinder: onLastStrongRef automatically unlinking death recipients: 
+09-05 12:33:31.347   796   862 D StylusManager: Stylus InputDevice changed: 14 virtio_input_multi_touch_11
+09-05 12:33:31.360   505   526 I DropBoxManagerService: add tag=system_server_strictmode isTagEnabled=true flags=0x2
+09-05 12:33:31.360   505   526 I DropBoxManagerService: add tag=system_server_strictmode isTagEnabled=true flags=0x2
+09-05 12:33:31.567  1370  1417 I LatinIME:LogUtils: Dictionary info: dictionary = main:en ; version = 54 ; date = 1414726273
+09-05 12:33:31.962  2486  2487 I AidlLazyServiceRegistrar: Process has 0 (of 1 available) client(s) in use after notification artd has clients: 0
+09-05 12:33:31.962  2486  2487 I AidlLazyServiceRegistrar: Trying to shut down the service. No clients in use for any service in process.
+09-05 12:33:31.964  2486  2487 I AidlLazyServiceRegistrar: Unregistered all clients and exiting
+09-05 12:33:32.154     0     0 I servicemanager: Notifying artd they don't (previously: do) have clients when we now have no record of a client
+09-05 12:33:32.156     0     0 I servicemanager: Unregistering artd
+09-05 12:33:32.157     0     0 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+09-05 12:33:32.160     0     0 I init    : Service 'artd' (pid 2486) exited with status 0 oneshot service took 0.987000 seconds in background
+09-05 12:33:32.161     0     0 I init    : Sending signal 9 to service 'artd' (pid 2486) process group...
+09-05 12:33:32.163     0     0 I libprocessgroup: Successfully killed process cgroup uid 1082 pid 2486 in 0ms
+09-05 12:33:32.017   781   781 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+09-05 12:33:32.094   505   589 I RoleService: Granting default roles...
+09-05 12:33:32.167   796   796 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+09-05 12:33:32.472     0     0 I logd    : logdr: UID=2000 GID=2000 PID=2537 n tail=0 logMask=99 pid=0 start=0ns deadline=0ns
 === END ===

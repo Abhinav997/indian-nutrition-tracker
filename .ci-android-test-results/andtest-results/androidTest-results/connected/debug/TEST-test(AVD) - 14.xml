@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<testsuites tests="13" failures="3" errors="0" skipped="0" time="0.000" timestamp="2026-09-05T12:33:30" hostname="localhost">
+  <testsuite name="com.indian.nutrition.tracker.data.local.DaoInstrumentedTest" tests="5" failures="0" errors="0" skipped="0" time="0.269" timestamp="2026-09-05T12:33:30" hostname="localhost">
+    <properties>
+      <property name="device" value="emulator-5554" />
+    </properties>
+    <testcase name="dailyLogInsertReplaceAndDelete" classname="com.indian.nutrition.tracker.data.local.DaoInstrumentedTest" time="0.079" />
+    <testcase name="waterInsertReplaceAndOrdering" classname="com.indian.nutrition.tracker.data.local.DaoInstrumentedTest" time="0.058" />
+    <testcase name="weightUpsertUpdateAndUniqueDate" classname="com.indian.nutrition.tracker.data.local.DaoInstrumentedTest" time="0.034" />
+    <testcase name="offCacheEvictionAndCounting" classname="com.indian.nutrition.tracker.data.local.DaoInstrumentedTest" time="0.041" />
+    <testcase name="customFoodInsertUpdateAndClear" classname="com.indian.nutrition.tracker.data.local.DaoInstrumentedTest" time="0.057" />
+  </testsuite>
+  <testsuite name="com.indian.nutrition.tracker.data.repository.RepositoryInstrumentedTest" tests="4" failures="0" errors="0" skipped="0" time="0.186" timestamp="2026-09-05T12:33:30" hostname="localhost">
+    <properties>
+      <property name="device" value="emulator-5554" />
+    </properties>
+    <testcase name="logAndWaterImportKeepIdsAndReplaceOnConflict" classname="com.indian.nutrition.tracker.data.repository.RepositoryInstrumentedTest" time="0.051" />
+    <testcase name="customImportAndClearAllTables" classname="com.indian.nutrition.tracker.data.repository.RepositoryInstrumentedTest" time="0.086" />
+    <testcase name="weightImportCollapsesDuplicateDates" classname="com.indian.nutrition.tracker.data.repository.RepositoryInstrumentedTest" time="0.022" />
+    <testcase name="weightUpsertIsOneRowPerDate" classname="com.indian.nutrition.tracker.data.repository.RepositoryInstrumentedTest" time="0.027" />
+  </testsuite>
+  <testsuite name="com.indian.nutrition.tracker.ui.AppUiTest" tests="4" failures="3" errors="0" skipped="0" time="8.305" timestamp="2026-09-05T12:33:30" hostname="localhost">
+    <properties>
+      <property name="device" value="emulator-5554" />
+    </properties>
+    <testcase name="test01_homeRendersAndWaterQuickAddWorks" classname="com.indian.nutrition.tracker.ui.AppUiTest" time="1.527">
+      <failure>java.lang.AssertionError: Failed: assertExists.
+Reason: Expected exactly '1' node but could not find any node that satisfies: (TestTag = 'water-tracker-widget')
+
+	at androidx.compose.ui.test.SemanticsNodeInteraction.fetchOneOrThrow(SemanticsNodeInteraction.kt:178)
+	at androidx.compose.ui.test.SemanticsNodeInteraction.fetchOneOrThrow$default(SemanticsNodeInteraction.kt:150)
+	at androidx.compose.ui.test.SemanticsNodeInteraction.assertExists(SemanticsNodeInteraction.kt:125)
+	at androidx.compose.ui.test.SemanticsNodeInteraction.assertExists$default(SemanticsNodeInteraction.kt:124)
+	at com.indian.nutrition.tracker.ui.AppUiTest.test01_homeRendersAndWaterQuickAddWorks(AppUiTest.kt:89)
+</failure>
+    </testcase>
+    <testcase name="test02_weightSheetLogsAndUpdatesSummary" classname="com.indian.nutrition.tracker.ui.AppUiTest" time="2.592" />
+    <testcase name="test03_addFoodOpensSearchAndCanCreateCustomRecipe" classname="com.indian.nutrition.tracker.ui.AppUiTest" time="2.973">
+      <failure>java.lang.AssertionError: Semantic Node has no parent layout with a Scroll SemanticsAction
+	at androidx.compose.ui.test.ActionsKt.scrollToNode(Actions.kt:92)
+	at androidx.compose.ui.test.ActionsKt.performScrollTo(Actions.kt:77)
+	at com.indian.nutrition.tracker.ui.AppUiTest.test03_addFoodOpensSearchAndCanCreateCustomRecipe(AppUiTest.kt:145)
+</failure>
+    </testcase>
+    <testcase name="test04_calculatorRendersProfileAndSavesTargets" classname="com.indian.nutrition.tracker.ui.AppUiTest" time="1.213">
+      <failure>java.lang.AssertionError: Action performScrollTo() failed.
+Reason: Expected exactly '1' node but could not find any node that satisfies: (TestTag = 'target-mode-predefined-btn')
+
+	at androidx.compose.ui.test.SemanticsNodeInteraction.fetchOneOrThrow(SemanticsNodeInteraction.kt:178)
+	at androidx.compose.ui.test.SemanticsNodeInteraction.fetchOneOrThrow$default(SemanticsNodeInteraction.kt:150)
+	at androidx.compose.ui.test.SemanticsNodeInteraction.fetchSemanticsNode(SemanticsNodeInteraction.kt:84)
+	at androidx.compose.ui.test.ActionsKt.performScrollTo(Actions.kt:76)
+	at com.indian.nutrition.tracker.ui.AppUiTest.test04_calculatorRendersProfileAndSavesTargets(AppUiTest.kt:162)
+</failure>
+    </testcase>
+  </testsuite>
+</testsuites>

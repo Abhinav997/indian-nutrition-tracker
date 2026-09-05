@@ -1,0 +1,2 @@
+09-05 12:33:21.755  2342  2361 I TestRunner: started: waterInsertReplaceAndOrdering(com.indian.nutrition.tracker.data.local.DaoInstrumentedTest)
+09-05 12:33:21.814  2342  2361 I TestRunner: finished: waterInsertReplaceAndOrdering(com.indian.nutrition.tracker.data.local.DaoInstrumentedTest)

@@ -1,0 +1,2 @@
+09-05 12:33:21.815  2342  2361 I TestRunner: started: weightUpsertUpdateAndUniqueDate(com.indian.nutrition.tracker.data.local.DaoInstrumentedTest)
+09-05 12:33:21.852  2342  2361 I TestRunner: finished: weightUpsertUpdateAndUniqueDate(com.indian.nutrition.tracker.data.local.DaoInstrumentedTest)
