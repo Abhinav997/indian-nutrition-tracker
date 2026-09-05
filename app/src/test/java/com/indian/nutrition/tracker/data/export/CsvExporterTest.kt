@@ -41,7 +41,7 @@ class CsvExporterTest {
         val expected = """
             Type,Date,Detail1,Detail2,Detail3,Detail4,Detail5,Detail6,Detail7
             # Food Logs: Type,Date,Meal,Food Name,Source,Serving (g),Calories (kcal),Protein (g),Carbs (g),Fat (g)
-            FOOD,2026-09-05,LUNCH,"D""al ""spicy""",NIN,150,180,9.0,28.0,2.0
+            FOOD,2026-09-05,Lunch,"D""al ""spicy""",NIN,150,180,9.0,28.0,2.0
             # Water Logs: Type,Date,Time,Amount (ml)
             WATER,2026-09-05,"7:00 AM",250
             # Weight Logs: Type,Date,Weight (kg),Note

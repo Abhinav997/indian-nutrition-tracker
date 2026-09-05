@@ -51,6 +51,13 @@ class JsonBackupTest {
         assertTrue(raw.contains("\"weight_kg\": 82.5"))
         assertTrue(raw.contains("\"amount_ml\": 250"))
         assertTrue(raw.contains("\"created_at\": 100"))
+        assertTrue(raw.contains("\"sex\": \"M\""))
+        assertTrue(raw.contains("\"activity_level\": \"Moderate\""))
+        assertTrue(raw.contains("\"goal_type\": \"Lose\""))
+        assertTrue(raw.contains("\"unit_system\": \"kg\""))
+        assertTrue(raw.contains("\"default_chart_range\": \"14d\""))
+        assertTrue(raw.contains("\"meal_type\": \"Lunch\""))
+        assertTrue(raw.contains("\"protein_basis\": \"current\""))
         assertTrue(raw.contains("\"version\": \"1.0\""))
         assertTrue(raw.contains("\"exportedAt\""))
     }
@@ -75,7 +82,7 @@ class JsonBackupTest {
         {
           "settings": {
             "current_weight_kg": 70.0, "target_weight_kg": 65.0, "height_cm": 165,
-            "age_years": 30, "sex": "Other", "activity_level": "Light Exercise",
+            "age_years": 30, "sex": "Other", "activity_level": "Light",
             "goal_type": "Gain", "goal_rate_kg_per_week": 0.25,
             "daily_calorie_target": 2200, "daily_protein_target": 100,
             "daily_water_target_ml": 2500, "protein_basis": "target",

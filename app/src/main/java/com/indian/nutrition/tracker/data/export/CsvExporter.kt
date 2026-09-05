@@ -57,7 +57,7 @@ object CsvExporter {
         sb.append(FOOD_COMMENT)
         foods.forEach { log ->
             sb.append("FOOD,${log.date},")
-            sb.append(log.mealType.name)
+            sb.append(log.mealType.displayName)
             sb.append(',').append(quote(log.foodName))
             sb.append(',').append(log.source.name)
             sb.append(',').append(log.servingGrams)

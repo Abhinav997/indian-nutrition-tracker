@@ -129,7 +129,7 @@ object JsonBackup {
             weightLogs = weightLogs.map { it.toDto() },
             waterLogs = waterLogs.map { it.toDto() },
             customFoods = customFoods.map { it.toDto() },
-            exportedAt = java.time.OffsetDateTime.now().toString(),
+            exportedAt = java.time.Instant.now().toString(),
             version = "1.0",
         )
         return json.encodeToString(BackupDto.serializer(), dto)
@@ -191,156 +191,184 @@ object JsonBackup {
             "bad date '$date'"
         }
 
-    // --- Conversions (snake_case DTO → domain, tolerant of web labels) ---
-
-    fun SettingsDto.toDomain(): UserSettings = UserSettings(
-        currentWeightKg = currentWeightKg,
-        targetWeightKg = targetWeightKg,
-        heightCm = heightCm,
-        ageYears = ageYears,
-        sex = coerceSex(sex),
-        activityLevel = coerceActivity(activityLevel),
-        goalType = coerceGoal(goalType),
-        goalRateKgPerWeek = goalRateKgPerWeek,
-        dailyCalorieTarget = dailyCalorieTarget,
-        dailyProteinTarget = dailyProteinTarget,
-        dailyWaterTargetMl = dailyWaterTargetMl,
-        proteinBasis = coerceProteinBasis(proteinBasis),
-        unitSystem = coerceUnit(unitSystem),
-        defaultChartRange = coerceDateRange(defaultChartRange),
-    )
-
-    fun DailyLogDto.toDomain(): DailyLog = DailyLog(
-        id = id,
-        date = LocalDate.parse(date),
-        foodId = foodId,
-        foodName = foodName,
-        source = coerceSource(source),
-        servingGrams = servingGrams,
-        calories = calories,
-        protein = protein,
-        carbs = carbs,
-        fat = fat,
-        mealType = coerceMeal(mealType),
-        createdAt = createdAt,
-    )
-
-    fun WeightLogDto.toDomain(): WeightLog = WeightLog(
-        id = id,
-        date = LocalDate.parse(date),
-        weightKg = weightKg,
-        note = note,
-        createdAt = createdAt,
-    )
-
-    fun WaterLogDto.toDomain(): WaterLog = WaterLog(
-        id = id,
-        date = LocalDate.parse(date),
-        amountMl = amountMl,
-        time = time,
-        createdAt = createdAt,
-    )
-
-    fun CustomFoodDto.toDomain(): CustomFood = CustomFood(
-        id = id,
-        name = name,
-        kcalPer100g = kcalPer100g,
-        proteinPer100g = proteinPer100g,
-        carbsPer100g = carbsPer100g,
-        fatPer100g = fatPer100g,
-        fiberPer100g = fiberPer100g,
-        typicalServingDescription = typicalServingDescription,
-        typicalServingGrams = typicalServingGrams,
-        notes = notes,
-        createdAt = createdAt,
-    )
-
-    // --- Domain → DTO ---
-
-    fun UserSettings.toDto(): SettingsDto = SettingsDto(
-        currentWeightKg = currentWeightKg,
-        targetWeightKg = targetWeightKg,
-        heightCm = heightCm,
-        ageYears = ageYears,
-        sex = sex.name,
-        activityLevel = activityLevel.name,
-        goalType = goalType.name,
-        goalRateKgPerWeek = goalRateKgPerWeek,
-        dailyCalorieTarget = dailyCalorieTarget,
-        dailyProteinTarget = dailyProteinTarget,
-        dailyWaterTargetMl = dailyWaterTargetMl,
-        proteinBasis = proteinBasis.name,
-        unitSystem = unitSystem.name,
-        defaultChartRange = defaultChartRange.name,
-    )
-
-    fun DailyLog.toDto(): DailyLogDto = DailyLogDto(
-        id = id, date = date.toString(), foodId = foodId, foodName = foodName,
-        source = source.name, servingGrams = servingGrams, calories = calories,
-        protein = protein, carbs = carbs, fat = fat, mealType = mealType.name,
-        createdAt = createdAt,
-    )
-
-    fun WeightLog.toDto(): WeightLogDto = WeightLogDto(
-        id = id, date = date.toString(), weightKg = weightKg, note = note, createdAt = createdAt,
-    )
-
-    fun WaterLog.toDto(): WaterLogDto = WaterLogDto(
-        id = id, date = date.toString(), amountMl = amountMl, time = time, createdAt = createdAt,
-    )
-
-    fun CustomFood.toDto(): CustomFoodDto = CustomFoodDto(
-        id = id, name = name, kcalPer100g = kcalPer100g, proteinPer100g = proteinPer100g,
-        carbsPer100g = carbsPer100g, fatPer100g = fatPer100g, fiberPer100g = fiberPer100g,
-        typicalServingDescription = typicalServingDescription, typicalServingGrams = typicalServingGrams,
-        notes = notes, createdAt = createdAt,
-    )
-
-    // --- Coercion helpers (web labels → native enums; unknown → default) ---
-
-    fun coerceSex(value: String): Sex = when (value.lowercase()) {
-        "f", "female" -> Sex.F
-        "other", "o" -> Sex.OTHER
-        else -> Sex.M
-    }
-
-    fun coerceActivity(value: String): ActivityLevel =
-        ActivityLevel.entries.firstOrNull { it.name.equals(value, true) } ?: when (value.lowercase()) {
-            "sedentary" -> ActivityLevel.SEDENTARY
-            "light exercise" -> ActivityLevel.LIGHT
-            "moderate exercise" -> ActivityLevel.MODERATE
-            "active" -> ActivityLevel.ACTIVE
-            "very active" -> ActivityLevel.VERY_ACTIVE
-            else -> ActivityLevel.MODERATE
-        }
-
-    fun coerceGoal(value: String): GoalType = when (value.lowercase()) {
-        "lose" -> GoalType.LOSE
-        "maintain" -> GoalType.MAINTAIN
-        "gain" -> GoalType.GAIN
-        else -> GoalType.LOSE
-    }
-
-    fun coerceProteinBasis(value: String): ProteinBasis = when (value.lowercase()) {
-        "target" -> ProteinBasis.TARGET
-        else -> ProteinBasis.CURRENT
-    }
-
-    fun coerceUnit(value: String): UnitSystem = when (value.lowercase()) {
-        "lb" -> UnitSystem.LB
-        else -> UnitSystem.KG
-    }
-
-    fun coerceDateRange(value: String): DateRange = when (value.lowercase().trim()) {
-        "7d" -> DateRange.D7
-        "30d" -> DateRange.D30
-        "all", "60d" -> DateRange.ALL
-        else -> DateRange.D14
-    }
-
-    fun coerceSource(value: String): FoodSource =
-        FoodSource.entries.firstOrNull { it.name.equals(value, true) } ?: FoodSource.OFF
-
-    fun coerceMeal(value: String): MealType =
-        MealType.entries.firstOrNull { it.name.equals(value, true) } ?: MealType.LUNCH
 }
+// --- Conversions (snake_case DTO → domain, tolerant of web labels) ---
+
+fun SettingsDto.toDomain(): UserSettings = UserSettings(
+    currentWeightKg = currentWeightKg,
+    targetWeightKg = targetWeightKg,
+    heightCm = heightCm,
+    ageYears = ageYears,
+    sex = coerceSex(sex),
+    activityLevel = coerceActivity(activityLevel),
+    goalType = coerceGoal(goalType),
+    goalRateKgPerWeek = goalRateKgPerWeek,
+    dailyCalorieTarget = dailyCalorieTarget,
+    dailyProteinTarget = dailyProteinTarget,
+    dailyWaterTargetMl = dailyWaterTargetMl,
+    proteinBasis = coerceProteinBasis(proteinBasis),
+    unitSystem = coerceUnit(unitSystem),
+    defaultChartRange = coerceDateRange(defaultChartRange),
+)
+
+fun DailyLogDto.toDomain(): DailyLog = DailyLog(
+    id = id,
+    date = LocalDate.parse(date),
+    foodId = foodId,
+    foodName = foodName,
+    source = coerceSource(source),
+    servingGrams = servingGrams,
+    calories = calories,
+    protein = protein,
+    carbs = carbs,
+    fat = fat,
+    mealType = coerceMeal(mealType),
+    createdAt = createdAt,
+)
+
+fun WeightLogDto.toDomain(): WeightLog = WeightLog(
+    id = id,
+    date = LocalDate.parse(date),
+    weightKg = weightKg,
+    note = note,
+    createdAt = createdAt,
+)
+
+fun WaterLogDto.toDomain(): WaterLog = WaterLog(
+    id = id,
+    date = LocalDate.parse(date),
+    amountMl = amountMl,
+    time = time,
+    createdAt = createdAt,
+)
+
+fun CustomFoodDto.toDomain(): CustomFood = CustomFood(
+    id = id,
+    name = name,
+    kcalPer100g = kcalPer100g,
+    proteinPer100g = proteinPer100g,
+    carbsPer100g = carbsPer100g,
+    fatPer100g = fatPer100g,
+    fiberPer100g = fiberPer100g,
+    typicalServingDescription = typicalServingDescription,
+    typicalServingGrams = typicalServingGrams,
+    notes = notes,
+    createdAt = createdAt,
+)
+
+// --- Domain → DTO ---
+
+fun UserSettings.toDto(): SettingsDto = SettingsDto(
+    currentWeightKg = currentWeightKg,
+    targetWeightKg = targetWeightKg,
+    heightCm = heightCm,
+    ageYears = ageYears,
+    sex = sex.toWebLabel(),
+    activityLevel = activityLevel.toWebLabel(),
+    goalType = goalType.toWebLabel(),
+    goalRateKgPerWeek = goalRateKgPerWeek,
+    dailyCalorieTarget = dailyCalorieTarget,
+    dailyProteinTarget = dailyProteinTarget,
+    dailyWaterTargetMl = dailyWaterTargetMl,
+    proteinBasis = if (proteinBasis == ProteinBasis.TARGET) "target" else "current",
+    unitSystem = if (unitSystem == UnitSystem.LB) "lb" else "kg",
+    defaultChartRange = defaultChartRange.toWebLabel(),
+)
+
+fun DailyLog.toDto(): DailyLogDto = DailyLogDto(
+    id = id, date = date.toString(), foodId = foodId, foodName = foodName,
+    source = source.name, servingGrams = servingGrams, calories = calories,
+    protein = protein, carbs = carbs, fat = fat, mealType = mealType.displayName,
+    createdAt = createdAt,
+)
+
+fun WeightLog.toDto(): WeightLogDto = WeightLogDto(
+    id = id, date = date.toString(), weightKg = weightKg, note = note, createdAt = createdAt,
+)
+
+fun WaterLog.toDto(): WaterLogDto = WaterLogDto(
+    id = id, date = date.toString(), amountMl = amountMl, time = time, createdAt = createdAt,
+)
+
+fun CustomFood.toDto(): CustomFoodDto = CustomFoodDto(
+    id = id, name = name, kcalPer100g = kcalPer100g, proteinPer100g = proteinPer100g,
+    carbsPer100g = carbsPer100g, fatPer100g = fatPer100g, fiberPer100g = fiberPer100g,
+    typicalServingDescription = typicalServingDescription, typicalServingGrams = typicalServingGrams,
+    notes = notes, createdAt = createdAt,
+)
+
+// --- Coercion helpers (web labels → native enums; unknown → default) ---
+
+fun Sex.toWebLabel(): String = when (this) {
+    Sex.F -> "F"
+    Sex.OTHER -> "Other"
+    Sex.M -> "M"
+}
+
+fun ActivityLevel.toWebLabel(): String = when (this) {
+    ActivityLevel.SEDENTARY -> "Sedentary"
+    ActivityLevel.LIGHT -> "Light"
+    ActivityLevel.MODERATE -> "Moderate"
+    ActivityLevel.ACTIVE -> "Active"
+    ActivityLevel.VERY_ACTIVE -> "Very Active"
+}
+
+fun GoalType.toWebLabel(): String = when (this) {
+    GoalType.LOSE -> "Lose"
+    GoalType.MAINTAIN -> "Maintain"
+    GoalType.GAIN -> "Gain"
+}
+
+fun DateRange.toWebLabel(): String = when (this) {
+    DateRange.D7 -> "7d"
+    DateRange.D14 -> "14d"
+    DateRange.D30 -> "30d"
+    DateRange.ALL -> "All"
+}
+
+fun coerceSex(value: String): Sex = when (value.lowercase()) {
+    "f", "female" -> Sex.F
+    "other", "o" -> Sex.OTHER
+    else -> Sex.M
+}
+
+fun coerceActivity(value: String): ActivityLevel =
+    ActivityLevel.entries.firstOrNull { it.name.equals(value, true) } ?: when (value.lowercase()) {
+        "sedentary" -> ActivityLevel.SEDENTARY
+        "light", "light exercise" -> ActivityLevel.LIGHT
+        "moderate", "moderate exercise" -> ActivityLevel.MODERATE
+        "active" -> ActivityLevel.ACTIVE
+        "very active" -> ActivityLevel.VERY_ACTIVE
+        else -> ActivityLevel.MODERATE
+    }
+
+fun coerceGoal(value: String): GoalType = when (value.lowercase()) {
+    "lose" -> GoalType.LOSE
+    "maintain" -> GoalType.MAINTAIN
+    "gain" -> GoalType.GAIN
+    else -> GoalType.LOSE
+}
+
+fun coerceProteinBasis(value: String): ProteinBasis = when (value.lowercase()) {
+    "target" -> ProteinBasis.TARGET
+    else -> ProteinBasis.CURRENT
+}
+
+fun coerceUnit(value: String): UnitSystem = when (value.lowercase()) {
+    "lb" -> UnitSystem.LB
+    else -> UnitSystem.KG
+}
+
+fun coerceDateRange(value: String): DateRange = when (value.lowercase().trim()) {
+    "7d" -> DateRange.D7
+    "30d" -> DateRange.D30
+    "all", "60d" -> DateRange.ALL
+    else -> DateRange.D14
+}
+
+fun coerceSource(value: String): FoodSource =
+    FoodSource.entries.firstOrNull { it.name.equals(value, true) } ?: FoodSource.OFF
+
+fun coerceMeal(value: String): MealType =
+    MealType.entries.firstOrNull { it.name.equals(value, true) } ?: MealType.LUNCH
+

@@ -3,6 +3,7 @@ package com.indian.nutrition.tracker.ui.screens.calculator
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.indian.nutrition.tracker.data.export.JsonBackup
+import com.indian.nutrition.tracker.data.export.toDomain
 import com.indian.nutrition.tracker.data.repository.CustomFoodRepository
 import com.indian.nutrition.tracker.data.repository.LogRepository
 import com.indian.nutrition.tracker.data.repository.SettingsRepository

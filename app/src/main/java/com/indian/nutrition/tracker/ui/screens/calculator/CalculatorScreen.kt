@@ -242,17 +242,18 @@ fun CalculatorScreen(
                 goalRate = goalRate,
                 proteinBasis = proteinBasis,
                 onUnitToggle = { newUnit ->
-                    if (newUnit == unitSystem) return@ProfileCard
-                    val c = currentKg
-                    val t = targetKg
-                    if (newUnit == UnitSystem.LB) {
-                        currentWeight = UnitConverters.kgToLb(c).toString()
-                        targetWeight = UnitConverters.kgToLb(t).toString()
-                    } else {
-                        currentWeight = c.toString()
-                        targetWeight = t.toString()
+                    if (newUnit != unitSystem) {
+                        val c = currentKg
+                        val t = targetKg
+                        if (newUnit == UnitSystem.LB) {
+                            currentWeight = UnitConverters.kgToLb(c).toString()
+                            targetWeight = UnitConverters.kgToLb(t).toString()
+                        } else {
+                            currentWeight = c.toString()
+                            targetWeight = t.toString()
+                        }
+                        unit = newUnit.name
                     }
-                    unit = newUnit.name
                 },
                 onCurrentWeight = { currentWeight = it },
                 onTargetWeight = { targetWeight = it },
