@@ -35,49 +35,88 @@ jobs:
             "build-tools;36.0.0" > /dev/null
 
       - name: Compile debug APK
-        run: ./gradlew :app:assembleDebug --stacktrace
+        run: |
+          rm -f /tmp/gradle-build.log
+          ./gradlew :app:assembleDebug --stacktrace 2>&1 | tee -a /tmp/gradle-build.log
+          exit ${PIPESTATUS[0]}
 
       - name: Run unit tests (calculator)
-        run: ./gradlew :app:testDebugUnitTest --tests "*TargetCalculatorTest" --stacktrace
+        run: |
+          ./gradlew :app:testDebugUnitTest --tests "*TargetCalculatorTest" --stacktrace 2>&1 | tee -a /tmp/gradle-build.log
+          exit ${PIPESTATUS[0]}
 
       - name: Run unit tests (dates)
-        run: ./gradlew :app:testDebugUnitTest --tests "*DateUtilsTest" --stacktrace
+        run: |
+          ./gradlew :app:testDebugUnitTest --tests "*DateUtilsTest" --stacktrace 2>&1 | tee -a /tmp/gradle-build.log
+          exit ${PIPESTATUS[0]}
 
       - name: Run unit tests (units)
-        run: ./gradlew :app:testDebugUnitTest --tests "*UnitConvertersTest" --stacktrace
+        run: |
+          ./gradlew :app:testDebugUnitTest --tests "*UnitConvertersTest" --stacktrace 2>&1 | tee -a /tmp/gradle-build.log
+          exit ${PIPESTATUS[0]}
 
       - name: Run unit tests (settings)
-        run: ./gradlew :app:testDebugUnitTest --tests "*SettingsRepositoryTest" --stacktrace
+        run: |
+          ./gradlew :app:testDebugUnitTest --tests "*SettingsRepositoryTest" --stacktrace 2>&1 | tee -a /tmp/gradle-build.log
+          exit ${PIPESTATUS[0]}
       - name: Run unit tests (food lookup)
-        run: ./gradlew :app:testDebugUnitTest --tests "*FoodLookupTest" --stacktrace
+        run: |
+          ./gradlew :app:testDebugUnitTest --tests "*FoodLookupTest" --stacktrace 2>&1 | tee -a /tmp/gradle-build.log
+          exit ${PIPESTATUS[0]}
 
       - name: Run unit tests (off cache)
-        run: ./gradlew :app:testDebugUnitTest --tests "*OffCacheRepositoryTest" --stacktrace
+        run: |
+          ./gradlew :app:testDebugUnitTest --tests "*OffCacheRepositoryTest" --stacktrace 2>&1 | tee -a /tmp/gradle-build.log
+          exit ${PIPESTATUS[0]}
 
       - name: Run unit tests (weight repo)
-        run: ./gradlew :app:testDebugUnitTest --tests "*WeightRepositoryTest" --stacktrace
+        run: |
+          ./gradlew :app:testDebugUnitTest --tests "*WeightRepositoryTest" --stacktrace 2>&1 | tee -a /tmp/gradle-build.log
+          exit ${PIPESTATUS[0]}
 
       - name: Run unit tests (off parser)
-        run: ./gradlew :app:testDebugUnitTest --tests "*OffProductParserTest" --stacktrace
+        run: |
+          ./gradlew :app:testDebugUnitTest --tests "*OffProductParserTest" --stacktrace 2>&1 | tee -a /tmp/gradle-build.log
+          exit ${PIPESTATUS[0]}
 
       - name: Run unit tests (off client)
-        run: ./gradlew :app:testDebugUnitTest --tests "*OffApiClientTest" --stacktrace
+        run: |
+          ./gradlew :app:testDebugUnitTest --tests "*OffApiClientTest" --stacktrace 2>&1 | tee -a /tmp/gradle-build.log
+          exit ${PIPESTATUS[0]}
 
       - name: Run unit tests (off search)
-        run: ./gradlew :app:testDebugUnitTest --tests "*OffSearchRepositoryTest" --stacktrace
+        run: |
+          ./gradlew :app:testDebugUnitTest --tests "*OffSearchRepositoryTest" --stacktrace 2>&1 | tee -a /tmp/gradle-build.log
+          exit ${PIPESTATUS[0]}
 
       - name: Run unit tests (chart math)
-        run: ./gradlew :app:testDebugUnitTest --tests "*ChartMathTest" --stacktrace
+        run: |
+          ./gradlew :app:testDebugUnitTest --tests "*ChartMathTest" --stacktrace 2>&1 | tee -a /tmp/gradle-build.log
+          exit ${PIPESTATUS[0]}
 
       - name: Run unit tests (number utils)
-        run: ./gradlew :app:testDebugUnitTest --tests "*NumberUtilsTest" --stacktrace
+        run: |
+          ./gradlew :app:testDebugUnitTest --tests "*NumberUtilsTest" --stacktrace 2>&1 | tee -a /tmp/gradle-build.log
+          exit ${PIPESTATUS[0]}
 
       - name: Run unit tests (csv export)
-        run: ./gradlew :app:testDebugUnitTest --tests "*CsvExporterTest" --stacktrace
+        run: |
+          ./gradlew :app:testDebugUnitTest --tests "*CsvExporterTest" --stacktrace 2>&1 | tee -a /tmp/gradle-build.log
+          exit ${PIPESTATUS[0]}
 
       - name: Run unit tests (json backup)
-        run: ./gradlew :app:testDebugUnitTest --tests "*JsonBackupTest" --stacktrace
+        run: |
+          ./gradlew :app:testDebugUnitTest --tests "*JsonBackupTest" --stacktrace 2>&1 | tee -a /tmp/gradle-build.log
+          exit ${PIPESTATUS[0]}
 
+
+      - name: Upload gradle log (on failure)
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: gradle-build-log
+          path: /tmp/gradle-build.log
+          if-no-files-found: ignore
 
       - name: Upload debug APK
         uses: actions/upload-artifact@v4
@@ -121,7 +160,17 @@ jobs:
           arch: x86_64
           target: default
           disable-animations: true
-          script: ./gradlew :app:connectedDebugAndroidTest --stacktrace
+          script: |
+            ./gradlew :app:connectedDebugAndroidTest --stacktrace 2>&1 | tee /tmp/gradle-instr.log
+            exit ${PIPESTATUS[0]}
+
+      - name: Upload instrumentation log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: gradle-instrumented-log
+          path: /tmp/gradle-instr.log
+          if-no-files-found: ignore
 
       - name: Upload test reports
         uses: actions/upload-artifact@v4
