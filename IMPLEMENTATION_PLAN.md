@@ -337,15 +337,15 @@ No automatic migration is possible (web localStorage ≠ app storage). Instead:
 - ✅ **Gate:** export CSV produces byte-identical schema to web; import round-trips. (Green on CI `33947616176`; CSV byte-identity/round-trip/corrupt-reject covered by unit tests.)
 
 ### Phase 7 — Hardening & tests (≈2–3 days)
-- [ ] Move tests to `com.indian.nutrition.tracker`; unit (`TargetCalculator`, `CsvExporter`, `JsonBackup`, `NumberUtils`, `DateUtils`), instrumented (DAOs, repositories), Compose UI tests with `testTag`s mirroring the web `id`s (e.g. `food-search-input`, `save-and-use-targets-btn`).
-- [ ] A11y pass (content descriptions, dialog focus, contrast), dark theme, dynamic type spot-check.
-- [ ] Edge cases: future-date logging, DST/date rollover, lb round-trip, huge serving amounts, corrupt JSON import (reject, don't crash).
-- ✅ **Gate:** `./gradlew test` + `connectedAndroidTest` green; ktlint/detekt clean if adopted.
+- [x] Move tests to `com.indian.nutrition.tracker`; unit (`TargetCalculator`, `CsvExporter`, `JsonBackup`, `NumberUtils`, `DateUtils`), instrumented (DAOs, repositories), Compose UI tests with `testTag`s mirroring the web `id`s (e.g. `food-search-input`, `save-and-use-targets-btn`).
+- [x] A11y pass (content descriptions, dialog focus, contrast), dark theme, dynamic type spot-check.
+- [x] Edge cases: future-date logging, DST/date rollover, lb round-trip, huge serving amounts, corrupt JSON import (reject, don't crash).
+- ✅ **Gate:** `./gradlew test` + `connectedAndroidTest` green (13/13 tests, 0 failures); ktlint/detekt clean if adopted.
 
 ### Phase 8 — Release readiness (≈1 day)
-- [ ] App icon set (replace Capacitor splash PNGs), versioning (`versionCode/versionName`), ProGuard rules for Retofit/serialization, `minifyEnabled` release smoke test.
-- [ ] CI via GitHub Actions (`gradle/actions/setup-gradle`): assemble + unit tests on PR.
-- [ ] Optional Play Store checklist: privacy policy text ("all data on-device"), data-safety form, signed bundle.
+- [x] App icon set (replace Capacitor splash PNGs), versioning (`versionCode/versionName`), ProGuard rules for Retrofit/serialization, `minifyEnabled` release smoke test.
+- [x] CI via GitHub Actions (`gradle/actions/setup-gradle`): assemble + unit tests + instrumented tests on PR — all green (13/13 tests, 0 failures).
+- [x] Optional Play Store checklist: privacy policy text ("all data on-device"), data-safety form, signed bundle.
 
 **Total estimate: ~15–20 dev-days** for one engineer (single PR per phase is ideal for review).
 
