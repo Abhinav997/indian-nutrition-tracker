@@ -181,6 +181,7 @@ jobs:
           force-avd-creation: true
           emulator-options: -no-snapshot -no-window -gpu swiftshader_indirect -no-audio -no-boot-anim -camera-back none
           script: |
+            set +e
             ./gradlew :app:connectedDebugAndroidTest --stacktrace 2>&1 | tee /tmp/gradle-instr.log
             TEST_EXIT=${PIPESTATUS[0]}
             adb logcat -d 2>/dev/null | tail -600 > /tmp/instr-logcat.txt || true
