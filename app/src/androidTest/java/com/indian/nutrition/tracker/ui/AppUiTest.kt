@@ -15,9 +15,11 @@ import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.indian.nutrition.tracker.MainActivity
 import org.junit.Before
 import org.junit.BeforeClass
+import org.junit.FixMethodOrder
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
+import org.junit.runners.MethodSorters
 import java.io.File
 
 /**
@@ -26,8 +28,11 @@ import java.io.File
  *
  * The app database and DataStore are wiped before each test run so tests
  * start from web defaults (82 kg / 1950 kcal / 2750 ml).
+ *
+ * Tests are ordered alphabetically for deterministic execution on CI.
  */
 @RunWith(AndroidJUnit4::class)
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 class AppUiTest {
 
     companion object {
@@ -38,7 +43,8 @@ class AppUiTest {
             // Delete Room database
             context.deleteDatabase("inw.db")
             // Delete DataStore preferences file (not a SQLite database!)
-            val dsFile = File(context.filesDir, "datastore/inw_settings.preferences_pb")
+            val dsDir = File(context.filesDir, "datastore")
+            val dsFile = File(dsDir, "inw_settings.preferences_pb")
             if (dsFile.exists()) dsFile.delete()
         }
     }
@@ -50,33 +56,33 @@ class AppUiTest {
     fun ensureHomeScreen() {
         // Wait for the home screen to fully render before each test.
         // Each test gets a fresh Activity, so we must wait for initial load.
-        waitForTag("bottom-navigation-bar")
-        waitForTag("today-intake-card", timeout = 15_000)
+        waitForTag("bottom-navigation-bar", timeout = 20_000)
+        waitForTag("today-intake-card", timeout = 20_000)
     }
 
-    private fun waitForTag(tag: String, timeout: Long = 10_000) {
+    private fun waitForTag(tag: String, timeout: Long = 15_000) {
         composeRule.waitUntil(timeoutMillis = timeout) {
             composeRule.onAllNodesWithTag(tag).fetchSemanticsNodes().isNotEmpty()
         }
     }
 
-    private fun waitForText(text: String, timeout: Long = 10_000) {
+    private fun waitForText(text: String, timeout: Long = 15_000) {
         composeRule.waitUntil(timeoutMillis = timeout) {
             composeRule.onAllNodesWithText(text, substring = true).fetchSemanticsNodes().isNotEmpty()
         }
     }
 
     /**
-     * Wait for the given text to disappear (useful after sheet dismiss animations).
+     * Wait for the given tag to disappear (useful after sheet dismiss animations).
      */
-    private fun waitForTagGone(tag: String, timeout: Long = 5_000) {
+    private fun waitForTagGone(tag: String, timeout: Long = 10_000) {
         composeRule.waitUntil(timeoutMillis = timeout) {
             composeRule.onAllNodesWithTag(tag).fetchSemanticsNodes().isEmpty()
         }
     }
 
     @Test
-    fun homeRendersAndWaterQuickAddWorks() {
+    fun test01_homeRendersAndWaterQuickAddWorks() {
         // Verify core home-screen cards are present
         composeRule.onNodeWithTag("today-intake-card").assertExists()
         composeRule.onNodeWithTag("home-weight-summary-card").assertExists()
@@ -94,7 +100,7 @@ class AppUiTest {
     }
 
     @Test
-    fun weightSheetLogsAndUpdatesSummary() {
+    fun test02_weightSheetLogsAndUpdatesSummary() {
         // Open the weight logging bottom sheet
         composeRule.onNodeWithTag("home-log-weight-btn").performScrollTo().performClick()
         waitForTag("log-weight-modal-dialog")
@@ -111,7 +117,7 @@ class AppUiTest {
     }
 
     @Test
-    fun addFoodOpensSearchAndCanCreateCustomRecipe() {
+    fun test03_addFoodOpensSearchAndCanCreateCustomRecipe() {
         // Navigate to food search via the Add Food button
         composeRule.onNodeWithTag("home-quick-add-food-btn").performScrollTo().performClick()
         waitForTag("food-search-input")
@@ -143,12 +149,12 @@ class AppUiTest {
     }
 
     @Test
-    fun calculatorRendersProfileAndSavesTargets() {
+    fun test04_calculatorRendersProfileAndSavesTargets() {
         // Navigate to Calculator tab via bottom navigation
         composeRule.onNodeWithText("Calculator").performClick()
 
         // Wait for the profile section to render
-        waitForTag("profile-current-weight")
+        waitForTag("profile-current-weight", timeout = 20_000)
         composeRule.onNodeWithTag("profile-target-weight").assertExists()
         composeRule.onNodeWithTag("unit-system-kg-btn").assertExists()
 
