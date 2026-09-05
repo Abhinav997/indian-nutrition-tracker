@@ -6,6 +6,20 @@ plugins {
     id 'com.google.devtools.ksp' version "$kspVersion"
 }
 
+// Release signing is configured through environment variables so the keystore
+// never lives in the repository. The release workflow (and local release
+// builds) provide:
+//   ANDROID_KEYSTORE_FILE     — path to the keystore (PKCS12 or JKS)
+//   ANDROID_KEYSTORE_PASSWORD — keystore password
+//   ANDROID_KEY_ALIAS         — key alias inside the keystore
+//   ANDROID_KEY_PASSWORD      — password for that key
+// When these are absent the release APK is simply built unsigned.
+def releaseKeystore = System.getenv('ANDROID_KEYSTORE_FILE')
+def releaseStorePassword = System.getenv('ANDROID_KEYSTORE_PASSWORD')
+def releaseKeyAlias = System.getenv('ANDROID_KEY_ALIAS')
+def releaseKeyPassword = System.getenv('ANDROID_KEY_PASSWORD')
+def hasReleaseKeystore = releaseKeystore != null && file(releaseKeystore).exists()
+
 android {
     namespace = "com.indian.nutrition.tracker"
     compileSdk = rootProject.ext.compileSdkVersion
@@ -19,11 +33,25 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    signingConfigs {
+        release {
+            if (hasReleaseKeystore) {
+                storeFile file(releaseKeystore)
+                storePassword releaseStorePassword
+                keyAlias releaseKeyAlias
+                keyPassword releaseKeyPassword
+            }
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            if (hasReleaseKeystore) {
+                signingConfig signingConfigs.release
+            }
         }
     }
 
