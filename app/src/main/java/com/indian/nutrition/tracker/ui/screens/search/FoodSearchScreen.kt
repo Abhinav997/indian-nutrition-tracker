@@ -141,7 +141,10 @@ fun FoodSearchScreen(
                         leadingIcon = { Icon(Icons.Filled.Search, contentDescription = null) },
                         trailingIcon = {
                             if (query.isNotEmpty()) {
-                                IconButton(onClick = { viewModel.setQuery("") }) {
+                                IconButton(
+                                    onClick = { viewModel.setQuery("") },
+                                    contentDescription = "Clear search",
+                                ) {
                                     Text("✕")
                                 }
                             }

@@ -6,21 +6,21 @@ as a single-activity app.
 
 ## Status
 
-This repository is being rewritten from a web app (React + Vite + Express +
+This repository was rewritten from a web app (React + Vite + Express +
 Capacitor) into a **native Android app**. The web toolchain and Capacitor shell
 have been removed (see git history); the native rewrite is in progress:
 
 - [x] Phase 0 — remove web/Capacitor, native Compose skeleton, CI build gate
 - [x] Phase 1 — theme, navigation, domain models, target calculator, settings
-- [ ] Phase 2 — food datasets + Room persistence
-- [ ] Phase 3 — home dashboard & logging flows
-- [ ] Phase 4 — food search + Open Food Facts
-- [ ] Phase 5 — progress charts
-- [ ] Phase 6 — calculator/settings + CSV/JSON export & import
-- [ ] Phase 7 — tests & hardening
+- [x] Phase 2 — food datasets + Room persistence
+- [x] Phase 3 — home dashboard & logging flows
+- [x] Phase 4 — food search + Open Food Facts
+- [x] Phase 5 — progress charts
+- [x] Phase 6 — calculator/settings + CSV/JSON export & import
+- [ ] Phase 7 — tests & hardening *(in progress)*
 - [ ] Phase 8 — release readiness
 
-## Planned features (parity with the web app)
+## Features
 
 - **Food logging** from three sources: a curated NIN/IFCT 2017 database
   (56 Indian foods), curated Indian packaged products (36), and live
@@ -30,6 +30,7 @@ have been removed (see git history); the native rewrite is in progress:
 - **Daily dashboard**: calories/protein vs targets, macros, meals grouped by
   Breakfast/Lunch/Snack/Dinner, weight + BMI summary, water tracker.
 - **Progress charts**: weight trend, daily calories/protein/water vs targets.
+- **Data export/import**: CSV and JSON backup with round-trip fidelity.
 - **Privacy-first**: all data stored on-device (Room + DataStore). No accounts.
 
 ## Requirements
@@ -54,10 +55,37 @@ Open the project in Android Studio and run `app` on an emulator or device.
 ./gradlew :app:connectedAndroidTest          # instrumented tests (device)
 ```
 
+### Unit test coverage
+
+| Module | Test |
+|--------|------|
+| Target calculator | `TargetCalculatorTest` |
+| Date utilities | `DateUtilsTest` |
+| Unit conversions | `UnitConvertersTest` |
+| Number utilities | `NumberUtilsTest` |
+| Settings repository | `SettingsRepositoryTest` |
+| Food lookup / search | `FoodLookupTest` |
+| OFF API client | `OffApiClientTest` |
+| OFF product parser | `OffProductParserTest` |
+| OFF cache repository | `OffCacheRepositoryTest` |
+| OFF search repository | `OffSearchRepositoryTest` |
+| Weight repository | `WeightRepositoryTest` |
+| Chart math | `ChartMathTest` |
+| CSV export | `CsvExporterTest` |
+| JSON backup | `JsonBackupTest` |
+
+### Instrumented test coverage
+
+| Test | What it covers |
+|------|---------------|
+| `DaoInstrumentedTest` | Room DAO CRUD, upsert, ordering, eviction |
+| `RepositoryInstrumentedTest` | Repository import, upsert-per-date, clear |
+| `AppUiTest` | Home screen, water quick-add, weight logging, food search, custom food creation, calculator |
+
 ## Continuous integration
 
 GitHub Actions (`.github/workflows/android.yml`) assembles the debug APK and
-runs unit tests on every push/PR.
+runs unit tests on every push/PR. Instrumented tests run on an API 34 emulator.
 
 ## Data & attributions
 

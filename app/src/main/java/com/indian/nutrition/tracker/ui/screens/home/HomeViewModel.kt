@@ -13,6 +13,7 @@ import com.indian.nutrition.tracker.domain.model.WaterLog
 import com.indian.nutrition.tracker.domain.model.WeightLog
 import com.indian.nutrition.tracker.util.DateUtils
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -24,6 +25,7 @@ import java.time.LocalDate
 import kotlin.math.roundToInt
 
 /** Home/Today screen state: selected date, logs, water, weight, settings. */
+@OptIn(ExperimentalCoroutinesApi::class)
 class HomeViewModel(container: AppContainer) : ViewModel() {
 
     private val logRepository: LogRepository = container.logRepository

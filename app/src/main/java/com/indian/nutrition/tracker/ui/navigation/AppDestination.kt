@@ -1,10 +1,10 @@
 package com.indian.nutrition.tracker.ui.navigation
 
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.TrendingUp
 import androidx.compose.material.icons.filled.Calculate
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Search
-import androidx.compose.material.icons.filled.TrendingUp
 import androidx.compose.ui.graphics.vector.ImageVector
 
 /** The four main tabs of the app (matches the web app's bottom navigation). */
@@ -15,7 +15,7 @@ sealed class AppDestination(
 ) {
     data object Home : AppDestination("home", "Today", Icons.Filled.Home)
     data object FoodSearch : AppDestination("search", "Food Log", Icons.Filled.Search)
-    data object Progress : AppDestination("progress", "Progress", Icons.Filled.TrendingUp)
+    data object Progress : AppDestination("progress", "Progress", Icons.AutoMirrored.Filled.TrendingUp)
     data object Calculator : AppDestination("calculator", "Calculator", Icons.Filled.Calculate)
 
     val sublabel: String
