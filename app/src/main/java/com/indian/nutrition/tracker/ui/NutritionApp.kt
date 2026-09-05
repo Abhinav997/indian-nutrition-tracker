@@ -103,7 +103,9 @@ fun NutritionApp(container: AppContainer) {
                     )
                 }
                 composable(AppDestination.Progress.route) { ProgressScreen(container) }
-                composable(AppDestination.Calculator.route) { CalculatorScreen() }
+                composable(AppDestination.Calculator.route) {
+                    CalculatorScreen(container, snackbarHostState)
+                }
             }
         }
     }

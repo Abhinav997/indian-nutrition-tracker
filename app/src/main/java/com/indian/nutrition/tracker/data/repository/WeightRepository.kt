@@ -39,4 +39,9 @@ class WeightRepository(private val dao: WeightLogDao) {
     suspend fun delete(id: String) = dao.deleteById(id)
 
     suspend fun clear() = dao.deleteAll()
+
+    /** Bulk import (backup restore): one row per date (web parity). */
+    suspend fun importAll(logs: List<WeightLog>) {
+        logs.forEach { upsert(it.date, it.weightKg, it.note) }
+    }
 }

@@ -50,7 +50,7 @@ interface WeightLogDao {
 
 @Dao
 interface WaterLogDao {
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(entity: WaterLogEntity)
 
     @Query("DELETE FROM water_logs WHERE id = :id")
@@ -93,6 +93,9 @@ interface CustomFoodDao {
 
     @Query("SELECT * FROM custom_foods ORDER BY createdAt DESC")
     fun observeAll(): Flow<List<CustomFoodEntity>>
+
+    @Query("DELETE FROM custom_foods")
+    suspend fun deleteAll()
 }
 
 @Dao

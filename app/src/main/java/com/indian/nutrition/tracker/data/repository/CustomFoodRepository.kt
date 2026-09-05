@@ -38,4 +38,11 @@ class CustomFoodRepository(private val dao: CustomFoodDao) {
     }
 
     suspend fun delete(id: String) = dao.deleteById(id)
+
+    suspend fun clear() = dao.deleteAll()
+
+    /** Bulk import (backup restore): keeps original ids, replaces on conflict. */
+    suspend fun importAll(foods: List<CustomFood>) {
+        foods.forEach { dao.insert(it.toEntity()) }
+    }
 }

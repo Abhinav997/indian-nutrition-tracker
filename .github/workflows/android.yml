@@ -69,6 +69,12 @@ jobs:
       - name: Run unit tests (chart math)
         run: ./gradlew :app:testDebugUnitTest --tests "*ChartMathTest" --stacktrace
 
+      - name: Run unit tests (csv export)
+        run: ./gradlew :app:testDebugUnitTest --tests "*CsvExporterTest" --stacktrace
+
+      - name: Run unit tests (json backup)
+        run: ./gradlew :app:testDebugUnitTest --tests "*JsonBackupTest" --stacktrace
+
 
       - name: Upload debug APK
         uses: actions/upload-artifact@v4

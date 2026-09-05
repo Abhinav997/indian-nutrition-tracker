@@ -37,4 +37,9 @@ class WaterRepository(private val dao: WaterLogDao) {
     suspend fun delete(id: String) = dao.deleteById(id)
 
     suspend fun clear() = dao.deleteAll()
+
+    /** Bulk import (backup restore): keeps original ids, replaces on conflict. */
+    suspend fun importAll(logs: List<WaterLog>) {
+        logs.forEach { dao.insert(it.toEntity()) }
+    }
 }
