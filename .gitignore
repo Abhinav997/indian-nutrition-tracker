@@ -18,3 +18,10 @@ captures/
 .DS_Store
 *.log
 
+# Release signing — keystores and credentials never belong in git
+signing/
+*.jks
+*.keystore
+*.p12
+*.pem
+

@@ -105,6 +105,27 @@ Open the project in Android Studio and run `app` on an emulator or device.
 GitHub Actions (`.github/workflows/android.yml`) assembles the debug APK and
 runs unit tests on every push/PR. Instrumented tests run on an API 34 emulator.
 
+## Releases
+
+Pushing a version tag (`git tag v1.0.0 && git push origin v1.0.0`) triggers
+`.github/workflows/release.yml`, which builds a **signed release APK**, checks
+its signature with `apksigner`, and publishes it to a GitHub Release.
+
+Release signing credentials are supplied as repository secrets (never
+committed):
+
+| Secret | Value |
+|--------|-------|
+| `ANDROID_KEYSTORE_BASE64` | base64-encoded PKCS12/JKS keystore |
+| `ANDROID_KEYSTORE_PASSWORD` | keystore password |
+| `ANDROID_KEY_ALIAS` | key alias in the keystore |
+| `ANDROID_KEY_PASSWORD` | password of that key |
+
+The workflow decodes the keystore at build time and hands it to Gradle via
+environment variables (`ANDROID_KEYSTORE_FILE`, `ANDROID_KEYSTORE_PASSWORD`,
+`ANDROID_KEY_ALIAS`, `ANDROID_KEY_PASSWORD` — see `app/build.gradle`). Bump
+`versionCode` / `versionName` in `app/build.gradle` before tagging a release.
+
 ## Data & attributions
 
 - **Indian food composition:** derived from *Indian Food Composition Tables
