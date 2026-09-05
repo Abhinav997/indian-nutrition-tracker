@@ -147,13 +147,21 @@ class AppUiTest {
         composeRule.onNodeWithTag("profile-target-weight").assertExists()
 
         // The save button is below the fold on the CI's small emulator.
-        // Scroll the LazyColumn to bring the ResultsCard into composition.
+        // Swipe multiple times to scroll the LazyColumn far enough that
+        // the ResultsCard (containing the save button) is composed.
         composeRule.onNodeWithTag("profile-current-weight").performTouchInput {
             swipeUp()
         }
+        composeRule.waitForIdle()
+        // Second swipe to scroll further past the tall ProfileCard
+        composeRule.onNodeWithTag("profile-target-weight").performTouchInput {
+            swipeUp()
+        }
+        composeRule.waitForIdle()
 
-        // Wait for save button to be composed, then click it
+        // Now scroll precisely to the save button
         waitForTag("save-and-use-targets-btn", timeout = 20_000)
+        composeRule.onNodeWithTag("save-and-use-targets-btn").performScrollTo()
         composeRule.onNodeWithTag("save-and-use-targets-btn").performClick()
 
         waitForText("Saved & applied to dashboard!")
