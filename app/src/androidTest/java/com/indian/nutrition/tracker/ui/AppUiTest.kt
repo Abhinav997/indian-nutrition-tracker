@@ -1,6 +1,7 @@
 package com.indian.nutrition.tracker.ui
 
 import android.content.Context
+import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import androidx.compose.ui.test.onAllNodesWithTag
 import androidx.compose.ui.test.onAllNodesWithText
@@ -27,9 +28,9 @@ import java.io.File
  * Compose UI tests on the real MainActivity.
  * Tests are ordered alphabetically for deterministic CI execution.
  *
- * The CI emulator uses a 320×640 screen so many LazyColumn items are
- * initially off-screen. We use performTouchInput { swipeUp() } to
- * scroll the list and bring items into the composition window.
+ * The CI emulator uses a 320x640 screen so many LazyColumn items are
+ * initially off-screen. We use performTouchInput { down/moveTo/up }
+ * to scroll the list and bring items into the composition window.
  */
 @RunWith(AndroidJUnit4::class)
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
@@ -73,20 +74,35 @@ class AppUiTest {
         }
     }
 
+    /**
+     * Scrolls a LazyColumn upward (reveals items further down) by sending
+     * a manual swipe gesture on the given node. Uses the low-level
+     * down/moveTo/up API which is always available on TouchInjectionScope.
+     */
+    private fun scrollDown(tag: String) {
+        composeRule.onNodeWithTag(tag).performTouchInput {
+            val cx = size.width / 2f
+            val top = size.height.toFloat() * 0.2f
+            val bot = size.height.toFloat() * 0.8f
+            down(Offset(cx, bot))
+            advanceEventTime(100)
+            moveTo(Offset(cx, top))
+            advanceEventTime(100)
+            up()
+        }
+    }
+
     @Test
     fun test01_homeRendersAndWaterQuickAddWorks() {
         // Core home-screen cards are in the semantic tree
         composeRule.onNodeWithTag("today-intake-card").assertExists()
         composeRule.onNodeWithTag("home-weight-summary-card").assertExists()
 
-        // The WaterCard sits below the fold on the CI's 320×640 emulator.
-        // Swipe up on the intake card to scroll the LazyColumn and bring
-        // the WaterCard into the composition window.
-        composeRule.onNodeWithTag("today-intake-card").performTouchInput {
-            swipeUp()
-        }
+        // The WaterCard sits below the fold on the CI's 320x640 emulator.
+        // Scroll the LazyColumn to bring the WaterCard into composition.
+        scrollDown("today-intake-card")
 
-        // Wait for the water add button to be composed
+        // Wait for the water add button to be composed, then click it
         waitForTag("water-add-250-btn")
         composeRule.onNodeWithTag("water-add-250-btn").performClick()
 
@@ -147,13 +163,10 @@ class AppUiTest {
         composeRule.onNodeWithTag("profile-target-weight").assertExists()
 
         // The save button is below the fold on the CI's small emulator.
-        // Swipe up on the profile section to scroll the LazyColumn and
-        // bring the ResultsCard (with save button) into composition.
-        composeRule.onNodeWithTag("profile-current-weight").performTouchInput {
-            swipeUp()
-        }
+        // Scroll the LazyColumn to bring the ResultsCard into composition.
+        scrollDown("profile-current-weight")
 
-        // Wait for save button to be composed
+        // Wait for save button to be composed, then click it
         waitForTag("save-and-use-targets-btn", timeout = 20_000)
         composeRule.onNodeWithTag("save-and-use-targets-btn").performClick()
 
