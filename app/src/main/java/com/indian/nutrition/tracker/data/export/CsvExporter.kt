@@ -44,13 +44,13 @@ object CsvExporter {
 
         val foods = dailyLogs
             .filter { inRange(it.date) }
-            .sortedWith(compareBy({ it.date }, { it.createdAt }))
+            .sortedWith(compareBy<DailyLog> { it.date }.thenBy { it.createdAt })
         val waters = waterLogs
             .filter { inRange(it.date) }
-            .sortedWith(compareBy({ it.date }, { it.createdAt }))
+            .sortedWith(compareBy<WaterLog> { it.date }.thenBy { it.createdAt })
         val weights = weightLogs
             .filter { inRange(it.date) }
-            .sortedWith(compareBy({ it.date }, { it.createdAt }))
+            .sortedWith(compareBy<WeightLog> { it.date }.thenBy { it.createdAt })
 
         val sb = StringBuilder()
         sb.append(HEADER)

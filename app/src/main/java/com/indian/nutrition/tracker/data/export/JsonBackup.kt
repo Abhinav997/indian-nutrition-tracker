@@ -23,89 +23,90 @@ import java.time.LocalDate
  * (snake_case fields via @SerialName), plus validation on import so corrupt
  * files are rejected instead of crashing (Phase 6 gate: import round-trips).
  */
+// --- Web backup DTOs (snake_case, matching the old localStorage rows) ---
+
+
+@Serializable
+data class BackupDto(
+    val settings: SettingsDto,
+    val dailyLogs: List<DailyLogDto> = emptyList(),
+    val weightLogs: List<WeightLogDto> = emptyList(),
+    val waterLogs: List<WaterLogDto> = emptyList(),
+    val customFoods: List<CustomFoodDto> = emptyList(),
+    val exportedAt: String? = null,
+    val version: String = "1.0",
+)
+
+@Serializable
+data class SettingsDto(
+    @SerialName("current_weight_kg") val currentWeightKg: Double,
+    @SerialName("target_weight_kg") val targetWeightKg: Double,
+    @SerialName("height_cm") val heightCm: Double,
+    @SerialName("age_years") val ageYears: Int,
+    val sex: String,
+    @SerialName("activity_level") val activityLevel: String,
+    @SerialName("goal_type") val goalType: String,
+    @SerialName("goal_rate_kg_per_week") val goalRateKgPerWeek: Double,
+    @SerialName("daily_calorie_target") val dailyCalorieTarget: Int,
+    @SerialName("daily_protein_target") val dailyProteinTarget: Int,
+    @SerialName("daily_water_target_ml") val dailyWaterTargetMl: Int,
+    @SerialName("protein_basis") val proteinBasis: String,
+    @SerialName("unit_system") val unitSystem: String,
+    @SerialName("default_chart_range") val defaultChartRange: String,
+)
+
+@Serializable
+data class DailyLogDto(
+    val id: String,
+    val date: String,
+    @SerialName("food_id") val foodId: String,
+    @SerialName("food_name") val foodName: String,
+    val source: String,
+    @SerialName("serving_grams") val servingGrams: Int,
+    val calories: Int,
+    val protein: Double,
+    val carbs: Double,
+    val fat: Double,
+    @SerialName("meal_type") val mealType: String,
+    @SerialName("created_at") val createdAt: Long,
+)
+
+@Serializable
+data class WeightLogDto(
+    val id: String,
+    val date: String,
+    @SerialName("weight_kg") val weightKg: Double,
+    val note: String? = null,
+    @SerialName("created_at") val createdAt: Long,
+)
+
+@Serializable
+data class WaterLogDto(
+    val id: String,
+    val date: String,
+    @SerialName("amount_ml") val amountMl: Int,
+    val time: String? = null,
+    @SerialName("created_at") val createdAt: Long,
+)
+
+@Serializable
+data class CustomFoodDto(
+    val id: String,
+    val name: String,
+    @SerialName("kcal_per_100g") val kcalPer100g: Double,
+    @SerialName("protein_per_100g") val proteinPer100g: Double,
+    @SerialName("carbs_per_100g") val carbsPer100g: Double,
+    @SerialName("fat_per_100g") val fatPer100g: Double,
+    @SerialName("fiber_per_100g") val fiberPer100g: Double? = null,
+    @SerialName("typical_serving_description") val typicalServingDescription: String? = null,
+    @SerialName("typical_serving_grams") val typicalServingGrams: Int? = null,
+    val notes: String? = null,
+    @SerialName("created_at") val createdAt: Long,
+)
+
 object JsonBackup {
 
     val json = Json { ignoreUnknownKeys = true; prettyPrint = true; encodeDefaults = true }
-
-    // --- Web backup DTOs (snake_case, matching the old localStorage rows) ---
-
-    @Serializable
-    data class BackupDto(
-        val settings: SettingsDto,
-        val dailyLogs: List<DailyLogDto> = emptyList(),
-        val weightLogs: List<WeightLogDto> = emptyList(),
-        val waterLogs: List<WaterLogDto> = emptyList(),
-        val customFoods: List<CustomFoodDto> = emptyList(),
-        val exportedAt: String? = null,
-        val version: String = "1.0",
-    )
-
-    @Serializable
-    data class SettingsDto(
-        @SerialName("current_weight_kg") val currentWeightKg: Double,
-        @SerialName("target_weight_kg") val targetWeightKg: Double,
-        @SerialName("height_cm") val heightCm: Double,
-        @SerialName("age_years") val ageYears: Int,
-        val sex: String,
-        @SerialName("activity_level") val activityLevel: String,
-        @SerialName("goal_type") val goalType: String,
-        @SerialName("goal_rate_kg_per_week") val goalRateKgPerWeek: Double,
-        @SerialName("daily_calorie_target") val dailyCalorieTarget: Int,
-        @SerialName("daily_protein_target") val dailyProteinTarget: Int,
-        @SerialName("daily_water_target_ml") val dailyWaterTargetMl: Int,
-        @SerialName("protein_basis") val proteinBasis: String,
-        @SerialName("unit_system") val unitSystem: String,
-        @SerialName("default_chart_range") val defaultChartRange: String,
-    )
-
-    @Serializable
-    data class DailyLogDto(
-        val id: String,
-        val date: String,
-        @SerialName("food_id") val foodId: String,
-        @SerialName("food_name") val foodName: String,
-        val source: String,
-        @SerialName("serving_grams") val servingGrams: Int,
-        val calories: Int,
-        val protein: Double,
-        val carbs: Double,
-        val fat: Double,
-        @SerialName("meal_type") val mealType: String,
-        @SerialName("created_at") val createdAt: Long,
-    )
-
-    @Serializable
-    data class WeightLogDto(
-        val id: String,
-        val date: String,
-        @SerialName("weight_kg") val weightKg: Double,
-        val note: String? = null,
-        @SerialName("created_at") val createdAt: Long,
-    )
-
-    @Serializable
-    data class WaterLogDto(
-        val id: String,
-        val date: String,
-        @SerialName("amount_ml") val amountMl: Int,
-        val time: String? = null,
-        @SerialName("created_at") val createdAt: Long,
-    )
-
-    @Serializable
-    data class CustomFoodDto(
-        val id: String,
-        val name: String,
-        @SerialName("kcal_per_100g") val kcalPer100g: Double,
-        @SerialName("protein_per_100g") val proteinPer100g: Double,
-        @SerialName("carbs_per_100g") val carbsPer100g: Double,
-        @SerialName("fat_per_100g") val fatPer100g: Double,
-        @SerialName("fiber_per_100g") val fiberPer100g: Double? = null,
-        @SerialName("typical_serving_description") val typicalServingDescription: String? = null,
-        @SerialName("typical_serving_grams") val typicalServingGrams: Int? = null,
-        val notes: String? = null,
-        @SerialName("created_at") val createdAt: Long,
-    )
 
     // --- Import result ---
 
