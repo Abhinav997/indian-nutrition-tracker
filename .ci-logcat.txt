@@ -1,600 +1,600 @@
-09-05 13:05:48.845   798   831 V WindowManagerShell:  try handler com.android.wm.shell.activityembedding.ActivityEmbeddingController@8ae96fc
-09-05 13:05:48.845   798   831 V WindowManagerShell:  try handler com.android.wm.shell.recents.RecentsTransitionHandler@73f4185
-09-05 13:05:48.845   798   831 V ShellRecents: RecentsTransitionHandler.startAnimation: no controller found
-09-05 13:05:48.845   798   831 V WindowManagerShell:  try handler com.android.wm.shell.pip.PipTransition@dc39bda
-09-05 13:05:48.845   798   831 V WindowManagerShell:  try handler com.android.wm.shell.splitscreen.StageCoordinator@a61f80b
-09-05 13:05:48.845   798   831 V WindowManagerShell:  try handler com.android.wm.shell.transition.RemoteTransitionHandler@8cc26e8
-09-05 13:05:48.845   798   831 V WindowManagerShell: Transition doesn't have explicit remote, search filters for match for {id=11 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{android.window.IWindowContainerToken$Stub$Proxy@918929} m=OPEN f=NONE leash=Surface(name=Task=13)/@0x5191462 sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0},{WCT{android.window.IWindowContainerToken$Stub$Proxy@47814ae} m=TO_BACK f=NONE leash=Surface(name=Task=12)/@0x5afb9f3 sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0}]}
-09-05 13:05:48.845   798   831 V WindowManagerShell:  Checking filter Pair{{types=[] flags=0x0] notFlags=0x100 checks=[{atype=home independent=true modes=[OPEN,TO_FRONT] flags=NONE mustBeTask=false order=TOP topActivity=ComponentInfo{com.android.launcher3/com.android.launcher3.uioverrides.QuickstepLauncher}},{atype=standard independent=true modes=[CLOSE,TO_BACK] flags=NONE mustBeTask=false order=ANY topActivity=null}]} RemoteTransition { remoteTransition = android.window.IRemoteTransition$Stub$Proxy@2377101, appThread = android.app.IApplicationThread$Stub$Proxy@dcf9ba6, debugName = QuickstepLaunchHome }}
-09-05 13:05:48.845   798   831 V WindowManagerShell:  Delegate animation for #11 to null
-09-05 13:05:48.845   798   831 V WindowManagerShell:  try handler com.android.wm.shell.transition.DefaultTransitionHandler@b3609e7
-09-05 13:05:48.845   798   831 V WindowManagerShell: start default transition animation, info = {id=11 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{android.window.IWindowContainerToken$Stub$Proxy@918929} m=OPEN f=NONE leash=Surface(name=Task=13)/@0x5191462 sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0},{WCT{android.window.IWindowContainerToken$Stub$Proxy@47814ae} m=TO_BACK f=NONE leash=Surface(name=Task=12)/@0x5afb9f3 sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0}]}
-09-05 13:05:48.845   798   831 V WindowManagerShell: loadAnimation: anim=android.view.animation.AnimationSet@8108ee5 animAttr=0x9 type=OPEN isEntrance=false
-09-05 13:05:48.846   798   831 V WindowManagerShell: loadAnimation: anim=android.view.animation.AnimationSet@f86746b animAttr=0x8 type=OPEN isEntrance=true
-09-05 13:05:48.849   505   522 V WindowManager: Sent Transition #11 createdAt=09-05 13:05:48.797 via request=TransitionRequestInfo { type = OPEN, triggerTask = TaskInfo{userId=0 taskId=13 displayId=0 isRunning=true baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10000000 cmp=com.indian.nutrition.tracker.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity } baseActivity=ComponentInfo{com.indian.nutrition.tracker.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity} topActivity=ComponentInfo{com.indian.nutrition.tracker.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity} origActivity=null realActivity=ComponentInfo{com.indian.nutrition.tracker.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity} numActivities=1 lastActiveTime=266000 supportsMultiWindow=true resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{RemoteToken{a825a4f Task{9332cbd #13 type=standard A=10142:com.indian.nutrition.tracker.test}}} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=false launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=null topActivityInfo=ActivityInfo{91eb5dc androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity} launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=false isVisible=false isVisibleRequested=false isSleeping=false topActivityInSizeCompat=false topActivityEligibleForLetterboxEducation= false topActivityLetterboxed= false isFromDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 topActivityLetterboxHeight=-1 locusId=null displayAreaFeatureId=1 cameraCompatControlState=hidden}, remoteTransition = null, displayChange = null }
-09-05 13:05:48.849   505   522 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
-09-05 13:05:48.849   505   522 V WindowManager:     info={id=11 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{RemoteToken{a825a4f Task{9332cbd #13 type=standard A=10142:com.indian.nutrition.tracker.test}}} m=OPEN f=NONE leash=Surface(name=Task=13)/@0xa5a91f3 sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0},{WCT{RemoteToken{10600bc Task{dc895b7 #12 type=standard A=10141:com.indian.nutrition.tracker}}} m=TO_BACK f=NONE leash=Surface(name=Task=12)/@0x805a48e sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0}]}
-09-05 13:05:48.849   798   831 V WindowManagerShell:  animated by com.android.wm.shell.transition.DefaultTransitionHandler@b3609e7
-09-05 13:05:48.859   505  2204 D CoreBackPreview: Window{6dbf2d u0 com.indian.nutrition.tracker.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity}: Setting back callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@8cf53c8, mPriority=0, mIsAnimationCallback=false}
-09-05 13:05:48.869   798   831 V WindowManagerShell: Transition animation finished (aborted=false), notifying core (#11)android.os.BinderProxy@8be3fb9@0
-09-05 13:05:48.870   505   522 V WindowManager: Finish Transition #11: created at 09-05 13:05:48.797 collect-started=0.033ms request-sent=2.263ms started=3.387ms ready=12.769ms sent=46.309ms finished=72.214ms
-09-05 13:05:48.870  2391  2410 W OpenGLRenderer: Failed to initialize 101010-2 format, error = EGL_SUCCESS
-09-05 13:05:48.873   798   831 V WindowManagerShell: Track 0 became idle
-09-05 13:05:48.873   798   831 V WindowManagerShell: All active transition animations finished
-09-05 13:05:48.877   798   874 D EGL_emulation: app_time_stats: avg=561.92ms min=14.87ms max=1108.96ms count=2
-09-05 13:05:49.065   798   831 V WindowManagerShell: Transition requested: android.os.BinderProxy@23b05e3 TransitionRequestInfo { type = CLOSE, triggerTask = TaskInfo{userId=0 taskId=13 displayId=0 isRunning=false baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10000000 cmp=com.indian.nutrition.tracker.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity } baseActivity=null topActivity=null origActivity=null realActivity=ComponentInfo{com.indian.nutrition.tracker.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity} numActivities=0 lastActiveTime=266005 supportsMultiWindow=true resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{android.window.IWindowContainerToken$Stub$Proxy@f7edbe0} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=false launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=null topActivityInfo=null launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=false isVisible=true isVisibleRequested=true isSleeping=false topActivityInSizeCompat=false topActivityEligibleForLetterboxEducation= false topActivityLetterboxed= false isFromDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 topActivityLetterboxHeight=-1 locusId=null displayAreaFeatureId=1 cameraCompatControlState=hidden}, remoteTransition = null, displayChange = null }
-09-05 13:05:49.066   505   522 W ziparchive: Unable to open '/data/app/~~Q1FeMcn1u1cD1kE28eQtmA==/com.indian.nutrition.tracker.test-iBxoldObPRtsmYlq2jDDhg==/base.dm': No such file or directory
-09-05 13:05:49.074   505   522 I ActivityTaskManager: Displayed com.indian.nutrition.tracker.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity for user 0: +266ms
-09-05 13:05:49.079   389   389 I BpBinder: onLastStrongRef automatically unlinking death recipients: 
-09-05 13:05:49.091  2347  2347 D LifecycleMonitor: Lifecycle status change: com.indian.nutrition.tracker.MainActivity@6aea70e in: STOPPED
-09-05 13:05:49.091  2347  2347 V ActivityScenario: Update currentActivityStage to STOPPED, currentActivity=com.indian.nutrition.tracker.MainActivity@6aea70e
-09-05 13:05:49.099   505   522 V WindowManager: Sent Transition #12 createdAt=09-05 13:05:49.063 via request=TransitionRequestInfo { type = CLOSE, triggerTask = TaskInfo{userId=0 taskId=13 displayId=0 isRunning=false baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10000000 cmp=com.indian.nutrition.tracker.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity } baseActivity=null topActivity=null origActivity=null realActivity=ComponentInfo{com.indian.nutrition.tracker.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity} numActivities=0 lastActiveTime=266005 supportsMultiWindow=true resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{RemoteToken{a825a4f Task{9332cbd #13 type=standard A=10142:com.indian.nutrition.tracker.test}}} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=false launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=null topActivityInfo=null launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=false isVisible=true isVisibleRequested=true isSleeping=false topActivityInSizeCompat=false topActivityEligibleForLetterboxEducation= false topActivityLetterboxed= false isFromDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 topActivityLetterboxHeight=-1 locusId=null displayAreaFeatureId=1 cameraCompatControlState=hidden}, remoteTransition = null, displayChange = null }
-09-05 13:05:49.099   505   522 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
-09-05 13:05:49.099   505   522 V WindowManager:     info={id=12 t=CLOSE f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{RemoteToken{98badeb Task{246343f #1 type=home}}} m=TO_FRONT f=SHOW_WALLPAPER leash=Surface(name=Task=1)/@0xe134fd4 sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0},{WCT{RemoteToken{a825a4f Task{9332cbd #13 type=standard A=10142:com.indian.nutrition.tracker.test}}} m=CLOSE f=NONE leash=Surface(name=Task=13)/@0xa5a91f3 sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0},{null m=TO_FRONT f=IS_WALLPAPER leash=Surface(name=WallpaperWindowToken{ec3d54a token=android.os.Binder@2ffbab5})/@0x6f3d8bd sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0}]}
-09-05 13:05:49.099   798   831 V WindowManagerShell: onTransitionReady android.os.BinderProxy@23b05e3: {id=12 t=CLOSE f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{android.window.IWindowContainerToken$Stub$Proxy@5bc196a} m=TO_FRONT f=SHOW_WALLPAPER leash=Surface(name=Task=1)/@0x2e9055e sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0},{WCT{android.window.IWindowContainerToken$Stub$Proxy@2d14e5b} m=CLOSE f=NONE leash=Surface(name=Task=13)/@0x18e1d3f sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0},{null m=TO_FRONT f=IS_WALLPAPER leash=Surface(name=WallpaperWindowToken{ec3d54a token=android.os.Binder@2ffbab5})/@0x425d60c sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0}]}
-09-05 13:05:49.100   798   831 V WindowManagerShell: Playing animation for (#12)android.os.BinderProxy@23b05e3@0
-09-05 13:05:49.100   798   831 V WindowManagerShell:  try handler com.android.wm.shell.transition.DefaultMixedHandler@86040ce
-09-05 13:05:49.100   798   831 V WindowManagerShell:  try handler com.android.wm.shell.keyguard.KeyguardTransitionHandler@20e8bef
-09-05 13:05:49.100   798   831 V WindowManagerShell:  try handler com.android.wm.shell.activityembedding.ActivityEmbeddingController@8ae96fc
-09-05 13:05:49.100   798   831 V WindowManagerShell:  try handler com.android.wm.shell.recents.RecentsTransitionHandler@73f4185
-09-05 13:05:49.100   798   831 V ShellRecents: RecentsTransitionHandler.startAnimation: no controller found
-09-05 13:05:49.100   798   831 V WindowManagerShell:  try handler com.android.wm.shell.pip.PipTransition@dc39bda
-09-05 13:05:49.100   798   831 V WindowManagerShell:  try handler com.android.wm.shell.splitscreen.StageCoordinator@a61f80b
-09-05 13:05:49.100   798   831 V WindowManagerShell:  try handler com.android.wm.shell.transition.RemoteTransitionHandler@8cc26e8
-09-05 13:05:49.100   798   831 V WindowManagerShell: Transition doesn't have explicit remote, search filters for match for {id=12 t=CLOSE f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{android.window.IWindowContainerToken$Stub$Proxy@5bc196a} m=TO_FRONT f=SHOW_WALLPAPER leash=Surface(name=Task=1)/@0x2e9055e sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0},{WCT{android.window.IWindowContainerToken$Stub$Proxy@2d14e5b} m=CLOSE f=NONE leash=Surface(name=Task=13)/@0x18e1d3f sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0},{null m=TO_FRONT f=IS_WALLPAPER leash=Surface(name=WallpaperWindowToken{ec3d54a token=android.os.Binder@2ffbab5})/@0x425d60c sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0}]}
-09-05 13:05:49.100   798   831 V WindowManagerShell:  Checking filter Pair{{types=[] flags=0x0] notFlags=0x100 checks=[{atype=home independent=true modes=[OPEN,TO_FRONT] flags=NONE mustBeTask=false order=TOP topActivity=ComponentInfo{com.android.launcher3/com.android.launcher3.uioverrides.QuickstepLauncher}},{atype=standard independent=true modes=[CLOSE,TO_BACK] flags=NONE mustBeTask=false order=ANY topActivity=null}]} RemoteTransition { remoteTransition = android.window.IRemoteTransition$Stub$Proxy@2377101, appThread = android.app.IApplicationThread$Stub$Proxy@dcf9ba6, debugName = QuickstepLaunchHome }}
-09-05 13:05:49.100   798   831 D RemoteTransitionHandler: Found filterPair{{types=[] flags=0x0] notFlags=0x100 checks=[{atype=home independent=true modes=[OPEN,TO_FRONT] flags=NONE mustBeTask=false order=TOP topActivity=ComponentInfo{com.android.launcher3/com.android.launcher3.uioverrides.QuickstepLauncher}},{atype=standard independent=true modes=[CLOSE,TO_BACK] flags=NONE mustBeTask=false order=ANY topActivity=null}]} RemoteTransition { remoteTransition = android.window.IRemoteTransition$Stub$Proxy@2377101, appThread = android.app.IApplicationThread$Stub$Proxy@dcf9ba6, debugName = QuickstepLaunchHome }}
-09-05 13:05:49.100   798   831 V WindowManagerShell:  Delegate animation for #12 to RemoteTransition { remoteTransition = android.window.IRemoteTransition$Stub$Proxy@2377101, appThread = android.app.IApplicationThread$Stub$Proxy@dcf9ba6, debugName = QuickstepLaunchHome }
-09-05 13:05:49.103   798   831 V WindowManagerShell:  animated by com.android.wm.shell.transition.RemoteTransitionHandler@8cc26e8
-09-05 13:05:49.122   798   798 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
-09-05 13:05:49.124   505   518 I ImeTracker: com.android.launcher3:e120fe08: onRequestHide at ORIGIN_SERVER_HIDE_INPUT reason HIDE_UNSPECIFIED_WINDOW
-09-05 13:05:49.128   798   831 V WindowManagerShell: Transition animation finished (aborted=false), notifying core (#12)android.os.BinderProxy@23b05e3@0
-09-05 13:05:49.132   505   522 V WindowManager: Finish Transition #12: created at 09-05 13:05:49.063 collect-started=0.022ms request-sent=0.056ms started=7.358ms ready=10.25ms sent=35.204ms finished=65.759ms
-09-05 13:05:49.154   798   831 V WindowManagerShell: Track 0 became idle
-09-05 13:05:49.154   798   831 V WindowManagerShell: All active transition animations finished
-09-05 13:05:49.171  2391  2391 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=falsecallback=android.view.ViewRootImpl$$ExternalSyntheticLambda17@b970c4c
-09-05 13:05:49.173   505  1779 W InputManager-JNI: Input channel object '6dbf2d com.indian.nutrition.tracker.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity (client)' was disposed without first being removed with the input manager!
-09-05 13:05:49.173   798   860 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=falsecallback=android.view.ViewRootImpl$$ExternalSyntheticLambda17@b44ce0a
-09-05 13:05:49.175   505   715 W WindowManager: Failed looking up window session=Session{127cfe 2391:u0a10142} callers=com.android.server.wm.WindowManagerService.windowForClientLocked:6034 com.android.server.wm.Session.setOnBackInvokedCallbackInfo:944 android.view.IWindowSession$Stub.onTransact:1145 
-09-05 13:05:49.175   505   715 I WindowManager: setOnBackInvokedCallback(): No window state for package:com.indian.nutrition.tracker.test
-09-05 13:05:49.175   505  2203 W InputManager-JNI: Input channel object '5569580 Splash Screen com.indian.nutrition.tracker.test (client)' was disposed without first being removed with the input manager!
-09-05 13:05:49.178   505   872 W WindowManager: Failed looking up window session=Session{d7b8d8c 798:u0a10118} callers=com.android.server.wm.WindowManagerService.windowForClientLocked:6034 com.android.server.wm.WindowManagerService.removeWindow:1974 com.android.server.wm.Session.remove:231 
-09-05 13:05:49.180   505   518 W WindowManager: Failed looking up window session=Session{d7b8d8c 798:u0a10118} callers=com.android.server.wm.WindowManagerService.windowForClientLocked:6034 com.android.server.wm.Session.setOnBackInvokedCallbackInfo:944 android.view.IWindowSession$Stub.onTransact:1145 
-09-05 13:05:49.180   505   518 I WindowManager: setOnBackInvokedCallback(): No window state for package:com.android.systemui
-09-05 13:05:49.183   505  1537 W ActivityTaskManager: takeTaskSnapshot: taskId=13 not found or not visible
-09-05 13:05:49.185  2347  2347 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=falsecallback=ImeCallback=ImeOnBackInvokedCallback@181261964 Callback=android.window.IOnBackInvokedCallback$Stub$Proxy@7fd226d
-09-05 13:05:49.185  2347  2347 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=falsecallback=android.view.ViewRootImpl$$ExternalSyntheticLambda17@d7e469a
-09-05 13:05:49.185   505  1537 D CoreBackPreview: Window{89c068f u0 com.indian.nutrition.tracker/com.indian.nutrition.tracker.MainActivity}: Setting back callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@f437ce6, mPriority=0, mIsAnimationCallback=false}
-09-05 13:05:49.186   505  1537 D CoreBackPreview: Window{89c068f u0 com.indian.nutrition.tracker/com.indian.nutrition.tracker.MainActivity}: Setting back callback null
-09-05 13:05:49.187   505  1537 W InputManager-JNI: Input channel object '89c068f com.indian.nutrition.tracker/com.indian.nutrition.tracker.MainActivity (client)' was disposed without first being removed with the input manager!
-09-05 13:05:49.188   505  1537 W WindowManager: Failed looking up window session=Session{a0a231d 2347:u0a10141} callers=com.android.server.wm.WindowManagerService.windowForClientLocked:6034 com.android.server.wm.Session.updateRequestedVisibleTypes:690 android.view.IWindowSession$Stub.onTransact:1034 
-09-05 13:05:49.227  2347  2347 D LifecycleMonitor: Lifecycle status change: com.indian.nutrition.tracker.MainActivity@6aea70e in: DESTROYED
-09-05 13:05:49.228  2347  2347 V ActivityScenario: Update currentActivityStage to DESTROYED, currentActivity=null
-09-05 13:05:49.231  2347  2367 D IdlingRegistry: Unregistering idling resources: [androidx.compose.ui.test.EspressoLink@1f14e6a]
-09-05 13:05:49.232  2347  2347 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=falsecallback=android.view.ViewRootImpl$$ExternalSyntheticLambda17@5ee4acd
-09-05 13:05:49.232   505  1537 D CoreBackPreview: Window{498bccb u0 com.indian.nutrition.tracker/com.indian.nutrition.tracker.MainActivity}: Setting back callback null
-09-05 13:05:49.233   505  1537 W InputManager-JNI: Input channel object '498bccb com.indian.nutrition.tracker/com.indian.nutrition.tracker.MainActivity (client)' was disposed without first being removed with the input manager!
-09-05 13:05:49.238  2347  2347 I ImeTracker: com.indian.nutrition.tracker:cca58352: onRequestHide at ORIGIN_CLIENT_HIDE_SOFT_INPUT reason HIDE_SOFT_INPUT
-09-05 13:05:49.238  2347  2347 I ImeTracker: com.indian.nutrition.tracker:cca58352: onFailed at PHASE_CLIENT_VIEW_SERVED
-09-05 13:05:49.239  2347  2347 I ImeTracker: com.android.launcher3:e120fe08: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
-09-05 13:05:49.240  2347  2367 E TestRunner: failed: test03_addFoodOpensSearchAndCanCreateCustomRecipe(com.indian.nutrition.tracker.ui.AppUiTest)
-09-05 13:05:49.242  2347  2367 E TestRunner: ----- begin exception -----
-09-05 13:05:49.242  2347  2367 E TestRunner: java.lang.AssertionError: Semantic Node has no parent layout with a Scroll SemanticsAction
-09-05 13:05:49.242  2347  2367 E TestRunner: 	at androidx.compose.ui.test.ActionsKt.scrollToNode(Actions.kt:92)
-09-05 13:05:49.242  2347  2367 E TestRunner: 	at androidx.compose.ui.test.ActionsKt.performScrollTo(Actions.kt:77)
-09-05 13:05:49.242  2347  2367 E TestRunner: 	at com.indian.nutrition.tracker.ui.AppUiTest.test03_addFoodOpensSearchAndCanCreateCustomRecipe(AppUiTest.kt:124)
-09-05 13:05:49.242  2347  2367 E TestRunner: 	at java.lang.reflect.Method.invoke(Native Method)
-09-05 13:05:49.242  2347  2367 E TestRunner: 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
-09-05 13:05:49.242  2347  2367 E TestRunner: 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-09-05 13:05:49.242  2347  2367 E TestRunner: 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
-09-05 13:05:49.242  2347  2367 E TestRunner: 	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-09-05 13:05:49.242  2347  2367 E TestRunner: 	at androidx.test.internal.runner.junit4.statement.RunBefores.evaluate(RunBefores.java:80)
-09-05 13:05:49.242  2347  2367 E TestRunner: 	at org.junit.rules.ExternalResource$1.evaluate(ExternalResource.java:54)
-09-05 13:05:49.242  2347  2367 E TestRunner: 	at androidx.compose.ui.test.junit4.AndroidComposeTestRule$apply$1$evaluate$1.invoke(AndroidComposeTestRule.android.kt:272)
-09-05 13:05:49.242  2347  2367 E TestRunner: 	at androidx.compose.ui.test.junit4.AndroidComposeTestRule$apply$1$evaluate$1.invoke(AndroidComposeTestRule.android.kt:271)
-09-05 13:05:49.242  2347  2367 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$AndroidComposeUiTestImpl.withDisposableContent(ComposeUiTest.android.kt:505)
-09-05 13:05:49.242  2347  2367 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1$1$1$1$1$1.invoke(ComposeUiTest.android.kt:333)
-09-05 13:05:49.242  2347  2367 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.withComposeIdlingResource(ComposeUiTest.android.kt:385)
-09-05 13:05:49.242  2347  2367 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.access$withComposeIdlingResource(ComposeUiTest.android.kt:219)
-09-05 13:05:49.242  2347  2367 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1$1$1$1$1.invoke(ComposeUiTest.android.kt:332)
-09-05 13:05:49.242  2347  2367 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.withWindowRecomposer(ComposeUiTest.android.kt:359)
-09-05 13:05:49.242  2347  2367 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.access$withWindowRecomposer(ComposeUiTest.android.kt:219)
-09-05 13:05:49.242  2347  2367 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1$1$1$1.invoke(ComposeUiTest.android.kt:331)
-09-05 13:05:49.242  2347  2367 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.withTestCoroutines(ComposeUiTest.android.kt:372)
-09-05 13:05:49.242  2347  2367 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.access$withTestCoroutines(ComposeUiTest.android.kt:219)
-09-05 13:05:49.242  2347  2367 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1$1$1.invoke(ComposeUiTest.android.kt:330)
-09-05 13:05:49.242  2347  2367 E TestRunner: 	at androidx.compose.ui.test.EspressoLink.withStrategy(EspressoLink.android.kt:66)
-09-05 13:05:49.242  2347  2367 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1$1.invoke(ComposeUiTest.android.kt:329)
-09-05 13:05:49.242  2347  2367 E TestRunner: 	at androidx.compose.ui.test.IdlingResourceRegistry.withRegistry(IdlingResourceRegistry.jvm.kt:155)
-09-05 13:05:49.242  2347  2367 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1.invoke(ComposeUiTest.android.kt:328)
-09-05 13:05:49.242  2347  2367 E TestRunner: 	at androidx.compose.ui.test.ComposeRootRegistry.withRegistry(ComposeRootRegistry.android.kt:146)
-09-05 13:05:49.242  2347  2367 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.runTest(ComposeUiTest.android.kt:327)
-09-05 13:05:49.242  2347  2367 E TestRunner: 	at androidx.compose.ui.test.junit4.AndroidComposeTestRule$apply$1.evaluate(AndroidComposeTestRule.android.kt:271)
-09-05 13:05:49.242  2347  2367 E TestRunner: 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-09-05 13:05:49.242  2347  2367 E TestRunner: 	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
-09-05 13:05:49.242  2347  2367 E TestRunner: 	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
-09-05 13:05:49.242  2347  2367 E TestRunner: 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
-09-05 13:05:49.242  2347  2367 E TestRunner: 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
-09-05 13:05:49.242  2347  2367 E TestRunner: 	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
-09-05 13:05:49.242  2347  2367 E TestRunner: 	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
-09-05 13:05:49.242  2347  2367 E TestRunner: 	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
-09-05 13:05:49.242  2347  2367 E TestRunner: 	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
-09-05 13:05:49.242  2347  2367 E TestRunner: 	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
-09-05 13:05:49.242  2347  2367 E TestRunner: 	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
-09-05 13:05:49.244  2347  2367 E TestRunner: 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-09-05 13:05:49.244  2347  2367 E TestRunner: 	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
-09-05 13:05:49.244  2347  2367 E TestRunner: 	at androidx.test.ext.junit.runners.AndroidJUnit4.run(AndroidJUnit4.java:162)
-09-05 13:05:49.244  2347  2367 E TestRunner: 	at org.junit.runners.Suite.runChild(Suite.java:128)
-09-05 13:05:49.244  2347  2367 E TestRunner: 	at org.junit.runners.Suite.runChild(Suite.java:27)
-09-05 13:05:49.244  2347  2367 E TestRunner: 	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
-09-05 13:05:49.244  2347  2367 E TestRunner: 	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
-09-05 13:05:49.244  2347  2367 E TestRunner: 	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
-09-05 13:05:49.244  2347  2367 E TestRunner: 	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
-09-05 13:05:49.244  2347  2367 E TestRunner: 	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
-09-05 13:05:49.244  2347  2367 E TestRunner: 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-09-05 13:05:49.244  2347  2367 E TestRunner: 	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
-09-05 13:05:49.244  2347  2367 E TestRunner: 	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
-09-05 13:05:49.244  2347  2367 E TestRunner: 	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
-09-05 13:05:49.244  2347  2367 E TestRunner: 	at androidx.test.internal.runner.TestExecutor.execute(TestExecutor.java:68)
-09-05 13:05:49.244  2347  2367 E TestRunner: 	at androidx.test.internal.runner.TestExecutor.execute(TestExecutor.java:59)
-09-05 13:05:49.244  2347  2367 E TestRunner: 	at androidx.test.runner.AndroidJUnitRunner.onStart(AndroidJUnitRunner.java:467)
-09-05 13:05:49.244  2347  2367 E TestRunner: 	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2402)
-09-05 13:05:49.244  2347  2367 E TestRunner: ----- end exception -----
-09-05 13:05:49.253  2347  2367 I TestRunner: finished: test03_addFoodOpensSearchAndCanCreateCustomRecipe(com.indian.nutrition.tracker.ui.AppUiTest)
-09-05 13:05:49.254  2347  2367 I TestRunner: started: test04_calculatorRendersProfileAndSavesTargets(com.indian.nutrition.tracker.ui.AppUiTest)
-09-05 13:05:49.257  2347  2367 D IdlingRegistry: Registering idling resources: [androidx.compose.ui.test.EspressoLink@d53225]
-09-05 13:05:49.264  2347  2367 W Settings: Setting always_finish_activities has moved from android.provider.Settings.System to android.provider.Settings.Global, returning read-only value.
-09-05 13:05:49.272   505  1537 I ActivityTaskManager: START u0 {act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.indian.nutrition.tracker/.MainActivity} with LAUNCH_SINGLE_TASK from uid 10141 (BAL_ALLOW_PERMISSION) result code=0
-09-05 13:05:49.272   798   862 D SplashScreenView: Build android.window.SplashScreenView{b026bc2 V.E...... ......ID 0,0-0,0}
-09-05 13:05:49.272   798   862 D SplashScreenView: Icon: view: null drawable: null size: 0
-09-05 13:05:49.272   798   862 D SplashScreenView: Branding: view: android.view.View{6e92dd3 G.ED..... ......I. 0,0-0,0 #10204ef android:id/splashscreen_branding_view} drawable: null size w: 0 h: 0
-09-05 13:05:49.278   798   831 V WindowManagerShell: Transition requested: android.os.BinderProxy@78f820e TransitionRequestInfo { type = OPEN, triggerTask = TaskInfo{userId=0 taskId=14 displayId=0 isRunning=true baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.indian.nutrition.tracker/.MainActivity } baseActivity=ComponentInfo{com.indian.nutrition.tracker/com.indian.nutrition.tracker.MainActivity} topActivity=ComponentInfo{com.indian.nutrition.tracker/com.indian.nutrition.tracker.MainActivity} origActivity=null realActivity=ComponentInfo{com.indian.nutrition.tracker/com.indian.nutrition.tracker.MainActivity} numActivities=1 lastActiveTime=266471 supportsMultiWindow=true resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{android.window.IWindowContainerToken$Stub$Proxy@68ed42f} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=false launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=null topActivityInfo=ActivityInfo{ad0da3c com.indian.nutrition.tracker.MainActivity} launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=false isVisible=false isVisibleRequested=false isSleeping=false topActivityInSizeCompat=false topActivityEligibleForLetterboxEducation= false topActivityLetterboxed= false isFromDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 topActivityLetterboxHeight=-1 locusId=null displayAreaFeatureId=1 cameraCompatControlState=hidden}, remoteTransition = null, displayChange = null }
-09-05 13:05:49.279   505   884 D CoreBackPreview: Window{cdaeb96 u0 Splash Screen com.indian.nutrition.tracker}: Setting back callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@c4af304, mPriority=0, mIsAnimationCallback=false}
-09-05 13:05:49.288   505   522 V WindowManager: Sent Transition #13 createdAt=09-05 13:05:49.268 via request=TransitionRequestInfo { type = OPEN, triggerTask = TaskInfo{userId=0 taskId=14 displayId=0 isRunning=true baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10008000 cmp=com.indian.nutrition.tracker/.MainActivity } baseActivity=ComponentInfo{com.indian.nutrition.tracker/com.indian.nutrition.tracker.MainActivity} topActivity=ComponentInfo{com.indian.nutrition.tracker/com.indian.nutrition.tracker.MainActivity} origActivity=null realActivity=ComponentInfo{com.indian.nutrition.tracker/com.indian.nutrition.tracker.MainActivity} numActivities=1 lastActiveTime=266471 supportsMultiWindow=true resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{RemoteToken{b6ce9b3 Task{ed4ccca #14 type=standard A=10141:com.indian.nutrition.tracker}}} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=false launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=null topActivityInfo=ActivityInfo{63b70 com.indian.nutrition.tracker.MainActivity} launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=false isVisible=false isVisibleRequested=false isSleeping=false topActivityInSizeCompat=false topActivityEligibleForLetterboxEducation= false topActivityLetterboxed= false isFromDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 topActivityLetterboxHeight=-1 locusId=null displayAreaFeatureId=1 cameraCompatControlState=hidden}, remoteTransition = null, displayChange = null }
-09-05 13:05:49.288   505   522 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
-09-05 13:05:49.288   505   522 V WindowManager:     info={id=13 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{RemoteToken{b6ce9b3 Task{ed4ccca #14 type=standard A=10141:com.indian.nutrition.tracker}}} m=OPEN f=NONE leash=Surface(name=Task=14)/@0xb0ce0ed sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0},{WCT{RemoteToken{98badeb Task{246343f #1 type=home}}} m=TO_BACK f=SHOW_WALLPAPER leash=Surface(name=Task=1)/@0xe134fd4 sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0}]}
-09-05 13:05:49.289   798   831 V WindowManagerShell: onTransitionReady android.os.BinderProxy@78f820e: {id=13 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{android.window.IWindowContainerToken$Stub$Proxy@b57467d} m=OPEN f=NONE leash=Surface(name=Task=14)/@0xfdc4e6 sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0},{WCT{android.window.IWindowContainerToken$Stub$Proxy@d514972} m=TO_BACK f=SHOW_WALLPAPER leash=Surface(name=Task=1)/@0xdef1a27 sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0}]}
-09-05 13:05:49.289   798   831 V WindowManagerShell: Playing animation for (#13)android.os.BinderProxy@78f820e@0
-09-05 13:05:49.289   798   831 V WindowManagerShell:  try handler com.android.wm.shell.transition.DefaultMixedHandler@86040ce
-09-05 13:05:49.289   798   831 V WindowManagerShell:  try handler com.android.wm.shell.keyguard.KeyguardTransitionHandler@20e8bef
-09-05 13:05:49.289   798   831 V WindowManagerShell:  try handler com.android.wm.shell.activityembedding.ActivityEmbeddingController@8ae96fc
-09-05 13:05:49.290  2347  2347 D LifecycleMonitor: Lifecycle status change: com.indian.nutrition.tracker.MainActivity@1414dd9 in: PRE_ON_CREATE
-09-05 13:05:49.290   798   831 V WindowManagerShell:  try handler com.android.wm.shell.recents.RecentsTransitionHandler@73f4185
-09-05 13:05:49.291   798   831 V ShellRecents: RecentsTransitionHandler.startAnimation: no controller found
-09-05 13:05:49.291   798   831 V WindowManagerShell:  try handler com.android.wm.shell.pip.PipTransition@dc39bda
-09-05 13:05:49.291   798   831 V WindowManagerShell:  try handler com.android.wm.shell.splitscreen.StageCoordinator@a61f80b
-09-05 13:05:49.291   798   831 V WindowManagerShell:  try handler com.android.wm.shell.transition.RemoteTransitionHandler@8cc26e8
-09-05 13:05:49.291  2347  2347 V ActivityScenario: Activity lifecycle changed event received but ignored because the reported transition was not ON_CREATE while the last known transition was PRE_ON_CREATE
-09-05 13:05:49.292   798   831 V WindowManagerShell: Transition doesn't have explicit remote, search filters for match for {id=13 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{android.window.IWindowContainerToken$Stub$Proxy@b57467d} m=OPEN f=NONE leash=Surface(name=Task=14)/@0xfdc4e6 sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0},{WCT{android.window.IWindowContainerToken$Stub$Proxy@d514972} m=TO_BACK f=SHOW_WALLPAPER leash=Surface(name=Task=1)/@0xdef1a27 sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0}]}
-09-05 13:05:49.293   798   831 V WindowManagerShell:  Checking filter Pair{{types=[] flags=0x0] notFlags=0x100 checks=[{atype=home independent=true modes=[OPEN,TO_FRONT] flags=NONE mustBeTask=false order=TOP topActivity=ComponentInfo{com.android.launcher3/com.android.launcher3.uioverrides.QuickstepLauncher}},{atype=standard independent=true modes=[CLOSE,TO_BACK] flags=NONE mustBeTask=false order=ANY topActivity=null}]} RemoteTransition { remoteTransition = android.window.IRemoteTransition$Stub$Proxy@2377101, appThread = android.app.IApplicationThread$Stub$Proxy@dcf9ba6, debugName = QuickstepLaunchHome }}
-09-05 13:05:49.293   798   831 V WindowManagerShell:  Delegate animation for #13 to null
-09-05 13:05:49.293   798   831 V WindowManagerShell:  try handler com.android.wm.shell.transition.DefaultTransitionHandler@b3609e7
-09-05 13:05:49.293   798   831 V WindowManagerShell: start default transition animation, info = {id=13 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{android.window.IWindowContainerToken$Stub$Proxy@b57467d} m=OPEN f=NONE leash=Surface(name=Task=14)/@0xfdc4e6 sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0},{WCT{android.window.IWindowContainerToken$Stub$Proxy@d514972} m=TO_BACK f=SHOW_WALLPAPER leash=Surface(name=Task=1)/@0xdef1a27 sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0}]}
-09-05 13:05:49.293   798   831 V WindowManagerShell: loadAnimation: anim=android.view.animation.AnimationSet@e85ca40 animAttr=0x13 type=OPEN isEntrance=false
-09-05 13:05:49.293   798   831 V WindowManagerShell: loadAnimation: anim=android.view.animation.AnimationSet@a1d4a6c animAttr=0x12 type=OPEN isEntrance=true
-09-05 13:05:49.294   798   831 V WindowManagerShell:  animated by com.android.wm.shell.transition.DefaultTransitionHandler@b3609e7
-09-05 13:05:49.296   389   389 I BpBinder: onLastStrongRef automatically unlinking death recipients: 
-09-05 13:05:49.298   798   831 V WindowManagerShell: Transition animation finished (aborted=false), notifying core (#13)android.os.BinderProxy@78f820e@0
-09-05 13:05:49.299   798   831 V WindowManagerShell: Track 0 became idle
-09-05 13:05:49.299   798   831 V WindowManagerShell: All active transition animations finished
-09-05 13:05:49.300   505   522 V WindowManager: Finish Transition #13: created at 09-05 13:05:49.268 collect-started=0.08ms request-sent=3.918ms started=11.479ms ready=11.466ms sent=20.174ms finished=30.469ms
-09-05 13:05:49.305  2347  2347 D LifecycleMonitor: Lifecycle status change: com.indian.nutrition.tracker.MainActivity@1414dd9 in: CREATED
-09-05 13:05:49.305  2347  2347 V ActivityScenario: Update currentActivityStage to CREATED, currentActivity=com.indian.nutrition.tracker.MainActivity@1414dd9
-09-05 13:05:49.306  2347  2347 D LifecycleMonitor: Lifecycle status change: com.indian.nutrition.tracker.MainActivity@1414dd9 in: STARTED
-09-05 13:05:49.307  2347  2347 V ActivityScenario: Update currentActivityStage to STARTED, currentActivity=com.indian.nutrition.tracker.MainActivity@1414dd9
-09-05 13:05:49.308  2347  2347 D LifecycleMonitor: Lifecycle status change: com.indian.nutrition.tracker.MainActivity@1414dd9 in: RESUMED
-09-05 13:05:49.309  2347  2347 V ActivityScenario: Update currentActivityStage to RESUMED, currentActivity=com.indian.nutrition.tracker.MainActivity@1414dd9
-09-05 13:05:49.323  2347  2347 D AutofillManager: Fill dialog is enabled:false, hints=[]
-09-05 13:05:49.337   505  1779 D CoreBackPreview: Window{30bd76e u0 com.indian.nutrition.tracker/com.indian.nutrition.tracker.MainActivity}: Setting back callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@aa1fc7a, mPriority=0, mIsAnimationCallback=false}
-09-05 13:05:49.382   505  2459 W OpenGLRenderer: Failed to initialize 101010-2 format, error = EGL_SUCCESS
-09-05 13:05:49.384  1049  1049 W FrameTracker: Missed App frame:UNKNOWN: 24, 5158, 24851007, CUJ=J<LAUNCHER_APP_CLOSE_TO_HOME>
-09-05 13:05:49.384  1049  1049 W FrameTracker: Missed SF frame:UNKNOWN: 24, 5158, 24851007, CUJ=J<LAUNCHER_APP_CLOSE_TO_HOME>
-09-05 13:05:49.384  1049  1049 W FrameTracker: Missing SF jank callback for vsyncId: 5364, CUJ=J<LAUNCHER_APP_CLOSE_TO_HOME>
-09-05 13:05:49.432   505   522 W ziparchive: Unable to open '/data/app/~~P0o6CUzISVRZwi49BGChrQ==/com.indian.nutrition.tracker-ft6EcII08qYGwnsguzjxAQ==/base.dm': No such file or directory
-09-05 13:05:49.433   505   522 I ActivityTaskManager: Displayed com.indian.nutrition.tracker/.MainActivity for user 0: +164ms
-09-05 13:05:49.438  1049  1077 I ImeTracker: com.android.launcher3:605b49a3: onRequestHide at ORIGIN_CLIENT_HIDE_SOFT_INPUT reason HIDE_SOFT_INPUT
-09-05 13:05:49.438   505  2203 I ImeTracker: com.android.launcher3:605b49a3: onCancelled at PHASE_SERVER_SHOULD_HIDE
-09-05 13:05:49.449   798   860 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=falsecallback=android.view.ViewRootImpl$$ExternalSyntheticLambda17@3d363c5
-09-05 13:05:49.449   505  1537 D CoreBackPreview: Window{cdaeb96 u0 Splash Screen com.indian.nutrition.tracker EXITING}: Setting back callback null
-09-05 13:05:49.450   505  1537 W InputManager-JNI: Input channel object 'cdaeb96 Splash Screen com.indian.nutrition.tracker (client)' was disposed without first being removed with the input manager!
-09-05 13:05:49.453   505  1537 I ImeTracker: com.indian.nutrition.tracker:824560d4: onRequestHide at ORIGIN_SERVER_HIDE_INPUT reason HIDE_UNSPECIFIED_WINDOW
-09-05 13:05:49.453   505  1537 I ImeTracker: com.indian.nutrition.tracker:824560d4: onCancelled at PHASE_SERVER_SHOULD_HIDE
-09-05 13:05:49.474  1369  1416 D EGL_emulation: app_time_stats: avg=176.64ms min=23.18ms max=383.60ms count=8
-09-05 13:05:49.639  2347  2347 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
-09-05 13:05:49.639  2347  2347 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
-09-05 13:05:49.792   782   782 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
-09-05 13:05:50.263  2347  2356 W System  : A resource failed to call release. 
-09-05 13:05:50.833   505   588 D ActivityManager: freezing 812 com.android.permissioncontroller
-09-05 13:05:53.303   505  1816 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
-09-05 13:05:56.970   798   798 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
-09-05 13:05:57.728   782   782 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
-09-05 13:05:58.720  2347  2347 E FrameTracker: force finish cuj, time out: J<IME_INSETS_ANIMATION::0@0@com.indian.nutrition.tracker>
-09-05 13:05:59.111   798   798 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
-09-05 13:05:59.186   505   588 D ActivityManager: freezing 2391 com.indian.nutrition.tracker.test
-09-05 13:05:59.974   798   798 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
-09-05 13:06:00.035   798   874 D EGL_emulation: app_time_stats: avg=1239.78ms min=6.40ms max=10535.54ms count=9
-09-05 13:06:02.979   798   798 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
-09-05 13:06:05.072   505  1537 D CompatibilityChangeReporter: Compat change id reported: 265464455; UID 10142; state: DISABLED
-09-05 13:06:05.072   505  1537 D CompatibilityChangeReporter: Compat change id reported: 265452344; UID 10142; state: DISABLED
-09-05 13:06:05.072   505  1537 D CompatibilityChangeReporter: Compat change id reported: 266124927; UID 10142; state: DISABLED
-09-05 13:06:05.072   505  1537 D CompatibilityChangeReporter: Compat change id reported: 265451093; UID 10142; state: DISABLED
-09-05 13:06:05.072   505  1537 D CompatibilityChangeReporter: Compat change id reported: 265456536; UID 10142; state: DISABLED
-09-05 13:06:05.072   505  1537 D CompatibilityChangeReporter: Compat change id reported: 255940284; UID 10142; state: DISABLED
-09-05 13:06:05.072   505  1537 D CompatibilityChangeReporter: Compat change id reported: 236283604; UID 10142; state: DISABLED
-09-05 13:06:05.072   505  1537 D CompatibilityChangeReporter: Compat change id reported: 263959004; UID 10142; state: DISABLED
-09-05 13:06:05.072   505  1537 D CompatibilityChangeReporter: Compat change id reported: 264304459; UID 10142; state: DISABLED
-09-05 13:06:05.072   505  1537 D CompatibilityChangeReporter: Compat change id reported: 264301586; UID 10142; state: DISABLED
-09-05 13:06:05.072   505  1537 D CompatibilityChangeReporter: Compat change id reported: 254631730; UID 10142; state: DISABLED
-09-05 13:06:05.072   505  1537 D CompatibilityChangeReporter: Compat change id reported: 273509367; UID 10142; state: DISABLED
-09-05 13:06:05.072   505  1537 D CompatibilityChangeReporter: Compat change id reported: 263259275; UID 10142; state: DISABLED
-09-05 13:06:05.072   505  1537 D CompatibilityChangeReporter: Compat change id reported: 174042980; UID 10142; state: DISABLED
-09-05 13:06:05.072   505  1537 D CompatibilityChangeReporter: Compat change id reported: 174042936; UID 10142; state: DISABLED
-09-05 13:06:05.072   505  1537 D CompatibilityChangeReporter: Compat change id reported: 181136395; UID 10142; state: DISABLED
-09-05 13:06:05.072   505  1537 D CompatibilityChangeReporter: Compat change id reported: 194480991; UID 10142; state: ENABLED
-09-05 13:06:05.074   505  1537 D CompatibilityChangeReporter: Compat change id reported: 184838306; UID 10142; state: DISABLED
-09-05 13:06:05.074   505  1537 D CompatibilityChangeReporter: Compat change id reported: 185004937; UID 10142; state: DISABLED
-09-05 13:06:05.074   505  1537 D CompatibilityChangeReporter: Compat change id reported: 197654537; UID 10142; state: ENABLED
-09-05 13:06:05.075   505  1537 D CompatibilityChangeReporter: Compat change id reported: 205907456; UID 10142; state: ENABLED
-09-05 13:06:05.076   505  1537 D CompatibilityChangeReporter: Compat change id reported: 194833441; UID 10142; state: ENABLED
-09-05 13:06:05.076   505  1537 I ActivityTaskManager: START u0 {act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10000000 cmp=com.indian.nutrition.tracker.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity} with LAUNCH_MULTIPLE from uid 10141 (BAL_ALLOW_VISIBLE_WINDOW) result code=0
-09-05 13:06:05.076   798   862 D SplashScreenView: Build android.window.SplashScreenView{3f5c7a6 V.E...... ......ID 0,0-0,0}
-09-05 13:06:05.076   798   862 D SplashScreenView: Icon: view: null drawable: null size: 0
-09-05 13:06:05.076   798   862 D SplashScreenView: Branding: view: android.view.View{2dec5e7 G.ED..... ......I. 0,0-0,0 #10204ef android:id/splashscreen_branding_view} drawable: null size w: 0 h: 0
-09-05 13:06:05.076   798   831 V WindowManagerShell: Transition requested: android.os.BinderProxy@d0d594 TransitionRequestInfo { type = OPEN, triggerTask = TaskInfo{userId=0 taskId=15 displayId=0 isRunning=true baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10000000 cmp=com.indian.nutrition.tracker.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity } baseActivity=ComponentInfo{com.indian.nutrition.tracker.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity} topActivity=ComponentInfo{com.indian.nutrition.tracker.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity} origActivity=null realActivity=ComponentInfo{com.indian.nutrition.tracker.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity} numActivities=1 lastActiveTime=282276 supportsMultiWindow=true resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{android.window.IWindowContainerToken$Stub$Proxy@e76383d} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=false launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=null topActivityInfo=ActivityInfo{9a6b832 androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity} launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=false isVisible=false isVisibleRequested=false isSleeping=false topActivityInSizeCompat=false topActivityEligibleForLetterboxEducation= false topActivityLetterboxed= false isFromDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 topActivityLetterboxHeight=-1 locusId=null displayAreaFeatureId=1 cameraCompatControlState=hidden}, remoteTransition = null, displayChange = null }
-09-05 13:06:05.078   505   884 D CompatibilityChangeReporter: Compat change id reported: 168419799; UID 10142; state: DISABLED
-09-05 13:06:05.078   505   884 D CompatibilityChangeReporter: Compat change id reported: 273564678; UID 10142; state: DISABLED
-09-05 13:06:05.081  2347  2347 D LifecycleMonitor: Lifecycle status change: com.indian.nutrition.tracker.MainActivity@1414dd9 in: PAUSED
-09-05 13:06:05.082  2347  2347 V ActivityScenario: Update currentActivityStage to PAUSED, currentActivity=com.indian.nutrition.tracker.MainActivity@1414dd9
-09-05 13:06:05.086   505   518 D ActivityManager: quick sync unfreeze 2391 for 1
-09-05 13:06:05.094   505  1537 D CoreBackPreview: Window{fbfaf00 u0 Splash Screen com.indian.nutrition.tracker.test}: Setting back callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@6c0dd7e, mPriority=0, mIsAnimationCallback=false}
-09-05 13:06:05.094   505   525 D ActivityManager: sync unfroze 2391 com.indian.nutrition.tracker.test for 1
-09-05 13:06:05.095   505   525 D OomAdjuster: Not killing cached processes
-09-05 13:06:05.096   389   389 I BpBinder: onLastStrongRef automatically unlinking death recipients: 
-09-05 13:06:05.101   505   581 D CompatibilityChangeReporter: Compat change id reported: 265195908; UID 10142; state: ENABLED
-09-05 13:06:05.107   798   831 V WindowManagerShell: onTransitionReady android.os.BinderProxy@d0d594: {id=14 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{android.window.IWindowContainerToken$Stub$Proxy@4fff871} m=OPEN f=NONE leash=Surface(name=Task=15)/@0x7391b8a sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0},{WCT{android.window.IWindowContainerToken$Stub$Proxy@7156656} m=TO_BACK f=NONE leash=Surface(name=Task=14)/@0x70f5fb sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0}]}
-09-05 13:06:05.107   798   831 V WindowManagerShell: Playing animation for (#14)android.os.BinderProxy@d0d594@0
-09-05 13:06:05.107   798   831 V WindowManagerShell:  try handler com.android.wm.shell.transition.DefaultMixedHandler@86040ce
-09-05 13:06:05.107   798   831 V WindowManagerShell:  try handler com.android.wm.shell.keyguard.KeyguardTransitionHandler@20e8bef
-09-05 13:06:05.107   798   831 V WindowManagerShell:  try handler com.android.wm.shell.activityembedding.ActivityEmbeddingController@8ae96fc
-09-05 13:06:05.107   798   831 V WindowManagerShell:  try handler com.android.wm.shell.recents.RecentsTransitionHandler@73f4185
-09-05 13:06:05.107   798   831 V ShellRecents: RecentsTransitionHandler.startAnimation: no controller found
-09-05 13:06:05.107   798   831 V WindowManagerShell:  try handler com.android.wm.shell.pip.PipTransition@dc39bda
-09-05 13:06:05.107   798   831 V WindowManagerShell:  try handler com.android.wm.shell.splitscreen.StageCoordinator@a61f80b
-09-05 13:06:05.107   798   831 V WindowManagerShell:  try handler com.android.wm.shell.transition.RemoteTransitionHandler@8cc26e8
-09-05 13:06:05.107   798   831 V WindowManagerShell: Transition doesn't have explicit remote, search filters for match for {id=14 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{android.window.IWindowContainerToken$Stub$Proxy@4fff871} m=OPEN f=NONE leash=Surface(name=Task=15)/@0x7391b8a sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0},{WCT{android.window.IWindowContainerToken$Stub$Proxy@7156656} m=TO_BACK f=NONE leash=Surface(name=Task=14)/@0x70f5fb sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0}]}
-09-05 13:06:05.107   798   831 V WindowManagerShell:  Checking filter Pair{{types=[] flags=0x0] notFlags=0x100 checks=[{atype=home independent=true modes=[OPEN,TO_FRONT] flags=NONE mustBeTask=false order=TOP topActivity=ComponentInfo{com.android.launcher3/com.android.launcher3.uioverrides.QuickstepLauncher}},{atype=standard independent=true modes=[CLOSE,TO_BACK] flags=NONE mustBeTask=false order=ANY topActivity=null}]} RemoteTransition { remoteTransition = android.window.IRemoteTransition$Stub$Proxy@2377101, appThread = android.app.IApplicationThread$Stub$Proxy@dcf9ba6, debugName = QuickstepLaunchHome }}
-09-05 13:06:05.108   798   831 V WindowManagerShell:  Delegate animation for #14 to null
-09-05 13:06:05.108   798   831 V WindowManagerShell:  try handler com.android.wm.shell.transition.DefaultTransitionHandler@b3609e7
-09-05 13:06:05.108   798   831 V WindowManagerShell: start default transition animation, info = {id=14 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{android.window.IWindowContainerToken$Stub$Proxy@4fff871} m=OPEN f=NONE leash=Surface(name=Task=15)/@0x7391b8a sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0},{WCT{android.window.IWindowContainerToken$Stub$Proxy@7156656} m=TO_BACK f=NONE leash=Surface(name=Task=14)/@0x70f5fb sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0}]}
-09-05 13:06:05.108   798   831 V WindowManagerShell: loadAnimation: anim=android.view.animation.AnimationSet@84aaaad animAttr=0x9 type=OPEN isEntrance=false
-09-05 13:06:05.109   798   831 V WindowManagerShell: loadAnimation: anim=android.view.animation.AnimationSet@a22973 animAttr=0x8 type=OPEN isEntrance=true
-09-05 13:06:05.109   505   522 V WindowManager: Sent Transition #14 createdAt=09-05 13:06:05.073 via request=TransitionRequestInfo { type = OPEN, triggerTask = TaskInfo{userId=0 taskId=15 displayId=0 isRunning=true baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10000000 cmp=com.indian.nutrition.tracker.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity } baseActivity=ComponentInfo{com.indian.nutrition.tracker.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity} topActivity=ComponentInfo{com.indian.nutrition.tracker.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity} origActivity=null realActivity=ComponentInfo{com.indian.nutrition.tracker.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity} numActivities=1 lastActiveTime=282276 supportsMultiWindow=true resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{RemoteToken{c09538a Task{db9503d #15 type=standard A=10142:com.indian.nutrition.tracker.test}}} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=false launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=null topActivityInfo=ActivityInfo{e28cdfb androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity} launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=false isVisible=false isVisibleRequested=false isSleeping=false topActivityInSizeCompat=false topActivityEligibleForLetterboxEducation= false topActivityLetterboxed= false isFromDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 topActivityLetterboxHeight=-1 locusId=null displayAreaFeatureId=1 cameraCompatControlState=hidden}, remoteTransition = null, displayChange = null }
-09-05 13:06:05.109   505   522 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
-09-05 13:06:05.109   505   522 V WindowManager:     info={id=14 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{RemoteToken{c09538a Task{db9503d #15 type=standard A=10142:com.indian.nutrition.tracker.test}}} m=OPEN f=NONE leash=Surface(name=Task=15)/@0x3f0bb2c sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0},{WCT{RemoteToken{b6ce9b3 Task{ed4ccca #14 type=standard A=10141:com.indian.nutrition.tracker}}} m=TO_BACK f=NONE leash=Surface(name=Task=14)/@0xb0ce0ed sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0}]}
-09-05 13:06:05.110   798   831 V WindowManagerShell:  animated by com.android.wm.shell.transition.DefaultTransitionHandler@b3609e7
-09-05 13:06:05.117   798   831 V WindowManagerShell: Transition animation finished (aborted=false), notifying core (#14)android.os.BinderProxy@d0d594@0
-09-05 13:06:05.118   505   522 V WindowManager: Finish Transition #14: created at 09-05 13:06:05.073 collect-started=0.015ms request-sent=3.237ms started=4.075ms ready=19.763ms sent=34.003ms finished=45.735ms
-09-05 13:06:05.119   798   831 V WindowManagerShell: Track 0 became idle
-09-05 13:06:05.119   798   831 V WindowManagerShell: All active transition animations finished
-09-05 13:06:05.131   505   884 D CoreBackPreview: Window{a83c2ad u0 com.indian.nutrition.tracker.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity}: Setting back callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@27d0173, mPriority=0, mIsAnimationCallback=false}
-09-05 13:06:05.140  2391  2410 W OpenGLRenderer: Failed to initialize 101010-2 format, error = EGL_SUCCESS
-09-05 13:06:05.144  2347  2347 D LifecycleMonitor: Lifecycle status change: com.indian.nutrition.tracker.MainActivity@1414dd9 in: STOPPED
-09-05 13:06:05.145  2347  2347 V ActivityScenario: Update currentActivityStage to STOPPED, currentActivity=com.indian.nutrition.tracker.MainActivity@1414dd9
-09-05 13:06:05.257   505   522 W ziparchive: Unable to open '/data/app/~~Q1FeMcn1u1cD1kE28eQtmA==/com.indian.nutrition.tracker.test-iBxoldObPRtsmYlq2jDDhg==/base.dm': No such file or directory
-09-05 13:06:05.269   798   831 V WindowManagerShell: Transition requested: android.os.BinderProxy@86edfe1 TransitionRequestInfo { type = CLOSE, triggerTask = TaskInfo{userId=0 taskId=15 displayId=0 isRunning=false baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10000000 cmp=com.indian.nutrition.tracker.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity } baseActivity=null topActivity=null origActivity=null realActivity=ComponentInfo{com.indian.nutrition.tracker.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity} numActivities=0 lastActiveTime=282285 supportsMultiWindow=true resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{android.window.IWindowContainerToken$Stub$Proxy@8721106} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=false launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=null topActivityInfo=null launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=false isVisible=true isVisibleRequested=true isSleeping=false topActivityInSizeCompat=false topActivityEligibleForLetterboxEducation= false topActivityLetterboxed= false isFromDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 topActivityLetterboxHeight=-1 locusId=null displayAreaFeatureId=1 cameraCompatControlState=hidden}, remoteTransition = null, displayChange = null }
-09-05 13:06:05.274   798   860 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=falsecallback=android.view.ViewRootImpl$$ExternalSyntheticLambda17@9931b39
-09-05 13:06:05.275   505   884 W InputManager-JNI: Input channel object 'fbfaf00 Splash Screen com.indian.nutrition.tracker.test (client)' was disposed without first being removed with the input manager!
-09-05 13:06:05.277   505  2203 D CoreBackPreview: Window{fbfaf00 u0 Splash Screen com.indian.nutrition.tracker.test EXITING}: Setting back callback null
-09-05 13:06:05.279   389   389 I BpBinder: onLastStrongRef automatically unlinking death recipients: 
-09-05 13:06:05.289   505   522 I ActivityTaskManager: Displayed com.indian.nutrition.tracker.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity for user 0: +185ms
-09-05 13:06:05.317   505   522 V WindowManager: Sent Transition #15 createdAt=09-05 13:06:05.267 via request=TransitionRequestInfo { type = CLOSE, triggerTask = TaskInfo{userId=0 taskId=15 displayId=0 isRunning=false baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10000000 cmp=com.indian.nutrition.tracker.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity } baseActivity=null topActivity=null origActivity=null realActivity=ComponentInfo{com.indian.nutrition.tracker.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity} numActivities=0 lastActiveTime=282285 supportsMultiWindow=true resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{RemoteToken{c09538a Task{db9503d #15 type=standard A=10142:com.indian.nutrition.tracker.test}}} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=false launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=null topActivityInfo=null launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=false isVisible=true isVisibleRequested=true isSleeping=false topActivityInSizeCompat=false topActivityEligibleForLetterboxEducation= false topActivityLetterboxed= false isFromDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 topActivityLetterboxHeight=-1 locusId=null displayAreaFeatureId=1 cameraCompatControlState=hidden}, remoteTransition = null, displayChange = null }
-09-05 13:06:05.318   798   831 V WindowManagerShell: onTransitionReady android.os.BinderProxy@86edfe1: {id=15 t=CLOSE f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{android.window.IWindowContainerToken$Stub$Proxy@caaaa19} m=TO_FRONT f=SHOW_WALLPAPER leash=Surface(name=Task=1)/@0x418991d sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0},{WCT{android.window.IWindowContainerToken$Stub$Proxy@cd43ade} m=CLOSE f=NONE leash=Surface(name=Task=15)/@0x68e3792 sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0},{null m=TO_FRONT f=IS_WALLPAPER leash=Surface(name=WallpaperWindowToken{ec3d54a token=android.os.Binder@2ffbab5})/@0xc685563 sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0}]}
-09-05 13:06:05.318   798   831 V WindowManagerShell: Playing animation for (#15)android.os.BinderProxy@86edfe1@0
-09-05 13:06:05.319   798   831 V WindowManagerShell:  try handler com.android.wm.shell.transition.DefaultMixedHandler@86040ce
-09-05 13:06:05.319   798   831 V WindowManagerShell:  try handler com.android.wm.shell.keyguard.KeyguardTransitionHandler@20e8bef
-09-05 13:06:05.321   798   831 V WindowManagerShell:  try handler com.android.wm.shell.activityembedding.ActivityEmbeddingController@8ae96fc
-09-05 13:06:05.321   798   831 V WindowManagerShell:  try handler com.android.wm.shell.recents.RecentsTransitionHandler@73f4185
-09-05 13:06:05.321   798   831 V ShellRecents: RecentsTransitionHandler.startAnimation: no controller found
-09-05 13:06:05.321   505   522 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
-09-05 13:06:05.321   798   831 V WindowManagerShell:  try handler com.android.wm.shell.pip.PipTransition@dc39bda
-09-05 13:06:05.322   798   831 V WindowManagerShell:  try handler com.android.wm.shell.splitscreen.StageCoordinator@a61f80b
-09-05 13:06:05.322   505   522 V WindowManager:     info={id=15 t=CLOSE f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{RemoteToken{98badeb Task{246343f #1 type=home}}} m=TO_FRONT f=SHOW_WALLPAPER leash=Surface(name=Task=1)/@0xe134fd4 sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0},{WCT{RemoteToken{c09538a Task{db9503d #15 type=standard A=10142:com.indian.nutrition.tracker.test}}} m=CLOSE f=NONE leash=Surface(name=Task=15)/@0x3f0bb2c sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0},{null m=TO_FRONT f=IS_WALLPAPER leash=Surface(name=WallpaperWindowToken{ec3d54a token=android.os.Binder@2ffbab5})/@0x6f3d8bd sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0}]}
-09-05 13:06:05.322   798   831 V WindowManagerShell:  try handler com.android.wm.shell.transition.RemoteTransitionHandler@8cc26e8
-09-05 13:06:05.322   798   831 V WindowManagerShell: Transition doesn't have explicit remote, search filters for match for {id=15 t=CLOSE f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{android.window.IWindowContainerToken$Stub$Proxy@caaaa19} m=TO_FRONT f=SHOW_WALLPAPER leash=Surface(name=Task=1)/@0x418991d sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0},{WCT{android.window.IWindowContainerToken$Stub$Proxy@cd43ade} m=CLOSE f=NONE leash=Surface(name=Task=15)/@0x68e3792 sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0},{null m=TO_FRONT f=IS_WALLPAPER leash=Surface(name=WallpaperWindowToken{ec3d54a token=android.os.Binder@2ffbab5})/@0xc685563 sb=Rect(0, 0 - 320, 640) eb=Rect(0, 0 - 320, 640) d=0}]}
-09-05 13:06:05.322   798   831 V WindowManagerShell:  Checking filter Pair{{types=[] flags=0x0] notFlags=0x100 checks=[{atype=home independent=true modes=[OPEN,TO_FRONT] flags=NONE mustBeTask=false order=TOP topActivity=ComponentInfo{com.android.launcher3/com.android.launcher3.uioverrides.QuickstepLauncher}},{atype=standard independent=true modes=[CLOSE,TO_BACK] flags=NONE mustBeTask=false order=ANY topActivity=null}]} RemoteTransition { remoteTransition = android.window.IRemoteTransition$Stub$Proxy@2377101, appThread = android.app.IApplicationThread$Stub$Proxy@dcf9ba6, debugName = QuickstepLaunchHome }}
-09-05 13:06:05.322   798   831 D RemoteTransitionHandler: Found filterPair{{types=[] flags=0x0] notFlags=0x100 checks=[{atype=home independent=true modes=[OPEN,TO_FRONT] flags=NONE mustBeTask=false order=TOP topActivity=ComponentInfo{com.android.launcher3/com.android.launcher3.uioverrides.QuickstepLauncher}},{atype=standard independent=true modes=[CLOSE,TO_BACK] flags=NONE mustBeTask=false order=ANY topActivity=null}]} RemoteTransition { remoteTransition = android.window.IRemoteTransition$Stub$Proxy@2377101, appThread = android.app.IApplicationThread$Stub$Proxy@dcf9ba6, debugName = QuickstepLaunchHome }}
-09-05 13:06:05.322   798   831 V WindowManagerShell:  Delegate animation for #15 to RemoteTransition { remoteTransition = android.window.IRemoteTransition$Stub$Proxy@2377101, appThread = android.app.IApplicationThread$Stub$Proxy@dcf9ba6, debugName = QuickstepLaunchHome }
-09-05 13:06:05.323   798   831 V WindowManagerShell:  animated by com.android.wm.shell.transition.RemoteTransitionHandler@8cc26e8
-09-05 13:06:05.323  2347  2347 D LifecycleMonitor: Lifecycle status change: com.indian.nutrition.tracker.MainActivity@1414dd9 in: DESTROYED
-09-05 13:06:05.323  2347  2347 V ActivityScenario: Update currentActivityStage to DESTROYED, currentActivity=null
-09-05 13:06:05.326  2347  2367 D IdlingRegistry: Unregistering idling resources: [androidx.compose.ui.test.EspressoLink@d53225]
-09-05 13:06:05.327  2347  2347 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=falsecallback=android.view.ViewRootImpl$$ExternalSyntheticLambda17@848d29d
-09-05 13:06:05.327   505  2203 D CoreBackPreview: Window{30bd76e u0 com.indian.nutrition.tracker/com.indian.nutrition.tracker.MainActivity}: Setting back callback null
-09-05 13:06:05.336   798   831 V WindowManagerShell: Transition animation finished (aborted=false), notifying core (#15)android.os.BinderProxy@86edfe1@0
-09-05 13:06:05.338   505  2203 I ImeTracker: com.android.launcher3:2b6a1f22: onRequestHide at ORIGIN_SERVER_HIDE_INPUT reason HIDE_UNSPECIFIED_WINDOW
-09-05 13:06:05.338   505  2203 I ImeTracker: com.android.launcher3:2b6a1f22: onCancelled at PHASE_SERVER_SHOULD_HIDE
-09-05 13:06:05.339   505   522 V WindowManager: Finish Transition #15: created at 09-05 13:06:05.267 collect-started=0.029ms request-sent=1.574ms started=6.008ms ready=13.626ms sent=48.903ms finished=71.324ms
-09-05 13:06:05.340   798   831 V WindowManagerShell: Track 0 became idle
-09-05 13:06:05.340   798   831 V WindowManagerShell: All active transition animations finished
-09-05 13:06:05.340   798   874 D EGL_emulation: app_time_stats: avg=5304.73ms min=5304.73ms max=5304.73ms count=1
-09-05 13:06:05.342   505  2203 W InputManager-JNI: Input channel object '30bd76e com.indian.nutrition.tracker/com.indian.nutrition.tracker.MainActivity (client)' was disposed without first being removed with the input manager!
-09-05 13:06:05.353  2347  2367 E TestRunner: failed: test04_calculatorRendersProfileAndSavesTargets(com.indian.nutrition.tracker.ui.AppUiTest)
-09-05 13:06:05.358  2347  2367 E TestRunner: ----- begin exception -----
-09-05 13:06:05.358  2347  2367 E TestRunner: androidx.compose.ui.test.ComposeTimeoutException: Condition still not satisfied after 15000 ms
-09-05 13:06:05.358  2347  2367 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$AndroidComposeUiTestImpl.waitUntil(ComposeUiTest.android.kt:441)
-09-05 13:06:05.358  2347  2367 E TestRunner: 	at androidx.compose.ui.test.junit4.AndroidComposeTestRule.waitUntil(AndroidComposeTestRule.android.kt:306)
-09-05 13:06:05.358  2347  2367 E TestRunner: 	at com.indian.nutrition.tracker.ui.AppUiTest.waitForTag(AppUiTest.kt:54)
-09-05 13:06:05.358  2347  2367 E TestRunner: 	at com.indian.nutrition.tracker.ui.AppUiTest.waitForTag$default(AppUiTest.kt:53)
-09-05 13:06:05.358  2347  2367 E TestRunner: 	at com.indian.nutrition.tracker.ui.AppUiTest.test04_calculatorRendersProfileAndSavesTargets(AppUiTest.kt:140)
-09-05 13:06:05.358  2347  2367 E TestRunner: 	at java.lang.reflect.Method.invoke(Native Method)
-09-05 13:06:05.358  2347  2367 E TestRunner: 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
-09-05 13:06:05.358  2347  2367 E TestRunner: 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-09-05 13:06:05.358  2347  2367 E TestRunner: 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
-09-05 13:06:05.358  2347  2367 E TestRunner: 	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-09-05 13:06:05.358  2347  2367 E TestRunner: 	at androidx.test.internal.runner.junit4.statement.RunBefores.evaluate(RunBefores.java:80)
-09-05 13:06:05.358  2347  2367 E TestRunner: 	at org.junit.rules.ExternalResource$1.evaluate(ExternalResource.java:54)
-09-05 13:06:05.358  2347  2367 E TestRunner: 	at androidx.compose.ui.test.junit4.AndroidComposeTestRule$apply$1$evaluate$1.invoke(AndroidComposeTestRule.android.kt:272)
-09-05 13:06:05.358  2347  2367 E TestRunner: 	at androidx.compose.ui.test.junit4.AndroidComposeTestRule$apply$1$evaluate$1.invoke(AndroidComposeTestRule.android.kt:271)
-09-05 13:06:05.358  2347  2367 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$AndroidComposeUiTestImpl.withDisposableContent(ComposeUiTest.android.kt:505)
-09-05 13:06:05.358  2347  2367 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1$1$1$1$1$1.invoke(ComposeUiTest.android.kt:333)
-09-05 13:06:05.358  2347  2367 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.withComposeIdlingResource(ComposeUiTest.android.kt:385)
-09-05 13:06:05.358  2347  2367 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.access$withComposeIdlingResource(ComposeUiTest.android.kt:219)
-09-05 13:06:05.358  2347  2367 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1$1$1$1$1.invoke(ComposeUiTest.android.kt:332)
-09-05 13:06:05.358  2347  2367 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.withWindowRecomposer(ComposeUiTest.android.kt:359)
-09-05 13:06:05.358  2347  2367 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.access$withWindowRecomposer(ComposeUiTest.android.kt:219)
-09-05 13:06:05.358  2347  2367 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1$1$1$1.invoke(ComposeUiTest.android.kt:331)
-09-05 13:06:05.358  2347  2367 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.withTestCoroutines(ComposeUiTest.android.kt:372)
-09-05 13:06:05.358  2347  2367 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.access$withTestCoroutines(ComposeUiTest.android.kt:219)
-09-05 13:06:05.358  2347  2367 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1$1$1.invoke(ComposeUiTest.android.kt:330)
-09-05 13:06:05.358  2347  2367 E TestRunner: 	at androidx.compose.ui.test.EspressoLink.withStrategy(EspressoLink.android.kt:66)
-09-05 13:06:05.358  2347  2367 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1$1.invoke(ComposeUiTest.android.kt:329)
-09-05 13:06:05.358  2347  2367 E TestRunner: 	at androidx.compose.ui.test.IdlingResourceRegistry.withRegistry(IdlingResourceRegistry.jvm.kt:155)
-09-05 13:06:05.358  2347  2367 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1.invoke(ComposeUiTest.android.kt:328)
-09-05 13:06:05.358  2347  2367 E TestRunner: 	at androidx.compose.ui.test.ComposeRootRegistry.withRegistry(ComposeRootRegistry.android.kt:146)
-09-05 13:06:05.358  2347  2367 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.runTest(ComposeUiTest.android.kt:327)
-09-05 13:06:05.358  2347  2367 E TestRunner: 	at androidx.compose.ui.test.junit4.AndroidComposeTestRule$apply$1.evaluate(AndroidComposeTestRule.android.kt:271)
-09-05 13:06:05.358  2347  2367 E TestRunner: 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-09-05 13:06:05.358  2347  2367 E TestRunner: 	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
-09-05 13:06:05.358  2347  2367 E TestRunner: 	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
-09-05 13:06:05.358  2347  2367 E TestRunner: 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
-09-05 13:06:05.358  2347  2367 E TestRunner: 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
-09-05 13:06:05.358  2347  2367 E TestRunner: 	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
-09-05 13:06:05.358  2347  2367 E TestRunner: 	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
-09-05 13:06:05.359  2347  2367 E TestRunner: 	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
-09-05 13:06:05.359  2347  2367 E TestRunner: 	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
-09-05 13:06:05.359  2347  2367 E TestRunner: 	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
-09-05 13:06:05.359  2347  2367 E TestRunner: 	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
-09-05 13:06:05.359  2347  2367 E TestRunner: 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-09-05 13:06:05.359  2347  2367 E TestRunner: 	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
-09-05 13:06:05.359  2347  2367 E TestRunner: 	at androidx.test.ext.junit.runners.AndroidJUnit4.run(AndroidJUnit4.java:162)
-09-05 13:06:05.359  2347  2367 E TestRunner: 	at org.junit.runners.Suite.runChild(Suite.java:128)
-09-05 13:06:05.359  2347  2367 E TestRunner: 	at org.junit.runners.Suite.runChild(Suite.java:27)
-09-05 13:06:05.359  2347  2367 E TestRunner: 	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
-09-05 13:06:05.359  2347  2367 E TestRunner: 	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
-09-05 13:06:05.359  2347  2367 E TestRunner: 	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
-09-05 13:06:05.359  2347  2367 E TestRunner: 	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
-09-05 13:06:05.359  2347  2367 E TestRunner: 	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
-09-05 13:06:05.359  2347  2367 E TestRunner: 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-09-05 13:06:05.359  2347  2367 E TestRunner: 	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
-09-05 13:06:05.359  2347  2367 E TestRunner: 	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
-09-05 13:06:05.359  2347  2367 E TestRunner: 	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
-09-05 13:06:05.359  2347  2367 E TestRunner: 	at androidx.test.internal.runner.TestExecutor.execute(TestExecutor.java:68)
-09-05 13:06:05.359  2347  2367 E TestRunner: 	at androidx.test.internal.runner.TestExecutor.execute(TestExecutor.java:59)
-09-05 13:06:05.359  2347  2367 E TestRunner: 	at androidx.test.runner.AndroidJUnitRunner.onStart(AndroidJUnitRunner.java:467)
-09-05 13:06:05.359  2347  2367 E TestRunner: 	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2402)
-09-05 13:06:05.359  2347  2367 E TestRunner: ----- end exception -----
-09-05 13:06:05.365  2347  2367 I TestRunner: finished: test04_calculatorRendersProfileAndSavesTargets(com.indian.nutrition.tracker.ui.AppUiTest)
-09-05 13:06:05.369  2347  2367 I TestRunner: run finished: 13 tests, 3 failed, 0 ignored
-09-05 13:06:05.374  2391  2391 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=falsecallback=android.view.ViewRootImpl$$ExternalSyntheticLambda17@6c7cd05
-09-05 13:06:05.375   505  1779 W InputManager-JNI: Input channel object 'a83c2ad com.indian.nutrition.tracker.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity (client)' was disposed without first being removed with the input manager!
-09-05 13:06:05.375   505   884 W WindowManager: Failed looking up window session=Session{127cfe 2391:u0a10142} callers=com.android.server.wm.WindowManagerService.windowForClientLocked:6034 com.android.server.wm.Session.setOnBackInvokedCallbackInfo:944 android.view.IWindowSession$Stub.onTransact:1145 
-09-05 13:06:05.375   505   884 I WindowManager: setOnBackInvokedCallback(): No window state for package:com.indian.nutrition.tracker.test
-09-05 13:06:05.385   505  2203 I ActivityManager: Force stopping com.indian.nutrition.tracker appid=10141 user=0: finished inst
-09-05 13:06:05.386  2334  2334 I app_process: System.exit called, status: 0
-09-05 13:06:05.386  2334  2334 I AndroidRuntime: VM exiting with result code 0.
-09-05 13:06:05.389   505  2203 E ActivityManager: Unable to freeze binder for 2347: -11
-09-05 13:06:05.390   505   523 D DisplayManagerService: Drop pending events for gone uid 10141
-09-05 13:06:05.391   505  2203 I ActivityManager: Killing 2347:com.indian.nutrition.tracker/u0a141 (adj 0): stop com.indian.nutrition.tracker due to finished inst
-09-05 13:06:05.556     0     0 I binder  : 505:2203 ioctl 400c620e 74b217bc2930 returned -11
-09-05 13:06:05.557     0     0 I binder  : 505:2203 ioctl 400c620e 74b217bc2930 returned -11
-09-05 13:06:05.413   505   518 W ActivityTaskManager: takeTaskSnapshot: taskId=15 not found or not visible
-09-05 13:06:05.428   505  1779 V ActivityManager: Got obituary of 2347:com.indian.nutrition.tracker
-09-05 13:06:05.428   505   525 W ActivityManager: setHasOverlayUi called on unknown pid: 2347
-09-05 13:06:05.431   326   326 I Zygote  : Process 2347 exited due to signal 9 (Killed)
-09-05 13:06:05.664   782   782 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
-09-05 13:06:05.715   505   534 I ActivityManager: Force stopping com.indian.nutrition.tracker appid=10141 user=-1: deletePackageX
-09-05 13:06:05.715   505   534 E libprocessgroup: No such cgroup attribute: /sys/fs/cgroup/uid_4294877437/cgroup.freeze
-09-05 13:06:05.715   505   534 W libprocessgroup: Failed to apply Frozen process profile: No such file or directory
-09-05 13:06:05.716   505   534 E libprocessgroup: No such cgroup attribute: /sys/fs/cgroup/uid_4294877437/cgroup.freeze
-09-05 13:06:05.716   505   534 W libprocessgroup: Failed to apply Unfrozen process profile: No such file or directory
-09-05 13:06:05.887     0     0 I servicemanager: Since 'artd' could not be found, trying to start it as a lazy AIDL service. (if it's not configured to be a lazy service, it may be stuck starting or still starting).
-09-05 13:06:05.891     0     0 I init    : starting service 'artd'...
-09-05 13:06:05.910     0     0 I init    : ... started service 'artd' has pid 2495
-09-05 13:06:05.911     0     0 I init    : Control message: Processed ctl.interface_start for 'aidl/artd' from pid: 133 (/system/bin/servicemanager)
-09-05 13:06:05.750  2495  2495 I artd    : Starting artd
-09-05 13:06:05.750  2495  2495 I AidlLazyServiceRegistrar: Registering service artd
-09-05 13:06:05.755  2495  2496 I AidlLazyServiceRegistrar: Process has 1 (of 1 available) client(s) in use after notification artd has clients: 1
-09-05 13:06:05.756   505   557 I PermissionManager: Removing permission com.indian.nutrition.tracker.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION that used to be declared by com.indian.nutrition.tracker
-09-05 13:06:05.920     0     0 I BpBinder: onLastStrongRef automatically unlinking death recipients:
-09-05 13:06:05.922     0     0 I servicemanager: Notifying artd they do (previously: don't) have clients when service is guaranteed to be in use
-09-05 13:06:05.756   505   557 I PermissionManager: Permission ownership changed. Updating all permissions.
-09-05 13:06:05.756   505   557 W PermissionManager: Package com.android.adservices.api is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.adservices APEX instead.
-09-05 13:06:05.766   505   557 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
-09-05 13:06:05.766   505   557 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
-09-05 13:06:05.766   505   557 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
-09-05 13:06:05.766   505   557 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
-09-05 13:06:05.766   505   557 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
-09-05 13:06:05.766   505   557 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
-09-05 13:06:05.766   505   557 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
-09-05 13:06:05.766   505   557 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
-09-05 13:06:05.766   505   557 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
-09-05 13:06:05.766   505   557 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
-09-05 13:06:05.767   505   557 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
-09-05 13:06:05.767   505   557 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
-09-05 13:06:05.767   505   557 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
-09-05 13:06:05.781   505   557 D PackageManager: Instant App installer not found with android.intent.action.INSTALL_INSTANT_APP_PACKAGE
-09-05 13:06:05.781   505   557 D PackageManager: Clear ephemeral installer activity
-09-05 13:06:05.789   505   524 I DropBoxManagerService: add tag=system_server_strictmode isTagEnabled=true flags=0x2
-09-05 13:06:05.790   505   557 I ActivityManager: Force stopping com.indian.nutrition.tracker appid=10141 user=0: pkg removed
-09-05 13:06:05.790   505   524 I DropBoxManagerService: add tag=system_server_strictmode isTagEnabled=true flags=0x2
-09-05 13:06:05.790   505   524 I DropBoxManagerService: add tag=system_server_strictmode isTagEnabled=true flags=0x2
-09-05 13:06:05.790   505   524 I DropBoxManagerService: add tag=system_server_strictmode isTagEnabled=true flags=0x2
-09-05 13:06:05.790   505   524 I DropBoxManagerService: add tag=system_server_strictmode isTagEnabled=true flags=0x2
-09-05 13:06:05.791   505   524 I DropBoxManagerService: add tag=system_server_strictmode isTagEnabled=true flags=0x2
-09-05 13:06:05.791   505   524 I DropBoxManagerService: add tag=system_server_strictmode isTagEnabled=true flags=0x2
-09-05 13:06:05.791   505   524 I DropBoxManagerService: add tag=system_server_strictmode isTagEnabled=true flags=0x2
-09-05 13:06:05.791   505   524 I DropBoxManagerService: add tag=system_server_strictmode isTagEnabled=true flags=0x2
-09-05 13:06:05.791   505   524 I DropBoxManagerService: add tag=system_server_strictmode isTagEnabled=true flags=0x2
-09-05 13:06:05.809   505  1816 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
-09-05 13:06:05.809  1000  1000 D CarrierSvcBindHelper: onPackageRemoved: com.indian.nutrition.tracker
-09-05 13:06:05.810   975   975 V MediaPlayerList: mPackageChangedBroadcastReceiver: action: android.intent.action.PACKAGE_REMOVED
-09-05 13:06:05.811  1000  1000 D CarrierSvcBindHelper: No carrier app for: 0
-09-05 13:06:05.814   975   975 V MediaPlayerList: mPackageChangedBroadcastReceiver: action: android.intent.action.PACKAGE_REMOVED
-09-05 13:06:05.819   505   505 D ActivityManager: sync unfroze 1001 com.android.settings for 10
-09-05 13:06:05.820   505   505 D ActivityManager: sync unfroze 2011 com.android.dynsystem:dynsystem for 10
-09-05 13:06:05.821   505   505 D ActivityManager: sync unfroze 1971 com.android.dynsystem for 10
-09-05 13:06:05.822   505   505 D ActivityManager: sync unfroze 1946 com.android.localtransport for 10
-09-05 13:06:05.823   505   505 D ActivityManager: sync unfroze 1677 com.android.keychain for 10
-09-05 13:06:05.825   505   600 I InputReader: Reconfiguring input devices, changes=KEYBOARD_LAYOUTS
-09-05 13:06:05.826   505   524 I DropBoxManagerService: add tag=system_app_strictmode isTagEnabled=true flags=0x2
-09-05 13:06:05.826   505   533 W WindowMagnificationMgr: requestConnection duplicated request: connect=false, mConnectionState=DISCONNECTED
-09-05 13:06:05.826   505   721 W WifiService: Couldn't get PackageInfo for package:com.indian.nutrition.tracker
-09-05 13:06:05.827   505   721 D WifiService: Remove settings for package:com.indian.nutrition.tracker
-09-05 13:06:05.827   505   721 D WifiConfigManager: Remove all networks for app ApplicationInfo{ef8c62d com.indian.nutrition.tracker}
-09-05 13:06:05.828   505   734 E AppOps  : attributionTag VCN not declared in manifest of android
-09-05 13:06:05.828   505   610 V StorageManagerService: Package com.indian.nutrition.tracker does not have legacy storage
-09-05 13:06:05.837   505   589 I RoleService: Granting default roles...
-09-05 13:06:05.838   505   721 D WifiConfigStore: Writing to stores completed in 8 ms.
-09-05 13:06:05.838   505   721 I PasspointManager: No app ops listener found for com.indian.nutrition.tracker
-09-05 13:06:05.841   505   505 I Telecom : CarModeTracker: Package com.indian.nutrition.tracker is not tracked.: SSH.oR@AIM🔒
-09-05 13:06:05.841   505   505 I Telecom : InCallController: updateCarModeForConnections: car mode apps: : SSH.oR@AIM🔒
-09-05 13:06:05.841   505   505 I Telecom : InCallController: update carmode current:UserHandle{0} parent:null: SSH.oR@AIM🔒
-09-05 13:06:05.844   505   505 I ConditionProviders: Disallowing condition provider com.indian.nutrition.tracker (userSet: true)
-09-05 13:06:05.849   798   869 D StylusManager: Stylus InputDevice changed: 14 virtio_input_multi_touch_11
-09-05 13:06:05.850   798   869 D StylusManager: Stylus InputDevice changed: 12 virtio_input_multi_touch_9
-09-05 13:06:05.850   798   869 D StylusManager: Stylus InputDevice changed: 8 virtio_input_multi_touch_5
-09-05 13:06:05.851   798   869 D StylusManager: Stylus InputDevice changed: 7 virtio_input_multi_touch_4
-09-05 13:06:05.851   798   869 D StylusManager: Stylus InputDevice changed: 6 virtio_input_multi_touch_3
-09-05 13:06:05.853   798   869 D StylusManager: Stylus InputDevice changed: 13 virtio_input_multi_touch_10
-09-05 13:06:05.856   798   869 D StylusManager: Stylus InputDevice changed: 11 virtio_input_multi_touch_8
-09-05 13:06:05.857   798   869 D StylusManager: Stylus InputDevice changed: 9 virtio_input_multi_touch_6
-09-05 13:06:05.857   798   869 D StylusManager: Stylus InputDevice changed: 5 virtio_input_multi_touch_2
-09-05 13:06:05.858   798   869 D StylusManager: Stylus InputDevice changed: 4 virtio_input_multi_touch_1
-09-05 13:06:05.858   798   869 D StylusManager: Stylus InputDevice changed: 10 virtio_input_multi_touch_7
-09-05 13:06:05.862   505   589 D ActivityManager: sync unfroze 812 com.android.permissioncontroller for 6
-09-05 13:06:05.866   505   721 W WifiService: Couldn't get PackageInfo for package:com.indian.nutrition.tracker
-09-05 13:06:05.866   505   721 D WifiService: Remove settings for package:com.indian.nutrition.tracker
-09-05 13:06:05.867   505   721 D WifiConfigManager: Remove all networks for app ApplicationInfo{bf1a6d1 com.indian.nutrition.tracker}
-09-05 13:06:05.867   505   583 I RollbackManager: broadcast=ACTION_PACKAGE_FULLY_REMOVED pkg=com.indian.nutrition.tracker
-09-05 13:06:05.870   505   534 D ActivityManager: sync unfroze 1496 com.android.documentsui for 3
-09-05 13:06:05.877   505   721 D WifiConfigStore: Writing to stores completed in 7 ms.
-09-05 13:06:05.877   505   721 I PasspointManager: No app ops listener found for com.indian.nutrition.tracker
-09-05 13:06:05.879  1428  1428 W MediaProvider: WorkProfileOwnerApps cache is empty
-09-05 13:06:05.891   798   798 D ControlsListingControllerImpl: ServiceConfig reloaded, count: 0
-09-05 13:06:05.893   505   533 W ProcessStats: Tracking association SourceState{e2bf53c system/1000 ImpFg #733} whose proc state 5 is better than process ProcessState{686ac16 com.android.keychain/1000 pkg=com.android.keychain} proc state 8 (5 skipped)
-09-05 13:06:05.899  1677  2506 W KeyChain: Creating new DB.
-09-05 13:06:05.928   505   557 W PermissionManager: Package com.android.adservices.api is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.adservices APEX instead.
-09-05 13:06:05.933   798   805 I ndroid.systemui: Background concurrent copying GC freed 157620(7656KB) AllocSpace objects, 26(520KB) LOS objects, 49% free, 12MB/24MB, paused 25us,15us total 131.799ms
-09-05 13:06:05.937   325   365 I netd    : tetherGetStats() -> {[]} <1.15ms>
-09-05 13:06:05.942   505   557 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
-09-05 13:06:05.942   505   557 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
-09-05 13:06:05.942   505   557 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
-09-05 13:06:05.942   505   557 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
-09-05 13:06:05.942   505   557 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
-09-05 13:06:05.942   505   557 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
-09-05 13:06:05.942   505   557 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
-09-05 13:06:05.942   505   557 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
-09-05 13:06:05.942   505   557 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
-09-05 13:06:05.942   505   557 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
-09-05 13:06:05.942   505   557 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
-09-05 13:06:05.942   505   557 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
-09-05 13:06:05.942   505   557 W PermissionManager: Package com.android.providers.media.module is an APK in APEX, but has permission allowlist on the system image. Please bundle the allowlist in the com.android.mediaprovider APEX instead.
-09-05 13:06:05.946   505   514 I system_server: Background concurrent copying GC freed 292766(13MB) AllocSpace objects, 32(768KB) LOS objects, 49% free, 18MB/37MB, paused 39us,33us total 164.071ms
-09-05 13:06:05.949   505   515 W JavaBinder: BinderProxy is being destroyed but the application did not call unlinkToDeath to unlink all of its death recipients beforehand.  Releasing leaked death recipient: com.android.server.am.ActivityManagerService$14
-09-05 13:06:05.950   505   515 I BpBinder: onLastStrongRef automatically unlinking death recipients: 
-09-05 13:06:05.960   505   557 D PackageManager: Instant App installer not found with android.intent.action.INSTALL_INSTANT_APP_PACKAGE
-09-05 13:06:05.960   505   557 D PackageManager: Clear ephemeral installer activity
-09-05 13:06:05.962   505   534 D ActivityManager: sync unfroze 1699 android.process.media for 3
-09-05 13:06:05.966   505   524 I DropBoxManagerService: add tag=system_app_strictmode isTagEnabled=true flags=0x2
-09-05 13:06:05.967   505  1816 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
-09-05 13:06:05.967   505   534 I ActivityManager: Force stopping com.indian.nutrition.tracker.test appid=10142 user=-1: deletePackageX
-09-05 13:06:05.968   505   534 E libprocessgroup: No such cgroup attribute: /sys/fs/cgroup/uid_4294877438/cgroup.freeze
-09-05 13:06:05.968   505   534 W libprocessgroup: Failed to apply Frozen process profile: No such file or directory
-09-05 13:06:05.969   505   523 D DisplayManagerService: Drop pending events for gone uid 10142
-09-05 13:06:05.969   505   534 I ActivityManager: Killing 2391:com.indian.nutrition.tracker.test/u0a142 (adj 900): stop com.indian.nutrition.tracker.test due to deletePackageX
-09-05 13:06:05.980   326   326 I Zygote  : Process 2391 exited due to signal 9 (Killed)
-09-05 13:06:05.981   798   798 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
-09-05 13:06:05.988   505   534 E libprocessgroup: No such cgroup attribute: /sys/fs/cgroup/uid_4294877438/cgroup.freeze
-09-05 13:06:05.988   505   534 W libprocessgroup: Failed to apply Unfrozen process profile: No such file or directory
-09-05 13:06:05.990   505   557 I ActivityManager: Force stopping com.indian.nutrition.tracker.test appid=10142 user=0: pkg removed
-09-05 13:06:05.991  1428  1856 I MediaProvider: Begin Intent { act=android.intent.action.PACKAGE_FULLY_REMOVED dat=package: flg=0x5000010 cmp=com.android.providers.media.module/com.android.providers.media.MediaService (has extras) }
-09-05 13:06:05.994   505  2204 V ActivityManager: Got obituary of 2391:com.indian.nutrition.tracker.test
-09-05 13:06:05.994  1428  1856 D MediaProvider: Deleted 0 Android/media items belonging to com.indian.nutrition.tracker on /data/user/0/com.android.providers.media.module/databases/external.db
-09-05 13:06:05.995   505   525 W ActivityManager: setHasOverlayUi called on unknown pid: 2391
-09-05 13:06:05.995   389   389 E BpTransactionCompletedListener: Failed to transact (-32)
-09-05 13:06:05.997   505  2204 D SafetySourceDataValidator: No cert check requested for package com.android.permissioncontroller
-09-05 13:06:05.998   505  1816 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
-09-05 13:06:06.005   505   524 I DropBoxManagerService: add tag=system_server_strictmode isTagEnabled=true flags=0x2
-09-05 13:06:06.006   505   524 I DropBoxManagerService: add tag=system_server_strictmode isTagEnabled=true flags=0x2
-09-05 13:06:06.008  1049  1049 D Launcher.Model: package removed received com.indian.nutrition.tracker
-09-05 13:06:06.008  1049  1078 D PackageUpdatedTask: Removing app iconcom.indian.nutrition.tracker
-09-05 13:06:06.010   505   524 I DropBoxManagerService: add tag=system_server_strictmode isTagEnabled=true flags=0x2
-09-05 13:06:06.010   505   524 I DropBoxManagerService: add tag=system_server_strictmode isTagEnabled=true flags=0x2
-09-05 13:06:06.011   505   524 I DropBoxManagerService: add tag=system_server_strictmode isTagEnabled=true flags=0x2
-09-05 13:06:06.012   505   524 I DropBoxManagerService: add tag=system_server_strictmode isTagEnabled=true flags=0x2
-09-05 13:06:06.013  1049  1078 D ModelWriter: removing items from db . Reason: [removed because the corresponding package or component is removed. mOp=3 removedPackages=[com.indian.nutrition.tracker] removedComponents=[]]
-09-05 13:06:06.042  1000  1000 D CarrierSvcBindHelper: onPackageRemoved: com.indian.nutrition.tracker.test
-09-05 13:06:06.042  1000  1000 D CarrierSvcBindHelper: No carrier app for: 0
-09-05 13:06:06.050   975   975 V MediaPlayerList: mPackageChangedBroadcastReceiver: action: android.intent.action.PACKAGE_REMOVED
-09-05 13:06:06.051   975   975 V MediaPlayerList: mPackageChangedBroadcastReceiver: action: android.intent.action.PACKAGE_REMOVED
-09-05 13:06:06.054   812   812 D PersistedStoragePackageUninstalledReceiver: Received android.intent.action.PACKAGE_FULLY_REMOVED for com.indian.nutrition.tracker for u0
-09-05 13:06:06.057  1428  1428 W MediaProvider: WorkProfileOwnerApps cache is empty
-09-05 13:06:06.063   798   798 D ControlsListingControllerImpl: ServiceConfig reloaded, count: 0
-09-05 13:06:06.071   505  2204 D SafetySourceDataValidator: No cert check requested for package com.android.permissioncontroller
-09-05 13:06:06.071  1428  1856 D MediaGrants: Removed 0 media_grants for 0 user for com.indian.nutrition.tracker. Reason: Package orphaned
-09-05 13:06:06.072  1428  1856 I MediaProvider: End Intent { act=android.intent.action.PACKAGE_FULLY_REMOVED dat=package: flg=0x5000010 cmp=com.android.providers.media.module/com.android.providers.media.MediaService (has extras) }
-09-05 13:06:06.072  1428  1856 I MediaProvider: Begin Intent { act=android.intent.action.PACKAGE_FULLY_REMOVED dat=package: flg=0x5000010 cmp=com.android.providers.media.module/com.android.providers.media.MediaService (has extras) }
-09-05 13:06:06.073  1428  1856 D MediaProvider: Deleted 0 Android/media items belonging to com.indian.nutrition.tracker.test on /data/user/0/com.android.providers.media.module/databases/external.db
-09-05 13:06:06.075  1428  1856 D MediaGrants: Removed 0 media_grants for 0 user for com.indian.nutrition.tracker.test. Reason: Package orphaned
-09-05 13:06:06.078  1428  1856 I MediaProvider: End Intent { act=android.intent.action.PACKAGE_FULLY_REMOVED dat=package: flg=0x5000010 cmp=com.android.providers.media.module/com.android.providers.media.MediaService (has extras) }
-09-05 13:06:06.084   505   514 I system_server: Background concurrent copying GC freed 78760(4074KB) AllocSpace objects, 18(616KB) LOS objects, 49% free, 17MB/34MB, paused 56us,42us total 100.050ms
-09-05 13:06:06.095   812   812 D PersistedStoragePackageUninstalledReceiver: Received android.intent.action.PACKAGE_FULLY_REMOVED for com.indian.nutrition.tracker.test for u0
-09-05 13:06:06.107   505   721 W WifiService: Couldn't get PackageInfo for package:com.indian.nutrition.tracker.test
-09-05 13:06:06.110   505   583 I RollbackManager: broadcast=ACTION_PACKAGE_FULLY_REMOVED pkg=com.indian.nutrition.tracker.test
-09-05 13:06:06.111   505   600 I InputReader: Reconfiguring input devices, changes=KEYBOARD_LAYOUTS
-09-05 13:06:06.111   505   610 V StorageManagerService: Package com.indian.nutrition.tracker.test does not have legacy storage
-09-05 13:06:06.111   505   721 D WifiService: Remove settings for package:com.indian.nutrition.tracker.test
-09-05 13:06:06.112   505   721 D WifiConfigManager: Remove all networks for app ApplicationInfo{7e0781d com.indian.nutrition.tracker.test}
-09-05 13:06:06.115   505   734 E AppOps  : attributionTag VCN not declared in manifest of android
-09-05 13:06:06.121   505   505 I Telecom : CarModeTracker: Package com.indian.nutrition.tracker.test is not tracked.: SSH.oR@AIY🔒
-09-05 13:06:06.121   505   505 I Telecom : InCallController: updateCarModeForConnections: car mode apps: : SSH.oR@AIY🔒
-09-05 13:06:06.122   505   505 I Telecom : InCallController: update carmode current:UserHandle{0} parent:null: SSH.oR@AIY🔒
-09-05 13:06:06.123   505   533 W WindowMagnificationMgr: requestConnection duplicated request: connect=false, mConnectionState=DISCONNECTED
-09-05 13:06:06.124   505   721 D WifiConfigStore: Writing to stores completed in 12 ms.
-09-05 13:06:06.124   505   721 I PasspointManager: No app ops listener found for com.indian.nutrition.tracker.test
-09-05 13:06:06.125   505   721 W WifiService: Couldn't get PackageInfo for package:com.indian.nutrition.tracker.test
-09-05 13:06:06.125   505   721 D WifiService: Remove settings for package:com.indian.nutrition.tracker.test
-09-05 13:06:06.125   505   721 D WifiConfigManager: Remove all networks for app ApplicationInfo{c73a190 com.indian.nutrition.tracker.test}
-09-05 13:06:06.132   505   721 D WifiConfigStore: Writing to stores completed in 6 ms.
-09-05 13:06:06.133   798   869 D StylusManager: Stylus InputDevice changed: 14 virtio_input_multi_touch_11
-09-05 13:06:06.138   505   505 I ConditionProviders: Disallowing condition provider com.indian.nutrition.tracker.test (userSet: true)
-09-05 13:06:06.139   798   869 D StylusManager: Stylus InputDevice changed: 12 virtio_input_multi_touch_9
-09-05 13:06:06.142   505   721 I PasspointManager: No app ops listener found for com.indian.nutrition.tracker.test
-09-05 13:06:06.145   798   869 D StylusManager: Stylus InputDevice changed: 8 virtio_input_multi_touch_5
-09-05 13:06:06.160   325   365 I netd    : tetherGetStats() -> {[]} <0.37ms>
-09-05 13:06:06.162   798   869 D StylusManager: Stylus InputDevice changed: 7 virtio_input_multi_touch_4
-09-05 13:06:06.163   505  1547 E AtomicFile: Failed to rename /data/system/cachequota.xml.new to /data/system/cachequota.xml
-09-05 13:06:06.164   798   869 D StylusManager: Stylus InputDevice changed: 6 virtio_input_multi_touch_3
-09-05 13:06:06.166  1049  1049 D Launcher.Model: package removed received com.indian.nutrition.tracker.test
-09-05 13:06:06.166  1049  1078 D PackageUpdatedTask: Removing app iconcom.indian.nutrition.tracker.test
-09-05 13:06:06.168  1049  1078 D ModelWriter: removing items from db . Reason: [removed because the corresponding package or component is removed. mOp=3 removedPackages=[com.indian.nutrition.tracker.test] removedComponents=[]]
-09-05 13:06:06.169   798   869 D StylusManager: Stylus InputDevice changed: 13 virtio_input_multi_touch_10
-09-05 13:06:06.170   798   869 D StylusManager: Stylus InputDevice changed: 11 virtio_input_multi_touch_8
-09-05 13:06:06.171   798   869 D StylusManager: Stylus InputDevice changed: 9 virtio_input_multi_touch_6
-09-05 13:06:06.171   798   869 D StylusManager: Stylus InputDevice changed: 5 virtio_input_multi_touch_2
-09-05 13:06:06.173   798   869 D StylusManager: Stylus InputDevice changed: 4 virtio_input_multi_touch_1
-09-05 13:06:06.173   798   869 D StylusManager: Stylus InputDevice changed: 10 virtio_input_multi_touch_7
-09-05 13:06:06.310  1369  1406 I LatinIME:LogUtils: Dictionary info: dictionary = main:en ; version = 54 ; date = 1414726273
-09-05 13:06:06.843   505   589 I RoleService: Granting default roles...
-09-05 13:06:07.364     0     0 I logd    : logdr: UID=2000 GID=2000 PID=2539 n tail=0 logMask=99 pid=0 start=0ns deadline=0ns
-09-05 13:06:07.508     0     0 I logd    : logdr: UID=2000 GID=2000 PID=2542 n tail=0 logMask=99 pid=0 start=0ns deadline=0ns
+09-05 13:23:16.791   505  2213 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.display.color.ColorDisplayService
+09-05 13:23:16.791   505  2213 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.display.color.ColorDisplayService took to complete: 0ms
+09-05 13:23:16.791   505  2213 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.job.JobSchedulerService
+09-05 13:23:16.791   505  2213 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.job.JobSchedulerService took to complete: 0ms
+09-05 13:23:16.791   505  2213 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.soundtrigger.SoundTriggerService
+09-05 13:23:16.791   505  2213 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.soundtrigger.SoundTriggerService took to complete: 0ms
+09-05 13:23:16.791   505  2213 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.trust.TrustManagerService
+09-05 13:23:16.791   505  2213 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.trust.TrustManagerService took to complete: 0ms
+09-05 13:23:16.791   505  2213 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.backup.BackupManagerService$Lifecycle
+09-05 13:23:16.791   505  2213 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.backup.BackupManagerService$Lifecycle took to complete: 0ms
+09-05 13:23:16.791   505  2213 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.appwidget.AppWidgetService
+09-05 13:23:16.791   505  2213 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.appwidget.AppWidgetService took to complete: 0ms
+09-05 13:23:16.791   505  2213 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.voiceinteraction.VoiceInteractionManagerService
+09-05 13:23:16.791   505  2213 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.voiceinteraction.VoiceInteractionManagerService took to complete: 0ms
+09-05 13:23:16.791   505  2213 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.GestureLauncherService
+09-05 13:23:16.791   505  2213 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.GestureLauncherService took to complete: 0ms
+09-05 13:23:16.792   505  2213 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.SensorNotificationService
+09-05 13:23:16.792   505  2213 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.SensorNotificationService took to complete: 0ms
+09-05 13:23:16.792   505  2213 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.emergency.EmergencyAffordanceService
+09-05 13:23:16.792   505  2213 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.emergency.EmergencyAffordanceService took to complete: 0ms
+09-05 13:23:16.792   505  2213 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.blob.BlobStoreManagerService
+09-05 13:23:16.792   505  2213 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.blob.BlobStoreManagerService took to complete: 0ms
+09-05 13:23:16.792   505  2213 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.dreams.DreamManagerService
+09-05 13:23:16.792   505  2213 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.dreams.DreamManagerService took to complete: 0ms
+09-05 13:23:16.792   505  2213 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.print.PrintManagerService
+09-05 13:23:16.792   505  2213 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.print.PrintManagerService took to complete: 0ms
+09-05 13:23:16.792   505  2213 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.security.AttestationVerificationManagerService
+09-05 13:23:16.792   505  2213 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.security.AttestationVerificationManagerService took to complete: 0ms
+09-05 13:23:16.792   505  2213 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.companion.CompanionDeviceManagerService
+09-05 13:23:16.792   505  2213 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.companion.CompanionDeviceManagerService took to complete: 0ms
+09-05 13:23:16.792   505  2213 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.companion.virtual.VirtualDeviceManagerService
+09-05 13:23:16.792   505  2213 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.companion.virtual.VirtualDeviceManagerService took to complete: 0ms
+09-05 13:23:16.792   505  2213 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.restrictions.RestrictionsManagerService
+09-05 13:23:16.792   505  2213 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.restrictions.RestrictionsManagerService took to complete: 0ms
+09-05 13:23:16.792   505  2213 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.media.MediaSessionService
+09-05 13:23:16.792   505  2213 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.media.MediaSessionService took to complete: 0ms
+09-05 13:23:16.792   505  2213 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.media.MediaResourceMonitorService
+09-05 13:23:16.792   505  2213 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.media.MediaResourceMonitorService took to complete: 0ms
+09-05 13:23:16.792   505  2213 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.biometrics.sensors.face.FaceService
+09-05 13:23:16.792   505  2213 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.biometrics.sensors.face.FaceService took to complete: 0ms
+09-05 13:23:16.792   505  2213 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.biometrics.sensors.fingerprint.FingerprintService
+09-05 13:23:16.792   505  2213 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.biometrics.sensors.fingerprint.FingerprintService took to complete: 0ms
+09-05 13:23:16.792   505  2213 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.biometrics.BiometricService
+09-05 13:23:16.792   505  2213 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.biometrics.BiometricService took to complete: 1ms
+09-05 13:23:16.792   505  2213 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.biometrics.AuthService
+09-05 13:23:16.792   505  2213 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.biometrics.AuthService took to complete: 0ms
+09-05 13:23:16.792   505  2213 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.pm.ShortcutService$Lifecycle
+09-05 13:23:16.792   505  2213 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.pm.ShortcutService$Lifecycle took to complete: 0ms
+09-05 13:23:16.792   505  2213 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.pm.LauncherAppsService
+09-05 13:23:16.792   505  2213 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.pm.LauncherAppsService took to complete: 0ms
+09-05 13:23:16.792   505  2213 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.pm.CrossProfileAppsService
+09-05 13:23:16.792   505  2213 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.pm.CrossProfileAppsService took to complete: 0ms
+09-05 13:23:16.792   505  2213 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.people.PeopleService
+09-05 13:23:16.792   505  2213 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.people.PeopleService took to complete: 0ms
+09-05 13:23:16.792   505  2213 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.media.metrics.MediaMetricsManagerService
+09-05 13:23:16.792   505  2213 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.media.metrics.MediaMetricsManagerService took to complete: 0ms
+09-05 13:23:16.792   505  2213 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.pm.BackgroundInstallControlService
+09-05 13:23:16.792   505  2213 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.pm.BackgroundInstallControlService took to complete: 0ms
+09-05 13:23:16.792   505  2213 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.media.projection.MediaProjectionManagerService
+09-05 13:23:16.792   505  2213 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.media.projection.MediaProjectionManagerService took to complete: 0ms
+09-05 13:23:16.792   505  2213 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.slice.SliceManagerService$Lifecycle
+09-05 13:23:16.792   505  2213 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.slice.SliceManagerService$Lifecycle took to complete: 0ms
+09-05 13:23:16.792   505  2213 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.stats.StatsCompanion$Lifecycle
+09-05 13:23:16.792   505  2213 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.stats.StatsCompanion$Lifecycle took to complete: 0ms
+09-05 13:23:16.792   505  2213 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.scheduling.RebootReadinessManagerService$Lifecycle
+09-05 13:23:16.792   505  2213 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.scheduling.RebootReadinessManagerService$Lifecycle took to complete: 0ms
+09-05 13:23:16.792   505  2213 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.stats.pull.StatsPullAtomService
+09-05 13:23:16.792   505  2213 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.stats.pull.StatsPullAtomService took to complete: 0ms
+09-05 13:23:16.792   505  2213 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.stats.bootstrap.StatsBootstrapAtomService$Lifecycle
+09-05 13:23:16.792   505  2213 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.stats.bootstrap.StatsBootstrapAtomService$Lifecycle took to complete: 0ms
+09-05 13:23:16.792   505  2213 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.incident.IncidentCompanionService
+09-05 13:23:16.792   505  2213 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.incident.IncidentCompanionService took to complete: 0ms
+09-05 13:23:16.792   505  2213 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.sdksandbox.SdkSandboxManagerService$Lifecycle
+09-05 13:23:16.792   505  2213 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.sdksandbox.SdkSandboxManagerService$Lifecycle took to complete: 0ms
+09-05 13:23:16.792   505  2213 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.adservices.AdServicesManagerService$Lifecycle
+09-05 13:23:16.792   505  2213 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.adservices.AdServicesManagerService$Lifecycle took to complete: 0ms
+09-05 13:23:16.792   505  2213 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.ondevicepersonalization.OnDevicePersonalizationSystemService$Lifecycle
+09-05 13:23:16.792   505  2213 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.ondevicepersonalization.OnDevicePersonalizationSystemService$Lifecycle took to complete: 0ms
+09-05 13:23:16.792   505  2213 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.MmsServiceBroker
+09-05 13:23:16.792   505  2213 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.MmsServiceBroker took to complete: 0ms
+09-05 13:23:16.792   505  2213 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.autofill.AutofillManagerService
+09-05 13:23:16.792   505  2213 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.autofill.AutofillManagerService took to complete: 0ms
+09-05 13:23:16.792   505  2213 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.credentials.CredentialManagerService
+09-05 13:23:16.792   505  2213 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.credentials.CredentialManagerService took to complete: 0ms
+09-05 13:23:16.792   505  2213 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.selectiontoolbar.SelectionToolbarManagerService
+09-05 13:23:16.792   505  2213 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.selectiontoolbar.SelectionToolbarManagerService took to complete: 0ms
+09-05 13:23:16.792   505  2213 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.clipboard.ClipboardService
+09-05 13:23:16.792   505  2213 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.clipboard.ClipboardService took to complete: 0ms
+09-05 13:23:16.792   505  2213 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.appbinding.AppBindingService$Lifecycle
+09-05 13:23:16.792   505  2213 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.appbinding.AppBindingService$Lifecycle took to complete: 0ms
+09-05 13:23:16.792   505  2213 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.tracing.TracingServiceProxy
+09-05 13:23:16.792   505  2213 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.tracing.TracingServiceProxy took to complete: 0ms
+09-05 13:23:16.792   505  2213 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.policy.PermissionPolicyService
+09-05 13:23:16.792   505  2213 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.policy.PermissionPolicyService took to complete: 0ms
+09-05 13:23:16.792   505  2213 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.pm.StagingManager$Lifecycle
+09-05 13:23:16.792   505  2213 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.pm.StagingManager$Lifecycle took to complete: 0ms
+09-05 13:23:16.792   505  2213 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.app.GameManagerService$Lifecycle
+09-05 13:23:16.792   505  2213 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.app.GameManagerService$Lifecycle took to complete: 0ms
+09-05 13:23:16.792   505  2213 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.safetycenter.SafetyCenterService
+09-05 13:23:16.792   505  2213 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.safetycenter.SafetyCenterService took to complete: 0ms
+09-05 13:23:16.792   505  2213 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.appsearch.AppSearchModule$Lifecycle
+09-05 13:23:16.792   505  2213 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.appsearch.AppSearchModule$Lifecycle took to complete: 0ms
+09-05 13:23:16.793   505  2213 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.media.MediaCommunicationService
+09-05 13:23:16.793   505  2213 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.media.MediaCommunicationService took to complete: 0ms
+09-05 13:23:16.793   505  2213 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.compat.overrides.AppCompatOverridesService$Lifecycle
+09-05 13:23:16.793   505  2213 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.compat.overrides.AppCompatOverridesService$Lifecycle took to complete: 0ms
+09-05 13:23:16.793   505  2213 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.healthconnect.HealthConnectManagerService
+09-05 13:23:16.793   505  2213 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.healthconnect.HealthConnectManagerService took to complete: 0ms
+09-05 13:23:16.793   505  2213 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.devicelock.DeviceLockService
+09-05 13:23:16.793   505  2213 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.devicelock.DeviceLockService took to complete: 0ms
+09-05 13:23:16.793   505  2214 D SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.timezonedetector.location.LocationTimeZoneManagerService$Lifecycle
+09-05 13:23:16.793   505  2214 V SystemServerTimingAsync: ssm.onCompletedEventUser-0_{|Unlocked|}_com.android.server.timezonedetector.location.LocationTimeZoneManagerService$Lifecycle took to complete: 0ms
+09-05 13:23:16.793   505   532 V SystemServerTimingAsync: ssm.CompletedEventUser-0 took to complete: 20ms
+09-05 13:23:16.994  2064  2185 V RkpdServerInterface: Network request completed successfully.
+09-05 13:23:16.995  2064  2185 I RkpdPeriodicProvisioner: Total services found implementing IRPC: 1
+09-05 13:23:16.995  2064  2185 I RkpdPeriodicProvisioner: Starting provisioning for com.android.rkpdapp.interfaces.SystemInterface{android.hardware.security.keymint.IRemotelyProvisionedComponent/default}
+09-05 13:23:16.996  2064  2185 I RkpdKeyPoolStats: PoolStats{keysInUse=0, idealTotalSignedKeys=12, keysToGenerate=12, keysUnassigned=0}
+09-05 13:23:16.996  2064  2185 I RkpdProvisioner: Requested number of keys for provisioning: 12
+09-05 13:23:17.005  2064  2185 W RkpdSystemInterface: HAL returned a batch size that's too small (20), defaulting to 20
+09-05 13:23:17.006  2064  2185 I RkpdServerInterface: request_id: 4a3a4ae6-019a-4797-8bf3-eeabb321c7d6
+09-05 13:23:17.007  2064  2185 V RkpdServerInterface: Requesting data from server. Attempt 1
+09-05 13:23:17.010   325  2216 I resolv  : GetAddrInfoHandler::run: {100 100 100 983140 10140 0}
+09-05 13:23:17.012   325  2217 I resolv  : res_nmkquery: (QUERY, IN, AAAA)
+09-05 13:23:17.012   325  2217 I resolv  : resolv_cache_lookup: FOUND IN CACHE entry=0x7403ab34ce10
+09-05 13:23:17.012   325  2217 I resolv  : doQuery: rcode=0, ancount=8, return value=275
+09-05 13:23:17.012   325  2218 I resolv  : res_nmkquery: (QUERY, IN, A)
+09-05 13:23:17.013   325  2218 I resolv  : resolv_cache_lookup: FOUND IN CACHE entry=0x7402db34d870
+09-05 13:23:17.013   325  2218 I resolv  : doQuery: rcode=0, ancount=8, return value=179
+09-05 13:23:17.014  2064  2185 D TrafficStats: tagSocket(79) with statsTag=0x0, statsUid=-1
+09-05 13:23:17.047  1443  1935 W ModernMediaScanner: Failed to apply ContentProviderOperation(type=insert uri=content://media/internal/file values={instance_id=null, compilation=null, disc_number=0, duration=10214, is_ringtone=1, album_artist=null, resolution=null, orientation=null, artist=pdx, author=null, height=null, is_drm=0, is_audiobook=0, date_modified=1702767290, writer=null, composer=null, _modifier=3, is_recording=0, datetaken=null, mime_type=audio/ogg, is_notification=0, bitrate=96000, cd_track_number=0, xmp=[], year=null, _data=/product/media/audio/ringtones/PERSEUS.ogg, _size=112981, album=Unknown, genre=Unknown, is_alarm=0, title=Perseus, track=0, width=null, is_music=0, document_id=null, is_podcast=0, capture_framerate=null, num_tracks=1, original_document_id=null, media_type=2} exceptionAllowed)
+09-05 13:23:17.047  1443  1935 W ModernMediaScanner: android.database.sqlite.SQLiteConstraintException: UNIQUE constraint failed: files._data (code 2067 SQLITE_CONSTRAINT_UNIQUE)
+09-05 13:23:17.047  1443  1935 W ModernMediaScanner: 	at android.database.sqlite.SQLiteConnection.nativeExecuteForLastInsertedRowId(Native Method)
+09-05 13:23:17.047  1443  1935 W ModernMediaScanner: 	at android.database.sqlite.SQLiteConnection.executeForLastInsertedRowId(SQLiteConnection.java:961)
+09-05 13:23:17.047  1443  1935 W ModernMediaScanner: 	at android.database.sqlite.SQLiteSession.executeForLastInsertedRowId(SQLiteSession.java:790)
+09-05 13:23:17.047  1443  1935 W ModernMediaScanner: 	at android.database.sqlite.SQLiteStatement.executeInsert(SQLiteStatement.java:89)
+09-05 13:23:17.047  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.util.DatabaseUtils.executeInsert(DatabaseUtils.java:488)
+09-05 13:23:17.047  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.util.SQLiteQueryBuilder.insert(SQLiteQueryBuilder.java:611)
+09-05 13:23:17.047  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.util.SQLiteQueryBuilder.lambda$insert$1(SQLiteQueryBuilder.java:575)
+09-05 13:23:17.047  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.util.SQLiteQueryBuilder.$r8$lambda$z6PmNgi8nEawad46M5nyYc14aRM(SQLiteQueryBuilder.java:0)
+09-05 13:23:17.047  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.util.SQLiteQueryBuilder$$ExternalSyntheticLambda4.apply(R8$$SyntheticClass:0)
+09-05 13:23:17.047  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.DatabaseHelper.runWithTransaction(DatabaseHelper.java:850)
+09-05 13:23:17.047  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.util.SQLiteQueryBuilder.insert(SQLiteQueryBuilder.java:574)
+09-05 13:23:17.047  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.lambda$insertAllowingUpsert$20(MediaProvider.java:4846)
+09-05 13:23:17.047  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.$r8$lambda$A8_bSAcDGkyGiCcvRo57xoMQkf8(MediaProvider.java:0)
+09-05 13:23:17.047  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider$$ExternalSyntheticLambda39.apply(R8$$SyntheticClass:0)
+09-05 13:23:17.047  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.DatabaseHelper.runWithTransaction(DatabaseHelper.java:850)
+09-05 13:23:17.047  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.insertAllowingUpsert(MediaProvider.java:4836)
+09-05 13:23:17.047  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.insertFile(MediaProvider.java:4818)
+09-05 13:23:17.047  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.insertInternal(MediaProvider.java:5287)
+09-05 13:23:17.047  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.insert(MediaProvider.java:4980)
+09-05 13:23:17.047  1443  1935 W ModernMediaScanner: 	at android.content.ContentProviderOperation.applyInternal(ContentProviderOperation.java:375)
+09-05 13:23:17.047  1443  1935 W ModernMediaScanner: 	at android.content.ContentProviderOperation.apply(ContentProviderOperation.java:347)
+09-05 13:23:17.047  1443  1935 W ModernMediaScanner: 	at android.content.ContentProvider.applyBatch(ContentProvider.java:2653)
+09-05 13:23:17.047  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.applyBatch(MediaProvider.java:5339)
+09-05 13:23:17.047  1443  1935 W ModernMediaScanner: 	at android.content.ContentProvider.applyBatch(ContentProvider.java:2644)
+09-05 13:23:17.047  1443  1935 W ModernMediaScanner: 	at android.content.ContentResolver.applyBatch(ContentResolver.java:2246)
+09-05 13:23:17.047  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.applyPending(ModernMediaScanner.java:957)
+09-05 13:23:17.047  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.maybeApplyPending(ModernMediaScanner.java:947)
+09-05 13:23:17.047  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.visitFile(ModernMediaScanner.java:853)
+09-05 13:23:17.047  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.visitFile(ModernMediaScanner.java:338)
+09-05 13:23:17.047  1443  1935 W ModernMediaScanner: 	at java.nio.file.Files.walkFileTree(Files.java:2670)
+09-05 13:23:17.047  1443  1935 W ModernMediaScanner: 	at java.nio.file.Files.walkFileTree(Files.java:2742)
+09-05 13:23:17.047  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.walkFileTree(ModernMediaScanner.java:454)
+09-05 13:23:17.047  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.runInternal(ModernMediaScanner.java:417)
+09-05 13:23:17.047  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.run(ModernMediaScanner.java:406)
+09-05 13:23:17.047  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner.scanDirectory(ModernMediaScanner.java:252)
+09-05 13:23:17.047  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.scanDirectory(MediaProvider.java:1939)
+09-05 13:23:17.047  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.MediaService.onScanVolume(MediaService.java:204)
+09-05 13:23:17.047  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.MediaService.onScanVolume(MediaService.java:172)
+09-05 13:23:17.047  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.MediaService.onHandleWork(MediaService.java:95)
+09-05 13:23:17.047  1443  1935 W ModernMediaScanner: 	at androidx.core.app.JobIntentService$CommandProcessor.doInBackground(JobIntentService.java:396)
+09-05 13:23:17.047  1443  1935 W ModernMediaScanner: 	at androidx.core.app.JobIntentService$CommandProcessor.doInBackground(JobIntentService.java:387)
+09-05 13:23:17.047  1443  1935 W ModernMediaScanner: 	at android.os.AsyncTask$3.call(AsyncTask.java:394)
+09-05 13:23:17.047  1443  1935 W ModernMediaScanner: 	at java.util.concurrent.FutureTask.run(FutureTask.java:264)
+09-05 13:23:17.047  1443  1935 W ModernMediaScanner: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+09-05 13:23:17.047  1443  1935 W ModernMediaScanner: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:644)
+09-05 13:23:17.047  1443  1935 W ModernMediaScanner: 	at java.lang.Thread.run(Thread.java:1012)
+09-05 13:23:17.367   505  1186 D WifiNl80211Manager: Scan result ready event
+09-05 13:23:17.368   505  1186 D WifiNative: Scan result ready event
+09-05 13:23:17.641     0     0 I servicemanager: Notifying android.hardware.drm.IDrmFactory/clearkey they do (previously: don't) have clients when service is guaranteed to be in use
+09-05 13:23:17.481  2187  2187 I AidlLazyServiceRegistrar: Process has 1 (of 1 available) client(s) in use after notification android.hardware.drm.IDrmFactory/clearkey has clients: 1
+09-05 13:23:17.485  2187  2187 I AidlLazyServiceRegistrar: Process has 0 (of 1 available) client(s) in use after notification android.hardware.drm.IDrmFactory/clearkey has clients: 0
+09-05 13:23:17.485  2187  2187 I AidlLazyServiceRegistrar: Trying to shut down the service. No clients in use for any service in process.
+09-05 13:23:17.492  2187  2187 I AidlLazyServiceRegistrar: Unregistered all clients and exiting
+09-05 13:23:17.650     0     0 I servicemanager: Notifying android.hardware.drm.IDrmFactory/clearkey they don't (previously: do) have clients when we now have no record of a client
+09-05 13:23:17.653     0     0 I servicemanager: Unregistering android.hardware.drm.IDrmFactory/clearkey
+09-05 13:23:17.657     0     0 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+09-05 13:23:17.662     0     0 I init    : Service 'vendor.drm-clearkey-service' (pid 2187) exited with status 0 oneshot service took 2.067000 seconds in background
+09-05 13:23:17.679     0     0 I init    : Sending signal 9 to service 'vendor.drm-clearkey-service' (pid 2187) process group...
+09-05 13:23:17.681     0     0 I libprocessgroup: Successfully killed process cgroup uid 1013 pid 2187 in 0ms
+09-05 13:23:17.545   798   798 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+09-05 13:23:18.047  1784  1784 D CompatibilityChangeReporter: Compat change id reported: 253665015; UID 10062; state: ENABLED
+09-05 13:23:18.048  1784  1784 D CompatibilityChangeReporter: Compat change id reported: 194532703; UID 10062; state: ENABLED
+09-05 13:23:18.049   505  1186 D CompatibilityChangeReporter: Compat change id reported: 253665015; UID 10062; state: ENABLED
+09-05 13:23:18.052   505  1186 D CompatibilityChangeReporter: Compat change id reported: 194532703; UID 10062; state: ENABLED
+09-05 13:23:18.059   505  1186 D CompatibilityChangeReporter: Compat change id reported: 261072174; UID 1000; state: ENABLED
+09-05 13:23:18.148  2064  2185 E RkpdServerInterface: Server connection failed for url: https://remoteprovisioning.googleapis.com/v1:signCertificates?challenge=AAABoHG82hgBILStYz6OK0M_WjgUnqPG3u06YbQ=&request_id=4a3a4ae6-019a-4797-8bf3-eeabb321c7d6, response code: 400
+09-05 13:23:18.148  2064  2185 E RkpdServerInterface: Repeated failure count: 1
+09-05 13:23:18.148  2064  2185 E RkpdServerInterface: {
+09-05 13:23:18.148  2064  2185 E RkpdServerInterface:   "error": {
+09-05 13:23:18.148  2064  2185 E RkpdServerInterface:     "code": 400,
+09-05 13:23:18.148  2064  2185 E RkpdServerInterface:     "message": "Invalid request payload: vendor_patch_level`0` should be in the format YYYYMMDD or YYYYMM if present.\nRequestId: 4a3a4ae6-019a-4797-8bf3-eeabb321c7d6",
+09-05 13:23:18.148  2064  2185 E RkpdServerInterface:     "status": "INVALID_ARGUMENT"
+09-05 13:23:18.148  2064  2185 E RkpdServerInterface:   }
+09-05 13:23:18.148  2064  2185 E RkpdServerInterface: }
+09-05 13:23:18.148  2064  2185 E RkpdPeriodicProvisioner: Error provisioning keys for com.android.rkpdapp.interfaces.SystemInterface{android.hardware.security.keymint.IRemotelyProvisionedComponent/default}
+09-05 13:23:18.148  2064  2185 E RkpdPeriodicProvisioner: com.android.rkpdapp.RkpdException: HTTP error status encountered: 400
+09-05 13:23:18.148  2064  2185 E RkpdPeriodicProvisioner: 	at com.android.rkpdapp.interfaces.ServerInterface.requestData(ServerInterface.java:341)
+09-05 13:23:18.148  2064  2185 E RkpdPeriodicProvisioner: 	at com.android.rkpdapp.interfaces.ServerInterface.connectAndGetData(ServerInterface.java:287)
+09-05 13:23:18.148  2064  2185 E RkpdPeriodicProvisioner: 	at com.android.rkpdapp.interfaces.ServerInterface.requestSignedCertificates(ServerInterface.java:121)
+09-05 13:23:18.148  2064  2185 E RkpdPeriodicProvisioner: 	at com.android.rkpdapp.provisioner.Provisioner.batchProvision(Provisioner.java:157)
+09-05 13:23:18.148  2064  2185 E RkpdPeriodicProvisioner: 	at com.android.rkpdapp.provisioner.Provisioner.fetchCertificates(Provisioner.java:136)
+09-05 13:23:18.148  2064  2185 E RkpdPeriodicProvisioner: 	at com.android.rkpdapp.provisioner.Provisioner.provisionKeys(Provisioner.java:89)
+09-05 13:23:18.148  2064  2185 E RkpdPeriodicProvisioner: 	at com.android.rkpdapp.provisioner.PeriodicProvisioner.doWork(PeriodicProvisioner.java:110)
+09-05 13:23:18.148  2064  2185 E RkpdPeriodicProvisioner: 	at androidx.work.Worker$1.run(Worker.java:82)
+09-05 13:23:18.148  2064  2185 E RkpdPeriodicProvisioner: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+09-05 13:23:18.148  2064  2185 E RkpdPeriodicProvisioner: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:644)
+09-05 13:23:18.148  2064  2185 E RkpdPeriodicProvisioner: 	at java.lang.Thread.run(Thread.java:1012)
+09-05 13:23:18.151  2064  2094 I WM-WorkerWrapper: Worker result FAILURE for Work [ id=811ec35c-217e-44f8-895c-183bb3507de3, tags={ com.android.rkpdapp.provisioner.PeriodicProvisioner } ]
+09-05 13:23:18.158   505  1186 W JobScheduler: Job didn't exist in JobStore: fb7e2e #u0a140/0 com.android.rkpdapp/androidx.work.impl.background.systemjob.SystemJobService
+09-05 13:23:18.162   505   578 D CompatibilityChangeReporter: Compat change id reported: 265195908; UID 10140; state: ENABLED
+09-05 13:23:18.279  1443  1935 W ModernMediaScanner: Failed to apply ContentProviderOperation(type=insert uri=content://media/internal/file values={instance_id=null, compilation=null, disc_number=0, duration=4383, is_ringtone=0, album_artist=null, resolution=null, orientation=null, artist=Unknown, author=null, height=null, is_drm=0, is_audiobook=0, date_modified=1702767290, writer=null, composer=null, _modifier=3, is_recording=0, datetaken=null, mime_type=audio/ogg, is_notification=1, bitrate=96000, cd_track_number=null, xmp=[], year=null, _data=/product/media/audio/notifications/Vega.ogg, _size=29310, album=notifications, genre=null, is_alarm=0, title=Vega, track=null, width=null, is_music=0, document_id=null, is_podcast=0, capture_framerate=null, num_tracks=1, original_document_id=null, media_type=2} exceptionAllowed)
+09-05 13:23:18.279  1443  1935 W ModernMediaScanner: android.database.sqlite.SQLiteConstraintException: UNIQUE constraint failed: files._data (code 2067 SQLITE_CONSTRAINT_UNIQUE)
+09-05 13:23:18.279  1443  1935 W ModernMediaScanner: 	at android.database.sqlite.SQLiteConnection.nativeExecuteForLastInsertedRowId(Native Method)
+09-05 13:23:18.279  1443  1935 W ModernMediaScanner: 	at android.database.sqlite.SQLiteConnection.executeForLastInsertedRowId(SQLiteConnection.java:961)
+09-05 13:23:18.279  1443  1935 W ModernMediaScanner: 	at android.database.sqlite.SQLiteSession.executeForLastInsertedRowId(SQLiteSession.java:790)
+09-05 13:23:18.279  1443  1935 W ModernMediaScanner: 	at android.database.sqlite.SQLiteStatement.executeInsert(SQLiteStatement.java:89)
+09-05 13:23:18.279  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.util.DatabaseUtils.executeInsert(DatabaseUtils.java:488)
+09-05 13:23:18.279  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.util.SQLiteQueryBuilder.insert(SQLiteQueryBuilder.java:611)
+09-05 13:23:18.279  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.util.SQLiteQueryBuilder.lambda$insert$1(SQLiteQueryBuilder.java:575)
+09-05 13:23:18.279  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.util.SQLiteQueryBuilder.$r8$lambda$z6PmNgi8nEawad46M5nyYc14aRM(SQLiteQueryBuilder.java:0)
+09-05 13:23:18.279  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.util.SQLiteQueryBuilder$$ExternalSyntheticLambda4.apply(R8$$SyntheticClass:0)
+09-05 13:23:18.279  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.DatabaseHelper.runWithTransaction(DatabaseHelper.java:850)
+09-05 13:23:18.279  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.util.SQLiteQueryBuilder.insert(SQLiteQueryBuilder.java:574)
+09-05 13:23:18.279  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.lambda$insertAllowingUpsert$20(MediaProvider.java:4846)
+09-05 13:23:18.279  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.$r8$lambda$A8_bSAcDGkyGiCcvRo57xoMQkf8(MediaProvider.java:0)
+09-05 13:23:18.279  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider$$ExternalSyntheticLambda39.apply(R8$$SyntheticClass:0)
+09-05 13:23:18.279  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.DatabaseHelper.runWithTransaction(DatabaseHelper.java:850)
+09-05 13:23:18.279  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.insertAllowingUpsert(MediaProvider.java:4836)
+09-05 13:23:18.279  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.insertFile(MediaProvider.java:4818)
+09-05 13:23:18.279  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.insertInternal(MediaProvider.java:5287)
+09-05 13:23:18.279  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.insert(MediaProvider.java:4980)
+09-05 13:23:18.279  1443  1935 W ModernMediaScanner: 	at android.content.ContentProviderOperation.applyInternal(ContentProviderOperation.java:375)
+09-05 13:23:18.279  1443  1935 W ModernMediaScanner: 	at android.content.ContentProviderOperation.apply(ContentProviderOperation.java:347)
+09-05 13:23:18.279  1443  1935 W ModernMediaScanner: 	at android.content.ContentProvider.applyBatch(ContentProvider.java:2653)
+09-05 13:23:18.279  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.applyBatch(MediaProvider.java:5339)
+09-05 13:23:18.279  1443  1935 W ModernMediaScanner: 	at android.content.ContentProvider.applyBatch(ContentProvider.java:2644)
+09-05 13:23:18.279  1443  1935 W ModernMediaScanner: 	at android.content.ContentResolver.applyBatch(ContentResolver.java:2246)
+09-05 13:23:18.279  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.applyPending(ModernMediaScanner.java:957)
+09-05 13:23:18.279  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.maybeApplyPending(ModernMediaScanner.java:947)
+09-05 13:23:18.279  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.visitFile(ModernMediaScanner.java:853)
+09-05 13:23:18.279  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.visitFile(ModernMediaScanner.java:338)
+09-05 13:23:18.279  1443  1935 W ModernMediaScanner: 	at java.nio.file.Files.walkFileTree(Files.java:2670)
+09-05 13:23:18.279  1443  1935 W ModernMediaScanner: 	at java.nio.file.Files.walkFileTree(Files.java:2742)
+09-05 13:23:18.279  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.walkFileTree(ModernMediaScanner.java:454)
+09-05 13:23:18.279  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.runInternal(ModernMediaScanner.java:417)
+09-05 13:23:18.279  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.run(ModernMediaScanner.java:406)
+09-05 13:23:18.280  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner.scanDirectory(ModernMediaScanner.java:252)
+09-05 13:23:18.280  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.scanDirectory(MediaProvider.java:1939)
+09-05 13:23:18.280  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.MediaService.onScanVolume(MediaService.java:204)
+09-05 13:23:18.280  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.MediaService.onScanVolume(MediaService.java:172)
+09-05 13:23:18.280  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.MediaService.onHandleWork(MediaService.java:95)
+09-05 13:23:18.280  1443  1935 W ModernMediaScanner: 	at androidx.core.app.JobIntentService$CommandProcessor.doInBackground(JobIntentService.java:396)
+09-05 13:23:18.280  1443  1935 W ModernMediaScanner: 	at androidx.core.app.JobIntentService$CommandProcessor.doInBackground(JobIntentService.java:387)
+09-05 13:23:18.280  1443  1935 W ModernMediaScanner: 	at android.os.AsyncTask$3.call(AsyncTask.java:394)
+09-05 13:23:18.280  1443  1935 W ModernMediaScanner: 	at java.util.concurrent.FutureTask.run(FutureTask.java:264)
+09-05 13:23:18.280  1443  1935 W ModernMediaScanner: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+09-05 13:23:18.280  1443  1935 W ModernMediaScanner: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:644)
+09-05 13:23:18.280  1443  1935 W ModernMediaScanner: 	at java.lang.Thread.run(Thread.java:1012)
+09-05 13:23:18.280  1443  1935 W ModernMediaScanner: Failed to apply ContentProviderOperation(type=insert uri=content://media/internal/file values={instance_id=null, compilation=null, disc_number=null, duration=1000, is_ringtone=0, album_artist=null, resolution=null, orientation=null, artist=pdx, author=null, height=null, is_drm=0, is_audiobook=0, date_modified=1702767290, writer=null, composer=null, _modifier=3, is_recording=0, datetaken=null, mime_type=audio/ogg, is_notification=1, bitrate=80000, cd_track_number=2dB214a, xmp=[], year=null, _data=/product/media/audio/notifications/arcturus.ogg, _size=7908, album=notifications, genre=null, is_alarm=0, title=Arcturus, track=null, width=null, is_music=0, document_id=null, is_podcast=0, capture_framerate=null, num_tracks=1, original_document_id=null, media_type=2} exceptionAllowed)
+09-05 13:23:18.280  1443  1935 W ModernMediaScanner: android.database.sqlite.SQLiteConstraintException: UNIQUE constraint failed: files._data (code 2067 SQLITE_CONSTRAINT_UNIQUE)
+09-05 13:23:18.280  1443  1935 W ModernMediaScanner: 	at android.database.sqlite.SQLiteConnection.nativeExecuteForLastInsertedRowId(Native Method)
+09-05 13:23:18.280  1443  1935 W ModernMediaScanner: 	at android.database.sqlite.SQLiteConnection.executeForLastInsertedRowId(SQLiteConnection.java:961)
+09-05 13:23:18.280  1443  1935 W ModernMediaScanner: 	at android.database.sqlite.SQLiteSession.executeForLastInsertedRowId(SQLiteSession.java:790)
+09-05 13:23:18.280  1443  1935 W ModernMediaScanner: 	at android.database.sqlite.SQLiteStatement.executeInsert(SQLiteStatement.java:89)
+09-05 13:23:18.280  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.util.DatabaseUtils.executeInsert(DatabaseUtils.java:488)
+09-05 13:23:18.280  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.util.SQLiteQueryBuilder.insert(SQLiteQueryBuilder.java:611)
+09-05 13:23:18.280  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.util.SQLiteQueryBuilder.lambda$insert$1(SQLiteQueryBuilder.java:575)
+09-05 13:23:18.280  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.util.SQLiteQueryBuilder.$r8$lambda$z6PmNgi8nEawad46M5nyYc14aRM(SQLiteQueryBuilder.java:0)
+09-05 13:23:18.280  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.util.SQLiteQueryBuilder$$ExternalSyntheticLambda4.apply(R8$$SyntheticClass:0)
+09-05 13:23:18.280  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.DatabaseHelper.runWithTransaction(DatabaseHelper.java:850)
+09-05 13:23:18.280  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.util.SQLiteQueryBuilder.insert(SQLiteQueryBuilder.java:574)
+09-05 13:23:18.280  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.lambda$insertAllowingUpsert$20(MediaProvider.java:4846)
+09-05 13:23:18.280  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.$r8$lambda$A8_bSAcDGkyGiCcvRo57xoMQkf8(MediaProvider.java:0)
+09-05 13:23:18.280  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider$$ExternalSyntheticLambda39.apply(R8$$SyntheticClass:0)
+09-05 13:23:18.280  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.DatabaseHelper.runWithTransaction(DatabaseHelper.java:850)
+09-05 13:23:18.280  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.insertAllowingUpsert(MediaProvider.java:4836)
+09-05 13:23:18.280  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.insertFile(MediaProvider.java:4818)
+09-05 13:23:18.280  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.insertInternal(MediaProvider.java:5287)
+09-05 13:23:18.280  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.insert(MediaProvider.java:4980)
+09-05 13:23:18.280  1443  1935 W ModernMediaScanner: 	at android.content.ContentProviderOperation.applyInternal(ContentProviderOperation.java:375)
+09-05 13:23:18.280  1443  1935 W ModernMediaScanner: 	at android.content.ContentProviderOperation.apply(ContentProviderOperation.java:347)
+09-05 13:23:18.280  1443  1935 W ModernMediaScanner: 	at android.content.ContentProvider.applyBatch(ContentProvider.java:2653)
+09-05 13:23:18.280  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.applyBatch(MediaProvider.java:5339)
+09-05 13:23:18.280  1443  1935 W ModernMediaScanner: 	at android.content.ContentProvider.applyBatch(ContentProvider.java:2644)
+09-05 13:23:18.280  1443  1935 W ModernMediaScanner: 	at android.content.ContentResolver.applyBatch(ContentResolver.java:2246)
+09-05 13:23:18.280  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.applyPending(ModernMediaScanner.java:957)
+09-05 13:23:18.280  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.maybeApplyPending(ModernMediaScanner.java:947)
+09-05 13:23:18.280  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.visitFile(ModernMediaScanner.java:853)
+09-05 13:23:18.280  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.visitFile(ModernMediaScanner.java:338)
+09-05 13:23:18.280  1443  1935 W ModernMediaScanner: 	at java.nio.file.Files.walkFileTree(Files.java:2670)
+09-05 13:23:18.280  1443  1935 W ModernMediaScanner: 	at java.nio.file.Files.walkFileTree(Files.java:2742)
+09-05 13:23:18.280  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.walkFileTree(ModernMediaScanner.java:454)
+09-05 13:23:18.280  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.runInternal(ModernMediaScanner.java:417)
+09-05 13:23:18.280  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.run(ModernMediaScanner.java:406)
+09-05 13:23:18.280  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner.scanDirectory(ModernMediaScanner.java:252)
+09-05 13:23:18.280  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.scanDirectory(MediaProvider.java:1939)
+09-05 13:23:18.280  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.MediaService.onScanVolume(MediaService.java:204)
+09-05 13:23:18.280  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.MediaService.onScanVolume(MediaService.java:172)
+09-05 13:23:18.280  1443  1935 W ModernMediaScanner: 	at com.android.providers.media.MediaService.onHandleWork(MediaService.java:95)
+09-05 13:23:18.280  1443  1935 W ModernMediaScanner: 	at androidx.core.app.JobIntentService$CommandProcessor.doInBackground(JobIntentService.java:396)
+09-05 13:23:18.280  1443  1935 W ModernMediaScanner: 	at androidx.core.app.JobIntentService$CommandProcessor.doInBackground(JobIntentService.java:387)
+09-05 13:23:18.280  1443  1935 W ModernMediaScanner: 	at android.os.AsyncTask$3.call(AsyncTask.java:394)
+09-05 13:23:18.280  1443  1935 W ModernMediaScanner: 	at java.util.concurrent.FutureTask.run(FutureTask.java:264)
+09-05 13:23:18.280  1443  1935 W ModernMediaScanner: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+09-05 13:23:18.280  1443  1935 W ModernMediaScanner: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:644)
+09-05 13:23:18.280  1443  1935 W ModernMediaScanner: 	at java.lang.Thread.run(Thread.java:1012)
+09-05 13:23:18.452   977   977 D AvrcpBrowsablePlayerConnector: Received a message: msg.what=2
+09-05 13:23:18.452   977   977 V AvrcpBrowsablePlayerConnector: Timed out waiting for players
+09-05 13:23:18.452   977   977 I AvrcpBrowsablePlayerConnector: Successfully connected to 0 browsable players.
+09-05 13:23:18.453   977   977 I MediaPlayerList: init: Browsable Player list size is 0
+09-05 13:23:18.723   505   578 D CompatibilityChangeReporter: Compat change id reported: 265195908; UID 10064; state: ENABLED
+09-05 13:23:18.920  1443  1935 I MediaProvider: Scanned internal due to REASON_MOUNTED, found 225 items in 5695ms, 221 inserts 4 updates 0 deletes
+09-05 13:23:18.953   505  1760 D CompatibilityChangeReporter: Compat change id reported: 182734110; UID 1000; state: ENABLED
+09-05 13:23:18.969  1443  1935 W MediaProvider: Didn't find any volume for getVolume(/product/media/audio/ringtones/Ring_Synth_04.ogg)
+09-05 13:23:18.971  1443  1935 I MediaProvider: Open with lower FS for /product/media/audio/ringtones/Ring_Synth_04.ogg. Uid: 10126
+09-05 13:23:19.000  1443  1935 W MediaProvider: Didn't find any volume for getVolume(/product/media/audio/notifications/pixiedust.ogg)
+09-05 13:23:19.002  1443  1935 I MediaProvider: Open with lower FS for /product/media/audio/notifications/pixiedust.ogg. Uid: 10126
+09-05 13:23:19.016  1443  1935 W MediaProvider: Didn't find any volume for getVolume(/product/media/audio/alarms/Alarm_Classic.ogg)
+09-05 13:23:19.017  1443  1935 I MediaProvider: Open with lower FS for /product/media/audio/alarms/Alarm_Classic.ogg. Uid: 10126
+09-05 13:23:19.029  1443  1935 W MediaProvider: isAppCloneUserPair for user 0: false
+09-05 13:23:19.032  1443  1935 W MediaProvider: isAppCloneUserPair for user 0: false
+09-05 13:23:19.039  1443  1619 E StorageManager: Failed to set extended attributes for /storage/emulated/0/Android to set project id.: Operation not permitted
+09-05 13:23:19.040  1443  1935 W MediaProvider: isAppCloneUserPair for user 0: false
+09-05 13:23:19.041  1443  1619 W MediaProvider: Failed to update quota type for /storage/emulated/0/Android
+09-05 13:23:19.041  1443  1619 W MediaProvider: java.io.IOException: Failed to update quota type for /storage/emulated/0/Android
+09-05 13:23:19.041  1443  1619 W MediaProvider: 	at android.os.storage.StorageManager.updateExternalStorageFileQuotaType(StorageManager.java:2551)
+09-05 13:23:19.041  1443  1619 W MediaProvider: 	at com.android.providers.media.MediaProvider.updateQuotaTypeForFileInternal(MediaProvider.java:882)
+09-05 13:23:19.041  1443  1619 W MediaProvider: 	at com.android.providers.media.MediaProvider.updateQuotaTypeForUri(MediaProvider.java:857)
+09-05 13:23:19.041  1443  1619 W MediaProvider: 	at com.android.providers.media.MediaProvider.-$$Nest$mupdateQuotaTypeForUri(MediaProvider.java:0)
+09-05 13:23:19.041  1443  1619 W MediaProvider: 	at com.android.providers.media.MediaProvider$5.lambda$onInsert$0(MediaProvider.java:916)
+09-05 13:23:19.041  1443  1619 W MediaProvider: 	at com.android.providers.media.MediaProvider$5.$r8$lambda$fpXVCCb4tNgN0rBFXazZWCUznbc(MediaProvider.java:0)
+09-05 13:23:19.041  1443  1619 W MediaProvider: 	at com.android.providers.media.MediaProvider$5$$ExternalSyntheticLambda1.run(R8$$SyntheticClass:0)
+09-05 13:23:19.041  1443  1619 W MediaProvider: 	at android.os.Handler.handleCallback(Handler.java:958)
+09-05 13:23:19.041  1443  1619 W MediaProvider: 	at android.os.Handler.dispatchMessage(Handler.java:99)
+09-05 13:23:19.041  1443  1619 W MediaProvider: 	at android.os.Looper.loopOnce(Looper.java:205)
+09-05 13:23:19.041  1443  1619 W MediaProvider: 	at android.os.Looper.loop(Looper.java:294)
+09-05 13:23:19.041  1443  1619 W MediaProvider: 	at android.os.HandlerThread.run(HandlerThread.java:67)
+09-05 13:23:19.045  1443  1619 E StorageManager: Failed to set extended attributes for /storage/emulated/0/Android/media to set project id.: Operation not permitted
+09-05 13:23:19.045  1443  1619 W MediaProvider: Failed to update quota type for /storage/emulated/0/Android/media
+09-05 13:23:19.045  1443  1619 W MediaProvider: java.io.IOException: Failed to update quota type for /storage/emulated/0/Android/media
+09-05 13:23:19.045  1443  1619 W MediaProvider: 	at android.os.storage.StorageManager.updateExternalStorageFileQuotaType(StorageManager.java:2551)
+09-05 13:23:19.045  1443  1619 W MediaProvider: 	at com.android.providers.media.MediaProvider.updateQuotaTypeForFileInternal(MediaProvider.java:882)
+09-05 13:23:19.045  1443  1619 W MediaProvider: 	at com.android.providers.media.MediaProvider.updateQuotaTypeForUri(MediaProvider.java:857)
+09-05 13:23:19.045  1443  1619 W MediaProvider: 	at com.android.providers.media.MediaProvider.-$$Nest$mupdateQuotaTypeForUri(MediaProvider.java:0)
+09-05 13:23:19.045  1443  1619 W MediaProvider: 	at com.android.providers.media.MediaProvider$5.lambda$onInsert$0(MediaProvider.java:916)
+09-05 13:23:19.045  1443  1619 W MediaProvider: 	at com.android.providers.media.MediaProvider$5.$r8$lambda$fpXVCCb4tNgN0rBFXazZWCUznbc(MediaProvider.java:0)
+09-05 13:23:19.045  1443  1619 W MediaProvider: 	at com.android.providers.media.MediaProvider$5$$ExternalSyntheticLambda1.run(R8$$SyntheticClass:0)
+09-05 13:23:19.045  1443  1619 W MediaProvider: 	at android.os.Handler.handleCallback(Handler.java:958)
+09-05 13:23:19.045  1443  1619 W MediaProvider: 	at android.os.Handler.dispatchMessage(Handler.java:99)
+09-05 13:23:19.045  1443  1619 W MediaProvider: 	at android.os.Looper.loopOnce(Looper.java:205)
+09-05 13:23:19.045  1443  1619 W MediaProvider: 	at android.os.Looper.loop(Looper.java:294)
+09-05 13:23:19.045  1443  1619 W MediaProvider: 	at android.os.HandlerThread.run(HandlerThread.java:67)
+09-05 13:23:19.065  1443  1935 I MediaProvider: Scanned external_primary due to REASON_MOUNTED, found 15 items in 41ms, 3 inserts 0 updates 0 deletes
+09-05 13:23:19.066  1443  1935 I MediaProvider: End Intent { act=com.android.providers.media.action.SCAN_VOLUME (has extras) }
+09-05 13:23:19.069  1443  1935 I MediaProvider: Begin Intent { act=android.intent.action.MEDIA_MOUNTED dat=file:///... flg=0x5000010 cmp=com.android.providers.media.module/com.android.providers.media.MediaService (has extras) }
+09-05 13:23:19.070  1443  1935 I MediaProvider: Volume MediaVolume name: [external_primary] id: [emulated;0] user: [UserHandle{0}] path: [/storage/emulated/0] externallyManaged: [false] mPublicVolume: [false] already attached
+09-05 13:23:19.070  1443  1935 I MediaProvider: End Intent { act=android.intent.action.MEDIA_MOUNTED dat=file:///... flg=0x5000010 cmp=com.android.providers.media.module/com.android.providers.media.MediaService (has extras) }
+09-05 13:23:19.212   505   587 D ActivityManager: freezing 1469 com.android.music
+09-05 13:23:19.462   505   587 D ActivityManager: freezing 1484 com.android.sdksetup
+09-05 13:23:19.526   955  1157 D DhcpClient: Received packet: 02:15:b2:00:00:00 OFFER, ip /10.0.2.16, mask /255.255.255.0, DNS servers: /10.0.2.3 , gateways [/10.0.2.2], lease time 86400, domain null
+09-05 13:23:19.527   955  1157 D DhcpClient: Received packet: 02:15:b2:00:00:00 ACK: your new IP /10.0.2.16, netmask /255.255.255.0, gateways [/10.0.2.2] DNS servers: /10.0.2.3 , lease time 86400
+09-05 13:23:21.582  1483  1483 D CompatibilityChangeReporter: Compat change id reported: 150939131; UID 10072; state: ENABLED
+09-05 13:23:21.582  1483  1483 I ProvidersCache: Updating roots due to change on user 0at content://com.android.externalstorage.documents
+09-05 13:23:21.643   157   921 I keystore2: system/security/keystore2/src/watchdog.rs:319 - Watchdog thread idle -> terminating. Have a great day.
+09-05 13:23:21.872   505   587 D ActivityManager: freezing 1759 com.android.quicksearchbox
+09-05 13:23:22.495  1483  1483 I ProvidersCache: Updating roots due to change on user 0at content://com.android.externalstorage.documents
+09-05 13:23:22.568  1483  1483 I ProvidersCache: Updating roots due to change on user 0at content://com.android.externalstorage.documents
+09-05 13:23:22.572   798   798 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+09-05 13:23:22.599  1483  1483 I ProvidersCache: Updating roots due to change on user 0at content://com.android.providers.media.documents/root
+09-05 13:23:22.615   388   394 W GpuWork : Failed to attach bpf program to power/gpu_work_period tracepoint [2(No such file or directory)]
+09-05 13:23:22.691  1483  1483 I ProvidersCache: Updating roots due to change on user 0at content://com.android.externalstorage.documents
+09-05 13:23:22.778   505   587 D ActivityManager: freezing 1218 com.android.cellbroadcastreceiver
+09-05 13:23:23.057  1483  1483 I ProvidersCache: Updating roots due to change on user 0at content://com.android.externalstorage.documents
+09-05 13:23:23.069  1483  1483 I ProvidersCache: Updating roots due to change on user 0at content://com.android.externalstorage.documents
+09-05 13:23:23.219   505   587 D ActivityManager: freezing 1324 com.android.carrierconfig
+09-05 13:23:23.338   505   587 D ActivityManager: freezing 1602 com.android.printspooler
+09-05 13:23:23.678  1001  1001 D CarrierSvcBindHelper: onPackageModified: com.android.statementservice
+09-05 13:23:23.678  1001  1001 D CarrierSvcBindHelper: No carrier app for: 0
+09-05 13:23:23.687   505   600 I InputReader: Reconfiguring input devices, changes=KEYBOARD_LAYOUTS
+09-05 13:23:23.693   977   977 V MediaPlayerList: mPackageChangedBroadcastReceiver: action: android.intent.action.PACKAGE_CHANGED
+09-05 13:23:23.694   977   977 V MediaPlayerList: mPackageChangedBroadcastReceiver: action: android.intent.action.PACKAGE_CHANGED
+09-05 13:23:23.699   798   798 D ControlsListingControllerImpl: ServiceConfig reloaded, count: 0
+09-05 13:23:23.700   802  2145 I PermissionControllerServiceImpl: Updating user sensitive for uid 10057
+09-05 13:23:23.714  1001  1262 D ImsResolver: maybeAddedImsService, packageName: com.android.statementservice
+09-05 13:23:23.715   505   531 W VoiceInteractionManager: no available voice recognition services found for user 0
+09-05 13:23:23.719   798   852 D StylusManager: Stylus InputDevice changed: 14 virtio_input_multi_touch_11
+09-05 13:23:23.722   798   852 D StylusManager: Stylus InputDevice changed: 12 virtio_input_multi_touch_9
+09-05 13:23:23.722   798   852 D StylusManager: Stylus InputDevice changed: 9 virtio_input_multi_touch_6
+09-05 13:23:23.722   798   852 D StylusManager: Stylus InputDevice changed: 13 virtio_input_multi_touch_10
+09-05 13:23:23.723   798   852 D StylusManager: Stylus InputDevice changed: 11 virtio_input_multi_touch_8
+09-05 13:23:23.723   798   852 D StylusManager: Stylus InputDevice changed: 10 virtio_input_multi_touch_7
+09-05 13:23:23.723   798   852 D StylusManager: Stylus InputDevice changed: 8 virtio_input_multi_touch_5
+09-05 13:23:23.723   798   852 D StylusManager: Stylus InputDevice changed: 6 virtio_input_multi_touch_3
+09-05 13:23:23.724   798   852 D StylusManager: Stylus InputDevice changed: 5 virtio_input_multi_touch_2
+09-05 13:23:23.724   798   852 D StylusManager: Stylus InputDevice changed: 4 virtio_input_multi_touch_1
+09-05 13:23:23.724   798   852 D StylusManager: Stylus InputDevice changed: 7 virtio_input_multi_touch_4
+09-05 13:23:23.736  1045  1057 W droid.launcher3: Cleared Reference was only reachable from finalizer (only reported once)
+09-05 13:23:24.360     0     0 I init    : Sending signal 9 to service 'idmap2d' (pid 443) process group...
+09-05 13:23:24.198   505   564 W OverlayManager: service 'idmap' died
+09-05 13:23:24.373     0     0 I libprocessgroup: Successfully killed process cgroup uid 1000 pid 443 in 11ms
+09-05 13:23:24.376     0     0 I init    : Control message: Processed ctl.stop for 'idmap2d' from pid: 505 (system_server)
+09-05 13:23:24.377     0     0 I init    : Service 'idmap2d' (pid 443) received signal 9
+09-05 13:23:24.877   505   524 I DropBoxManagerService: add tag=system_app_strictmode isTagEnabled=true flags=0x2
+09-05 13:23:25.650   782   782 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+09-05 13:23:26.028   505   587 D ActivityManager: freezing 1894 com.android.carrierdefaultapp
+09-05 13:23:26.700  1005  1019 W ndroid.settings: Cleared Reference was only reachable from finalizer (only reported once)
+09-05 13:23:27.534   798   798 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+09-05 13:23:27.649   505   587 D ActivityManager: freezing 1826 com.android.externalstorage
+09-05 13:23:27.850   505   578 D OomAdjuster: Not killing cached processes
+09-05 13:23:27.851   505   578 D ActivityManager: sync unfroze 1826 com.android.externalstorage for 10
+09-05 13:23:28.206   505   519 D WifiNl80211Manager: Scan result ready event
+09-05 13:23:28.207   505   519 D WifiNative: Scan result ready event
+09-05 13:23:28.295   505   767 I SdkSandboxManager: Reconciling sdk data package directories for 0
+09-05 13:23:29.025  1483  1483 I ProvidersCache: Updating roots due to change on user 0at content://com.android.providers.media.documents/root
+09-05 13:23:32.892   505   578 D OomAdjuster: Not killing cached processes
+09-05 13:23:33.686  1359  1386 W putmethod.latin: Cleared Reference was only reachable from finalizer (only reported once)
+09-05 13:23:34.595   798   798 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+09-05 13:23:35.636   782   782 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+09-05 13:23:37.546   798   798 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+09-05 13:23:37.608   798   798 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+09-05 13:23:39.087   505   587 D ActivityManager: freezing 1483 com.android.documentsui
+09-05 13:23:39.088   505   587 D ActivityManager: freezing 1826 com.android.externalstorage
+09-05 13:23:39.100   505   785 D OomAdjuster: Not killing cached processes
+09-05 13:23:40.620   798   798 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+09-05 13:23:41.632  1005  1005 D BatteryUsageBroadcastReceiver: onReceive:android.intent.action.BATTERY_LEVEL_CHANGED
+09-05 13:23:41.634  1005  1005 D BatteryUsageBroadcastReceiver: fetch data because of event: ACTION_BATTERY_LEVEL_CHANGED
+09-05 13:23:41.637   505  1186 D CompatibilityChangeReporter: Compat change id reported: 161145287; UID 1000; state: ENABLED
+09-05 13:23:41.638  1005  1005 D BatteryUsageBroadcastReceiver: cancel sendBroadcastToFetchUsageData when broadcastDelay is 2339987ms.
+09-05 13:23:42.439   505   587 D ActivityManager: freezing 1873 com.android.traceur
+09-05 13:23:42.545   505   587 D ActivityManager: freezing 1165 com.android.cellbroadcastreceiver.module
+09-05 13:23:42.641   505   587 D ActivityManager: freezing 1562 com.android.imsserviceentitlement
+09-05 13:23:42.724   505   587 D ActivityManager: freezing 1634 com.android.messaging
+09-05 13:23:42.787   505   587 D ActivityManager: freezing 1938 com.android.camera2
+09-05 13:23:42.828   505   587 D ActivityManager: freezing 1913 com.android.calendar
+09-05 13:23:42.893   505   587 D ActivityManager: freezing 1954 com.android.contacts
+09-05 13:23:43.014   505   587 D ActivityManager: freezing 1784 com.android.providers.calendar
+09-05 13:23:43.062   505   587 D ActivityManager: freezing 2017 com.android.dynsystem:dynsystem
+09-05 13:23:43.064   505   587 D ActivityManager: freezing 1978 com.android.dynsystem
+09-05 13:23:43.064   505   587 D ActivityManager: freezing 1855 com.android.localtransport
+09-05 13:23:43.064   505   587 D ActivityManager: freezing 1620 com.android.keychain
+09-05 13:23:43.380   505   587 D ActivityManager: freezing 2064 com.android.rkpdapp
+09-05 13:23:43.526   505   587 D ActivityManager: freezing 2101 com.android.statementservice
+09-05 13:23:43.575   782   782 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+09-05 13:23:45.929  1485  1530 D StrictMode: StrictMode policy violation: android.os.strictmode.SqliteObjectLeakedViolation: Finalizing a Cursor that has not been deactivated or closed. database = /data/user/0/com.android.providers.contacts/databases/contacts2.db, table = raw_contacts, query = SELECT contacts_view._id AS _id, contacts_view.display_name AS display_name, contacts_view.photo_thumb_uri AS photo_thumb_uri, data1 AS number, data2 AS type, data3 AS label, contacts_view.lookup AS lookup FROM raw_contacts JOIN view_contacts as contacts_view ON (contacts_view._id = raw_contacts.contact_id) JOIN (SELECT data_id,normalized_number FROM phone_lookup WHERE (phone_lookup.min_match = '7654321')) AS lookup ON lookup.data_id=data._id JOIN data ON data.raw_contact_id=raw_contacts._id WHERE (PHONE_NUMBERS_EQUAL(data.data1, '+15551234567', 0, 7)) ORDER BY  length(lookup.normalized_number) DESC
+09-05 13:23:45.929  1485  1530 D StrictMode: 	at android.os.StrictMode.onSqliteObjectLeaked(StrictMode.java:2222)
+09-05 13:23:45.929  1485  1530 D StrictMode: 	at android.database.sqlite.SQLiteCursor.finalize(SQLiteCursor.java:282)
+09-05 13:23:45.929  1485  1530 D StrictMode: 	at java.lang.Daemons$FinalizerDaemon.doFinalize(Daemons.java:339)
+09-05 13:23:45.929  1485  1530 D StrictMode: 	at java.lang.Daemons$FinalizerDaemon.processReference(Daemons.java:324)
+09-05 13:23:45.929  1485  1530 D StrictMode: 	at java.lang.Daemons$FinalizerDaemon.runInternal(Daemons.java:300)
+09-05 13:23:45.929  1485  1530 D StrictMode: 	at java.lang.Daemons$Daemon.run(Daemons.java:145)
+09-05 13:23:45.929  1485  1530 D StrictMode: 	at java.lang.Thread.run(Thread.java:1012)
+09-05 13:23:45.931  1485  1530 D StrictMode: StrictMode policy violation: android.os.strictmode.LeakedClosableViolation: A resource was acquired at attached stack trace but never released. See java.io.Closeable for information on avoiding resource leaks.
+09-05 13:23:45.931  1485  1530 D StrictMode: 	at android.os.StrictMode$AndroidCloseGuardReporter.report(StrictMode.java:1994)
+09-05 13:23:45.931  1485  1530 D StrictMode: 	at dalvik.system.CloseGuard.warnIfOpen(CloseGuard.java:336)
+09-05 13:23:45.931  1485  1530 D StrictMode: 	at android.database.AbstractCursor.finalize(AbstractCursor.java:531)
+09-05 13:23:45.931  1485  1530 D StrictMode: 	at android.database.sqlite.SQLiteCursor.finalize(SQLiteCursor.java:291)
+09-05 13:23:45.931  1485  1530 D StrictMode: 	at java.lang.Daemons$FinalizerDaemon.doFinalize(Daemons.java:339)
+09-05 13:23:45.931  1485  1530 D StrictMode: 	at java.lang.Daemons$FinalizerDaemon.processReference(Daemons.java:324)
+09-05 13:23:45.931  1485  1530 D StrictMode: 	at java.lang.Daemons$FinalizerDaemon.runInternal(Daemons.java:300)
+09-05 13:23:45.931  1485  1530 D StrictMode: 	at java.lang.Daemons$Daemon.run(Daemons.java:145)
+09-05 13:23:45.931  1485  1530 D StrictMode: 	at java.lang.Thread.run(Thread.java:1012)
+09-05 13:23:45.931  1485  1530 D StrictMode: Caused by: java.lang.Throwable: Explicit termination method 'AbstractCursor.close' not called
+09-05 13:23:45.931  1485  1530 D StrictMode: 	at dalvik.system.CloseGuard.openWithCallSite(CloseGuard.java:288)
+09-05 13:23:45.931  1485  1530 D StrictMode: 	at dalvik.system.CloseGuard.open(CloseGuard.java:257)
+09-05 13:23:45.931  1485  1530 D StrictMode: 	at android.database.AbstractCursor.<init>(AbstractCursor.java:227)
+09-05 13:23:45.931  1485  1530 D StrictMode: 	at android.database.AbstractWindowedCursor.<init>(AbstractWindowedCursor.java:39)
+09-05 13:23:45.931  1485  1530 D StrictMode: 	at android.database.sqlite.SQLiteCursor.<init>(SQLiteCursor.java:98)
+09-05 13:23:45.931  1485  1530 D StrictMode: 	at android.database.sqlite.SQLiteDirectCursorDriver.query(SQLiteDirectCursorDriver.java:52)
+09-05 13:23:45.931  1485  1530 D StrictMode: 	at android.database.sqlite.SQLiteDatabase.rawQueryWithFactory(SQLiteDatabase.java:1714)
+09-05 13:23:45.931  1485  1530 D StrictMode: 	at android.database.sqlite.SQLiteQueryBuilder.query(SQLiteQueryBuilder.java:592)
+09-05 13:23:45.931  1485  1530 D StrictMode: 	at com.android.providers.contacts.ContactsProvider2.doQuery(ContactsProvider2.java:7543)
+09-05 13:23:45.931  1485  1530 D StrictMode: 	at com.android.providers.contacts.ContactsProvider2.queryLocal(ContactsProvider2.java:7249)
+09-05 13:23:45.931  1485  1530 D StrictMode: 	at com.android.providers.contacts.ContactsProvider2.queryCorpLookupIfNecessary(ContactsProvider2.java:7728)
+09-05 13:23:45.931  1485  1530 D StrictMode: 	at com.android.providers.contacts.ContactsProvider2.queryLookupEnterprise(ContactsProvider2.java:7867)
+09-05 13:23:45.931  1485  1530 D StrictMode: 	at com.android.providers.contacts.ContactsProvider2.queryPhoneLookupEnterprise(ContactsProvider2.java:7838)
+09-05 13:23:45.931  1485  1530 D StrictMode: 	at com.android.providers.contacts.ContactsProvider2.queryLocal(ContactsProvider2.java:7172)
+09-05 13:23:45.931  1485  1530 D StrictMode: 	at com.android.providers.contacts.ContactsProvider2.queryDirectoryIfNecessary(ContactsProvider2.java:5883)
+09-05 13:23:45.931  1485  1530 D StrictMode: 	at com.android.providers.contacts.ContactsProvider2.queryInternal(ContactsProvider2.java:5728)
+09-05 13:23:45.931  1485  1530 D StrictMode: 	at com.android.providers.contacts.ContactsProvider2.query(ContactsProvider2.java:5673)
+09-05 13:23:45.931  1485  1530 D StrictMode: 	at android.content.ContentProvider.query(ContentProvider.java:1692)
+09-05 13:23:45.931  1485  1530 D StrictMode: 	at android.content.ContentProvider$Transport.query(ContentProvider.java:292)
+09-05 13:23:45.931  1485  1530 D StrictMode: 	at android.content.ContentProviderNative.onTransact(ContentProviderNative.java:107)
+09-05 13:23:45.931  1485  1530 D StrictMode: 	at android.os.Binder.execTransactInternal(Binder.java:1344)
+09-05 13:23:45.931  1485  1530 D StrictMode: 	at android.os.Binder.execTransact(Binder.java:1275)
+09-05 13:23:46.631   798   798 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+09-05 13:23:47.534   798   798 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+09-05 13:23:48.210   505  2156 D WifiNl80211Manager: Scan result ready event
+09-05 13:23:48.210   505  2156 D WifiNative: Scan result ready event
+09-05 13:23:49.138   505   587 D ActivityManager: freezing 802 com.android.permissioncontroller
+09-05 13:23:49.638   798   798 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+09-05 13:23:51.558   505   720 E WifiHealthMonitor:  Hit PackageManager exception
+09-05 13:23:51.558   505   720 E WifiHealthMonitor: android.content.pm.PackageManager$NameNotFoundException: No module info for package: com.android.wifi
+09-05 13:23:51.558   505   720 E WifiHealthMonitor: 	at android.app.ApplicationPackageManager.getModuleInfo(ApplicationPackageManager.java:1190)
+09-05 13:23:51.558   505   720 E WifiHealthMonitor: 	at com.android.server.wifi.WifiHealthMonitor.getWifiStackVersion(WifiHealthMonitor.java:367)
+09-05 13:23:51.558   505   720 E WifiHealthMonitor: 	at com.android.server.wifi.WifiHealthMonitor.extractCurrentSoftwareBuildInfo(WifiHealthMonitor.java:588)
+09-05 13:23:51.558   505   720 E WifiHealthMonitor: 	at com.android.server.wifi.WifiHealthMonitor.postBootSwBuildCheck(WifiHealthMonitor.java:523)
+09-05 13:23:51.558   505   720 E WifiHealthMonitor: 	at com.android.server.wifi.WifiHealthMonitor.postBootDetectionHandler(WifiHealthMonitor.java:514)
+09-05 13:23:51.558   505   720 E WifiHealthMonitor: 	at com.android.server.wifi.WifiHealthMonitor.-$$Nest$mpostBootDetectionHandler(WifiHealthMonitor.java:0)
+09-05 13:23:51.558   505   720 E WifiHealthMonitor: 	at com.android.server.wifi.WifiHealthMonitor$2.onAlarm(WifiHealthMonitor.java:190)
+09-05 13:23:51.558   505   720 E WifiHealthMonitor: 	at android.app.AlarmManager$ListenerWrapper.run(AlarmManager.java:375)
+09-05 13:23:51.558   505   720 E WifiHealthMonitor: 	at android.os.Handler.handleCallback(Handler.java:958)
+09-05 13:23:51.558   505   720 E WifiHealthMonitor: 	at android.os.Handler.dispatchMessage(Handler.java:99)
+09-05 13:23:51.558   505   720 E WifiHealthMonitor: 	at com.android.server.wifi.RunnerHandler.dispatchMessage(RunnerHandler.java:122)
+09-05 13:23:51.558   505   720 E WifiHealthMonitor: 	at android.os.Looper.loopOnce(Looper.java:205)
+09-05 13:23:51.558   505   720 E WifiHealthMonitor: 	at android.os.Looper.loop(Looper.java:294)
+09-05 13:23:51.558   505   720 E WifiHealthMonitor: 	at android.os.HandlerThread.run(HandlerThread.java:67)
+09-05 13:23:51.657   505   587 D ActivityManager: freezing 1005 com.android.settings
+09-05 13:23:52.349     0     0 W healthd : battery l=100 v=5000 t=25.0 h=2 st=2 c=900000 fc=3000000 cc=10 chg=a
+09-05 13:23:52.649   798   798 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+09-05 13:23:55.602   782   782 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+09-05 13:23:55.654   798   798 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+09-05 13:23:57.535   798   798 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+09-05 13:23:57.548   798   859 D EGL_emulation: app_time_stats: avg=42104.52ms min=42104.52ms max=42104.52ms count=1
+09-05 13:24:00.021   798   859 D EGL_emulation: app_time_stats: avg=2472.84ms min=2472.84ms max=2472.84ms count=1
+09-05 13:24:03.143   505   778 D ActivityManager: sync unfroze 802 com.android.permissioncontroller for 6
+09-05 13:24:03.143   505   778 D OomAdjuster: Not killing cached processes
+09-05 13:24:03.147   802  2273 I PermissionControllerServiceImpl: Updating user sensitive for user 0
+09-05 13:24:03.538   782   782 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+09-05 13:24:07.535   798   798 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+09-05 13:24:09.309   505  2268 W BatteryExternalStatsWorker: error reading Bluetooth stats: 11
+09-05 13:24:11.482   782   782 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+09-05 13:24:13.199   505   778 D OomAdjuster: Not killing cached processes
+09-05 13:24:17.534   798   798 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+09-05 13:24:19.666   782   782 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+09-05 13:24:19.691   798   798 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+09-05 13:24:22.696   798   798 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+09-05 13:24:23.251   505   587 D ActivityManager: freezing 802 com.android.permissioncontroller
+09-05 13:24:25.703   798   798 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+09-05 13:24:27.546   798   798 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+09-05 13:24:27.552   798   859 D EGL_emulation: app_time_stats: avg=27530.91ms min=27530.91ms max=27530.91ms count=1
+09-05 13:24:27.603   782   782 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+09-05 13:24:28.232   505  2268 D WifiNl80211Manager: Scan result ready event
+09-05 13:24:28.232   505  2268 D WifiNative: Scan result ready event
+09-05 13:24:28.720   798   798 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+09-05 13:24:29.110   325  2125 W resolv  : SSL_connect ssl error =5, mark 0xf0064: Connection refused
+09-05 13:24:29.110   325  2125 W resolv  : TLS Handshake failed
+09-05 13:24:29.110   325  2125 W resolv  : query failed
+09-05 13:24:29.110   325  2125 W resolv  : validateDnsTlsServer returned 0 for 10.0.2.3
+09-05 13:24:29.110   325  2125 W resolv  : Validation failed
+09-05 13:24:31.724   798   798 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+09-05 13:24:34.747   798   798 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+09-05 13:24:35.538   782   782 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+09-05 13:24:37.548   798   798 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+09-05 13:24:43.475   782   782 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+09-05 13:24:47.553   798   798 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+09-05 13:24:51.670   782   782 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+09-05 13:24:52.351     0     0 W healthd : battery l=100 v=5000 t=25.0 h=2 st=2 c=900000 fc=3000000 cc=10 chg=a
+09-05 13:24:57.555   798   798 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+09-05 13:24:59.602   782   782 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+09-05 13:25:00.077   798   859 D EGL_emulation: app_time_stats: avg=32524.63ms min=32524.63ms max=32524.63ms count=1
+09-05 13:25:07.543   782   782 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+09-05 13:25:07.552   798   798 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+09-05 13:25:15.475   782   782 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+09-05 13:25:17.556   798   798 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+09-05 13:25:23.666   782   782 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+09-05 13:25:27.556   798   798 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+09-05 13:25:28.892   798   798 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+09-05 13:25:31.604   782   782 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+09-05 13:25:31.905   798   798 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+09-05 13:25:37.562   798   798 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+09-05 13:25:39.538   782   782 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+09-05 13:25:47.474   782   782 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+09-05 13:25:47.554   798   798 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+09-05 13:25:48.218   505  2156 D WifiNl80211Manager: Scan result ready event
+09-05 13:25:48.218   505  2156 D WifiNative: Scan result ready event
+09-05 13:25:52.347     0     0 W healthd : battery l=100 v=5000 t=25.0 h=2 st=2 c=900000 fc=3000000 cc=10 chg=a
+09-05 13:25:55.666   782   782 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+09-05 13:25:57.554   798   798 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+09-05 13:26:00.039   798   859 D EGL_emulation: app_time_stats: avg=59961.96ms min=59961.96ms max=59961.96ms count=1
+09-05 13:26:03.602   782   782 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+09-05 13:26:07.570   798   798 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+09-05 13:26:07.592   798   859 D EGL_emulation: app_time_stats: avg=7552.66ms min=7552.66ms max=7552.66ms count=1
+09-05 13:26:11.539   782   782 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+09-05 13:26:17.566   798   798 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+09-05 13:26:19.477   782   782 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+09-05 13:26:27.567   798   798 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+09-05 13:26:27.667   782   782 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+09-05 13:26:35.604   782   782 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+09-05 13:26:37.568   798   798 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+09-05 13:26:37.587   798   859 D EGL_emulation: app_time_stats: avg=29991.49ms min=29991.49ms max=29991.49ms count=1
+09-05 13:26:43.539   782   782 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+09-05 13:26:47.566   798   798 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+09-05 13:26:51.474   782   782 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+09-05 13:26:52.348     0     0 W healthd : battery l=100 v=5000 t=25.0 h=2 st=2 c=900000 fc=3000000 cc=10 chg=a
+09-05 13:26:57.576   798   798 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+09-05 13:26:59.668   782   782 I wpa_supplicant: wlan0: CTRL-EVENT-BEACON-LOSS 
+09-05 13:27:00.043   798   859 D EGL_emulation: app_time_stats: avg=22455.99ms min=22455.99ms max=22455.99ms count=1
+09-05 13:27:01.297     0     0 I logd    : logdr: UID=2000 GID=2000 PID=2274 n tail=0 logMask=99 pid=0 start=0ns deadline=0ns
+09-05 13:27:01.529     0     0 I logd    : logdr: UID=2000 GID=2000 PID=2277 n tail=0 logMask=99 pid=0 start=0ns deadline=0ns
