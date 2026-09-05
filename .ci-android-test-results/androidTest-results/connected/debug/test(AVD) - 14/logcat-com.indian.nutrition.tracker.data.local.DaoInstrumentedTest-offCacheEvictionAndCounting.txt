@@ -1,0 +1,2 @@
+09-05 12:20:59.785  2351  2370 I TestRunner: started: offCacheEvictionAndCounting(com.indian.nutrition.tracker.data.local.DaoInstrumentedTest)
+09-05 12:20:59.808  2351  2370 I TestRunner: finished: offCacheEvictionAndCounting(com.indian.nutrition.tracker.data.local.DaoInstrumentedTest)

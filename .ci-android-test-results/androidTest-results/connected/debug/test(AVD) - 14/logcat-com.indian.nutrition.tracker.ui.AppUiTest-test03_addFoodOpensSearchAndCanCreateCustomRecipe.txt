@@ -1,0 +1,838 @@
+09-05 12:21:02.509  2351  2370 I TestRunner: started: test03_addFoodOpensSearchAndCanCreateCustomRecipe(com.indian.nutrition.tracker.ui.AppUiTest)
+09-05 12:21:02.512  2392  2392 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=falsecallback=android.view.ViewRootImpl$$ExternalSyntheticLambda17@f0dd2a3
+09-05 12:21:02.513   793   844 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=falsecallback=android.view.ViewRootImpl$$ExternalSyntheticLambda17@d8f19d4
+09-05 12:21:02.514   504  1045 W InputManager-JNI: Input channel object 'f2be14e Splash Screen com.indian.nutrition.tracker.test (client)' was disposed without first being removed with the input manager!
+09-05 12:21:02.514   504   572 W InputManager-JNI: Input channel object 'd5ecc26 com.indian.nutrition.tracker.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity (client)' was disposed without first being removed with the input manager!
+09-05 12:21:02.515  2351  2370 D IdlingRegistry: Registering idling resources: [androidx.compose.ui.test.EspressoLink@ffc6b24]
+09-05 12:21:02.518  2351  2370 W Settings: Setting always_finish_activities has moved from android.provider.Settings.System to android.provider.Settings.Global, returning read-only value.
+09-05 12:21:02.526   793   845 D SplashScreenView: Build android.window.SplashScreenView{18736a3 V.E...... ......ID 0,0-0,0}
+09-05 12:21:02.526   793   845 D SplashScreenView: Icon: view: null drawable: null size: 0
+09-05 12:21:02.526   793   845 D SplashScreenView: Branding: view: android.view.View{e4a1da0 G.ED..... ......I. 0,0-0,0 #10204ef android:id/splashscreen_branding_view} drawable: null size w: 0 h: 0
+09-05 12:21:02.533  2351  2351 D LifecycleMonitor: Lifecycle status change: com.indian.nutrition.tracker.MainActivity@54006a8 in: PRE_ON_CREATE
+09-05 12:21:02.533  2351  2351 V ActivityScenario: Activity lifecycle changed event received but ignored because the reported transition was not ON_CREATE while the last known transition was PRE_ON_CREATE
+09-05 12:21:02.540  2351  2351 D LifecycleMonitor: Lifecycle status change: com.indian.nutrition.tracker.MainActivity@54006a8 in: CREATED
+09-05 12:21:02.540  2351  2351 V ActivityScenario: Update currentActivityStage to CREATED, currentActivity=com.indian.nutrition.tracker.MainActivity@54006a8
+09-05 12:21:02.541  2351  2351 D LifecycleMonitor: Lifecycle status change: com.indian.nutrition.tracker.MainActivity@54006a8 in: STARTED
+09-05 12:21:02.541  2351  2351 V ActivityScenario: Update currentActivityStage to STARTED, currentActivity=com.indian.nutrition.tracker.MainActivity@54006a8
+09-05 12:21:02.542  2351  2351 D LifecycleMonitor: Lifecycle status change: com.indian.nutrition.tracker.MainActivity@54006a8 in: RESUMED
+09-05 12:21:02.542  2351  2351 V ActivityScenario: Update currentActivityStage to RESUMED, currentActivity=com.indian.nutrition.tracker.MainActivity@54006a8
+09-05 12:21:02.562  2351  2351 D AutofillManager: Fill dialog is enabled:false, hints=[]
+09-05 12:21:02.635   504  2446 W OpenGLRenderer: Failed to initialize 101010-2 format, error = EGL_SUCCESS
+09-05 12:21:02.641  1042  1042 W FrameTracker: Missing SF jank callback for vsyncId: 3968, CUJ=J<LAUNCHER_APP_CLOSE_TO_HOME>
+09-05 12:21:02.641  1042  1042 W FrameTracker: Missing SF jank callback for vsyncId: 4105, CUJ=J<LAUNCHER_APP_CLOSE_TO_HOME>
+09-05 12:21:02.644   504   523 W ziparchive: Unable to open '/data/app/~~08LTEOBrQF_1Dwhy81hBIQ==/com.indian.nutrition.tracker-UofC4Xw7Ut0hx6jBrHN76Q==/base.dm': No such file or directory
+09-05 12:21:02.645   504   523 I ActivityTaskManager: Displayed com.indian.nutrition.tracker/.MainActivity for user 0: +120ms
+09-05 12:21:02.648  1042  1112 I ImeTracker: com.android.launcher3:ad9c55d2: onRequestHide at ORIGIN_CLIENT_HIDE_SOFT_INPUT reason HIDE_SOFT_INPUT
+09-05 12:21:02.648   504   520 I ImeTracker: com.android.launcher3:ad9c55d2: onCancelled at PHASE_SERVER_SHOULD_HIDE
+09-05 12:21:02.658   793   844 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=falsecallback=android.view.ViewRootImpl$$ExternalSyntheticLambda17@dc74d2a
+09-05 12:21:02.659   504   520 W InputManager-JNI: Input channel object 'f7f436a Splash Screen com.indian.nutrition.tracker (client)' was disposed without first being removed with the input manager!
+09-05 12:21:02.756   504  2272 I ImeTracker: com.indian.nutrition.tracker:bfd28fa3: onRequestHide at ORIGIN_SERVER_HIDE_INPUT reason HIDE_UNSPECIFIED_WINDOW
+09-05 12:21:02.756   504  2272 I ImeTracker: com.indian.nutrition.tracker:bfd28fa3: onCancelled at PHASE_SERVER_SHOULD_HIDE
+09-05 12:21:02.811  2351  2351 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+09-05 12:21:02.811  2351  2351 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+09-05 12:21:03.026  2351  2351 D MonitoringInstr: Handling an uncaught exception thrown on the thread main.
+09-05 12:21:03.026  2351  2351 D MonitoringInstr: kotlinx.serialization.json.internal.JsonDecodingException: Unexpected JSON token at offset 8778: Unexpected symbol '.' in numeric literal at path: $[22].typicalServingGrams
+09-05 12:21:03.026  2351  2351 D MonitoringInstr: JSON input: .....",
+09-05 12:21:03.026  2351  2351 D MonitoringInstr:     "typicalServingGrams": 30.4,
+09-05 12:21:03.026  2351  2351 D MonitoringInstr:     "brand": "Optimum Nu.....
+09-05 12:21:03.026  2351  2351 D MonitoringInstr: 	at kotlinx.serialization.json.internal.JsonExceptionsKt.JsonDecodingException(JsonExceptions.kt:24)
+09-05 12:21:03.026  2351  2351 D MonitoringInstr: 	at kotlinx.serialization.json.internal.JsonExceptionsKt.JsonDecodingException(JsonExceptions.kt:32)
+09-05 12:21:03.026  2351  2351 D MonitoringInstr: 	at kotlinx.serialization.json.internal.AbstractJsonLexer.fail(AbstractJsonLexer.kt:580)
+09-05 12:21:03.026  2351  2351 D MonitoringInstr: 	at kotlinx.serialization.json.internal.AbstractJsonLexer.fail$default(AbstractJsonLexer.kt:578)
+09-05 12:21:03.026  2351  2351 D MonitoringInstr: 	at kotlinx.serialization.json.internal.AbstractJsonLexer.consumeNumericLiteral(AbstractJsonLexer.kt:636)
+09-05 12:21:03.026  2351  2351 D MonitoringInstr: 	at kotlinx.serialization.json.internal.StreamingJsonDecoder.decodeInt(StreamingJsonDecoder.kt:297)
+09-05 12:21:03.026  2351  2351 D MonitoringInstr: 	at kotlinx.serialization.internal.IntSerializer.deserialize(Primitives.kt:96)
+09-05 12:21:03.026  2351  2351 D MonitoringInstr: 	at kotlinx.serialization.internal.IntSerializer.deserialize(Primitives.kt:92)
+09-05 12:21:03.026  2351  2351 D MonitoringInstr: 	at kotlinx.serialization.json.internal.StreamingJsonDecoder.decodeSerializableValue(StreamingJsonDecoder.kt:69)
+09-05 12:21:03.026  2351  2351 D MonitoringInstr: 	at kotlinx.serialization.encoding.AbstractDecoder.decodeSerializableValue(AbstractDecoder.kt:43)
+09-05 12:21:03.026  2351  2351 D MonitoringInstr: 	at kotlinx.serialization.encoding.AbstractDecoder.decodeNullableSerializableElement(AbstractDecoder.kt:78)
+09-05 12:21:03.026  2351  2351 D MonitoringInstr: 	at com.indian.nutrition.tracker.data.asset.FoodDto$$serializer.deserialize(FoodAssets.kt:10)
+09-05 12:21:03.026  2351  2351 D MonitoringInstr: 	at com.indian.nutrition.tracker.data.asset.FoodDto$$serializer.deserialize(FoodAssets.kt:10)
+09-05 12:21:03.026  2351  2351 D MonitoringInstr: 	at kotlinx.serialization.json.internal.StreamingJsonDecoder.decodeSerializableValue(StreamingJsonDecoder.kt:69)
+09-05 12:21:03.026  2351  2351 D MonitoringInstr: 	at kotlinx.serialization.encoding.AbstractDecoder.decodeSerializableValue(AbstractDecoder.kt:43)
+09-05 12:21:03.026  2351  2351 D MonitoringInstr: 	at kotlinx.serialization.encoding.AbstractDecoder.decodeSerializableElement(AbstractDecoder.kt:70)
+09-05 12:21:03.026  2351  2351 D MonitoringInstr: 	at kotlinx.serialization.json.internal.StreamingJsonDecoder.decodeSerializableElement(StreamingJsonDecoder.kt:168)
+09-05 12:21:03.026  2351  2351 D MonitoringInstr: 	at kotlinx.serialization.encoding.CompositeDecoder$DefaultImpls.decodeSerializableElement$default(Decoding.kt:538)
+09-05 12:21:03.026  2351  2351 D MonitoringInstr: 	at kotlinx.serialization.internal.CollectionLikeSerializer.readElement(CollectionSerializers.kt:80)
+09-05 12:21:03.026  2351  2351 D MonitoringInstr: 	at kotlinx.serialization.internal.AbstractCollectionSerializer.readElement$default(CollectionSerializers.kt:51)
+09-05 12:21:03.026  2351  2351 D MonitoringInstr: 	at kotlinx.serialization.internal.AbstractCollectionSerializer.merge(CollectionSerializers.kt:36)
+09-05 12:21:03.026  2351  2351 D MonitoringInstr: 	at kotlinx.serialization.internal.AbstractCollectionSerializer.deserialize(CollectionSerializers.kt:43)
+09-05 12:21:03.026  2351  2351 D MonitoringInstr: 	at kotlinx.serialization.json.internal.StreamingJsonDecoder.decodeSerializableValue(StreamingJsonDecoder.kt:69)
+09-05 12:21:03.026  2351  2351 D MonitoringInstr: 	at kotlinx.serialization.json.Json.decodeFromString(Json.kt:165)
+09-05 12:21:03.026  2351  2351 D MonitoringInstr: 	at com.indian.nutrition.tracker.data.asset.FoodAssets.load(FoodAssets.kt:66)
+09-05 12:21:03.026  2351  2351 D MonitoringInstr: 	at com.indian.nutrition.tracker.data.asset.FoodAssets.loadAll(FoodAssets.kt:58)
+09-05 12:21:03.026  2351  2351 D MonitoringInstr: 	at com.indian.nutrition.tracker.data.repository.FoodRepository.ensureLoaded(FoodRepository.kt:29)
+09-05 12:21:03.026  2351  2351 D MonitoringInstr: 	at com.indian.nutrition.tracker.data.repository.FoodRepository.masterList(FoodRepository.kt:44)
+09-05 12:21:03.026  2351  2351 D MonitoringInstr: 	at com.indian.nutrition.tracker.ui.screens.search.SearchViewModel$master$1.invokeSuspend(SearchViewModel.kt:77)
+09-05 12:21:03.026  2351  2351 D MonitoringInstr: 	at com.indian.nutrition.tracker.ui.screens.search.SearchViewModel$master$1.invoke(Unknown Source:13)
+09-05 12:21:03.026  2351  2351 D MonitoringInstr: 	at com.indian.nutrition.tracker.ui.screens.search.SearchViewModel$master$1.invoke(Unknown Source:6)
+09-05 12:21:03.026  2351  2351 D MonitoringInstr: 	at kotlinx.coroutines.flow.FlowKt__ZipKt$combine$1$1.invokeSuspend(Zip.kt:29)
+09-05 12:21:03.026  2351  2351 D MonitoringInstr: 	at kotlinx.coroutines.flow.FlowKt__ZipKt$combine$1$1.invoke(Unknown Source:13)
+09-05 12:21:03.026  2351  2351 D MonitoringInstr: 	at kotlinx.coroutines.flow.FlowKt__ZipKt$combine$1$1.invoke(Unknown Source:6)
+09-05 12:21:03.026  2351  2351 D MonitoringInstr: 	at kotlinx.coroutines.flow.internal.CombineKt$combineInternal$2.invokeSuspend(Combine.kt:73)
+09-05 12:21:03.026  2351  2351 D MonitoringInstr: 	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+09-05 12:21:03.026  2351  2351 D MonitoringInstr: 	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:104)
+09-05 12:21:03.026  2351  2351 D MonitoringInstr: 	at kotlinx.coroutines.EventLoop.processUnconfinedEvent(EventLoop.common.kt:65)
+09-05 12:21:03.032  2351  2351 D MonitoringInstr: 	at kotlinx.coroutines.DispatchedTaskKt.resumeUnconfined(DispatchedTask.kt:241)
+09-05 12:21:03.032  2351  2351 D MonitoringInstr: 	at kotlinx.coroutines.DispatchedTaskKt.dispatch(DispatchedTask.kt:159)
+09-05 12:21:03.032  2351  2351 D MonitoringInstr: 	at kotlinx.coroutines.CancellableContinuationImpl.dispatchResume(CancellableContinuationImpl.kt:466)
+09-05 12:21:03.032  2351  2351 D MonitoringInstr: 	at kotlinx.coroutines.CancellableContinuationImpl.resumeImpl(CancellableContinuationImpl.kt:500)
+09-05 12:21:03.032  2351  2351 D MonitoringInstr: 	at kotlinx.coroutines.CancellableContinuationImpl.resumeImpl$default(CancellableContinuationImpl.kt:489)
+09-05 12:21:03.032  2351  2351 D MonitoringInstr: 	at kotlinx.coroutines.CancellableContinuationImpl.resumeWith(CancellableContinuationImpl.kt:364)
+09-05 12:21:03.032  2351  2351 D MonitoringInstr: 	at kotlinx.coroutines.flow.SharedFlowImpl.tryEmit(SharedFlow.kt:409)
+09-05 12:21:03.032  2351  2351 D MonitoringInstr: 	at kotlinx.coroutines.flow.internal.SubscriptionCountStateFlow.increment(AbstractSharedFlow.kt:125)
+09-05 12:21:03.032  2351  2351 D MonitoringInstr: 	at kotlinx.coroutines.flow.internal.AbstractSharedFlow.allocateSlot(AbstractSharedFlow.kt:64)
+09-05 12:21:03.032  2351  2351 D MonitoringInstr: 	at kotlinx.coroutines.flow.StateFlowImpl.collect(StateFlow.kt:382)
+09-05 12:21:03.032  2351  2351 D MonitoringInstr: 	at kotlinx.coroutines.flow.ReadonlyStateFlow.collect(Unknown Source:2)
+09-05 12:21:03.032  2351  2351 D MonitoringInstr: 	at androidx.lifecycle.compose.FlowExtKt$collectAsStateWithLifecycle$1$1$1.invokeSuspend(FlowExt.kt:174)
+09-05 12:21:03.032  2351  2351 D MonitoringInstr: 	at androidx.lifecycle.compose.FlowExtKt$collectAsStateWithLifecycle$1$1$1.invoke(Unknown Source:8)
+09-05 12:21:03.032  2351  2351 D MonitoringInstr: 	at androidx.lifecycle.compose.FlowExtKt$collectAsStateWithLifecycle$1$1$1.invoke(Unknown Source:4)
+09-05 12:21:03.032  2351  2351 D MonitoringInstr: 	at androidx.lifecycle.RepeatOnLifecycleKt$repeatOnLifecycle$3$1$1$1$1$1$1.invokeSuspend(RepeatOnLifecycle.kt:111)
+09-05 12:21:03.032  2351  2351 D MonitoringInstr: 	at androidx.lifecycle.RepeatOnLifecycleKt$repeatOnLifecycle$3$1$1$1$1$1$1.invoke(Unknown Source:8)
+09-05 12:21:03.032  2351  2351 D MonitoringInstr: 	at androidx.lifecycle.RepeatOnLifecycleKt$repeatOnLifecycle$3$1$1$1$1$1$1.invoke(Unknown Source:4)
+09-05 12:21:03.032  2351  2351 D MonitoringInstr: 	at kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:61)
+09-05 12:21:03.032  2351  2351 D MonitoringInstr: 	at kotlinx.coroutines.CoroutineScopeKt.coroutineScope(CoroutineScope.kt:261)
+09-05 12:21:03.032  2351  2351 D MonitoringInstr: 	at androidx.lifecycle.RepeatOnLifecycleKt$repeatOnLifecycle$3$1$1$1$1.invokeSuspend(RepeatOnLifecycle.kt:110)
+09-05 12:21:03.032  2351  2351 D MonitoringInstr: 	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+09-05 12:21:03.032  2351  2351 D MonitoringInstr: 	at androidx.compose.ui.test.ApplyingContinuationInterceptor$SendApplyContinuation.resumeWith(ApplyingContinuationInterceptor.kt:65)
+09-05 12:21:03.032  2351  2351 D MonitoringInstr: 	at androidx.compose.ui.test.FrameDeferringContinuationInterceptor$TrampolinedTask.resume(FrameDeferringContinuationInterceptor.jvm.kt:137)
+09-05 12:21:03.032  2351  2351 D MonitoringInstr: 	at androidx.compose.ui.test.FrameDeferringContinuationInterceptor.runWithoutResumingCoroutines(FrameDeferringContinuationInterceptor.jvm.kt:75)
+09-05 12:21:03.032  2351  2351 D MonitoringInstr: 	at androidx.compose.ui.test.TestMonotonicFrameClock.performFrame(TestMonotonicFrameClock.jvm.kt:132)
+09-05 12:21:03.032  2351  2351 D MonitoringInstr: 	at androidx.compose.ui.test.TestMonotonicFrameClock.access$performFrame(TestMonotonicFrameClock.jvm.kt:53)
+09-05 12:21:03.032  2351  2351 D MonitoringInstr: 	at androidx.compose.ui.test.TestMonotonicFrameClock$withFrameNanos$2$1$2.invokeSuspend(TestMonotonicFrameClock.jvm.kt:110)
+09-05 12:21:03.032  2351  2351 D MonitoringInstr: 	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+09-05 12:21:03.032  2351  2351 D MonitoringInstr: 	at kotlinx.coroutines.DispatchedTaskKt.resume(DispatchedTask.kt:231)
+09-05 12:21:03.032  2351  2351 D MonitoringInstr: 	at kotlinx.coroutines.DispatchedTaskKt.dispatch(DispatchedTask.kt:164)
+09-05 12:21:03.032  2351  2351 D MonitoringInstr: 	at kotlinx.coroutines.CancellableContinuationImpl.dispatchResume(CancellableContinuationImpl.kt:466)
+09-05 12:21:03.032  2351  2351 D MonitoringInstr: 	at kotlinx.coroutines.CancellableContinuationImpl.resumeImpl(CancellableContinuationImpl.kt:500)
+09-05 12:21:03.032  2351  2351 D MonitoringInstr: 	at kotlinx.coroutines.CancellableContinuationImpl.resumeImpl$default(CancellableContinuationImpl.kt:489)
+09-05 12:21:03.032  2351  2351 D MonitoringInstr: 	at kotlinx.coroutines.CancellableContinuationImpl.resumeUndispatched(CancellableContinuationImpl.kt:587)
+09-05 12:21:03.032  2351  2351 D MonitoringInstr: 	at kotlinx.coroutines.test.CancellableContinuationRunnable.run(TestDispatcher.kt:60)
+09-05 12:21:03.032  2351  2351 D MonitoringInstr: 	at kotlinx.coroutines.test.TestDispatcher.processEvent$kotlinx_coroutines_test(TestDispatcher.kt:24)
+09-05 12:21:03.032  2351  2351 D MonitoringInstr: 	at kotlinx.coroutines.test.TestCoroutineScheduler.runCurrent(TestCoroutineScheduler.kt:132)
+09-05 12:21:03.032  2351  2351 D MonitoringInstr: 	at androidx.compose.ui.test.AbstractMainTestClock$advanceDispatcher$1.invoke(AbstractMainTestClock.jvm.kt:72)
+09-05 12:21:03.032  2351  2351 D MonitoringInstr: 	at androidx.compose.ui.test.AbstractMainTestClock$advanceDispatcher$1.invoke(AbstractMainTestClock.jvm.kt:65)
+09-05 12:21:03.032  2351  2351 D MonitoringInstr: 	at androidx.compose.ui.test.AndroidSynchronization_androidKt.runOnUiThread(AndroidSynchronization.android.kt:33)
+09-05 12:21:03.033  2351  2351 D MonitoringInstr: 	at androidx.compose.ui.test.MainTestClockImpl$1.invoke(MainTestClockImpl.android.kt:29)
+09-05 12:21:03.033  2351  2351 D MonitoringInstr: 	at androidx.compose.ui.test.MainTestClockImpl$1.invoke(MainTestClockImpl.android.kt:29)
+09-05 12:21:03.033  2351  2351 D MonitoringInstr: 	at androidx.compose.ui.test.AbstractMainTestClock.advanceDispatcher(AbstractMainTestClock.jvm.kt:65)
+09-05 12:21:03.033  2351  2351 D MonitoringInstr: 	at androidx.compose.ui.test.AbstractMainTestClock.advanceTimeByFrame(AbstractMainTestClock.jvm.kt:36)
+09-05 12:21:03.033  2351  2351 D MonitoringInstr: 	at androidx.compose.ui.test.ComposeIdlingResource.isIdleNow(ComposeIdlingResource.android.kt:73)
+09-05 12:21:03.033  2351  2351 D MonitoringInstr: 	at androidx.compose.ui.test.IdlingResourceRegistry.areAllResourcesIdle(IdlingResourceRegistry.jvm.kt:122)
+09-05 12:21:03.033  2351  2351 D MonitoringInstr: 	at androidx.compose.ui.test.IdlingResourceRegistry.isIdleOrEnsurePolling$ui_test_release(IdlingResourceRegistry.jvm.kt:101)
+09-05 12:21:03.033  2351  2351 D MonitoringInstr: 	at androidx.compose.ui.test.EspressoLink.isIdleNow(EspressoLink.android.kt:44)
+09-05 12:21:03.033  2351  2351 D MonitoringInstr: 	at androidx.test.espresso.base.IdlingResourceRegistry.allResourcesAreIdle(IdlingResourceRegistry.java:281)
+09-05 12:21:03.033  2351  2351 D MonitoringInstr: 	at androidx.test.espresso.base.IdlingResourceRegistry$6.isIdleNow(IdlingResourceRegistry.java:320)
+09-05 12:21:03.033  2351  2351 D MonitoringInstr: 	at androidx.test.espresso.base.UiControllerImpl.loopMainThreadUntilIdle(UiControllerImpl.java:407)
+09-05 12:21:03.033  2351  2351 D MonitoringInstr: 	at androidx.test.espresso.Espresso.lambda$onIdle$2(Espresso.java:340)
+09-05 12:21:03.033  2351  2351 D MonitoringInstr: 	at androidx.test.espresso.Espresso$$ExternalSyntheticLambda1.call(D8$$SyntheticClass:0)
+09-05 12:21:03.033  2351  2351 D MonitoringInstr: 	at java.util.concurrent.FutureTask.run(FutureTask.java:264)
+09-05 12:21:03.033  2351  2351 D MonitoringInstr: 	at android.os.Handler.handleCallback(Handler.java:958)
+09-05 12:21:03.033  2351  2351 D MonitoringInstr: 	at android.os.Handler.dispatchMessage(Handler.java:99)
+09-05 12:21:03.033  2351  2351 D MonitoringInstr: 	at android.os.Looper.loopOnce(Looper.java:205)
+09-05 12:21:03.033  2351  2351 D MonitoringInstr: 	at android.os.Looper.loop(Looper.java:294)
+09-05 12:21:03.033  2351  2351 D MonitoringInstr: 	at android.app.ActivityThread.main(ActivityThread.java:8177)
+09-05 12:21:03.033  2351  2351 D MonitoringInstr: 	at java.lang.reflect.Method.invoke(Native Method)
+09-05 12:21:03.033  2351  2351 D MonitoringInstr: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:552)
+09-05 12:21:03.033  2351  2351 D MonitoringInstr: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:971)
+09-05 12:21:03.033  2351  2351 D MonitoringInstr: 	Suppressed: kotlinx.coroutines.internal.DiagnosticCoroutineContextException: [StandaloneCoroutine{Cancelling}@58aa39b, Dispatchers.Main.immediate]
+09-05 12:21:03.034  2351  2351 W AndroidJUnitRunner: An unhandled exception was thrown by the app.
+09-05 12:21:03.034  2351  2351 W AndroidJUnitRunner: kotlinx.serialization.json.internal.JsonDecodingException: Unexpected JSON token at offset 8778: Unexpected symbol '.' in numeric literal at path: $[22].typicalServingGrams
+09-05 12:21:03.034  2351  2351 W AndroidJUnitRunner: JSON input: .....",
+09-05 12:21:03.034  2351  2351 W AndroidJUnitRunner:     "typicalServingGrams": 30.4,
+09-05 12:21:03.034  2351  2351 W AndroidJUnitRunner:     "brand": "Optimum Nu.....
+09-05 12:21:03.034  2351  2351 W AndroidJUnitRunner: 	at kotlinx.serialization.json.internal.JsonExceptionsKt.JsonDecodingException(JsonExceptions.kt:24)
+09-05 12:21:03.034  2351  2351 W AndroidJUnitRunner: 	at kotlinx.serialization.json.internal.JsonExceptionsKt.JsonDecodingException(JsonExceptions.kt:32)
+09-05 12:21:03.034  2351  2351 W AndroidJUnitRunner: 	at kotlinx.serialization.json.internal.AbstractJsonLexer.fail(AbstractJsonLexer.kt:580)
+09-05 12:21:03.034  2351  2351 W AndroidJUnitRunner: 	at kotlinx.serialization.json.internal.AbstractJsonLexer.fail$default(AbstractJsonLexer.kt:578)
+09-05 12:21:03.034  2351  2351 W AndroidJUnitRunner: 	at kotlinx.serialization.json.internal.AbstractJsonLexer.consumeNumericLiteral(AbstractJsonLexer.kt:636)
+09-05 12:21:03.034  2351  2351 W AndroidJUnitRunner: 	at kotlinx.serialization.json.internal.StreamingJsonDecoder.decodeInt(StreamingJsonDecoder.kt:297)
+09-05 12:21:03.034  2351  2351 W AndroidJUnitRunner: 	at kotlinx.serialization.internal.IntSerializer.deserialize(Primitives.kt:96)
+09-05 12:21:03.034  2351  2351 W AndroidJUnitRunner: 	at kotlinx.serialization.internal.IntSerializer.deserialize(Primitives.kt:92)
+09-05 12:21:03.034  2351  2351 W AndroidJUnitRunner: 	at kotlinx.serialization.json.internal.StreamingJsonDecoder.decodeSerializableValue(StreamingJsonDecoder.kt:69)
+09-05 12:21:03.034  2351  2351 W AndroidJUnitRunner: 	at kotlinx.serialization.encoding.AbstractDecoder.decodeSerializableValue(AbstractDecoder.kt:43)
+09-05 12:21:03.034  2351  2351 W AndroidJUnitRunner: 	at kotlinx.serialization.encoding.AbstractDecoder.decodeNullableSerializableElement(AbstractDecoder.kt:78)
+09-05 12:21:03.034  2351  2351 W AndroidJUnitRunner: 	at com.indian.nutrition.tracker.data.asset.FoodDto$$serializer.deserialize(FoodAssets.kt:10)
+09-05 12:21:03.034  2351  2351 W AndroidJUnitRunner: 	at com.indian.nutrition.tracker.data.asset.FoodDto$$serializer.deserialize(FoodAssets.kt:10)
+09-05 12:21:03.034  2351  2351 W AndroidJUnitRunner: 	at kotlinx.serialization.json.internal.StreamingJsonDecoder.decodeSerializableValue(StreamingJsonDecoder.kt:69)
+09-05 12:21:03.034  2351  2351 W AndroidJUnitRunner: 	at kotlinx.serialization.encoding.AbstractDecoder.decodeSerializableValue(AbstractDecoder.kt:43)
+09-05 12:21:03.034  2351  2351 W AndroidJUnitRunner: 	at kotlinx.serialization.encoding.AbstractDecoder.decodeSerializableElement(AbstractDecoder.kt:70)
+09-05 12:21:03.034  2351  2351 W AndroidJUnitRunner: 	at kotlinx.serialization.json.internal.StreamingJsonDecoder.decodeSerializableElement(StreamingJsonDecoder.kt:168)
+09-05 12:21:03.034  2351  2351 W AndroidJUnitRunner: 	at kotlinx.serialization.encoding.CompositeDecoder$DefaultImpls.decodeSerializableElement$default(Decoding.kt:538)
+09-05 12:21:03.034  2351  2351 W AndroidJUnitRunner: 	at kotlinx.serialization.internal.CollectionLikeSerializer.readElement(CollectionSerializers.kt:80)
+09-05 12:21:03.034  2351  2351 W AndroidJUnitRunner: 	at kotlinx.serialization.internal.AbstractCollectionSerializer.readElement$default(CollectionSerializers.kt:51)
+09-05 12:21:03.034  2351  2351 W AndroidJUnitRunner: 	at kotlinx.serialization.internal.AbstractCollectionSerializer.merge(CollectionSerializers.kt:36)
+09-05 12:21:03.034  2351  2351 W AndroidJUnitRunner: 	at kotlinx.serialization.internal.AbstractCollectionSerializer.deserialize(CollectionSerializers.kt:43)
+09-05 12:21:03.034  2351  2351 W AndroidJUnitRunner: 	at kotlinx.serialization.json.internal.StreamingJsonDecoder.decodeSerializableValue(StreamingJsonDecoder.kt:69)
+09-05 12:21:03.034  2351  2351 W AndroidJUnitRunner: 	at kotlinx.serialization.json.Json.decodeFromString(Json.kt:165)
+09-05 12:21:03.034  2351  2351 W AndroidJUnitRunner: 	at com.indian.nutrition.tracker.data.asset.FoodAssets.load(FoodAssets.kt:66)
+09-05 12:21:03.034  2351  2351 W AndroidJUnitRunner: 	at com.indian.nutrition.tracker.data.asset.FoodAssets.loadAll(FoodAssets.kt:58)
+09-05 12:21:03.034  2351  2351 W AndroidJUnitRunner: 	at com.indian.nutrition.tracker.data.repository.FoodRepository.ensureLoaded(FoodRepository.kt:29)
+09-05 12:21:03.034  2351  2351 W AndroidJUnitRunner: 	at com.indian.nutrition.tracker.data.repository.FoodRepository.masterList(FoodRepository.kt:44)
+09-05 12:21:03.034  2351  2351 W AndroidJUnitRunner: 	at com.indian.nutrition.tracker.ui.screens.search.SearchViewModel$master$1.invokeSuspend(SearchViewModel.kt:77)
+09-05 12:21:03.034  2351  2351 W AndroidJUnitRunner: 	at com.indian.nutrition.tracker.ui.screens.search.SearchViewModel$master$1.invoke(Unknown Source:13)
+09-05 12:21:03.034  2351  2351 W AndroidJUnitRunner: 	at com.indian.nutrition.tracker.ui.screens.search.SearchViewModel$master$1.invoke(Unknown Source:6)
+09-05 12:21:03.034  2351  2351 W AndroidJUnitRunner: 	at kotlinx.coroutines.flow.FlowKt__ZipKt$combine$1$1.invokeSuspend(Zip.kt:29)
+09-05 12:21:03.034  2351  2351 W AndroidJUnitRunner: 	at kotlinx.coroutines.flow.FlowKt__ZipKt$combine$1$1.invoke(Unknown Source:13)
+09-05 12:21:03.034  2351  2351 W AndroidJUnitRunner: 	at kotlinx.coroutines.flow.FlowKt__ZipKt$combine$1$1.invoke(Unknown Source:6)
+09-05 12:21:03.034  2351  2351 W AndroidJUnitRunner: 	at kotlinx.coroutines.flow.internal.CombineKt$combineInternal$2.invokeSuspend(Combine.kt:73)
+09-05 12:21:03.034  2351  2351 W AndroidJUnitRunner: 	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+09-05 12:21:03.034  2351  2351 W AndroidJUnitRunner: 	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:104)
+09-05 12:21:03.034  2351  2351 W AndroidJUnitRunner: 	at kotlinx.coroutines.EventLoop.processUnconfinedEvent(EventLoop.common.kt:65)
+09-05 12:21:03.036  2351  2351 W AndroidJUnitRunner: 	at kotlinx.coroutines.DispatchedTaskKt.resumeUnconfined(DispatchedTask.kt:241)
+09-05 12:21:03.036  2351  2351 W AndroidJUnitRunner: 	at kotlinx.coroutines.DispatchedTaskKt.dispatch(DispatchedTask.kt:159)
+09-05 12:21:03.036  2351  2351 W AndroidJUnitRunner: 	at kotlinx.coroutines.CancellableContinuationImpl.dispatchResume(CancellableContinuationImpl.kt:466)
+09-05 12:21:03.036  2351  2351 W AndroidJUnitRunner: 	at kotlinx.coroutines.CancellableContinuationImpl.resumeImpl(CancellableContinuationImpl.kt:500)
+09-05 12:21:03.036  2351  2351 W AndroidJUnitRunner: 	at kotlinx.coroutines.CancellableContinuationImpl.resumeImpl$default(CancellableContinuationImpl.kt:489)
+09-05 12:21:03.036  2351  2351 W AndroidJUnitRunner: 	at kotlinx.coroutines.CancellableContinuationImpl.resumeWith(CancellableContinuationImpl.kt:364)
+09-05 12:21:03.036  2351  2351 W AndroidJUnitRunner: 	at kotlinx.coroutines.flow.SharedFlowImpl.tryEmit(SharedFlow.kt:409)
+09-05 12:21:03.036  2351  2351 W AndroidJUnitRunner: 	at kotlinx.coroutines.flow.internal.SubscriptionCountStateFlow.increment(AbstractSharedFlow.kt:125)
+09-05 12:21:03.036  2351  2351 W AndroidJUnitRunner: 	at kotlinx.coroutines.flow.internal.AbstractSharedFlow.allocateSlot(AbstractSharedFlow.kt:64)
+09-05 12:21:03.036  2351  2351 W AndroidJUnitRunner: 	at kotlinx.coroutines.flow.StateFlowImpl.collect(StateFlow.kt:382)
+09-05 12:21:03.036  2351  2351 W AndroidJUnitRunner: 	at kotlinx.coroutines.flow.ReadonlyStateFlow.collect(Unknown Source:2)
+09-05 12:21:03.036  2351  2351 W AndroidJUnitRunner: 	at androidx.lifecycle.compose.FlowExtKt$collectAsStateWithLifecycle$1$1$1.invokeSuspend(FlowExt.kt:174)
+09-05 12:21:03.036  2351  2351 W AndroidJUnitRunner: 	at androidx.lifecycle.compose.FlowExtKt$collectAsStateWithLifecycle$1$1$1.invoke(Unknown Source:8)
+09-05 12:21:03.036  2351  2351 W AndroidJUnitRunner: 	at androidx.lifecycle.compose.FlowExtKt$collectAsStateWithLifecycle$1$1$1.invoke(Unknown Source:4)
+09-05 12:21:03.036  2351  2351 W AndroidJUnitRunner: 	at androidx.lifecycle.RepeatOnLifecycleKt$repeatOnLifecycle$3$1$1$1$1$1$1.invokeSuspend(RepeatOnLifecycle.kt:111)
+09-05 12:21:03.036  2351  2351 W AndroidJUnitRunner: 	at androidx.lifecycle.RepeatOnLifecycleKt$repeatOnLifecycle$3$1$1$1$1$1$1.invoke(Unknown Source:8)
+09-05 12:21:03.036  2351  2351 W AndroidJUnitRunner: 	at androidx.lifecycle.RepeatOnLifecycleKt$repeatOnLifecycle$3$1$1$1$1$1$1.invoke(Unknown Source:4)
+09-05 12:21:03.036  2351  2351 W AndroidJUnitRunner: 	at kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:61)
+09-05 12:21:03.036  2351  2351 W AndroidJUnitRunner: 	at kotlinx.coroutines.CoroutineScopeKt.coroutineScope(CoroutineScope.kt:261)
+09-05 12:21:03.036  2351  2351 W AndroidJUnitRunner: 	at androidx.lifecycle.RepeatOnLifecycleKt$repeatOnLifecycle$3$1$1$1$1.invokeSuspend(RepeatOnLifecycle.kt:110)
+09-05 12:21:03.036  2351  2351 W AndroidJUnitRunner: 	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+09-05 12:21:03.036  2351  2351 W AndroidJUnitRunner: 	at androidx.compose.ui.test.ApplyingContinuationInterceptor$SendApplyContinuation.resumeWith(ApplyingContinuationInterceptor.kt:65)
+09-05 12:21:03.036  2351  2351 W AndroidJUnitRunner: 	at androidx.compose.ui.test.FrameDeferringContinuationInterceptor$TrampolinedTask.resume(FrameDeferringContinuationInterceptor.jvm.kt:137)
+09-05 12:21:03.036  2351  2351 W AndroidJUnitRunner: 	at androidx.compose.ui.test.FrameDeferringContinuationInterceptor.runWithoutResumingCoroutines(FrameDeferringContinuationInterceptor.jvm.kt:75)
+09-05 12:21:03.036  2351  2351 W AndroidJUnitRunner: 	at androidx.compose.ui.test.TestMonotonicFrameClock.performFrame(TestMonotonicFrameClock.jvm.kt:132)
+09-05 12:21:03.036  2351  2351 W AndroidJUnitRunner: 	at androidx.compose.ui.test.TestMonotonicFrameClock.access$performFrame(TestMonotonicFrameClock.jvm.kt:53)
+09-05 12:21:03.036  2351  2351 W AndroidJUnitRunner: 	at androidx.compose.ui.test.TestMonotonicFrameClock$withFrameNanos$2$1$2.invokeSuspend(TestMonotonicFrameClock.jvm.kt:110)
+09-05 12:21:03.036  2351  2351 W AndroidJUnitRunner: 	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+09-05 12:21:03.036  2351  2351 W AndroidJUnitRunner: 	at kotlinx.coroutines.DispatchedTaskKt.resume(DispatchedTask.kt:231)
+09-05 12:21:03.036  2351  2351 W AndroidJUnitRunner: 	at kotlinx.coroutines.DispatchedTaskKt.dispatch(DispatchedTask.kt:164)
+09-05 12:21:03.036  2351  2351 W AndroidJUnitRunner: 	at kotlinx.coroutines.CancellableContinuationImpl.dispatchResume(CancellableContinuationImpl.kt:466)
+09-05 12:21:03.036  2351  2351 W AndroidJUnitRunner: 	at kotlinx.coroutines.CancellableContinuationImpl.resumeImpl(CancellableContinuationImpl.kt:500)
+09-05 12:21:03.036  2351  2351 W AndroidJUnitRunner: 	at kotlinx.coroutines.CancellableContinuationImpl.resumeImpl$default(CancellableContinuationImpl.kt:489)
+09-05 12:21:03.036  2351  2351 W AndroidJUnitRunner: 	at kotlinx.coroutines.CancellableContinuationImpl.resumeUndispatched(CancellableContinuationImpl.kt:587)
+09-05 12:21:03.036  2351  2351 W AndroidJUnitRunner: 	at kotlinx.coroutines.test.CancellableContinuationRunnable.run(TestDispatcher.kt:60)
+09-05 12:21:03.036  2351  2351 W AndroidJUnitRunner: 	at kotlinx.coroutines.test.TestDispatcher.processEvent$kotlinx_coroutines_test(TestDispatcher.kt:24)
+09-05 12:21:03.036  2351  2351 W AndroidJUnitRunner: 	at kotlinx.coroutines.test.TestCoroutineScheduler.runCurrent(TestCoroutineScheduler.kt:132)
+09-05 12:21:03.036  2351  2351 W AndroidJUnitRunner: 	at androidx.compose.ui.test.AbstractMainTestClock$advanceDispatcher$1.invoke(AbstractMainTestClock.jvm.kt:72)
+09-05 12:21:03.036  2351  2351 W AndroidJUnitRunner: 	at androidx.compose.ui.test.AbstractMainTestClock$advanceDispatcher$1.invoke(AbstractMainTestClock.jvm.kt:65)
+09-05 12:21:03.036  2351  2351 W AndroidJUnitRunner: 	at androidx.compose.ui.test.AndroidSynchronization_androidKt.runOnUiThread(AndroidSynchronization.android.kt:33)
+09-05 12:21:03.037  2351  2351 W AndroidJUnitRunner: 	at androidx.compose.ui.test.MainTestClockImpl$1.invoke(MainTestClockImpl.android.kt:29)
+09-05 12:21:03.037  2351  2351 W AndroidJUnitRunner: 	at androidx.compose.ui.test.MainTestClockImpl$1.invoke(MainTestClockImpl.android.kt:29)
+09-05 12:21:03.037  2351  2351 W AndroidJUnitRunner: 	at androidx.compose.ui.test.AbstractMainTestClock.advanceDispatcher(AbstractMainTestClock.jvm.kt:65)
+09-05 12:21:03.037  2351  2351 W AndroidJUnitRunner: 	at androidx.compose.ui.test.AbstractMainTestClock.advanceTimeByFrame(AbstractMainTestClock.jvm.kt:36)
+09-05 12:21:03.037  2351  2351 W AndroidJUnitRunner: 	at androidx.compose.ui.test.ComposeIdlingResource.isIdleNow(ComposeIdlingResource.android.kt:73)
+09-05 12:21:03.037  2351  2351 W AndroidJUnitRunner: 	at androidx.compose.ui.test.IdlingResourceRegistry.areAllResourcesIdle(IdlingResourceRegistry.jvm.kt:122)
+09-05 12:21:03.037  2351  2351 W AndroidJUnitRunner: 	at androidx.compose.ui.test.IdlingResourceRegistry.isIdleOrEnsurePolling$ui_test_release(IdlingResourceRegistry.jvm.kt:101)
+09-05 12:21:03.037  2351  2351 W AndroidJUnitRunner: 	at androidx.compose.ui.test.EspressoLink.isIdleNow(EspressoLink.android.kt:44)
+09-05 12:21:03.037  2351  2351 W AndroidJUnitRunner: 	at androidx.test.espresso.base.IdlingResourceRegistry.allResourcesAreIdle(IdlingResourceRegistry.java:281)
+09-05 12:21:03.037  2351  2351 W AndroidJUnitRunner: 	at androidx.test.espresso.base.IdlingResourceRegistry$6.isIdleNow(IdlingResourceRegistry.java:320)
+09-05 12:21:03.037  2351  2351 W AndroidJUnitRunner: 	at androidx.test.espresso.base.UiControllerImpl.loopMainThreadUntilIdle(UiControllerImpl.java:407)
+09-05 12:21:03.037  2351  2351 W AndroidJUnitRunner: 	at androidx.test.espresso.Espresso.lambda$onIdle$2(Espresso.java:340)
+09-05 12:21:03.037  2351  2351 W AndroidJUnitRunner: 	at androidx.test.espresso.Espresso$$ExternalSyntheticLambda1.call(D8$$SyntheticClass:0)
+09-05 12:21:03.037  2351  2351 W AndroidJUnitRunner: 	at java.util.concurrent.FutureTask.run(FutureTask.java:264)
+09-05 12:21:03.037  2351  2351 W AndroidJUnitRunner: 	at android.os.Handler.handleCallback(Handler.java:958)
+09-05 12:21:03.037  2351  2351 W AndroidJUnitRunner: 	at android.os.Handler.dispatchMessage(Handler.java:99)
+09-05 12:21:03.037  2351  2351 W AndroidJUnitRunner: 	at android.os.Looper.loopOnce(Looper.java:205)
+09-05 12:21:03.037  2351  2351 W AndroidJUnitRunner: 	at android.os.Looper.loop(Looper.java:294)
+09-05 12:21:03.037  2351  2351 W AndroidJUnitRunner: 	at android.app.ActivityThread.main(ActivityThread.java:8177)
+09-05 12:21:03.037  2351  2351 W AndroidJUnitRunner: 	at java.lang.reflect.Method.invoke(Native Method)
+09-05 12:21:03.037  2351  2351 W AndroidJUnitRunner: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:552)
+09-05 12:21:03.037  2351  2351 W AndroidJUnitRunner: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:971)
+09-05 12:21:03.037  2351  2351 W AndroidJUnitRunner: 	Suppressed: kotlinx.coroutines.internal.DiagnosticCoroutineContextException: [StandaloneCoroutine{Cancelling}@58aa39b, Dispatchers.Main.immediate]
+09-05 12:21:03.044  2351  2351 D AndroidJUnitRunner: Reporting the crash to an event service.
+09-05 12:21:03.044  2351  2351 W TestEventClient: Process crashed before connection to orchestrator
+09-05 12:21:03.044  2351  2351 I AndroidJUnitRunner: Bringing down the entire Instrumentation process.
+09-05 12:21:03.046  2351  2351 E MonitoringInstr: Exception encountered by: Thread[main,5,main]. Dumping thread state to outputs and pining for the fjords.
+09-05 12:21:03.046  2351  2351 E MonitoringInstr: kotlinx.serialization.json.internal.JsonDecodingException: Unexpected JSON token at offset 8778: Unexpected symbol '.' in numeric literal at path: $[22].typicalServingGrams
+09-05 12:21:03.046  2351  2351 E MonitoringInstr: JSON input: .....",
+09-05 12:21:03.046  2351  2351 E MonitoringInstr:     "typicalServingGrams": 30.4,
+09-05 12:21:03.046  2351  2351 E MonitoringInstr:     "brand": "Optimum Nu.....
+09-05 12:21:03.046  2351  2351 E MonitoringInstr: 	at kotlinx.serialization.json.internal.JsonExceptionsKt.JsonDecodingException(JsonExceptions.kt:24)
+09-05 12:21:03.046  2351  2351 E MonitoringInstr: 	at kotlinx.serialization.json.internal.JsonExceptionsKt.JsonDecodingException(JsonExceptions.kt:32)
+09-05 12:21:03.046  2351  2351 E MonitoringInstr: 	at kotlinx.serialization.json.internal.AbstractJsonLexer.fail(AbstractJsonLexer.kt:580)
+09-05 12:21:03.046  2351  2351 E MonitoringInstr: 	at kotlinx.serialization.json.internal.AbstractJsonLexer.fail$default(AbstractJsonLexer.kt:578)
+09-05 12:21:03.046  2351  2351 E MonitoringInstr: 	at kotlinx.serialization.json.internal.AbstractJsonLexer.consumeNumericLiteral(AbstractJsonLexer.kt:636)
+09-05 12:21:03.046  2351  2351 E MonitoringInstr: 	at kotlinx.serialization.json.internal.StreamingJsonDecoder.decodeInt(StreamingJsonDecoder.kt:297)
+09-05 12:21:03.046  2351  2351 E MonitoringInstr: 	at kotlinx.serialization.internal.IntSerializer.deserialize(Primitives.kt:96)
+09-05 12:21:03.046  2351  2351 E MonitoringInstr: 	at kotlinx.serialization.internal.IntSerializer.deserialize(Primitives.kt:92)
+09-05 12:21:03.046  2351  2351 E MonitoringInstr: 	at kotlinx.serialization.json.internal.StreamingJsonDecoder.decodeSerializableValue(StreamingJsonDecoder.kt:69)
+09-05 12:21:03.046  2351  2351 E MonitoringInstr: 	at kotlinx.serialization.encoding.AbstractDecoder.decodeSerializableValue(AbstractDecoder.kt:43)
+09-05 12:21:03.046  2351  2351 E MonitoringInstr: 	at kotlinx.serialization.encoding.AbstractDecoder.decodeNullableSerializableElement(AbstractDecoder.kt:78)
+09-05 12:21:03.046  2351  2351 E MonitoringInstr: 	at com.indian.nutrition.tracker.data.asset.FoodDto$$serializer.deserialize(FoodAssets.kt:10)
+09-05 12:21:03.046  2351  2351 E MonitoringInstr: 	at com.indian.nutrition.tracker.data.asset.FoodDto$$serializer.deserialize(FoodAssets.kt:10)
+09-05 12:21:03.046  2351  2351 E MonitoringInstr: 	at kotlinx.serialization.json.internal.StreamingJsonDecoder.decodeSerializableValue(StreamingJsonDecoder.kt:69)
+09-05 12:21:03.046  2351  2351 E MonitoringInstr: 	at kotlinx.serialization.encoding.AbstractDecoder.decodeSerializableValue(AbstractDecoder.kt:43)
+09-05 12:21:03.046  2351  2351 E MonitoringInstr: 	at kotlinx.serialization.encoding.AbstractDecoder.decodeSerializableElement(AbstractDecoder.kt:70)
+09-05 12:21:03.046  2351  2351 E MonitoringInstr: 	at kotlinx.serialization.json.internal.StreamingJsonDecoder.decodeSerializableElement(StreamingJsonDecoder.kt:168)
+09-05 12:21:03.046  2351  2351 E MonitoringInstr: 	at kotlinx.serialization.encoding.CompositeDecoder$DefaultImpls.decodeSerializableElement$default(Decoding.kt:538)
+09-05 12:21:03.046  2351  2351 E MonitoringInstr: 	at kotlinx.serialization.internal.CollectionLikeSerializer.readElement(CollectionSerializers.kt:80)
+09-05 12:21:03.046  2351  2351 E MonitoringInstr: 	at kotlinx.serialization.internal.AbstractCollectionSerializer.readElement$default(CollectionSerializers.kt:51)
+09-05 12:21:03.046  2351  2351 E MonitoringInstr: 	at kotlinx.serialization.internal.AbstractCollectionSerializer.merge(CollectionSerializers.kt:36)
+09-05 12:21:03.046  2351  2351 E MonitoringInstr: 	at kotlinx.serialization.internal.AbstractCollectionSerializer.deserialize(CollectionSerializers.kt:43)
+09-05 12:21:03.046  2351  2351 E MonitoringInstr: 	at kotlinx.serialization.json.internal.StreamingJsonDecoder.decodeSerializableValue(StreamingJsonDecoder.kt:69)
+09-05 12:21:03.046  2351  2351 E MonitoringInstr: 	at kotlinx.serialization.json.Json.decodeFromString(Json.kt:165)
+09-05 12:21:03.046  2351  2351 E MonitoringInstr: 	at com.indian.nutrition.tracker.data.asset.FoodAssets.load(FoodAssets.kt:66)
+09-05 12:21:03.046  2351  2351 E MonitoringInstr: 	at com.indian.nutrition.tracker.data.asset.FoodAssets.loadAll(FoodAssets.kt:58)
+09-05 12:21:03.046  2351  2351 E MonitoringInstr: 	at com.indian.nutrition.tracker.data.repository.FoodRepository.ensureLoaded(FoodRepository.kt:29)
+09-05 12:21:03.046  2351  2351 E MonitoringInstr: 	at com.indian.nutrition.tracker.data.repository.FoodRepository.masterList(FoodRepository.kt:44)
+09-05 12:21:03.046  2351  2351 E MonitoringInstr: 	at com.indian.nutrition.tracker.ui.screens.search.SearchViewModel$master$1.invokeSuspend(SearchViewModel.kt:77)
+09-05 12:21:03.046  2351  2351 E MonitoringInstr: 	at com.indian.nutrition.tracker.ui.screens.search.SearchViewModel$master$1.invoke(Unknown Source:13)
+09-05 12:21:03.046  2351  2351 E MonitoringInstr: 	at com.indian.nutrition.tracker.ui.screens.search.SearchViewModel$master$1.invoke(Unknown Source:6)
+09-05 12:21:03.046  2351  2351 E MonitoringInstr: 	at kotlinx.coroutines.flow.FlowKt__ZipKt$combine$1$1.invokeSuspend(Zip.kt:29)
+09-05 12:21:03.046  2351  2351 E MonitoringInstr: 	at kotlinx.coroutines.flow.FlowKt__ZipKt$combine$1$1.invoke(Unknown Source:13)
+09-05 12:21:03.046  2351  2351 E MonitoringInstr: 	at kotlinx.coroutines.flow.FlowKt__ZipKt$combine$1$1.invoke(Unknown Source:6)
+09-05 12:21:03.046  2351  2351 E MonitoringInstr: 	at kotlinx.coroutines.flow.internal.CombineKt$combineInternal$2.invokeSuspend(Combine.kt:73)
+09-05 12:21:03.046  2351  2351 E MonitoringInstr: 	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+09-05 12:21:03.046  2351  2351 E MonitoringInstr: 	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:104)
+09-05 12:21:03.046  2351  2351 E MonitoringInstr: 	at kotlinx.coroutines.EventLoop.processUnconfinedEvent(EventLoop.common.kt:65)
+09-05 12:21:03.047  2351  2351 E MonitoringInstr: 	at kotlinx.coroutines.DispatchedTaskKt.resumeUnconfined(DispatchedTask.kt:241)
+09-05 12:21:03.047  2351  2351 E MonitoringInstr: 	at kotlinx.coroutines.DispatchedTaskKt.dispatch(DispatchedTask.kt:159)
+09-05 12:21:03.047  2351  2351 E MonitoringInstr: 	at kotlinx.coroutines.CancellableContinuationImpl.dispatchResume(CancellableContinuationImpl.kt:466)
+09-05 12:21:03.047  2351  2351 E MonitoringInstr: 	at kotlinx.coroutines.CancellableContinuationImpl.resumeImpl(CancellableContinuationImpl.kt:500)
+09-05 12:21:03.047  2351  2351 E MonitoringInstr: 	at kotlinx.coroutines.CancellableContinuationImpl.resumeImpl$default(CancellableContinuationImpl.kt:489)
+09-05 12:21:03.047  2351  2351 E MonitoringInstr: 	at kotlinx.coroutines.CancellableContinuationImpl.resumeWith(CancellableContinuationImpl.kt:364)
+09-05 12:21:03.047  2351  2351 E MonitoringInstr: 	at kotlinx.coroutines.flow.SharedFlowImpl.tryEmit(SharedFlow.kt:409)
+09-05 12:21:03.047  2351  2351 E MonitoringInstr: 	at kotlinx.coroutines.flow.internal.SubscriptionCountStateFlow.increment(AbstractSharedFlow.kt:125)
+09-05 12:21:03.047  2351  2351 E MonitoringInstr: 	at kotlinx.coroutines.flow.internal.AbstractSharedFlow.allocateSlot(AbstractSharedFlow.kt:64)
+09-05 12:21:03.047  2351  2351 E MonitoringInstr: 	at kotlinx.coroutines.flow.StateFlowImpl.collect(StateFlow.kt:382)
+09-05 12:21:03.047  2351  2351 E MonitoringInstr: 	at kotlinx.coroutines.flow.ReadonlyStateFlow.collect(Unknown Source:2)
+09-05 12:21:03.047  2351  2351 E MonitoringInstr: 	at androidx.lifecycle.compose.FlowExtKt$collectAsStateWithLifecycle$1$1$1.invokeSuspend(FlowExt.kt:174)
+09-05 12:21:03.047  2351  2351 E MonitoringInstr: 	at androidx.lifecycle.compose.FlowExtKt$collectAsStateWithLifecycle$1$1$1.invoke(Unknown Source:8)
+09-05 12:21:03.047  2351  2351 E MonitoringInstr: 	at androidx.lifecycle.compose.FlowExtKt$collectAsStateWithLifecycle$1$1$1.invoke(Unknown Source:4)
+09-05 12:21:03.047  2351  2351 E MonitoringInstr: 	at androidx.lifecycle.RepeatOnLifecycleKt$repeatOnLifecycle$3$1$1$1$1$1$1.invokeSuspend(RepeatOnLifecycle.kt:111)
+09-05 12:21:03.047  2351  2351 E MonitoringInstr: 	at androidx.lifecycle.RepeatOnLifecycleKt$repeatOnLifecycle$3$1$1$1$1$1$1.invoke(Unknown Source:8)
+09-05 12:21:03.047  2351  2351 E MonitoringInstr: 	at androidx.lifecycle.RepeatOnLifecycleKt$repeatOnLifecycle$3$1$1$1$1$1$1.invoke(Unknown Source:4)
+09-05 12:21:03.047  2351  2351 E MonitoringInstr: 	at kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:61)
+09-05 12:21:03.047  2351  2351 E MonitoringInstr: 	at kotlinx.coroutines.CoroutineScopeKt.coroutineScope(CoroutineScope.kt:261)
+09-05 12:21:03.047  2351  2351 E MonitoringInstr: 	at androidx.lifecycle.RepeatOnLifecycleKt$repeatOnLifecycle$3$1$1$1$1.invokeSuspend(RepeatOnLifecycle.kt:110)
+09-05 12:21:03.047  2351  2351 E MonitoringInstr: 	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+09-05 12:21:03.047  2351  2351 E MonitoringInstr: 	at androidx.compose.ui.test.ApplyingContinuationInterceptor$SendApplyContinuation.resumeWith(ApplyingContinuationInterceptor.kt:65)
+09-05 12:21:03.047  2351  2351 E MonitoringInstr: 	at androidx.compose.ui.test.FrameDeferringContinuationInterceptor$TrampolinedTask.resume(FrameDeferringContinuationInterceptor.jvm.kt:137)
+09-05 12:21:03.047  2351  2351 E MonitoringInstr: 	at androidx.compose.ui.test.FrameDeferringContinuationInterceptor.runWithoutResumingCoroutines(FrameDeferringContinuationInterceptor.jvm.kt:75)
+09-05 12:21:03.047  2351  2351 E MonitoringInstr: 	at androidx.compose.ui.test.TestMonotonicFrameClock.performFrame(TestMonotonicFrameClock.jvm.kt:132)
+09-05 12:21:03.047  2351  2351 E MonitoringInstr: 	at androidx.compose.ui.test.TestMonotonicFrameClock.access$performFrame(TestMonotonicFrameClock.jvm.kt:53)
+09-05 12:21:03.047  2351  2351 E MonitoringInstr: 	at androidx.compose.ui.test.TestMonotonicFrameClock$withFrameNanos$2$1$2.invokeSuspend(TestMonotonicFrameClock.jvm.kt:110)
+09-05 12:21:03.047  2351  2351 E MonitoringInstr: 	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+09-05 12:21:03.047  2351  2351 E MonitoringInstr: 	at kotlinx.coroutines.DispatchedTaskKt.resume(DispatchedTask.kt:231)
+09-05 12:21:03.047  2351  2351 E MonitoringInstr: 	at kotlinx.coroutines.DispatchedTaskKt.dispatch(DispatchedTask.kt:164)
+09-05 12:21:03.047  2351  2351 E MonitoringInstr: 	at kotlinx.coroutines.CancellableContinuationImpl.dispatchResume(CancellableContinuationImpl.kt:466)
+09-05 12:21:03.047  2351  2351 E MonitoringInstr: 	at kotlinx.coroutines.CancellableContinuationImpl.resumeImpl(CancellableContinuationImpl.kt:500)
+09-05 12:21:03.047  2351  2351 E MonitoringInstr: 	at kotlinx.coroutines.CancellableContinuationImpl.resumeImpl$default(CancellableContinuationImpl.kt:489)
+09-05 12:21:03.047  2351  2351 E MonitoringInstr: 	at kotlinx.coroutines.CancellableContinuationImpl.resumeUndispatched(CancellableContinuationImpl.kt:587)
+09-05 12:21:03.047  2351  2351 E MonitoringInstr: 	at kotlinx.coroutines.test.CancellableContinuationRunnable.run(TestDispatcher.kt:60)
+09-05 12:21:03.047  2351  2351 E MonitoringInstr: 	at kotlinx.coroutines.test.TestDispatcher.processEvent$kotlinx_coroutines_test(TestDispatcher.kt:24)
+09-05 12:21:03.047  2351  2351 E MonitoringInstr: 	at kotlinx.coroutines.test.TestCoroutineScheduler.runCurrent(TestCoroutineScheduler.kt:132)
+09-05 12:21:03.047  2351  2351 E MonitoringInstr: 	at androidx.compose.ui.test.AbstractMainTestClock$advanceDispatcher$1.invoke(AbstractMainTestClock.jvm.kt:72)
+09-05 12:21:03.047  2351  2351 E MonitoringInstr: 	at androidx.compose.ui.test.AbstractMainTestClock$advanceDispatcher$1.invoke(AbstractMainTestClock.jvm.kt:65)
+09-05 12:21:03.047  2351  2351 E MonitoringInstr: 	at androidx.compose.ui.test.AndroidSynchronization_androidKt.runOnUiThread(AndroidSynchronization.android.kt:33)
+09-05 12:21:03.048  2351  2351 E MonitoringInstr: 	at androidx.compose.ui.test.MainTestClockImpl$1.invoke(MainTestClockImpl.android.kt:29)
+09-05 12:21:03.048  2351  2351 E MonitoringInstr: 	at androidx.compose.ui.test.MainTestClockImpl$1.invoke(MainTestClockImpl.android.kt:29)
+09-05 12:21:03.048  2351  2351 E MonitoringInstr: 	at androidx.compose.ui.test.AbstractMainTestClock.advanceDispatcher(AbstractMainTestClock.jvm.kt:65)
+09-05 12:21:03.048  2351  2351 E MonitoringInstr: 	at androidx.compose.ui.test.AbstractMainTestClock.advanceTimeByFrame(AbstractMainTestClock.jvm.kt:36)
+09-05 12:21:03.048  2351  2351 E MonitoringInstr: 	at androidx.compose.ui.test.ComposeIdlingResource.isIdleNow(ComposeIdlingResource.android.kt:73)
+09-05 12:21:03.048  2351  2351 E MonitoringInstr: 	at androidx.compose.ui.test.IdlingResourceRegistry.areAllResourcesIdle(IdlingResourceRegistry.jvm.kt:122)
+09-05 12:21:03.048  2351  2351 E MonitoringInstr: 	at androidx.compose.ui.test.IdlingResourceRegistry.isIdleOrEnsurePolling$ui_test_release(IdlingResourceRegistry.jvm.kt:101)
+09-05 12:21:03.048  2351  2351 E MonitoringInstr: 	at androidx.compose.ui.test.EspressoLink.isIdleNow(EspressoLink.android.kt:44)
+09-05 12:21:03.048  2351  2351 E MonitoringInstr: 	at androidx.test.espresso.base.IdlingResourceRegistry.allResourcesAreIdle(IdlingResourceRegistry.java:281)
+09-05 12:21:03.048  2351  2351 E MonitoringInstr: 	at androidx.test.espresso.base.IdlingResourceRegistry$6.isIdleNow(IdlingResourceRegistry.java:320)
+09-05 12:21:03.048  2351  2351 E MonitoringInstr: 	at androidx.test.espresso.base.UiControllerImpl.loopMainThreadUntilIdle(UiControllerImpl.java:407)
+09-05 12:21:03.048  2351  2351 E MonitoringInstr: 	at androidx.test.espresso.Espresso.lambda$onIdle$2(Espresso.java:340)
+09-05 12:21:03.048  2351  2351 E MonitoringInstr: 	at androidx.test.espresso.Espresso$$ExternalSyntheticLambda1.call(D8$$SyntheticClass:0)
+09-05 12:21:03.048  2351  2351 E MonitoringInstr: 	at java.util.concurrent.FutureTask.run(FutureTask.java:264)
+09-05 12:21:03.048  2351  2351 E MonitoringInstr: 	at android.os.Handler.handleCallback(Handler.java:958)
+09-05 12:21:03.048  2351  2351 E MonitoringInstr: 	at android.os.Handler.dispatchMessage(Handler.java:99)
+09-05 12:21:03.048  2351  2351 E MonitoringInstr: 	at android.os.Looper.loopOnce(Looper.java:205)
+09-05 12:21:03.048  2351  2351 E MonitoringInstr: 	at android.os.Looper.loop(Looper.java:294)
+09-05 12:21:03.048  2351  2351 E MonitoringInstr: 	at android.app.ActivityThread.main(ActivityThread.java:8177)
+09-05 12:21:03.048  2351  2351 E MonitoringInstr: 	at java.lang.reflect.Method.invoke(Native Method)
+09-05 12:21:03.048  2351  2351 E MonitoringInstr: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:552)
+09-05 12:21:03.048  2351  2351 E MonitoringInstr: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:971)
+09-05 12:21:03.048  2351  2351 E MonitoringInstr: 	Suppressed: kotlinx.coroutines.internal.DiagnosticCoroutineContextException: [StandaloneCoroutine{Cancelling}@58aa39b, Dispatchers.Main.immediate]
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:   Thread[hwuiTask1,6,main]
+09-05 12:21:03.057  2351  2351 E THREAD_STATE: 
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:   Thread[kotlinx.coroutines.DefaultExecutor,5,main]
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     jdk.internal.misc.Unsafe.park(Native Method)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     kotlinx.coroutines.DefaultExecutor.run(DefaultExecutor.kt:118)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.lang.Thread.run(Thread.java:1012)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE: 
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:   Thread[RenderThread,7,main]
+09-05 12:21:03.057  2351  2351 E THREAD_STATE: 
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:   Thread[Profile Saver,5,system]
+09-05 12:21:03.057  2351  2351 E THREAD_STATE: 
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:   Thread[DefaultDispatcher-worker-1,5,main]
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     jdk.internal.misc.Unsafe.park(Native Method)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:376)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.park(CoroutineScheduler.kt:856)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.tryPark(CoroutineScheduler.kt:801)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:749)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:702)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE: 
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:   Thread[Jit thread pool worker thread 0,5,system]
+09-05 12:21:03.057  2351  2351 E THREAD_STATE: 
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:   Thread[DefaultDispatcher-worker-4,5,main]
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     jdk.internal.misc.Unsafe.park(Native Method)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:376)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.park(CoroutineScheduler.kt:856)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.tryPark(CoroutineScheduler.kt:801)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:749)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:702)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE: 
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:   Thread[binder:2351_1,5,main]
+09-05 12:21:03.057  2351  2351 E THREAD_STATE: 
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:   Thread[queued-work-looper,5,main]
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     android.os.MessageQueue.nativePollOnce(Native Method)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     android.os.MessageQueue.next(MessageQueue.java:335)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     android.os.Looper.loopOnce(Looper.java:162)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     android.os.Looper.loop(Looper.java:294)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     android.os.HandlerThread.run(HandlerThread.java:67)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE: 
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:   Thread[DefaultDispatcher-worker-5,5,main]
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     jdk.internal.misc.Unsafe.park(Native Method)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:376)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.park(CoroutineScheduler.kt:856)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.tryPark(CoroutineScheduler.kt:801)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:749)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:702)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE: 
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:   Thread[FinalizerDaemon,5,system]
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.lang.Object.wait(Native Method)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.lang.Object.wait(Object.java:386)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:210)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:231)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.lang.Daemons$FinalizerDaemon.runInternal(Daemons.java:309)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.lang.Daemons$Daemon.run(Daemons.java:145)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.lang.Thread.run(Thread.java:1012)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE: 
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:   Thread[arch_disk_io_3,5,main]
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     jdk.internal.misc.Unsafe.park(Native Method)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.util.concurrent.locks.LockSupport.park(LockSupport.java:341)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionNode.block(AbstractQueuedSynchronizer.java:506)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.util.concurrent.ForkJoinPool.unmanagedBlock(ForkJoinPool.java:3466)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.util.concurrent.ForkJoinPool.managedBlock(ForkJoinPool.java:3437)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1623)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:435)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1071)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1131)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:644)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.lang.Thread.run(Thread.java:1012)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE: 
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:   Thread[FinalizerWatchdogDaemon,5,system]
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.lang.Object.wait(Native Method)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.lang.Object.wait(Object.java:386)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.lang.Object.wait(Object.java:524)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.lang.Daemons$FinalizerWatchdogDaemon.sleepUntilNeeded(Daemons.java:428)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.lang.Daemons$FinalizerWatchdogDaemon.runInternal(Daemons.java:408)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.lang.Daemons$Daemon.run(Daemons.java:145)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.lang.Thread.run(Thread.java:1012)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE: 
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:   Thread[arch_disk_io_0,5,main]
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     jdk.internal.misc.Unsafe.park(Native Method)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.util.concurrent.locks.LockSupport.park(LockSupport.java:341)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionNode.block(AbstractQueuedSynchronizer.java:506)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.util.concurrent.ForkJoinPool.unmanagedBlock(ForkJoinPool.java:3466)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.util.concurrent.ForkJoinPool.managedBlock(ForkJoinPool.java:3437)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1623)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:435)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1071)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1131)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:644)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.lang.Thread.run(Thread.java:1012)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE: 
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:   Thread[SurfaceSyncGroupTimer,5,main]
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     android.os.MessageQueue.nativePollOnce(Native Method)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     android.os.MessageQueue.next(MessageQueue.java:335)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     android.os.Looper.loopOnce(Looper.java:162)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     android.os.Looper.loop(Looper.java:294)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     android.os.HandlerThread.run(HandlerThread.java:67)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE: 
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:   Thread[binder:2351_2,5,main]
+09-05 12:21:03.057  2351  2351 E THREAD_STATE: 
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:   Thread[main,5,main]
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     dalvik.system.VMStack.getThreadStackTrace(Native Method)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.lang.Thread.getStackTrace(Thread.java:1841)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.lang.Thread.getAllStackTraces(Thread.java:1909)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     androidx.test.runner.MonitoringInstrumentation.getThreadState(MonitoringInstrumentation.java:735)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     androidx.test.runner.MonitoringInstrumentation.dumpThreadStateToOutputs(MonitoringInstrumentation.java:730)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     androidx.test.runner.MonitoringInstrumentation.onException(MonitoringInstrumentation.java:724)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     androidx.test.runner.AndroidJUnitRunner.onException(AndroidJUnitRunner.java:648)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     androidx.test.runner.MonitoringInstrumentation$3.uncaughtException(MonitoringInstrumentation.java:315)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.lang.ThreadGroup.uncaughtException(ThreadGroup.java:1071)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.lang.ThreadGroup.uncaughtException(ThreadGroup.java:1066)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     kotlinx.coroutines.internal.CoroutineExceptionHandlerImplKt.propagateExceptionFinalResort(CoroutineExceptionHandlerImpl.kt:31)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     kotlinx.coroutines.internal.CoroutineExceptionHandlerImpl_commonKt.handleUncaughtCoroutineException(CoroutineExceptionHandlerImpl.common.kt:48)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     kotlinx.coroutines.CoroutineExceptionHandlerKt.handleCoroutineException(CoroutineExceptionHandler.kt:28)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     kotlinx.coroutines.StandaloneCoroutine.handleJobException(Builders.common.kt:190)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     kotlinx.coroutines.JobSupport.finalizeFinishingState(JobSupport.kt:228)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     kotlinx.coroutines.JobSupport.tryMakeCompletingSlowPath(JobSupport.kt:917)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     kotlinx.coroutines.JobSupport.tryMakeCompleting(JobSupport.kt:874)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     kotlinx.coroutines.JobSupport.makeCompletingOnce$kotlinx_coroutines_core(JobSupport.kt:839)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     kotlinx.coroutines.AbstractCoroutine.resumeWith(AbstractCoroutine.kt:97)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:46)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     kotlinx.coroutines.internal.ScopeCoroutine.afterResume(Scopes.kt:28)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     kotlinx.coroutines.AbstractCoroutine.resumeWith(AbstractCoroutine.kt:99)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:46)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:102)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     kotlinx.coroutines.EventLoop.processUnconfinedEvent(EventLoop.common.kt:65)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     kotlinx.coroutines.internal.DispatchedContinuationKt.resumeCancellableWith(DispatchedContinuation.kt:371)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     kotlinx.coroutines.internal.DispatchedContinuationKt.resumeCancellableWith$default(DispatchedContinuation.kt:274)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     kotlinx.coroutines.internal.ScopeCoroutine.afterCompletion(Scopes.kt:23)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     kotlinx.coroutines.JobSupport.continueCompleting(JobSupport.kt:947)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     kotlinx.coroutines.JobSupport.access$continueCompleting(JobSupport.kt:22)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     kotlinx.coroutines.JobSupport$ChildCompletion.invoke(JobSupport.kt:1166)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     kotlinx.coroutines.JobSupport.notifyCompletion(JobSupport.kt:1502)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     kotlinx.coroutines.JobSupport.completeStateFinalization(JobSupport.kt:322)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     kotlinx.coroutines.JobSupport.finalizeFinishingState(JobSupport.kt:239)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     kotlinx.coroutines.JobSupport.tryMakeCompletingSlowPath(JobSupport.kt:917)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     kotlinx.coroutines.JobSupport.tryMakeCompleting(JobSupport.kt:874)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     kotlinx.coroutines.JobSupport.makeCompletingOnce$kotlinx_coroutines_core(JobSupport.kt:839)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     kotlinx.coroutines.AbstractCoroutine.resumeWith(AbstractCoroutine.kt:97)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:46)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:230)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     android.os.Handler.handleCallback(Handler.java:958)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     android.os.Handler.dispatchMessage(Handler.java:99)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     androidx.test.espresso.base.TestLooperManagerCompat.execute(TestLooperManagerCompat.java:121)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     androidx.test.espresso.base.Interrogator.loopAndInterrogate(Interrogator.java:128)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     androidx.test.espresso.base.UiControllerImpl.loopUntil(UiControllerImpl.java:513)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     androidx.test.espresso.base.UiControllerImpl.loopMainThreadUntilIdle(UiControllerImpl.java:434)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     androidx.test.espresso.Espresso.lambda$onIdle$2(Espresso.java:340)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     androidx.test.espresso.Espresso$$ExternalSyntheticLambda1.call(D8$$SyntheticClass:0)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.util.concurrent.FutureTask.run(FutureTask.java:264)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     android.os.Handler.handleCallback(Handler.java:958)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     android.os.Handler.dispatchMessage(Handler.java:99)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     android.os.Looper.loopOnce(Looper.java:205)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     android.os.Looper.loop(Looper.java:294)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     android.app.ActivityThread.main(ActivityThread.java:8177)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.lang.reflect.Method.invoke(Native Method)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:552)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     com.android.internal.os.ZygoteInit.main(ZygoteInit.java:971)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE: 
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:   Thread[arch_disk_io_2,5,main]
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     jdk.internal.misc.Unsafe.park(Native Method)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.util.concurrent.locks.LockSupport.park(LockSupport.java:341)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionNode.block(AbstractQueuedSynchronizer.java:506)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.util.concurrent.ForkJoinPool.unmanagedBlock(ForkJoinPool.java:3466)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.util.concurrent.ForkJoinPool.managedBlock(ForkJoinPool.java:3437)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1623)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:435)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1071)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1131)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:644)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.lang.Thread.run(Thread.java:1012)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE: 
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:   Thread[binder:2351_3,5,main]
+09-05 12:21:03.057  2351  2351 E THREAD_STATE: 
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:   Thread[ReferenceQueueDaemon,5,system]
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.lang.Object.wait(Native Method)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.lang.Object.wait(Object.java:386)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.lang.Object.wait(Object.java:524)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.lang.Daemons$ReferenceQueueDaemon.runInternal(Daemons.java:239)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.lang.Daemons$Daemon.run(Daemons.java:145)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.lang.Thread.run(Thread.java:1012)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE: 
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:   Thread[HeapTaskDaemon,5,system]
+09-05 12:21:03.057  2351  2351 E THREAD_STATE: 
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:   Thread[Instr: androidx.test.runner.AndroidJUnitRunner,5,main]
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     jdk.internal.misc.Unsafe.park(Native Method)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.util.concurrent.locks.LockSupport.park(LockSupport.java:211)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.util.concurrent.FutureTask.awaitDone(FutureTask.java:447)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.util.concurrent.FutureTask.get(FutureTask.java:190)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     androidx.test.espresso.Espresso.onIdle(Espresso.java:349)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     androidx.test.espresso.Espresso.onIdle(Espresso.java:378)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     androidx.compose.ui.test.EspressoLink_androidKt.runEspressoOnIdle(EspressoLink.android.kt:92)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     androidx.compose.ui.test.EspressoLink.runUntilIdle(EspressoLink.android.kt:79)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     androidx.compose.ui.test.AndroidComposeUiTestEnvironment.waitForIdle(ComposeUiTest.android.kt:346)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     androidx.compose.ui.test.AndroidComposeUiTestEnvironment.access$waitForIdle(ComposeUiTest.android.kt:219)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     androidx.compose.ui.test.AndroidComposeUiTestEnvironment$AndroidTestOwner.getRoots(ComposeUiTest.android.kt:543)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     androidx.compose.ui.test.TestContext.getAllSemanticsNodes$ui_test_release(TestOwner.kt:86)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     androidx.compose.ui.test.TestContext.getAllSemanticsNodes$ui_test_release$default(TestOwner.kt:81)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     androidx.compose.ui.test.SemanticsNodeInteractionCollection.fetchSemanticsNodes(SemanticsNodeInteraction.kt:256)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     androidx.compose.ui.test.SemanticsNodeInteractionCollection.fetchSemanticsNodes$default(SemanticsNodeInteraction.kt:249)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     com.indian.nutrition.tracker.ui.AppUiTest.waitForTag$lambda$0(AppUiTest.kt:65)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     com.indian.nutrition.tracker.ui.AppUiTest$$ExternalSyntheticLambda1.invoke(D8$$SyntheticClass:0)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     androidx.compose.ui.test.AndroidComposeUiTestEnvironment$AndroidComposeUiTestImpl.waitUntil(ComposeUiTest.android.kt:434)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     androidx.compose.ui.test.junit4.AndroidComposeTestRule.waitUntil(AndroidComposeTestRule.android.kt:306)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     com.indian.nutrition.tracker.ui.AppUiTest.waitForTag(AppUiTest.kt:64)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     com.indian.nutrition.tracker.ui.AppUiTest.waitForTag$default(AppUiTest.kt:63)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     com.indian.nutrition.tracker.ui.AppUiTest.test03_addFoodOpensSearchAndCanCreateCustomRecipe(AppUiTest.kt:123)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.lang.reflect.Method.invoke(Native Method)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     androidx.test.internal.runner.junit4.statement.RunBefores.evaluate(RunBefores.java:80)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     org.junit.rules.ExternalResource$1.evaluate(ExternalResource.java:54)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     androidx.compose.ui.test.junit4.AndroidComposeTestRule$apply$1$evaluate$1.invoke(AndroidComposeTestRule.android.kt:272)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     androidx.compose.ui.test.junit4.AndroidComposeTestRule$apply$1$evaluate$1.invoke(AndroidComposeTestRule.android.kt:271)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     androidx.compose.ui.test.AndroidComposeUiTestEnvironment$AndroidComposeUiTestImpl.withDisposableContent(ComposeUiTest.android.kt:505)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1$1$1$1$1$1.invoke(ComposeUiTest.android.kt:333)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     androidx.compose.ui.test.AndroidComposeUiTestEnvironment.withComposeIdlingResource(ComposeUiTest.android.kt:385)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     androidx.compose.ui.test.AndroidComposeUiTestEnvironment.access$withComposeIdlingResource(ComposeUiTest.android.kt:219)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1$1$1$1$1.invoke(ComposeUiTest.android.kt:332)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     androidx.compose.ui.test.AndroidComposeUiTestEnvironment.withWindowRecomposer(ComposeUiTest.android.kt:359)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     androidx.compose.ui.test.AndroidComposeUiTestEnvironment.access$withWindowRecomposer(ComposeUiTest.android.kt:219)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1$1$1$1.invoke(ComposeUiTest.android.kt:331)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     androidx.compose.ui.test.AndroidComposeUiTestEnvironment.withTestCoroutines(ComposeUiTest.android.kt:372)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     androidx.compose.ui.test.AndroidComposeUiTestEnvironment.access$withTestCoroutines(ComposeUiTest.android.kt:219)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1$1$1.invoke(ComposeUiTest.android.kt:330)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     androidx.compose.ui.test.EspressoLink.withStrategy(EspressoLink.android.kt:66)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1$1.invoke(ComposeUiTest.android.kt:329)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     androidx.compose.ui.test.IdlingResourceRegistry.withRegistry(IdlingResourceRegistry.jvm.kt:155)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1.invoke(ComposeUiTest.android.kt:328)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     androidx.compose.ui.test.ComposeRootRegistry.withRegistry(ComposeRootRegistry.android.kt:146)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     androidx.compose.ui.test.AndroidComposeUiTestEnvironment.runTest(ComposeUiTest.android.kt:327)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     androidx.compose.ui.test.junit4.AndroidComposeTestRule$apply$1.evaluate(AndroidComposeTestRule.android.kt:271)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     androidx.test.ext.junit.runners.AndroidJUnit4.run(AndroidJUnit4.java:162)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     org.junit.runners.Suite.runChild(Suite.java:128)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     org.junit.runners.Suite.runChild(Suite.java:27)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     androidx.test.internal.runner.TestExecutor.execute(TestExecutor.java:68)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     androidx.test.internal.runner.TestExecutor.execute(TestExecutor.java:59)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     androidx.test.runner.AndroidJUnitRunner.onStart(AndroidJUnitRunner.java:467)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2402)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE: 
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:   Thread[binder:2351_4,5,main]
+09-05 12:21:03.057  2351  2351 E THREAD_STATE: 
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:   Thread[DefaultDispatcher-worker-2,5,main]
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     jdk.internal.misc.Unsafe.park(Native Method)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:376)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.park(CoroutineScheduler.kt:856)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.tryPark(CoroutineScheduler.kt:801)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:749)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:702)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE: 
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:   Thread[InstrumentationConnectionThread,5,main]
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     android.os.MessageQueue.nativePollOnce(Native Method)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     android.os.MessageQueue.next(MessageQueue.java:335)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     android.os.Looper.loopOnce(Looper.java:162)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     android.os.Looper.loop(Looper.java:294)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     android.os.HandlerThread.run(HandlerThread.java:67)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE: 
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:   Thread[arch_disk_io_1,5,main]
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     jdk.internal.misc.Unsafe.park(Native Method)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.util.concurrent.locks.LockSupport.park(LockSupport.java:341)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionNode.block(AbstractQueuedSynchronizer.java:506)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.util.concurrent.ForkJoinPool.unmanagedBlock(ForkJoinPool.java:3466)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.util.concurrent.ForkJoinPool.managedBlock(ForkJoinPool.java:3437)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1623)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:435)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1071)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1131)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:644)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.lang.Thread.run(Thread.java:1012)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE: 
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:   Thread[Signal Catcher,10,system]
+09-05 12:21:03.057  2351  2351 E THREAD_STATE: 
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:   Thread[hwuiTask0,6,main]
+09-05 12:21:03.057  2351  2351 E THREAD_STATE: 
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:   Thread[DefaultDispatcher-worker-3,5,main]
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     jdk.internal.misc.Unsafe.park(Native Method)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:376)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.park(CoroutineScheduler.kt:856)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.tryPark(CoroutineScheduler.kt:801)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:749)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE:     kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:702)
+09-05 12:21:03.057  2351  2351 E THREAD_STATE: 
+09-05 12:21:03.057  2351  2351 E MonitoringInstr: Dying now...
+09-05 12:21:03.057  2351  2351 W MonitoringInstr: Invoking default uncaught exception handler com.android.internal.os.RuntimeInit$KillApplicationHandler@2e7eb75 (a class com.android.internal.os.RuntimeInit$KillApplicationHandler)
+--------- beginning of crash
+09-05 12:21:03.058  2351  2351 E AndroidRuntime: FATAL EXCEPTION: main
+09-05 12:21:03.058  2351  2351 E AndroidRuntime: Process: com.indian.nutrition.tracker, PID: 2351
+09-05 12:21:03.058  2351  2351 E AndroidRuntime: kotlinx.serialization.json.internal.JsonDecodingException: Unexpected JSON token at offset 8778: Unexpected symbol '.' in numeric literal at path: $[22].typicalServingGrams
+09-05 12:21:03.058  2351  2351 E AndroidRuntime: JSON input: .....",
+09-05 12:21:03.058  2351  2351 E AndroidRuntime:     "typicalServingGrams": 30.4,
+09-05 12:21:03.058  2351  2351 E AndroidRuntime:     "brand": "Optimum Nu.....
+09-05 12:21:03.058  2351  2351 E AndroidRuntime: 	at kotlinx.serialization.json.internal.JsonExceptionsKt.JsonDecodingException(JsonExceptions.kt:24)
+09-05 12:21:03.058  2351  2351 E AndroidRuntime: 	at kotlinx.serialization.json.internal.JsonExceptionsKt.JsonDecodingException(JsonExceptions.kt:32)
+09-05 12:21:03.058  2351  2351 E AndroidRuntime: 	at kotlinx.serialization.json.internal.AbstractJsonLexer.fail(AbstractJsonLexer.kt:580)
+09-05 12:21:03.058  2351  2351 E AndroidRuntime: 	at kotlinx.serialization.json.internal.AbstractJsonLexer.fail$default(AbstractJsonLexer.kt:578)
+09-05 12:21:03.058  2351  2351 E AndroidRuntime: 	at kotlinx.serialization.json.internal.AbstractJsonLexer.consumeNumericLiteral(AbstractJsonLexer.kt:636)
+09-05 12:21:03.058  2351  2351 E AndroidRuntime: 	at kotlinx.serialization.json.internal.StreamingJsonDecoder.decodeInt(StreamingJsonDecoder.kt:297)
+09-05 12:21:03.058  2351  2351 E AndroidRuntime: 	at kotlinx.serialization.internal.IntSerializer.deserialize(Primitives.kt:96)
+09-05 12:21:03.058  2351  2351 E AndroidRuntime: 	at kotlinx.serialization.internal.IntSerializer.deserialize(Primitives.kt:92)
+09-05 12:21:03.058  2351  2351 E AndroidRuntime: 	at kotlinx.serialization.json.internal.StreamingJsonDecoder.decodeSerializableValue(StreamingJsonDecoder.kt:69)
+09-05 12:21:03.058  2351  2351 E AndroidRuntime: 	at kotlinx.serialization.encoding.AbstractDecoder.decodeSerializableValue(AbstractDecoder.kt:43)
+09-05 12:21:03.058  2351  2351 E AndroidRuntime: 	at kotlinx.serialization.encoding.AbstractDecoder.decodeNullableSerializableElement(AbstractDecoder.kt:78)
+09-05 12:21:03.058  2351  2351 E AndroidRuntime: 	at com.indian.nutrition.tracker.data.asset.FoodDto$$serializer.deserialize(FoodAssets.kt:10)
+09-05 12:21:03.058  2351  2351 E AndroidRuntime: 	at com.indian.nutrition.tracker.data.asset.FoodDto$$serializer.deserialize(FoodAssets.kt:10)
+09-05 12:21:03.058  2351  2351 E AndroidRuntime: 	at kotlinx.serialization.json.internal.StreamingJsonDecoder.decodeSerializableValue(StreamingJsonDecoder.kt:69)
+09-05 12:21:03.058  2351  2351 E AndroidRuntime: 	at kotlinx.serialization.encoding.AbstractDecoder.decodeSerializableValue(AbstractDecoder.kt:43)
+09-05 12:21:03.058  2351  2351 E AndroidRuntime: 	at kotlinx.serialization.encoding.AbstractDecoder.decodeSerializableElement(AbstractDecoder.kt:70)
+09-05 12:21:03.058  2351  2351 E AndroidRuntime: 	at kotlinx.serialization.json.internal.StreamingJsonDecoder.decodeSerializableElement(StreamingJsonDecoder.kt:168)
+09-05 12:21:03.058  2351  2351 E AndroidRuntime: 	at kotlinx.serialization.encoding.CompositeDecoder$DefaultImpls.decodeSerializableElement$default(Decoding.kt:538)
+09-05 12:21:03.058  2351  2351 E AndroidRuntime: 	at kotlinx.serialization.internal.CollectionLikeSerializer.readElement(CollectionSerializers.kt:80)
+09-05 12:21:03.058  2351  2351 E AndroidRuntime: 	at kotlinx.serialization.internal.AbstractCollectionSerializer.readElement$default(CollectionSerializers.kt:51)
+09-05 12:21:03.058  2351  2351 E AndroidRuntime: 	at kotlinx.serialization.internal.AbstractCollectionSerializer.merge(CollectionSerializers.kt:36)
+09-05 12:21:03.058  2351  2351 E AndroidRuntime: 	at kotlinx.serialization.internal.AbstractCollectionSerializer.deserialize(CollectionSerializers.kt:43)
+09-05 12:21:03.058  2351  2351 E AndroidRuntime: 	at kotlinx.serialization.json.internal.StreamingJsonDecoder.decodeSerializableValue(StreamingJsonDecoder.kt:69)
+09-05 12:21:03.058  2351  2351 E AndroidRuntime: 	at kotlinx.serialization.json.Json.decodeFromString(Json.kt:165)
+09-05 12:21:03.058  2351  2351 E AndroidRuntime: 	at com.indian.nutrition.tracker.data.asset.FoodAssets.load(FoodAssets.kt:66)
+09-05 12:21:03.058  2351  2351 E AndroidRuntime: 	at com.indian.nutrition.tracker.data.asset.FoodAssets.loadAll(FoodAssets.kt:58)
+09-05 12:21:03.058  2351  2351 E AndroidRuntime: 	at com.indian.nutrition.tracker.data.repository.FoodRepository.ensureLoaded(FoodRepository.kt:29)
+09-05 12:21:03.058  2351  2351 E AndroidRuntime: 	at com.indian.nutrition.tracker.data.repository.FoodRepository.masterList(FoodRepository.kt:44)
+09-05 12:21:03.058  2351  2351 E AndroidRuntime: 	at com.indian.nutrition.tracker.ui.screens.search.SearchViewModel$master$1.invokeSuspend(SearchViewModel.kt:77)
+09-05 12:21:03.058  2351  2351 E AndroidRuntime: 	at com.indian.nutrition.tracker.ui.screens.search.SearchViewModel$master$1.invoke(Unknown Source:13)
+09-05 12:21:03.058  2351  2351 E AndroidRuntime: 	at com.indian.nutrition.tracker.ui.screens.search.SearchViewModel$master$1.invoke(Unknown Source:6)
+09-05 12:21:03.058  2351  2351 E AndroidRuntime: 	at kotlinx.coroutines.flow.FlowKt__ZipKt$combine$1$1.invokeSuspend(Zip.kt:29)
+09-05 12:21:03.058  2351  2351 E AndroidRuntime: 	at kotlinx.coroutines.flow.FlowKt__ZipKt$combine$1$1.invoke(Unknown Source:13)
+09-05 12:21:03.058  2351  2351 E AndroidRuntime: 	at kotlinx.coroutines.flow.FlowKt__ZipKt$combine$1$1.invoke(Unknown Source:6)
+09-05 12:21:03.058  2351  2351 E AndroidRuntime: 	at kotlinx.coroutines.flow.internal.CombineKt$combineInternal$2.invokeSuspend(Combine.kt:73)
+09-05 12:21:03.058  2351  2351 E AndroidRuntime: 	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+09-05 12:21:03.058  2351  2351 E AndroidRuntime: 	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:104)
+09-05 12:21:03.058  2351  2351 E AndroidRuntime: 	at kotlinx.coroutines.EventLoop.processUnconfinedEvent(EventLoop.common.kt:65)
+09-05 12:21:03.059  2351  2351 E AndroidRuntime: 	at kotlinx.coroutines.DispatchedTaskKt.resumeUnconfined(DispatchedTask.kt:241)
+09-05 12:21:03.059  2351  2351 E AndroidRuntime: 	at kotlinx.coroutines.DispatchedTaskKt.dispatch(DispatchedTask.kt:159)
+09-05 12:21:03.059  2351  2351 E AndroidRuntime: 	at kotlinx.coroutines.CancellableContinuationImpl.dispatchResume(CancellableContinuationImpl.kt:466)
+09-05 12:21:03.059  2351  2351 E AndroidRuntime: 	at kotlinx.coroutines.CancellableContinuationImpl.resumeImpl(CancellableContinuationImpl.kt:500)
+09-05 12:21:03.059  2351  2351 E AndroidRuntime: 	at kotlinx.coroutines.CancellableContinuationImpl.resumeImpl$default(CancellableContinuationImpl.kt:489)
+09-05 12:21:03.059  2351  2351 E AndroidRuntime: 	at kotlinx.coroutines.CancellableContinuationImpl.resumeWith(CancellableContinuationImpl.kt:364)
+09-05 12:21:03.059  2351  2351 E AndroidRuntime: 	at kotlinx.coroutines.flow.SharedFlowImpl.tryEmit(SharedFlow.kt:409)
+09-05 12:21:03.059  2351  2351 E AndroidRuntime: 	at kotlinx.coroutines.flow.internal.SubscriptionCountStateFlow.increment(AbstractSharedFlow.kt:125)
+09-05 12:21:03.059  2351  2351 E AndroidRuntime: 	at kotlinx.coroutines.flow.internal.AbstractSharedFlow.allocateSlot(AbstractSharedFlow.kt:64)
+09-05 12:21:03.059  2351  2351 E AndroidRuntime: 	at kotlinx.coroutines.flow.StateFlowImpl.collect(StateFlow.kt:382)
+09-05 12:21:03.059  2351  2351 E AndroidRuntime: 	at kotlinx.coroutines.flow.ReadonlyStateFlow.collect(Unknown Source:2)
+09-05 12:21:03.059  2351  2351 E AndroidRuntime: 	at androidx.lifecycle.compose.FlowExtKt$collectAsStateWithLifecycle$1$1$1.invokeSuspend(FlowExt.kt:174)
+09-05 12:21:03.059  2351  2351 E AndroidRuntime: 	at androidx.lifecycle.compose.FlowExtKt$collectAsStateWithLifecycle$1$1$1.invoke(Unknown Source:8)
+09-05 12:21:03.059  2351  2351 E AndroidRuntime: 	at androidx.lifecycle.compose.FlowExtKt$collectAsStateWithLifecycle$1$1$1.invoke(Unknown Source:4)
+09-05 12:21:03.059  2351  2351 E AndroidRuntime: 	at androidx.lifecycle.RepeatOnLifecycleKt$repeatOnLifecycle$3$1$1$1$1$1$1.invokeSuspend(RepeatOnLifecycle.kt:111)
+09-05 12:21:03.059  2351  2351 E AndroidRuntime: 	at androidx.lifecycle.RepeatOnLifecycleKt$repeatOnLifecycle$3$1$1$1$1$1$1.invoke(Unknown Source:8)
+09-05 12:21:03.059  2351  2351 E AndroidRuntime: 	at androidx.lifecycle.RepeatOnLifecycleKt$repeatOnLifecycle$3$1$1$1$1$1$1.invoke(Unknown Source:4)
+09-05 12:21:03.059  2351  2351 E AndroidRuntime: 	at kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:61)
+09-05 12:21:03.059  2351  2351 E AndroidRuntime: 	at kotlinx.coroutines.CoroutineScopeKt.coroutineScope(CoroutineScope.kt:261)
+09-05 12:21:03.059  2351  2351 E AndroidRuntime: 	at androidx.lifecycle.RepeatOnLifecycleKt$repeatOnLifecycle$3$1$1$1$1.invokeSuspend(RepeatOnLifecycle.kt:110)
+09-05 12:21:03.059  2351  2351 E AndroidRuntime: 	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+09-05 12:21:03.059  2351  2351 E AndroidRuntime: 	at androidx.compose.ui.test.ApplyingContinuationInterceptor$SendApplyContinuation.resumeWith(ApplyingContinuationInterceptor.kt:65)
+09-05 12:21:03.059  2351  2351 E AndroidRuntime: 	at androidx.compose.ui.test.FrameDeferringContinuationInterceptor$TrampolinedTask.resume(FrameDeferringContinuationInterceptor.jvm.kt:137)
+09-05 12:21:03.059  2351  2351 E AndroidRuntime: 	at androidx.compose.ui.test.FrameDeferringContinuationInterceptor.runWithoutResumingCoroutines(FrameDeferringContinuationInterceptor.jvm.kt:75)
+09-05 12:21:03.059  2351  2351 E AndroidRuntime: 	at androidx.compose.ui.test.TestMonotonicFrameClock.performFrame(TestMonotonicFrameClock.jvm.kt:132)
+09-05 12:21:03.059  2351  2351 E AndroidRuntime: 	at androidx.compose.ui.test.TestMonotonicFrameClock.access$performFrame(TestMonotonicFrameClock.jvm.kt:53)
+09-05 12:21:03.059  2351  2351 E AndroidRuntime: 	at androidx.compose.ui.test.TestMonotonicFrameClock$withFrameNanos$2$1$2.invokeSuspend(TestMonotonicFrameClock.jvm.kt:110)
+09-05 12:21:03.059  2351  2351 E AndroidRuntime: 	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+09-05 12:21:03.059  2351  2351 E AndroidRuntime: 	at kotlinx.coroutines.DispatchedTaskKt.resume(DispatchedTask.kt:231)
+09-05 12:21:03.059  2351  2351 E AndroidRuntime: 	at kotlinx.coroutines.DispatchedTaskKt.dispatch(DispatchedTask.kt:164)
+09-05 12:21:03.059  2351  2351 E AndroidRuntime: 	at kotlinx.coroutines.CancellableContinuationImpl.dispatchResume(CancellableContinuationImpl.kt:466)
+09-05 12:21:03.059  2351  2351 E AndroidRuntime: 	at kotlinx.coroutines.CancellableContinuationImpl.resumeImpl(CancellableContinuationImpl.kt:500)
+09-05 12:21:03.059  2351  2351 E AndroidRuntime: 	at kotlinx.coroutines.CancellableContinuationImpl.resumeImpl$default(CancellableContinuationImpl.kt:489)
+09-05 12:21:03.059  2351  2351 E AndroidRuntime: 	at kotlinx.coroutines.CancellableContinuationImpl.resumeUndispatched(CancellableContinuationImpl.kt:587)
+09-05 12:21:03.059  2351  2351 E AndroidRuntime: 	at kotlinx.coroutines.test.CancellableContinuationRunnable.run(TestDispatcher.kt:60)
+09-05 12:21:03.059  2351  2351 E AndroidRuntime: 	at kotlinx.coroutines.test.TestDispatcher.processEvent$kotlinx_coroutines_test(TestDispatcher.kt:24)
+09-05 12:21:03.059  2351  2351 E AndroidRuntime: 	at kotlinx.coroutines.test.TestCoroutineScheduler.runCurrent(TestCoroutineScheduler.kt:132)
+09-05 12:21:03.059  2351  2351 E AndroidRuntime: 	at androidx.compose.ui.test.AbstractMainTestClock$advanceDispatcher$1.invoke(AbstractMainTestClock.jvm.kt:72)
+09-05 12:21:03.059  2351  2351 E AndroidRuntime: 	at androidx.compose.ui.test.AbstractMainTestClock$advanceDispatcher$1.invoke(AbstractMainTestClock.jvm.kt:65)
+09-05 12:21:03.059  2351  2351 E AndroidRuntime: 	at androidx.compose.ui.test.AndroidSynchronization_androidKt.runOnUiThread(AndroidSynchronization.android.kt:33)
+09-05 12:21:03.060  2351  2351 E AndroidRuntime: 	at androidx.compose.ui.test.MainTestClockImpl$1.invoke(MainTestClockImpl.android.kt:29)
+09-05 12:21:03.060  2351  2351 E AndroidRuntime: 	at androidx.compose.ui.test.MainTestClockImpl$1.invoke(MainTestClockImpl.android.kt:29)
+09-05 12:21:03.060  2351  2351 E AndroidRuntime: 	at androidx.compose.ui.test.AbstractMainTestClock.advanceDispatcher(AbstractMainTestClock.jvm.kt:65)
+09-05 12:21:03.060  2351  2351 E AndroidRuntime: 	at androidx.compose.ui.test.AbstractMainTestClock.advanceTimeByFrame(AbstractMainTestClock.jvm.kt:36)
+09-05 12:21:03.060  2351  2351 E AndroidRuntime: 	at androidx.compose.ui.test.ComposeIdlingResource.isIdleNow(ComposeIdlingResource.android.kt:73)
+09-05 12:21:03.060  2351  2351 E AndroidRuntime: 	at androidx.compose.ui.test.IdlingResourceRegistry.areAllResourcesIdle(IdlingResourceRegistry.jvm.kt:122)
+09-05 12:21:03.060  2351  2351 E AndroidRuntime: 	at androidx.compose.ui.test.IdlingResourceRegistry.isIdleOrEnsurePolling$ui_test_release(IdlingResourceRegistry.jvm.kt:101)
+09-05 12:21:03.060  2351  2351 E AndroidRuntime: 	at androidx.compose.ui.test.EspressoLink.isIdleNow(EspressoLink.android.kt:44)
+09-05 12:21:03.060  2351  2351 E AndroidRuntime: 	at androidx.test.espresso.base.IdlingResourceRegistry.allResourcesAreIdle(IdlingResourceRegistry.java:281)
+09-05 12:21:03.060  2351  2351 E AndroidRuntime: 	at androidx.test.espresso.base.IdlingResourceRegistry$6.isIdleNow(IdlingResourceRegistry.java:320)
+09-05 12:21:03.060  2351  2351 E AndroidRuntime: 	at androidx.test.espresso.base.UiControllerImpl.loopMainThreadUntilIdle(UiControllerImpl.java:407)
+09-05 12:21:03.060  2351  2351 E AndroidRuntime: 	at androidx.test.espresso.Espresso.lambda$onIdle$2(Espresso.java:340)
+09-05 12:21:03.060  2351  2351 E AndroidRuntime: 	at androidx.test.espresso.Espresso$$ExternalSyntheticLambda1.call(D8$$SyntheticClass:0)
+09-05 12:21:03.060  2351  2351 E AndroidRuntime: 	at java.util.concurrent.FutureTask.run(FutureTask.java:264)
+09-05 12:21:03.060  2351  2351 E AndroidRuntime: 	at android.os.Handler.handleCallback(Handler.java:958)
+09-05 12:21:03.060  2351  2351 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:99)
+09-05 12:21:03.060  2351  2351 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:205)
+09-05 12:21:03.060  2351  2351 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:294)
+09-05 12:21:03.060  2351  2351 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:8177)
+09-05 12:21:03.060  2351  2351 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+09-05 12:21:03.060  2351  2351 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:552)
+09-05 12:21:03.060  2351  2351 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:971)
+09-05 12:21:03.060  2351  2351 E AndroidRuntime: 	Suppressed: kotlinx.coroutines.internal.DiagnosticCoroutineContextException: [StandaloneCoroutine{Cancelling}@58aa39b, Dispatchers.Main.immediate]
+09-05 12:21:03.067  2351  2351 I Process : Sending signal. PID: 2351 SIG: 9
+09-05 12:21:03.083   504  2216 I ImeTracker: com.indian.nutrition.tracker:2056be1b: onRequestHide at ORIGIN_SERVER_HIDE_INPUT reason HIDE_REMOVE_CLIENT
+09-05 12:21:03.083   504  2216 I ImeTracker: com.indian.nutrition.tracker:2056be1b: onCancelled at PHASE_SERVER_SHOULD_HIDE
+09-05 12:21:03.083   504  2216 W InputManager-JNI: Input channel object 'd9d7737 com.indian.nutrition.tracker/com.indian.nutrition.tracker.MainActivity (client)' was disposed without first being removed with the input manager!
+09-05 12:21:03.084   504   535 I libprocessgroup: Successfully killed process cgroup uid 10141 pid 2351 in 0ms
+09-05 12:21:03.088   325   325 I Zygote  : Process 2351 exited due to signal 9 (Killed)
+09-05 12:21:03.097  2338  2338 I app_process: System.exit called, status: 0
+09-05 12:21:03.097  2338  2338 I AndroidRuntime: VM exiting with result code 0.
+09-05 12:21:03.102   389   389 E BpTransactionCompletedListener: Failed to transact (-32)
+09-05 12:21:03.103   389   389 I BpBinder: onLastStrongRef automatically unlinking death recipients: 
+09-05 12:21:03.120   504   533 E IPCThreadState: Binder transaction failure: 125074/29189/-22
+09-05 12:21:03.138   504  2448 I ImeTracker: com.android.launcher3:b4eb02d4: onRequestHide at ORIGIN_SERVER_HIDE_INPUT reason HIDE_UNSPECIFIED_WINDOW
+09-05 12:21:03.138   504  2448 I ImeTracker: com.android.launcher3:b4eb02d4: onCancelled at PHASE_SERVER_SHOULD_HIDE
+09-05 12:21:03.338   793   793 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+09-05 12:21:03.438   504   533 E libprocessgroup: No such cgroup attribute: /sys/fs/cgroup/uid_4294877437/cgroup.freeze
+09-05 12:21:03.438   504   533 W libprocessgroup: Failed to apply Frozen process profile: No such file or directory
+09-05 12:21:03.439   504   533 E libprocessgroup: No such cgroup attribute: /sys/fs/cgroup/uid_4294877437/cgroup.freeze
+09-05 12:21:03.439   504   533 W libprocessgroup: Failed to apply Unfrozen process profile: No such file or directory
+09-05 12:21:03.466  2479  2479 I artd    : Starting artd
+09-05 12:21:03.466  2479  2479 I AidlLazyServiceRegistrar: Registering service artd
+09-05 12:21:03.470  2479  2480 I AidlLazyServiceRegistrar: Process has 1 (of 1 available) client(s) in use after notification artd has clients: 1
+09-05 12:21:03.515   999   999 D CarrierSvcBindHelper: onPackageRemoved: com.indian.nutrition.tracker
+09-05 12:21:03.516   999   999 D CarrierSvcBindHelper: No carrier app for: 0
+09-05 12:21:03.521   974   974 V MediaPlayerList: mPackageChangedBroadcastReceiver: action: android.intent.action.PACKAGE_REMOVED
+09-05 12:21:03.522   974   974 V MediaPlayerList: mPackageChangedBroadcastReceiver: action: android.intent.action.PACKAGE_REMOVED
+09-05 12:21:03.527   504   716 W WifiService: Couldn't get PackageInfo for package:com.indian.nutrition.tracker
+09-05 12:21:03.527   504   716 D WifiService: Remove settings for package:com.indian.nutrition.tracker
+09-05 12:21:03.527   504   716 D WifiConfigManager: Remove all networks for app ApplicationInfo{20460d5 com.indian.nutrition.tracker}
+09-05 12:21:03.528  1402  1402 W MediaProvider: WorkProfileOwnerApps cache is empty
+09-05 12:21:03.533   504   597 I InputReader: Reconfiguring input devices, changes=KEYBOARD_LAYOUTS
+09-05 12:21:03.537   793   793 D ControlsListingControllerImpl: ServiceConfig reloaded, count: 0
+09-05 12:21:03.544   504   716 D WifiConfigStore: Writing to stores completed in 11 ms.
+09-05 12:21:03.544   504   716 I PasspointManager: No app ops listener found for com.indian.nutrition.tracker
+09-05 12:21:03.544   504   716 W WifiService: Couldn't get PackageInfo for package:com.indian.nutrition.tracker
+09-05 12:21:03.544   504   716 D WifiService: Remove settings for package:com.indian.nutrition.tracker
+09-05 12:21:03.544   504   716 D WifiConfigManager: Remove all networks for app ApplicationInfo{c79b3a7 com.indian.nutrition.tracker}
+09-05 12:21:03.546   793   850 D StylusManager: Stylus InputDevice changed: 13 virtio_input_multi_touch_10
+09-05 12:21:03.551   504   586 I RoleService: Granting default roles...
+09-05 12:21:03.552   504   716 D WifiConfigStore: Writing to stores completed in 8 ms.
+09-05 12:21:03.553   504   716 I PasspointManager: No app ops listener found for com.indian.nutrition.tracker
+09-05 12:21:03.554   504   572 D SafetySourceDataValidator: No cert check requested for package com.android.permissioncontroller
+09-05 12:21:03.555   793   850 D StylusManager: Stylus InputDevice changed: 12 virtio_input_multi_touch_9
+09-05 12:21:03.556   793   850 D StylusManager: Stylus InputDevice changed: 9 virtio_input_multi_touch_6
+09-05 12:21:03.556   793   850 D StylusManager: Stylus InputDevice changed: 11 virtio_input_multi_touch_8
+09-05 12:21:03.557   504   533 E libprocessgroup: No such cgroup attribute: /sys/fs/cgroup/uid_4294877438/cgroup.freeze
+09-05 12:21:03.557   504   533 W libprocessgroup: Failed to apply Frozen process profile: No such file or directory
+09-05 12:21:03.559   793   850 D StylusManager: Stylus InputDevice changed: 10 virtio_input_multi_touch_7
+09-05 12:21:03.559   793   850 D StylusManager: Stylus InputDevice changed: 5 virtio_input_multi_touch_2
+09-05 12:21:03.562   504   533 E libprocessgroup: No such cgroup attribute: /sys/fs/cgroup/uid_4294877438/cgroup.freeze
+09-05 12:21:03.562   504   533 W libprocessgroup: Failed to apply Unfrozen process profile: No such file or directory
+09-05 12:21:03.563   325   325 I Zygote  : Process 2392 exited due to signal 9 (Killed)
+09-05 12:21:03.563   793   850 D StylusManager: Stylus InputDevice changed: 14 virtio_input_multi_touch_11
+09-05 12:21:03.569   389   389 E BpTransactionCompletedListener: Failed to transact (-32)
+09-05 12:21:03.569   389   389 E BpTransactionCompletedListener: Failed to transact (-32)
+09-05 12:21:03.572   793   850 D StylusManager: Stylus InputDevice changed: 8 virtio_input_multi_touch_5
+09-05 12:21:03.577   793   850 D StylusManager: Stylus InputDevice changed: 4 virtio_input_multi_touch_1
+09-05 12:21:03.578  1460  2500 W KeyChain: Creating new DB.
+09-05 12:21:03.578   793   850 D StylusManager: Stylus InputDevice changed: 7 virtio_input_multi_touch_4
+09-05 12:21:03.583  1402  1838 I MediaProvider: Begin Intent { act=android.intent.action.PACKAGE_FULLY_REMOVED dat=package: flg=0x5000010 cmp=com.android.providers.media.module/com.android.providers.media.MediaService (has extras) }
+09-05 12:21:03.583  1402  1838 D MediaProvider: Deleted 0 Android/media items belonging to com.indian.nutrition.tracker on /data/user/0/com.android.providers.media.module/databases/external.db
+09-05 12:21:03.606  1402  1838 D MediaGrants: Removed 0 media_grants for 0 user for com.indian.nutrition.tracker. Reason: Package orphaned
+09-05 12:21:03.608   793   850 D StylusManager: Stylus InputDevice changed: 6 virtio_input_multi_touch_3
+09-05 12:21:03.609  1402  1838 I MediaProvider: End Intent { act=android.intent.action.PACKAGE_FULLY_REMOVED dat=package: flg=0x5000010 cmp=com.android.providers.media.module/com.android.providers.media.MediaService (has extras) }
+09-05 12:21:03.612  1042  1042 D Launcher.Model: package removed received com.indian.nutrition.tracker
+09-05 12:21:03.612  1042  1113 D PackageUpdatedTask: Removing app iconcom.indian.nutrition.tracker
+09-05 12:21:03.615   504   515 I system_server: Background concurrent copying GC freed 339476(15MB) AllocSpace objects, 37(1116KB) LOS objects, 49% free, 20MB/41MB, paused 32us,339us total 128.802ms
+09-05 12:21:03.616  1042  1113 D ModelWriter: removing items from db . Reason: [removed because the corresponding package or component is removed. mOp=3 removedPackages=[com.indian.nutrition.tracker] removedComponents=[]]
+09-05 12:21:03.622   504   516 W JavaBinder: BinderProxy is being destroyed but the application did not call unlinkToDeath to unlink all of its death recipients beforehand.  Releasing leaked death recipient: com.android.server.am.ActivityManagerService$14
+09-05 12:21:03.622   504   516 I BpBinder: onLastStrongRef automatically unlinking death recipients: 
