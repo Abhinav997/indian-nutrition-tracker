@@ -2,6 +2,7 @@ package com.indian.nutrition.tracker.ui.screens.calculator
 
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.compose.foundation.background
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -14,17 +15,22 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.selection.selectable
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.FilterChip
+import androidx.compose.material3.FilterChipDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.RadioButton
+import androidx.compose.material3.RadioButtonDefaults
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
@@ -38,6 +44,8 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
@@ -234,11 +242,6 @@ fun CalculatorScreen(
             Card(modifier = Modifier.fillMaxWidth()) {
                 Column(modifier = Modifier.padding(16.dp)) {
                     Text("Target Calculator & Profile", style = MaterialTheme.typography.titleMedium)
-                    Text(
-                        "Mifflin–St Jeor BMR, TDEE, & Macronutrient Estimator",
-                        style = MaterialTheme.typography.bodySmall,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant,
-                    )
                 }
             }
         }
@@ -480,6 +483,7 @@ private fun ProfileCard(
                             selected = unitSystem == u,
                             onClick = { onUnitToggle(u) },
                             label = { Text(u.name.lowercase()) },
+                            colors = calculatorChipColors(),
                             modifier = Modifier.testTag(
                                 if (u == UnitSystem.KG) "unit-system-kg-btn" else "unit-system-lb-btn",
                             ),
@@ -529,22 +533,57 @@ private fun ProfileCard(
             )
 
             SectionLabel("Protein Target Basis")
-            Row(verticalAlignment = Alignment.CenterVertically) {
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .horizontalScroll(rememberScrollState()),
+                horizontalArrangement = Arrangement.spacedBy(6.dp),
+            ) {
                 ProteinBasis.entries.forEach { basis ->
-                    Row(verticalAlignment = Alignment.CenterVertically) {
+                    val selected = proteinBasis == basis.name
+                    Row(
+                        modifier = Modifier
+                            .clip(RoundedCornerShape(12.dp))
+                            .background(
+                                if (selected) MaterialTheme.colorScheme.primaryContainer
+                                else MaterialTheme.colorScheme.surfaceVariant,
+                            )
+                            .selectable(
+                                selected = selected,
+                                onClick = { onProteinBasis(basis.name) },
+                                role = Role.RadioButton,
+                            )
+                            .padding(horizontal = 8.dp, vertical = 2.dp),
+                        verticalAlignment = Alignment.CenterVertically,
+                    ) {
                         RadioButton(
-                            selected = proteinBasis == basis.name,
-                            onClick = { onProteinBasis(basis.name) },
+                            selected = selected,
+                            onClick = null,
+                            colors = RadioButtonDefaults.colors(
+                                selectedColor = MaterialTheme.colorScheme.primary,
+                                unselectedColor = MaterialTheme.colorScheme.onSurfaceVariant,
+                            ),
                         )
-                        Text(basis.name.lowercase().replaceFirstChar { c -> c.uppercase() },
-                            style = MaterialTheme.typography.labelMedium)
-                        Spacer(Modifier.width(10.dp))
+                        Text(
+                            basis.name.lowercase().replaceFirstChar { c -> c.uppercase() },
+                            style = MaterialTheme.typography.labelMedium,
+                            color = if (selected) MaterialTheme.colorScheme.onPrimaryContainer
+                            else MaterialTheme.colorScheme.onSurfaceVariant,
+                        )
                     }
                 }
             }
         }
     }
 }
+
+@Composable
+private fun calculatorChipColors() = FilterChipDefaults.filterChipColors(
+    containerColor = MaterialTheme.colorScheme.surfaceVariant,
+    labelColor = MaterialTheme.colorScheme.onSurfaceVariant,
+    selectedContainerColor = MaterialTheme.colorScheme.primaryContainer,
+    selectedLabelColor = MaterialTheme.colorScheme.onPrimaryContainer,
+)
 
 @Composable
 private fun SectionLabel(text: String) {
@@ -570,6 +609,7 @@ private fun ChipRow(
                 selected = selected == value,
                 onClick = { onSelect(value) },
                 label = { Text(label) },
+                colors = calculatorChipColors(),
             )
         }
     }
@@ -615,9 +655,11 @@ private fun ResultsCard(
             Row(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
                 FilterChip(selected = !customMode, onClick = { onModeChange(false) },
                     label = { Text("Pre-defined (Auto Formula)") },
+                    colors = calculatorChipColors(),
                     modifier = Modifier.testTag("target-mode-predefined-btn"))
                 FilterChip(selected = customMode, onClick = { onModeChange(true) },
                     label = { Text("Custom Manual Targets") },
+                    colors = calculatorChipColors(),
                     modifier = Modifier.testTag("target-mode-custom-btn"))
             }
 
@@ -641,14 +683,32 @@ private fun ResultsCard(
                 )
             }
 
-            // Formula math breakdown
-            Column(verticalArrangement = Arrangement.spacedBy(2.dp)) {
-                Text("Body Metrics & Formula Math:", style = MaterialTheme.typography.labelMedium, fontWeight = FontWeight.Bold)
-                FormulaRow("BMR (Mifflin–St Jeor):", result.formulaDetails.bmrFormula)
-                FormulaRow("TDEE:", result.formulaDetails.tdeeFormula)
-                FormulaRow("Auto Calorie Goal:", result.formulaDetails.targetFormula)
-                FormulaRow("Auto Protein Goal:", result.formulaDetails.proteinFormula)
-                FormulaRow("Auto Hydration Goal:", result.formulaDetails.waterFormula)
+            Card(
+                colors = CardDefaults.cardColors(
+                    containerColor = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.55f),
+                ),
+                modifier = Modifier.fillMaxWidth(),
+            ) {
+                Column(
+                    modifier = Modifier.padding(12.dp),
+                    verticalArrangement = Arrangement.spacedBy(8.dp),
+                ) {
+                    Text(
+                        "How these targets are calculated",
+                        style = MaterialTheme.typography.titleSmall,
+                        fontWeight = FontWeight.Bold,
+                    )
+                    Text(
+                        "The details below use your profile and selected goal.",
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    )
+                    FormulaRow("BMR · Mifflin–St Jeor", result.formulaDetails.bmrFormula)
+                    FormulaRow("TDEE", result.formulaDetails.tdeeFormula)
+                    FormulaRow("Calorie goal", result.formulaDetails.targetFormula)
+                    FormulaRow("Protein goal", result.formulaDetails.proteinFormula)
+                    FormulaRow("Hydration goal", result.formulaDetails.waterFormula)
+                }
             }
 
             if (showValidation) {
@@ -668,12 +728,24 @@ private fun ResultsCard(
 
 @Composable
 private fun FormulaRow(label: String, value: String) {
-    Row(
-        horizontalArrangement = Arrangement.SpaceBetween,
-        modifier = Modifier.fillMaxWidth(),
-    ) {
-        Text(label, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
-        Text(value, style = MaterialTheme.typography.bodySmall, fontWeight = FontWeight.SemiBold)
+    Column(verticalArrangement = Arrangement.spacedBy(3.dp), modifier = Modifier.fillMaxWidth()) {
+        Text(
+            label,
+            style = MaterialTheme.typography.labelMedium,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
+        )
+        Text(
+            value,
+            style = MaterialTheme.typography.bodyMedium,
+            fontWeight = FontWeight.SemiBold,
+            modifier = Modifier
+                .fillMaxWidth()
+                .background(
+                    MaterialTheme.colorScheme.surface,
+                    RoundedCornerShape(8.dp),
+                )
+                .padding(horizontal = 10.dp, vertical = 8.dp),
+        )
     }
 }
 

@@ -40,7 +40,8 @@ private const val SEARCH_ROUTE_PATTERN = "search?meal={$SEARCH_MEAL_ARG}&date={$
 
 /**
  * Root composable: Material 3 theme, app scaffold with bottom navigation,
- * and the Navigation Compose graph for the four main destinations.
+ * and the Navigation Compose graph for the dashboard, progress, calculator,
+ * and focused food-log destinations.
  */
 @Composable
 fun NutritionApp(container: AppContainer) {
@@ -55,21 +56,27 @@ fun NutritionApp(container: AppContainer) {
             containerColor = MaterialTheme.colorScheme.background,
             snackbarHost = { SnackbarHost(snackbarHostState) },
             bottomBar = {
-                NavigationBar(modifier = Modifier.testTag("bottom-navigation-bar")) {
-                    AppDestination.all.forEach { destination ->
-                        NavigationBarItem(
-                            selected = currentDestination?.hierarchy
-                                ?.any { it.route == destination.route || it.route?.startsWith("${destination.route}?") == true } == true,
-                            onClick = {
-                                navController.navigate(destination.route) {
-                                    popUpTo(AppDestination.Home.route) { saveState = true }
-                                    launchSingleTop = true
-                                    restoreState = true
-                                }
-                            },
-                            icon = { Icon(destination.icon, contentDescription = destination.label) },
-                            label = { Text(destination.label) },
-                        )
+                // Food logging is a focused overlay, not a persistent tab.
+                if (current != AppDestination.FoodSearch) {
+                    NavigationBar(modifier = Modifier.testTag("bottom-navigation-bar")) {
+                        AppDestination.bottomNav.forEach { destination ->
+                            NavigationBarItem(
+                                selected = currentDestination?.hierarchy
+                                    ?.any {
+                                        it.route == destination.route ||
+                                            it.route?.startsWith("${destination.route}?") == true
+                                    } == true,
+                                onClick = {
+                                    navController.navigate(destination.route) {
+                                        popUpTo(AppDestination.Home.route) { saveState = true }
+                                        launchSingleTop = true
+                                        restoreState = true
+                                    }
+                                },
+                                icon = { Icon(destination.icon, contentDescription = destination.label) },
+                                label = { Text(destination.label) },
+                            )
+                        }
                     }
                 }
             },
@@ -114,6 +121,7 @@ fun NutritionApp(container: AppContainer) {
                         initialMeal = meal,
                         loggingDate = loggingDate,
                         snackbarHostState = snackbarHostState,
+                        onDone = { navController.popBackStack() },
                     )
                 }
                 composable(AppDestination.Progress.route) { ProgressScreen(container) }

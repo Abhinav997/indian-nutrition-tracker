@@ -1,14 +1,17 @@
 package com.indian.nutrition.tracker.ui.screens.home
 
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Delete
@@ -19,6 +22,7 @@ import androidx.compose.material3.Card
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -66,76 +70,101 @@ fun HomeScreen(container: AppContainer, onOpenFoodSearch: (MealType, java.time.L
         MealType.entries.associateWith { meal -> dailyLogs.filter { it.mealType == meal } }
     }
 
-    LazyColumn(
-        state = listState,
-        modifier = Modifier.fillMaxSize(),
-        contentPadding = androidx.compose.foundation.layout.PaddingValues(16.dp),
-        verticalArrangement = Arrangement.spacedBy(12.dp),
-    ) {
-        item {
-            Column(modifier = Modifier.testTag("app-top-header")) {
-                Text(
-                    text = if (selectedDate == DateUtils.today()) "Today's Intake" else
-                        "Intake · ${DateUtils.dayLabel(selectedDate)}",
-                    style = MaterialTheme.typography.titleLarge,
-                )
-                DateSwitcherBar(
+    Box(modifier = Modifier.fillMaxSize()) {
+        LazyColumn(
+            state = listState,
+            modifier = Modifier.fillMaxSize(),
+            contentPadding = androidx.compose.foundation.layout.PaddingValues(
+                start = 16.dp,
+                top = 16.dp,
+                end = 16.dp,
+                bottom = 96.dp,
+            ),
+            verticalArrangement = Arrangement.spacedBy(12.dp),
+        ) {
+            item {
+                Column(modifier = Modifier.testTag("app-top-header")) {
+                    Text(
+                        text = if (selectedDate == DateUtils.today()) "Today's Intake" else
+                            "Intake · ${DateUtils.dayLabel(selectedDate)}",
+                        style = MaterialTheme.typography.titleLarge,
+                    )
+                    DateSwitcherBar(
+                        selectedDate = selectedDate,
+                        onPrevious = viewModel::previousDay,
+                        onNext = viewModel::nextDay,
+                        onToday = viewModel::jumpToToday,
+                        modifier = Modifier.padding(top = 4.dp),
+                    )
+                }
+            }
+
+            item {
+                IntakeCard(
+                    logs = dailyLogs,
+                    settings = s,
                     selectedDate = selectedDate,
-                    onPrevious = viewModel::previousDay,
-                    onNext = viewModel::nextDay,
-                    onToday = viewModel::jumpToToday,
-                    modifier = Modifier.padding(top = 4.dp),
                 )
+            }
+
+            item {
+                WeightSummaryCard(
+                    settings = s,
+                    weightLogs = weightLogs,
+                    onLogWeight = { showWeightSheet = true },
+                )
+            }
+
+            item {
+                WaterCard(
+                    logs = waterLogs,
+                    targetMl = s.dailyWaterTargetMl,
+                    onAddWater = viewModel::addWater,
+                    onEditWater = viewModel::updateWater,
+                    onDeleteWater = viewModel::deleteWater,
+                )
+            }
+
+            item {
+                Text("Meals Logged for ${selectedDate}", style = MaterialTheme.typography.titleSmall)
+            }
+
+            MealType.entries.forEach { meal ->
+                val items = logsByMeal[meal].orEmpty()
+                item(key = "meal-${meal.name}", contentType = "meal-section") {
+                    MealSection(
+                        meal = meal,
+                        items = items,
+                        onAdd = {
+                            preferredMealName = it.name
+                            onOpenFoodSearch(it, selectedDate)
+                        },
+                        onEdit = { editingLog = it },
+                        onDelete = viewModel::deleteLog,
+                    )
+                }
             }
         }
 
-        item {
-            IntakeCard(
-                logs = dailyLogs,
-                settings = s,
-                selectedDate = selectedDate,
-                // The serving sheet still lets the user change the meal; the
-                // selected date is carried through so backfilled entries stay
-                // on the day the user is viewing.
-                onAddFood = { onOpenFoodSearch(preferredMeal, selectedDate) },
-            )
-        }
-
-        item {
-            WeightSummaryCard(
-                settings = s,
-                weightLogs = weightLogs,
-                onLogWeight = { showWeightSheet = true },
-            )
-        }
-
-        item {
-            WaterCard(
-                logs = waterLogs,
-                targetMl = s.dailyWaterTargetMl,
-                onAddWater = viewModel::addWater,
-                onEditWater = viewModel::updateWater,
-                onDeleteWater = viewModel::deleteWater,
-            )
-        }
-
-        item {
-            Text("Meals Logged for ${selectedDate}", style = MaterialTheme.typography.titleSmall)
-        }
-
-        MealType.entries.forEach { meal ->
-            val items = logsByMeal[meal].orEmpty()
-            item(key = "meal-${meal.name}", contentType = "meal-section") {
-                MealSection(
-                    meal = meal,
-                    items = items,
-                    onAdd = {
-                        preferredMealName = it.name
-                        onOpenFoodSearch(it, selectedDate)
-                    },
-                    onEdit = { editingLog = it },
-                    onDelete = viewModel::deleteLog,
-                )
+        Surface(
+            color = MaterialTheme.colorScheme.primary,
+            contentColor = MaterialTheme.colorScheme.onPrimary,
+            shape = RoundedCornerShape(50),
+            shadowElevation = 6.dp,
+            modifier = Modifier
+                .align(Alignment.BottomEnd)
+                .padding(16.dp)
+                .width(64.dp)
+                .height(48.dp)
+                .testTag("dashboard-add-food-btn"),
+        ) {
+            Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+                IconButton(
+                    onClick = { onOpenFoodSearch(preferredMeal, selectedDate) },
+                    modifier = Modifier.testTag("dashboard-add-food-action"),
+                ) {
+                    Icon(Icons.Filled.Add, contentDescription = "Log food")
+                }
             }
         }
     }
@@ -180,7 +209,6 @@ private fun IntakeCard(
     logs: List<DailyLog>,
     settings: UserSettings,
     selectedDate: java.time.LocalDate,
-    onAddFood: () -> Unit,
 ) {
     val totalKcal = logs.sumOf { it.calories }
     val totalProtein = HomeViewModel.round1(logs.sumOf { it.protein })
@@ -189,27 +217,17 @@ private fun IntakeCard(
 
     Card(modifier = Modifier.fillMaxWidth().testTag("today-intake-card")) {
         Column(modifier = Modifier.padding(12.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-            Row(
-                verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.SpaceBetween,
-                modifier = Modifier.fillMaxWidth(),
-            ) {
-                Column {
-                    Text(
-                        if (selectedDate == DateUtils.today()) "Today's Intake"
-                        else "Intake · ${DateUtils.dayLabel(selectedDate)}",
-                        style = MaterialTheme.typography.titleSmall,
-                    )
-                    Text(
-                        "Target vs Logged Nutrition",
-                        style = MaterialTheme.typography.bodySmall,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant,
-                    )
-                }
-                Button(onClick = onAddFood, modifier = Modifier.testTag("home-quick-add-food-btn")) {
-                    Icon(Icons.Filled.Add, contentDescription = null)
-                    Text("Add Food", modifier = Modifier.padding(start = 4.dp))
-                }
+            Column {
+                Text(
+                    if (selectedDate == DateUtils.today()) "Today's Intake"
+                    else "Intake · ${DateUtils.dayLabel(selectedDate)}",
+                    style = MaterialTheme.typography.titleSmall,
+                )
+                Text(
+                    "Target vs Logged Nutrition",
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                )
             }
             MacroProgressBar(
                 label = "Calories",

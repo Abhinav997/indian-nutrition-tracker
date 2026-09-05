@@ -33,7 +33,7 @@ import java.time.LocalDate
 
 enum class SearchTab { SEARCH, FREQUENT, CUSTOM }
 
-/** Search screen state: tabs, debounced OFF lookup, local master + custom CRUD. */
+/** Food-log overlay state: source/list modes, debounced OFF lookup, local master + custom CRUD. */
 @OptIn(FlowPreview::class)
 class SearchViewModel(
     container: AppContainer,

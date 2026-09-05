@@ -20,13 +20,10 @@ import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material.icons.filled.Scale
-import androidx.compose.material3.Button
 import androidx.compose.material3.Card
-import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.FilterChip
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -69,7 +66,6 @@ fun ProgressScreen(container: AppContainer) {
     val metric by viewModel.metric.collectAsStateWithLifecycle()
     val dateRange by viewModel.dateRange.collectAsStateWithLifecycle()
 
-    var showWeightSheet by remember { mutableStateOf(false) }
     var editingWeight by remember { mutableStateOf<WeightLog?>(null) }
 
     val s = settings ?: return LoadingProgress()
@@ -101,8 +97,6 @@ fun ProgressScreen(container: AppContainer) {
         contentPadding = PaddingValues(16.dp),
         verticalArrangement = Arrangement.spacedBy(12.dp),
     ) {
-        item { StatsBanner(settings = s, weightLogs = weightLogs, onLogWeight = { showWeightSheet = true }) }
-
         item { MetricSelector(selected = metric, onSelect = viewModel::setMetric) }
 
         item {
@@ -145,7 +139,7 @@ fun ProgressScreen(container: AppContainer) {
             )
         }
 
-        item { WeightHistoryHeader(count = weightLogs.size, onAdd = { showWeightSheet = true }) }
+        item { WeightHistoryHeader(count = weightLogs.size) }
 
         if (weightLogs.isEmpty()) {
             item {
@@ -167,18 +161,14 @@ fun ProgressScreen(container: AppContainer) {
         }
     }
 
-    if (showWeightSheet || editingWeight != null) {
+    if (editingWeight != null) {
         WeightSheet(
             unitSystem = s.unitSystem,
             currentWeightKg = s.currentWeightKg,
             weightLog = editingWeight,
-            onDismiss = {
-                showWeightSheet = false
-                editingWeight = null
-            },
+            onDismiss = { editingWeight = null },
             onSave = { kg, note ->
                 viewModel.saveWeight(editingWeight?.date ?: java.time.LocalDate.now(), kg, note)
-                showWeightSheet = false
                 editingWeight = null
             },
         )
@@ -189,108 +179,6 @@ fun ProgressScreen(container: AppContainer) {
 private fun LoadingProgress() {
     Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
         Text("Loading…", style = MaterialTheme.typography.titleMedium)
-    }
-}
-
-@Composable
-private fun StatsBanner(
-    settings: UserSettings,
-    weightLogs: List<WeightLog>,
-    onLogWeight: () -> Unit,
-) {
-    val latest = weightLogs.lastOrNull()?.weightKg ?: settings.currentWeightKg
-    val starting = weightLogs.firstOrNull()?.weightKg ?: settings.currentWeightKg
-    val target = settings.targetWeightKg
-    val diffFromStart = ((latest - starting) * 10).roundToInt() / 10.0
-    val diffFromTarget = ((latest - target) * 10).roundToInt() / 10.0
-    val bmi = UnitConverters.calculateBmi(latest, settings.heightCm)
-
-    val bannerContainer = MaterialTheme.colorScheme.primaryContainer
-    val bannerText = MaterialTheme.colorScheme.onPrimaryContainer
-    val bannerMuted = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = 0.72f)
-
-    Card(
-        modifier = Modifier.fillMaxWidth(),
-        colors = CardDefaults.cardColors(containerColor = bannerContainer),
-    ) {
-        Column(modifier = Modifier.padding(16.dp)) {
-            Row(
-                verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.SpaceBetween,
-                modifier = Modifier.fillMaxWidth(),
-            ) {
-                Column {
-                    Text(
-                        "PROGRESS & TRENDS",
-                        style = MaterialTheme.typography.labelSmall,
-                        color = MaterialTheme.colorScheme.primary,
-                        fontWeight = FontWeight.Bold,
-                    )
-                    Text(
-                        "Body Composition & Intake",
-                        style = MaterialTheme.typography.titleMedium,
-                        color = bannerText,
-                    )
-                }
-                Button(onClick = onLogWeight, modifier = Modifier.testTag("progress-log-weight-btn")) {
-                    Icon(Icons.Filled.Add, contentDescription = null, modifier = Modifier.size(16.dp))
-                    Spacer(Modifier.width(4.dp))
-                    Text("Log Weight")
-                }
-            }
-
-            Spacer(Modifier.height(12.dp))
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceEvenly,
-            ) {
-                BannerStat(
-                    label = "Current Weight",
-                    value = UnitConverters.formatWeight(latest, settings.unitSystem),
-                    sub = bmi?.let {
-                        "${it.bmi} · ${it.category.name.lowercase().replaceFirstChar { c -> c.uppercase() }}"
-                    } ?: "",
-                    valueColor = bannerText,
-                    subColor = MaterialTheme.colorScheme.primary,
-                )
-                BannerStat(
-                    label = "Net Change",
-                    value = (if (diffFromStart > 0) "+" else "") +
-                        UnitConverters.formatWeight(diffFromStart, settings.unitSystem),
-                    sub = "From start",
-                    valueColor = if (diffFromStart <= 0) MaterialTheme.colorScheme.tertiary
-                    else MaterialTheme.colorScheme.secondary,
-                    subColor = bannerMuted,
-                )
-                BannerStat(
-                    label = "Goal Target",
-                    value = UnitConverters.formatWeight(target, settings.unitSystem),
-                    sub = if (abs(diffFromTarget) <= 0.2) "Reached!"
-                    else "${UnitConverters.formatWeight(abs(diffFromTarget), settings.unitSystem)} left",
-                    valueColor = MaterialTheme.colorScheme.primary,
-                    subColor = bannerMuted,
-                )
-            }
-        }
-    }
-}
-
-@Composable
-private fun BannerStat(
-    label: String,
-    value: String,
-    sub: String,
-    valueColor: Color,
-    subColor: Color,
-) {
-    Column(horizontalAlignment = Alignment.CenterHorizontally) {
-        Text(
-            label.uppercase(),
-            style = MaterialTheme.typography.labelSmall,
-            color = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = 0.72f),
-        )
-        Text(value, style = MaterialTheme.typography.titleMedium, color = valueColor, fontWeight = FontWeight.Black)
-        Text(sub, style = MaterialTheme.typography.labelSmall, color = subColor)
     }
 }
 
@@ -452,21 +340,17 @@ private fun AverageTile(title: String, value: String, unit: String, target: Stri
 }
 
 @Composable
-private fun WeightHistoryHeader(count: Int, onAdd: () -> Unit) {
+private fun WeightHistoryHeader(count: Int) {
     Row(
         verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.SpaceBetween,
         modifier = Modifier.fillMaxWidth(),
     ) {
-        Row(verticalAlignment = Alignment.CenterVertically) {
-            Icon(Icons.Filled.Scale, contentDescription = null, tint = MaterialTheme.colorScheme.primary)
-            Text(
-                "Weight Log History ($count entries)",
-                style = MaterialTheme.typography.titleSmall,
-                modifier = Modifier.padding(start = 6.dp),
-            )
-        }
-        Button(onClick = onAdd) { Text("+ Add Entry") }
+        Icon(Icons.Filled.Scale, contentDescription = null, tint = MaterialTheme.colorScheme.primary)
+        Text(
+            "Weight Log History ($count entries)",
+            style = MaterialTheme.typography.titleSmall,
+            modifier = Modifier.padding(start = 6.dp),
+        )
     }
 }
 
