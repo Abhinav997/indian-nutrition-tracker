@@ -28,7 +28,11 @@ data class FoodDto(
 /** Loads and parses the curated food datasets shipped with the app. */
 object FoodAssets {
 
-    private val json = Json { ignoreUnknownKeys = true }
+    private val json = Json {
+        ignoreUnknownKeys = true
+        isLenient = true          // tolerate non-standard numeric literals
+        coerceInputValues = true  // null for missing/invalid optional fields
+    }
 
     private fun FoodDto.toFood() = Food(
         id = id,

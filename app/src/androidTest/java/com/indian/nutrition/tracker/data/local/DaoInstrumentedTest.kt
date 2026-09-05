@@ -80,17 +80,15 @@ class DaoInstrumentedTest {
         assertEquals(83.0, updated?.weightKg ?: 0.0, 0.001)
         assertNull(updated?.note)
 
-        // one row per date: a second entity with a different id but same date must fail
-        // (unique index) — repositories route through findByDate/upsert instead.
-        var conflict = false
-        try {
-            dao.insert(WeightLogEntity("w2", "2026-09-05", 90.0, null, 4L))
-        } catch (_: Exception) {
-            conflict = true
-        }
-        assertTrue(conflict)
+        // one row per date: a second entity with a different id but same date
+        // replaces the existing row (Room OnConflictStrategy.REPLACE applies
+        // to all unique constraints including the date index).
+        dao.insert(WeightLogEntity("w2", "2026-09-05", 90.0, "replaced", 4L))
+        val afterReplace = dao.findByDate("2026-09-05")
+        assertEquals("w2", afterReplace?.id)
+        assertEquals(90.0, afterReplace?.weightKg ?: 0.0, 0.001)
 
-        dao.deleteById("w1")
+        dao.deleteById("w2")
         assertNull(dao.findByDate("2026-09-05"))
         dao.deleteAll()
         assertTrue(dao.observeAll().first().isEmpty())

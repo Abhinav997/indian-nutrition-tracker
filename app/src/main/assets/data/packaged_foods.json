@@ -192,7 +192,7 @@
   },
   {
     "id": "pkg_maggi_2min_noodles",
-    "name": "Nestlé Maggi 2-Minute Masala Noodles",
+    "name": "Nestl\u00e9 Maggi 2-Minute Masala Noodles",
     "source": "OFF",
     "kcalPer100g": 427,
     "proteinPer100g": 8,
@@ -206,7 +206,7 @@
   },
   {
     "id": "pkg_maggi_oats_noodles",
-    "name": "Nestlé Maggi Nutri-licious Oats Masala Noodles",
+    "name": "Nestl\u00e9 Maggi Nutri-licious Oats Masala Noodles",
     "source": "OFF",
     "kcalPer100g": 412,
     "proteinPer100g": 9.8,
@@ -309,7 +309,7 @@
     "carbsPer100g": 9.8,
     "fatPer100g": 4.9,
     "typicalServingDescription": "1 scoop (~30.4g / 24g Protein)",
-    "typicalServingGrams": 30.4,
+    "typicalServingGrams": 30,
     "brand": "Optimum Nutrition",
     "category": "Protein Supplements",
     "barcode": "748927056465"
