@@ -55,8 +55,8 @@ class AppUiTest {
 
     @Test
     fun homeRendersAndWaterQuickAddWorks() {
-        composeRule.onNodeWithTag("today-intake-card").assertExists()
-        composeRule.onNodeWithTag("home-weight-summary-card").assertExists()
+        waitForTag("today-intake-card")
+        waitForTag("home-weight-summary-card")
 
         composeRule.onNodeWithTag("water-add-250-btn").performScrollTo().performClick()
         composeRule.onNodeWithText("250 / ", substring = true).assertExists()
@@ -84,9 +84,9 @@ class AppUiTest {
 
         composeRule.onNodeWithTag("open-create-custom-food-btn").performClick()
         waitForTag("custom-food-modal-dialog")
-        composeRule.onNodeWithTag("custom-food-name-input").performTextInput("Test Poha")
-        composeRule.onNodeWithTag("custom-food-kcal-input").performTextInput("260")
-        composeRule.onNodeWithTag("custom-food-protein-input").performTextInput("6")
+        composeRule.onNodeWithTag("custom-food-name-input").performScrollTo().performTextInput("Test Poha")
+        composeRule.onNodeWithTag("custom-food-kcal-input").performScrollTo().performTextInput("260")
+        composeRule.onNodeWithTag("custom-food-protein-input").performScrollTo().performTextInput("6")
         composeRule.onNodeWithTag("save-custom-food-submit-btn").performClick()
         waitForText("Test Poha")
     }
