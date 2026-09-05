@@ -331,10 +331,10 @@ No automatic migration is possible (web localStorage ≠ app storage). Instead:
 - ✅ **Gate:** charts render on a phone-sized emulator; touch points work. (Chart math unit-tested; on-device emulator check deferred to manual QA.)
 
 ### Phase 6 — Calculator/Settings + export/import (≈2 days)
-- [ ] Full calculator form (kg/lb toggle, activity select, goal chips, rate select, protein-basis radios, auto/manual target mode, formula breakdown).
-- [ ] CSV export (`ACTION_CREATE_DOCUMENT`) and JSON backup export/import (§10).
-- [ ] "Clear all logs" with confirmation dialog; Data Management card; About/attribution card.
-- ✅ **Gate:** export CSV produces byte-identical schema to web; import round-trips.
+- [x] Full calculator form (kg/lb toggle, activity select, goal chips, rate select, protein-basis radios, auto/manual target mode, formula breakdown).
+- [x] CSV export (`ACTION_CREATE_DOCUMENT`) and JSON backup export/import (§10).
+- [x] "Clear all logs" with confirmation dialog; Data Management card; About/attribution card.
+- ✅ **Gate:** export CSV produces byte-identical schema to web; import round-trips. (Green on CI `33947616176`; CSV byte-identity/round-trip/corrupt-reject covered by unit tests.)
 
 ### Phase 7 — Hardening & tests (≈2–3 days)
 - [ ] Move tests to `com.indian.nutrition.tracker`; unit (`TargetCalculator`, `CsvExporter`, `JsonBackup`, `NumberUtils`, `DateUtils`), instrumented (DAOs, repositories), Compose UI tests with `testTag`s mirroring the web `id`s (e.g. `food-search-input`, `save-and-use-targets-btn`).
