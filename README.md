@@ -17,8 +17,8 @@ have been removed (see git history); the native rewrite is in progress:
 - [x] Phase 4 — food search + Open Food Facts
 - [x] Phase 5 — progress charts
 - [x] Phase 6 — calculator/settings + CSV/JSON export & import
-- [ ] Phase 7 — tests & hardening *(in progress)*
-- [ ] Phase 8 — release readiness
+- [x] Phase 7 — tests & hardening
+- [ ] Phase 8 — release readiness *(in progress)*
 
 ## Features
 
@@ -41,10 +41,12 @@ have been removed (see git history); the native rewrite is in progress:
 ## Build
 
 ```bash
-./gradlew :app:assembleDebug
+./gradlew :app:assembleDebug      # debug APK (no minification)
+./gradlew :app:assembleRelease     # release APK (R8 minified + shrunk)
 ```
 
 Debug APK: `app/build/outputs/apk/debug/app-debug.apk`
+Release APK: `app/build/outputs/apk/release/app-release-unsigned.apk`
 
 Open the project in Android Studio and run `app` on an emulator or device.
 
