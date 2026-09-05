@@ -324,11 +324,11 @@ No automatic migration is possible (web localStorage ≠ app storage). Instead:
 - ✅ **Gate:** search works with network disabled; no duplicate rows; cache capped. (Unit tests cover fallback/cache/dedupe; on-device manual check deferred to QA.)
 
 ### Phase 5 — Progress & charts (≈2–3 days)
-- [ ] Stats banner (current/net-change/target, BMI category).
-- [ ] Custom Canvas charts: weight line+area with forward-fill; bars for calories/protein/water; target dashed line; touch points (not just hover); x-axis thinning for 30/60-day ranges.
-- [ ] Averages → full-range denominator; `DateRange` (`7d/14d/30d/All=60d`) persists via settings.
-- [ ] Weight history list with delete.
-- ✅ **Gate:** charts render on a phone-sized emulator; touch points work.
+- [x] Stats banner (current/net-change/target, BMI category).
+- [x] Custom Canvas charts: weight line+area with forward-fill; bars for calories/protein/water; target dashed line; touch points (not just hover); x-axis thinning for 30/60-day ranges.
+- [x] Averages → full-range denominator; `DateRange` (`7d/14d/30d/All=60d`) persists via settings.
+- [x] Weight history list with delete.
+- ✅ **Gate:** charts render on a phone-sized emulator; touch points work. (Chart math unit-tested; on-device emulator check deferred to manual QA.)
 
 ### Phase 6 — Calculator/Settings + export/import (≈2 days)
 - [ ] Full calculator form (kg/lb toggle, activity select, goal chips, rate select, protein-basis radios, auto/manual target mode, formula breakdown).
